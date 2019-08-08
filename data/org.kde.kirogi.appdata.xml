@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright 2019 Eike Hein -->
 <component type="desktop-application">
-  <id>org.kde.kirogi.desktop</id>
+  <id>org.kde.kirogi</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>LGPL-2.1+ AND GPL-2.0+</project_license>
   <name>Kirogi</name>
@@ -31,7 +31,7 @@
 ​  </categories>
   <screenshots>
     <screenshot type="default">
-      <image width="1920" height="1080">https://www.kde.org/images/screenshots/kirogi.png</image>
+      <image>https://cdn.kde.org/screenshots/kirogi/kirogi.png</image>
       <caption>The Kirogi in-flight UI</caption>
     </screenshot>
   </screenshots>
