@@ -80,7 +80,13 @@ Kirogi is written in C++14 and QML. It uses the [Kirigami](https://www.kde.org/p
 
 ### What is the license?
 
-Kirogi's library and bundled vehicle support plugins are licensed under LGPL v2.1 (or later). The frontend (UI and other business logic) is licensed under GPL v2 (or later).
+Kirogi's library in src/lib/ and bundled vehicle support plugins in src/plugins/ are licensed under LGPL v2.1 (or later), see COPYING.LIB.
+
+The frontend (UI and other business logic) is licensed under GPL v2 (or later), see COPYING.
+
+The app icon in data/icon is licensed under LGPL v2.1 (or later), see COPYING.LIB.
+
+The mascot artwork in XX is licensed under CC-BY-SA 4.0 or later.
 
 ### I have a supported Parrot drone. Do I need the Parrot SDK to use Kirogi?
 
