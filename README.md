@@ -76,7 +76,7 @@ Not yet. MAVLink support for both manual control and flight plans is planned for
 
 ### What technology does Kirogi use?
 
-Kirogi is written in C++14 and QML. It uses the [Kirigami](https://www.kde.org/products/kirigami/) UI toolkit (part of [KDE Frameworks](https://www.kde.org/products/frameworks/)) and Qt Quick, supported on a diverse array of mobile an desktop platforms.
+Kirogi is written in C++14 and QML. It uses the [Kirigami](https://www.kde.org/products/kirigami/) UI toolkit (part of [KDE Frameworks](https://www.kde.org/products/frameworks/)) and Qt Quick, supported on a diverse array of mobile and desktop platforms.
 
 ### What is the license?
 
