@@ -86,7 +86,7 @@ The frontend (UI and other business logic) is licensed under GPL v2 (or later), 
 
 The app icon in data/icon is licensed under LGPL v2.1 (or later), see COPYING.LIB.
 
-The mascot artwork in XX is licensed under CC-BY-SA 4.0 or later.
+The mascot artwork in src/ui/assets/ is licensed under CC-BY-SA 4.0 or later.
 
 ### I have a supported Parrot drone. Do I need the Parrot SDK to use Kirogi?
 
