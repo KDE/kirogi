@@ -23,12 +23,12 @@
     </ul>
   </description>
   <categories>
-​    <category>Science</category>
-​    <category>Geoscience</category>
-​    <category>RemoteAccess</category>
-​    <category>Sports</category>
-​    <category>Photography</category>
-​  </categories>
+    <category>Science</category>
+    <category>Geoscience</category>
+    <category>RemoteAccess</category>
+    <category>Sports</category>
+    <category>Photography</category>
+  </categories>
   <screenshots>
     <screenshot type="default">
       <image width="1920" height="1080">https://www.kde.org/images/screenshots/kirogi.png</image>
