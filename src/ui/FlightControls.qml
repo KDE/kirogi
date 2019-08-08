@@ -20,7 +20,7 @@
 
 import QtQuick 2.12
 import QtQuick.Controls 2.12 as QQC2
-import QtGamepad 1.12
+// import QtGamepad 1.12
 
 import org.kde.kirigami 2.6 as Kirigami
 
@@ -941,44 +941,44 @@ Kirigami.Page {
         handleClosedIcon.source: "configure"
     }
 
-    Connections {
-        target: GamepadManager
-        onGamepadConnected: deviceId = deviceId
-    }
-
-    Gamepad {
-        id: gamepad
-
-        deviceId: GamepadManager.connectedGamepads.length > 0 ? GamepadManager.connectedGamepads[0] : -1
-
-        onAxisLeftXChanged: {
-            if (kirogi.flying && inputMode.selectedMode == 1) {
-                kirogi.currentVehicle.pilot(axisRightX * 100, (axisRightY < 0 ? Math.abs(axisRightY) : -axisLeftY) * 100,
-                    axisLeftX * 100, (axisLeftY < 0 ? Math.abs(axisLeftY) : -axisLeftY) * 100);
-            }
-        }
-
-        onAxisLeftYChanged: {
-            if (kirogi.flying && inputMode.selectedMode == 1) {
-                kirogi.currentVehicle.pilot(axisRightX * 100, (axisRightY < 0 ? Math.abs(axisRightY) : -axisLeftY) * 100,
-                    axisLeftX * 100, (axisLeftY < 0 ? Math.abs(axisLeftY) : -axisLeftY) * 100);
-            }
-        }
-
-        onAxisRightXChanged: {
-            if (kirogi.flying && inputMode.selectedMode == 1) {
-                kirogi.currentVehicle.pilot(axisRightX * 100, (axisRightY < 0 ? Math.abs(axisRightY) : -axisLeftY) * 100,
-                    axisLeftX * 100, (axisLeftY < 0 ? Math.abs(axisLeftY) : -axisLeftY) * 100);
-            }
-        }
-
-        onAxisRightYChanged: {
-            if (kirogi.flying && inputMode.selectedMode == 1) {
-                kirogi.currentVehicle.pilot(axisRightX * 100, (axisRightY < 0 ? Math.abs(axisRightY) : -axisLeftY) * 100,
-                    axisLeftX * 100, (axisLeftY < 0 ? Math.abs(axisLeftY) : -axisLeftY) * 100);
-            }
-        }
-    }
+//     Connections {
+//         target: GamepadManager
+//         onGamepadConnected: deviceId = deviceId
+//     }
+//
+//     Gamepad {
+//         id: gamepad
+//
+//         deviceId: GamepadManager.connectedGamepads.length > 0 ? GamepadManager.connectedGamepads[0] : -1
+//
+//         onAxisLeftXChanged: {
+//             if (kirogi.flying && inputMode.selectedMode == 1) {
+//                 kirogi.currentVehicle.pilot(axisRightX * 100, (axisRightY < 0 ? Math.abs(axisRightY) : -axisLeftY) * 100,
+//                     axisLeftX * 100, (axisLeftY < 0 ? Math.abs(axisLeftY) : -axisLeftY) * 100);
+//             }
+//         }
+//
+//         onAxisLeftYChanged: {
+//             if (kirogi.flying && inputMode.selectedMode == 1) {
+//                 kirogi.currentVehicle.pilot(axisRightX * 100, (axisRightY < 0 ? Math.abs(axisRightY) : -axisLeftY) * 100,
+//                     axisLeftX * 100, (axisLeftY < 0 ? Math.abs(axisLeftY) : -axisLeftY) * 100);
+//             }
+//         }
+//
+//         onAxisRightXChanged: {
+//             if (kirogi.flying && inputMode.selectedMode == 1) {
+//                 kirogi.currentVehicle.pilot(axisRightX * 100, (axisRightY < 0 ? Math.abs(axisRightY) : -axisLeftY) * 100,
+//                     axisLeftX * 100, (axisLeftY < 0 ? Math.abs(axisLeftY) : -axisLeftY) * 100);
+//             }
+//         }
+//
+//         onAxisRightYChanged: {
+//             if (kirogi.flying && inputMode.selectedMode == 1) {
+//                 kirogi.currentVehicle.pilot(axisRightX * 100, (axisRightY < 0 ? Math.abs(axisRightY) : -axisLeftY) * 100,
+//                     axisLeftX * 100, (axisLeftY < 0 ? Math.abs(axisLeftY) : -axisLeftY) * 100);
+//             }
+//         }
+//     }
 
     Component.onCompleted: videoPlayer.playing = kirogiSettings.flying
 }
