@@ -29,7 +29,7 @@
 
 ## Navigation Map
 
-* Flight regulationss overlay
+* Flight regulations overlay
 
 ## Protocol/vendor support
 
