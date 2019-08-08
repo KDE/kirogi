@@ -1,0 +1,8 @@
+ClassName=Settings
+File=kirogi.kcfg
+GenerateProperties=true
+GlobalEnums=true
+MemberVariables=private
+Mutators=true
+Singleton=true
+UseEnumTypes=true

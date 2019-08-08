@@ -1,0 +1,87 @@
+# Kirogi
+
+Kirogi is a ground control application for drones. Take to the skies, open source-style.
+
+### Screenshot
+
+![A screenshot of Kirogi's in-flight UI](https://www.kde.org/images/screenshots/kirogi.png "Kirogi's in-flight UI")
+
+### Features
+
+* Direct flight controls
+* Fly by touch on a Navigation Map
+* Trigger vehicle actions (e.g. flips, trim)
+* Gamepad/joypad support
+* Live video
+* Configure flight parameters (speed, altitude limits)
+* Support for Parrot (Anafi, Bebop 2) and Ryze Tello drones (more planned)
+
+## FAQ
+
+### How is Kirogi different from other ground control applications?
+
+Created from scratch in February 2019, Kirogi benefits from a lot of prior art. It aims to provide the following unique combination of features:
+
+* **End-user focus.** As a [KDE application](https://manifesto.kde.org/), Kirogi aims to be a polished experience that is fun and easy to use for novices and experts alike, with special emphasis on a premium direct control experience.
+
+* **Multi-vendor.** Kirogi aims to have wide out-of-the-box support for many vehicles by different manufacturers. Users should be able to use different vehicles without needing to switch ground control software.
+
+* **Highly portable.** Kirogi aims to support many different mobile and desktop platforms. Users should be able to switch platforms without needing to switch ground control software.
+
+* **Freedom.** Kirogi will always be freely-licensed. Users should have control over and be able to extend and modify their ground control on their own.
+
+* **Open governance.** Created and maintained by the [KDE community](https://manifesto.kde.org/), an organization with more than two decades of experience in hosting free software projects.
+
+### Will Kirogi support my drone?
+
+The Kirogi project is currently in its early stages. For now it supports the following drones:
+
+* Parrot Anafi
+* Parrot Bebop 2
+* Ryze Tello
+
+Support for additional vehicles, also by other manufacturers, is very much a goal. If your vehicle is not on the list yet, check back later!
+
+In particular, we plan to add support for [MAVLink](https://en.wikipedia.org/wiki/MAVLink) to interface with open vehicle systems.
+
+Vehicle support is subject to availability for development and testing. If you are a manufacturer and would like to see Kirogi support your hardware, please [contact the board of directors of KDE e.V.](https://ev.kde.org/contact.php) for this and any other business inquiries.
+
+### Can Kirogi download photos and videos from my drone?
+
+Not yet. This feature is considered high priority and will be added before version 1.0.
+
+### Does Kirogi support mission planning and upload?
+
+Not yet. A mission planning mode is a future goal.
+
+### Do I need a touchscreen to use Kirogi?
+
+A touchscreen is not required to use Kirogi. It has basic support for two-stick gamepad/joypad controllers (it was tested with a Xbox One controller).
+
+### Does Kirogi support the Parrot Skycontroller peripherals?
+
+Not yet. There is basic support for two-stick gamepad/joypad controllers, however.
+
+### What does the name mean?
+
+The Kirogi project was started in South Korea. Kirogi (written "기러기" in the native writing system) is the Korean word for wild geese.
+
+_Wild_ geese are known as expert flyers. Kirogi's mascot is a farm goose with an adventurous spirit, who flies just as well thanks to the use of superior technology.
+
+## Technology and License
+
+### Does Kirogi support [MAVLink](https://en.wikipedia.org/wiki/MAVLink)?
+
+Not yet. MAVLink support for both manual control and flight plans is planned for future versions.
+
+### What technology does Kirogi use?
+
+Kirogi is written in C++14 and QML. It uses the [Kirigami](https://www.kde.org/products/kirigami/) UI toolkit (part of [KDE Frameworks](https://www.kde.org/products/frameworks/)) and Qt Quick, supported on a diverse array of mobile an desktop platforms.
+
+### What is the license?
+
+Kirogi's library and bundled vehicle support plugins are licensed under LGPL v2.1 (or later). The frontend (UI and other business logic) is licensed under GPL v2 (or later).
+
+### I have a supported Parrot drone. Do I need the Parrot SDK to use Kirogi?
+
+The Parrot SDK is not required to use Kirogi. It contains its own implementation of the protocol used to operate Parrot brand drones.

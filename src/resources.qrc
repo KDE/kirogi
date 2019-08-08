@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="main.qml">ui/main.qml</file>
+        <file alias="BlurredBackground.qml">ui/helpers/BlurredBackground.qml</file>
+        <file alias="FlightControls.qml">ui/FlightControls.qml</file>
+        <file alias="goose.webp">ui/assets/goose.webp</file>
+        <file alias="fallback.jpg">ui/assets/fallback.jpg</file>
+        <file alias="ModeRocker.qml">ui/components/ModeRocker.qml</file>
+        <file alias="NavigationMap.qml">ui/NavigationMap.qml</file>
+        <file alias="PillBox.qml">ui/components/PillBox.qml</file>
+        <file alias="PillBoxSeparator.qml">ui/components/PillBoxSeparator.qml</file>
+        <file alias="PitchBar.qml">ui/components/PitchBar.qml</file>
+        <file alias="Settings.qml">ui/Settings.qml</file>
+        <file alias="TouchButton.qml">ui/components/TouchButton.qml</file>
+        <file alias="TouchDPad.qml">ui/components/TouchDPad.qml</file>
+        <file alias="Vehicle.qml">ui/Vehicle.qml</file>
+        <file alias="VehicleActionsDrawer.qml">ui/VehicleActionsDrawer.qml</file>
+        <file alias="VirtualHorizon.qml">ui/components/VirtualHorizon.qml</file>
+    </qresource>
+</RCC>

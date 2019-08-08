@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Exec=kirogi -qwindowtitle %c %u
+Icon=kirogi
+GenericName=Drone ground control
+Terminal=false
+Name=Kirogi
+Categories=Qt;KDE;Network;IRCClient;Science;Geoscience;RemoteAccess;Sports;Photography
+X-DBUS-StartupType=Unique
+X-DBUS-ServiceName=org.kde.kirogi
+StartupNotify=true

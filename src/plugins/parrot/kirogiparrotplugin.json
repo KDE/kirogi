@@ -1,0 +1,16 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "hein@kde.org",
+                "Name": "Eike Hein"
+            }
+        ],
+        "Description": "A Kirogi plugin to support Parrot UAVs",
+        "Icon": "uav",
+        "Name": "Parrot",
+        "ServiceTypes": [
+            "Kirogi/VehicleSupport"
+        ]
+    }
+}

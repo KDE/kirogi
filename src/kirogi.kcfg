@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+                          http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
+  <kcfgfile name="kirogirc"/>
+  <group name="main">
+    <entry name="lastPlugin" key="lastPlugin" type="String">
+      <label>The plugin that was in active use when the application was quit.</label>
+      <default></default>
+    </entry>
+    <entry name="flying" key="flying" type="Bool">
+      <label>Used to remember if Kirogi was flying when quit.</label>
+      <default>false</default>
+    </entry>
+    <entry name="allowLocationRequests" key="allowLocationRequests" type="Bool">
+      <label>Allow Kirogi to request the device location.</label>
+      <default>true</default>
+    </entry>
+  </group>
+  <group name="ui">
+    <entry name="inputMode" key="InputMode" type="Enum">
+      <label>The input mode.</label>
+      <choices>
+        <choice name="Screen" />
+        <choice name="Controller"/>
+      </choices>
+      <default>Screen</default>
+    </entry>
+    <entry name="alwaysShowDPads" key="AlwaysShowDPads" type="Bool">
+      <label>Always show on-screen d-pads, even when in controller input mode.</label>
+      <default>false</default>
+    </entry>
+    <entry name="lastInputMode" key="LastInputMode" type="Int">
+      <label>The last user-selected input mode. 0 = on-screen d=pads, 1 = controller.</label>
+      <default>0</default>
+    </entry>
+  </group>
+</kcfg>

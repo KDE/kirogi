@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=ServiceType
+X-KDE-ServiceType=Kirogi/VehicleSupport
+X-KDE-Derived=
+Comment=Kirogi Vehicle Support Plugin

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 Eike Hein -->
+<component type="desktop-application">
+  <id>org.kde.kirogi.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LGPL-2.1+ AND GPL-2.0+</project_license>
+  <name>Kirogi</name>
+  <summary>UAV (drone) ground control</summary>
+  <developer_name>KDE Kirogi Developers</developer_name>
+  <update_contact>hein_AT_kde.org</update_contact>
+  <description>
+    <p>Kirogi is a ground control application for drones. Take to the skies, open source-style.</p>
+    <p>Features:</p>
+    <ul>
+      <li>Direct flight controls</li>
+      <li>Fly by touch on a Navigation Map</li>
+      <li>Trigger vehicle actions (e.g. flips, trim)</li>
+      <li>Gamepad/joypad support</li>
+      <li>Live video</li>
+      <li>Take photo and record video</li>
+      <li>Configure flight parameters (speed, altitude limits)</li>
+      <li>Support for Parrot (Anafi, Bebop 2) and Ryze Tello drones (more planned)</li>
+    </ul>
+  </description>
+  <categories>
+​    <category>Science</category>
+​    <category>Geoscience</category>
+​    <category>RemoteAccess</category>
+​    <category>Sports</category>
+​    <category>Photography</category>
+​  </categories>
+  <screenshots>
+    <screenshot type="default">
+      <image width="1920" height="1080">https://www.kde.org/images/screenshots/kirogi.png</image>
+      <caption>The Kirogi in-flight UI</caption>
+    </screenshot>
+  </screenshots>
+  <url type="homepage">https://www.kirogi.org/</url>
+  <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=kirogi</url>
+  <project_group>KDE</project_group>
+  <translation type="gettext">kirogi</translation>
+  <translation type="gettext">kirogiparrotplugin</translation>
+  <translation type="gettext">kirogiryzetelloplugin</translation>
+  <provides>
+    <binary>kirogi</binary>
+  </provides>
+  <launchable type="desktop-id">org.kde.kirogi.desktop</launchable>
+</component>

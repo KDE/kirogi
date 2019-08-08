@@ -1,0 +1,16 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "hein@kde.org",
+                "Name": "Eike Hein"
+            }
+        ],
+        "Description": "A Kirogi plugin to support the Ryze Tello UAV",
+        "Icon": "uav",
+        "Name": "Ryze Tello",
+        "ServiceTypes": [
+            "Kirogi/VehicleSupport"
+        ]
+    }
+}

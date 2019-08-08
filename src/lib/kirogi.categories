@@ -1,0 +1,2 @@
+kirogi.core Kirogi (Library) DEFAULT_SEVERITY [WARNING] IDENTIFIER [KIROGI_CORE]
+kirogi.app Kirogi (Application) DEFAULT_SEVERITY [WARNING] IDENTIFIER [KIROGI_APP]
