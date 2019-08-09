@@ -60,8 +60,13 @@ if (BUILD_APP)
     ecm_find_qmlmodule(QtGamePad 5.12)
     ecm_find_qmlmodule(QtGraphicalEffects 1.12)
     ecm_find_qmlmodule(QtLocation 5.12)
-    ecm_find_qmlmodule(QtPositioning 5.12)
     ecm_find_qmlmodule(org.kde.kirigami 2.6)
+
+    # FIXME TODO: QtGamepad currently causes performance problems on
+    # Android (blocking multi-tasking) that need to be investigated.
+    if(NOT ANDROID)
+        ecm_find_qmlmodule(QtPositioning 5.12)
+    endif()
 endif()
 
 if(BUILD_APP OR BUILD_QT_QUICK_LIB)

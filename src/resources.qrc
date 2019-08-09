@@ -5,6 +5,7 @@
         <file alias="FlightControls.qml">ui/FlightControls.qml</file>
         <file alias="goose.webp">ui/assets/goose.webp</file>
         <file alias="fallback.jpg">ui/assets/fallback.jpg</file>
+        <file alias="Gamepad.qml">ui/Gamepad.qml</file>
         <file alias="ModeRocker.qml">ui/components/ModeRocker.qml</file>
         <file alias="NavigationMap.qml">ui/NavigationMap.qml</file>
         <file alias="PillBox.qml">ui/components/PillBox.qml</file>
