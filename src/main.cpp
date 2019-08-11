@@ -129,6 +129,11 @@ int main(int argc, char *argv[])
         << QStringLiteral("android.permission.ACCESS_FINE_LOCATION"), &app)));
 
     engine.load(QUrl(QStringLiteral("qrc:///main.qml")));
+    if(engine.rootObjects().isEmpty()) {
+        qCritical() << "Application failed to load.";
+        gst_deinit();
+        return -1;
+    }
 
     videoPlayer->setWindow(qobject_cast<QQuickWindow *>(engine.rootObjects().first()));
 
