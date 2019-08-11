@@ -192,15 +192,19 @@ Kirigami.ApplicationWindow {
 
         property var _lastKnownCoordinate: null
 
-        active: connected && kirogiSettings.allowLocationRequests && locationPermissions.granted
+        active: kirogiSettings.allowLocationRequests && locationPermissions.granted
         updateInterval: 5000
 
         preferredPositioningMethods: PositionSource.SatellitePositioningMethods
 
         onPositionChanged: {
-            if (position.latitudeValid && position.longitudeValid && position.altitudeValid) {
-                _lastKnownCoordinate = position.coordinate;
-                currentVehicle.setControllerGpsPosition(_lastKnownCoordinate);
+            // Position via internet IP does not provide a valid altitude
+            if (position.latitudeValid && position.longitudeValid) {
+                _lastKnownCoordinate = position.coordinate
+
+                if(currentVehicle) {
+                    currentVehicle.setControllerGpsPosition(_lastKnownCoordinate)
+                }
             }
         }
     }
