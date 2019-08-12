@@ -198,7 +198,7 @@ Kirigami.ApplicationWindow {
         preferredPositioningMethods: PositionSource.SatellitePositioningMethods
 
         onPositionChanged: {
-            // Position via internet IP does not provide a valid altitude
+            // Position via internet IP does not provide a valid altitude.
             if (position.latitudeValid && position.longitudeValid) {
                 _lastKnownCoordinate = position.coordinate
 
