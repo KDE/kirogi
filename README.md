@@ -56,7 +56,7 @@ Not yet. A mission planning mode is a future goal.
 
 ### Do I need a touchscreen to use Kirogi?
 
-A touchscreen is not required to use Kirogi. It has basic support for two-stick gamepad/joypad controllers (it was tested with a Xbox One controller).
+A touchscreen is not required to use Kirogi. It has basic support for two-stick gamepad/joypad controllers (it was tested with an Xbox One controller).
 
 ### Does Kirogi support the Parrot Skycontroller peripherals?
 
