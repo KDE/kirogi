@@ -84,7 +84,7 @@ Kirogi's library in src/lib/ and bundled vehicle support plugins in src/plugins/
 
 The frontend (UI and other business logic) is licensed under GPL v2 (or later), see COPYING.
 
-The app icon in data/icon is licensed under LGPL v2.1 (or later), see COPYING.LIB.
+The app icon in data/icons/ is licensed under LGPL v2.1 (or later), see COPYING.LIB.
 
 The mascot artwork in src/ui/assets/ is licensed under CC-BY-SA 4.0, see COPYING.MASCOT.
 
