@@ -89,7 +89,7 @@ int main(int argc, char *argv[])
         xi18nc("@info:credit", "Application icon"), QStringLiteral("rafael.brandmaier@kdemail.net"));
 
     aboutData.addAuthor(xi18nc("@info:credit", "Lilly 'AsmoArael' Cholley"),
-        xi18nc("@info:credit", "Artwork (mascot and others)"), QStringLiteral("lc.jarryh99@outlook.fr"));
+        xi18nc("@info:credit", "Mascot artwork"), QStringLiteral("lc.jarryh99@outlook.fr"));
 
     KAboutData::setApplicationData(aboutData);
     QCommandLineParser parser;
