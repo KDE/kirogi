@@ -183,7 +183,8 @@ Kirigami.ApplicationWindow {
                 return 0.0;
             }
 
-            if (!currentVehicle.gpsPosition.isValid) {
+            // If currentVehicle is null or there is no valid position, set distance to zero
+            if (!currentVehicle || !currentVehicle.gpsPosition.isValid) {
                 return 0.0;
             }
 
