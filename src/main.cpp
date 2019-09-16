@@ -88,7 +88,7 @@ int main(int argc, char *argv[])
     aboutData.addAuthor(xi18nc("@info:credit", "Rafael Brandmaier"),
         xi18nc("@info:credit", "Application icon"), QStringLiteral("rafael.brandmaier@kdemail.net"));
 
-    aboutData.addAuthor(xi18nc("@info:credit", "Lilly 'AsmoArael' Cholley"),
+    aboutData.addAuthor(xi18nc("@info:credit", "L. 'AsmoArael' C."),
         xi18nc("@info:credit", "Mascot artwork"), QStringLiteral("lc.jarryh99@outlook.fr"));
 
     KAboutData::setApplicationData(aboutData);
