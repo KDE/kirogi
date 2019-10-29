@@ -3,12 +3,42 @@
         "Authors": [
             {
                 "Email": "hein@kde.org",
-                "Name": "Eike Hein"
+                "Name": "Eike Hein",
+                "Name[ca]": "Eike Hein",
+                "Name[cs]": "Eike Hein",
+                "Name[es]": "Eike Hein",
+                "Name[it]": "Eike Hein",
+                "Name[nl]": "Eike Hein",
+                "Name[pl]": "Eike Hein",
+                "Name[pt]": "Eike Hein",
+                "Name[sk]": "Eike Hein",
+                "Name[sv]": "Eike Hein",
+                "Name[uk]": "Eike Hein",
+                "Name[x-test]": "xxEike Heinxx"
             }
         ],
         "Description": "A Kirogi plugin to support Parrot UAVs",
+        "Description[ca]": "Un connector del Kirogi per admetre l'UAV Parrot",
+        "Description[es]": "Un complemento de Kirogi para usar los vehículos voladores no tripulados Parrot",
+        "Description[it]": "Un'estensione di Kirogi per supportare gli APR Parrot",
+        "Description[nl]": "Een Kirogi plug-in om Parrot UAV's te ondersteunen",
+        "Description[pl]": "Wtyczka Kirogi do obsługi Parrot UAVs",
+        "Description[pt]": "Um 'plugin' do Kirogi para ter suporte para os UAV's da Parrot",
+        "Description[sv]": "Ett Kirogi insticksprogram för att stödja Parrot drönare",
+        "Description[uk]": "Додаток до Kirogi для підтримки дронів Parrot",
+        "Description[x-test]": "xxA Kirogi plugin to support Parrot UAVsxx",
         "Icon": "uav",
         "Name": "Parrot",
+        "Name[ca]": "Parrot",
+        "Name[es]": "Parrot",
+        "Name[it]": "Parrot",
+        "Name[nl]": "Papegaai",
+        "Name[pl]": "Parrot",
+        "Name[pt]": "Parrot",
+        "Name[sk]": "Parrot",
+        "Name[sv]": "Parrot",
+        "Name[uk]": "Parrot",
+        "Name[x-test]": "xxParrotxx",
         "ServiceTypes": [
             "Kirogi/VehicleSupport"
         ]
