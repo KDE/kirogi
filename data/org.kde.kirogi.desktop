@@ -26,6 +26,7 @@ Name[sk]=Kirogi
 Name[sv]=Kirogi
 Name[uk]=Kirogi
 Name[x-test]=xxKirogixx
+Name[zh_TW]=Kirogi
 Categories=Qt;KDE;Network;IRCClient;Science;Geoscience;RemoteAccess;Sports;Photography
 X-DBUS-StartupType=Unique
 X-DBUS-ServiceName=org.kde.kirogi
