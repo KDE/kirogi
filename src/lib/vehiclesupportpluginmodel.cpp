@@ -26,6 +26,7 @@
 #include <KPluginLoader>
 #include <KPluginMetaData>
 
+#include <QCoreApplication>
 #include <QMetaEnum>
 
 namespace Kirogi
@@ -63,7 +64,9 @@ void VehicleSupportPluginModel::Private::findPlugins()
         return metaData.serviceTypes().contains(QStringLiteral("Kirogi/VehicleSupport"));
     };
 
-    plugins = KPluginLoader::findPlugins(QStringLiteral("kirogi/vehiclesupport"), filter);
+    // Looking for the relative path when the application is not installed in the system
+    plugins = KPluginLoader::findPlugins(QCoreApplication::applicationDirPath() + QStringLiteral("/../lib/plugins/kirogi/vehiclesupport"), filter);
+    plugins += KPluginLoader::findPlugins(QStringLiteral("kirogi/vehiclesupport"), filter);
 
     // Unload plugins that apparently got uninstalled at runtime.
     for (const QString &id : loadedPlugins.keys()) {
