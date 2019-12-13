@@ -111,6 +111,10 @@ int main(int argc, char *argv[])
 #endif
 
     QQmlApplicationEngine engine(&app);
+    /* Help our kind developers to test kirogi without further configuration
+     * Making it possible to install Kirogi in generic installation folder
+     */
+    engine.addImportPath(QCoreApplication::applicationDirPath() + "/../lib/qml");
 
     // For i18n.
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
