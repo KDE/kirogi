@@ -714,7 +714,7 @@ Kirigami.Page {
 
                 text: {
                     if (kirogi.ready) {
-                        return i18n("%1 m", kirogi.flying ? kirogi.currentVehicle.altitude.toFixed(2) : "0");
+                        return i18n("%1 m", kirogi.currentVehicle ? kirogi.currentVehicle.altitude.toFixed(2) : "0")
                     }
 
                     return i18n("– m");
@@ -911,7 +911,7 @@ Kirigami.Page {
         width: yardstick * 0.04
         height: parent.height * 0.6
 
-        pitch: kirogi.ready ? (Math.min(Math.max(kirogi.currentVehicle.pitch * (180/Math.PI), -90), 90) + 90) : 0.0
+        pitch: kirogi.currentVehicle ? (Math.min(Math.max(kirogi.currentVehicle.pitch * (180/Math.PI), -90), 90) + 90) : 0.0
     }
 
     VirtualHorizon {
@@ -921,7 +921,7 @@ Kirigami.Page {
 
         width: yardstick * 0.2
 
-        roll: kirogi.ready ? kirogi.currentVehicle.roll * (180/Math.PI) : 0
+        roll: kirogi.currentVehicle ? kirogi.currentVehicle.roll * (180/Math.PI) : 0
     }
 
     VehicleActionsDrawer {
