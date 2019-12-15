@@ -457,15 +457,11 @@ Kirigami.Page {
         onXChanged: moved = aboutToMove
 
         onAxisXChanged: {
-            if (kirogi.flying) {
-                kirogi.currentVehicle.pilot(rightDPad.axisX, rightDPad.axisY, leftDPad.axisX, leftDPad.axisY);
-            }
+            kirogi.currentVehicle.pilot(rightDPad.axisX, rightDPad.axisY, leftDPad.axisX, leftDPad.axisY);
         }
 
         onAxisYChanged: {
-            if (kirogi.flying) {
-                kirogi.currentVehicle.pilot(rightDPad.axisX, rightDPad.axisY, leftDPad.axisX, leftDPad.axisY);
-            }
+            kirogi.currentVehicle.pilot(rightDPad.axisX, rightDPad.axisY, leftDPad.axisX, leftDPad.axisY);
         }
 
         touchPos: {
@@ -563,15 +559,11 @@ Kirigami.Page {
         onXChanged: moved = aboutToMove
 
         onAxisXChanged: {
-            if (kirogi.flying) {
-                kirogi.currentVehicle.pilot(rightDPad.axisX, rightDPad.axisY, leftDPad.axisX, leftDPad.axisY);
-            }
+            kirogi.currentVehicle.pilot(rightDPad.axisX, rightDPad.axisY, leftDPad.axisX, leftDPad.axisY);
         }
 
         onAxisYChanged: {
-            if (kirogi.flying) {
-                kirogi.currentVehicle.pilot(rightDPad.axisX, rightDPad.axisY, leftDPad.axisX, leftDPad.axisY);
-            }
+            kirogi.currentVehicle.pilot(rightDPad.axisX, rightDPad.axisY, leftDPad.axisX, leftDPad.axisY);
         }
 
         touchPos: {
