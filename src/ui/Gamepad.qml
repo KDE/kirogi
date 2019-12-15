@@ -26,31 +26,25 @@ Gamepad {
 
     deviceId: GamepadManager.connectedGamepads.length > 0 ? GamepadManager.connectedGamepads[0] : -1
 
-    onAxisLeftXChanged: {
-        if (kirogi.flying && inputMode.selectedMode == 1) {
-            kirogi.currentVehicle.pilot(axisRightX * 100, (axisRightY < 0 ? Math.abs(axisRightY) : -axisLeftY) * 100,
-                axisLeftX * 100, (axisLeftY < 0 ? Math.abs(axisLeftY) : -axisLeftY) * 100);
+    function updateController() {
+        // Check if we are the in the correct mode
+        //TODO: Check if a valid enum or something more explicit and not a number
+        if(inputMode.selectedMode != 1) {
+            return
         }
+
+        // Ignore joystick signals that are lower than 1%
+        if(Math.abs(axisRightX) < 0.01 && Math.abs(axisRightY) < 0.01 &&
+            Math.abs(axisLeftX) < 0.01 && Math.abs(axisLeftY) < 0.01) {
+            return
+        }
+
+        // Make reverse and descend negatives
+        kirogi.currentVehicle.pilot(axisRightX * 100, -axisRightY * 100, axisLeftX * 100, -axisLeftY * 100)
     }
 
-    onAxisLeftYChanged: {
-        if (kirogi.flying && inputMode.selectedMode == 1) {
-            kirogi.currentVehicle.pilot(axisRightX * 100, (axisRightY < 0 ? Math.abs(axisRightY) : -axisLeftY) * 100,
-                axisLeftX * 100, (axisLeftY < 0 ? Math.abs(axisLeftY) : -axisLeftY) * 100);
-        }
-    }
-
-    onAxisRightXChanged: {
-        if (kirogi.flying && inputMode.selectedMode == 1) {
-            kirogi.currentVehicle.pilot(axisRightX * 100, (axisRightY < 0 ? Math.abs(axisRightY) : -axisLeftY) * 100,
-                axisLeftX * 100, (axisLeftY < 0 ? Math.abs(axisLeftY) : -axisLeftY) * 100);
-        }
-    }
-
-    onAxisRightYChanged: {
-        if (kirogi.flying && inputMode.selectedMode == 1) {
-            kirogi.currentVehicle.pilot(axisRightX * 100, (axisRightY < 0 ? Math.abs(axisRightY) : -axisLeftY) * 100,
-                axisLeftX * 100, (axisLeftY < 0 ? Math.abs(axisLeftY) : -axisLeftY) * 100);
-        }
-    }
+    onAxisLeftXChanged: updateController()
+    onAxisLeftYChanged: updateController()
+    onAxisRightXChanged: updateController()
+    onAxisRightYChanged: updateController()
 }
