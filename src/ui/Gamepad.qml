@@ -27,19 +27,19 @@ Gamepad {
     deviceId: GamepadManager.connectedGamepads.length > 0 ? GamepadManager.connectedGamepads[0] : -1
 
     function updateController() {
-        // Check if we are the in the correct mode
-        //TODO: Check if a valid enum or something more explicit and not a number
-        if(inputMode.selectedMode != 1) {
-            return
+        // Check if we are the in the correct mode.
+        // TODO: Enum-ify inputMode.selectedMode.
+        if (inputMode.selectedMode != 1) {
+            return;
         }
 
-        // Ignore joystick signals that are lower than 1%
-        if(Math.abs(axisRightX) < 0.01 && Math.abs(axisRightY) < 0.01 &&
+        // Ignore joystick signals smaller than 1%.
+        if (Math.abs(axisRightX) < 0.01 && Math.abs(axisRightY) < 0.01 &&
             Math.abs(axisLeftX) < 0.01 && Math.abs(axisLeftY) < 0.01) {
-            return
+            return;
         }
 
-        // Make reverse and descend negatives
+        // Make reverse and descend negatives.
         kirogi.currentVehicle.pilot(axisRightX * 100, -axisRightY * 100, axisLeftX * 100, -axisLeftY * 100)
     }
 
