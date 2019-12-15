@@ -722,7 +722,7 @@ Kirigami.Page {
 
                 text: {
                     if (kirogi.ready) {
-                        return i18n("%1 m", kirogi.flying ? kirogi.currentVehicle.altitude.toFixed(2) : "0");
+                        return i18n("%1 m", kirogi.currentVehicle ? kirogi.currentVehicle.altitude.toFixed(2) : "0")
                     }
 
                     return i18n("– m");
