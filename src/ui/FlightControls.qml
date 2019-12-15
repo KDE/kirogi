@@ -919,7 +919,7 @@ Kirigami.Page {
         width: yardstick * 0.04
         height: parent.height * 0.6
 
-        pitch: kirogi.ready ? (Math.min(Math.max(kirogi.currentVehicle.pitch * (180/Math.PI), -90), 90) + 90) : 0.0
+        pitch: kirogi.currentVehicle ? (Math.min(Math.max(kirogi.currentVehicle.pitch * (180/Math.PI), -90), 90) + 90) : 0.0
     }
 
     VirtualHorizon {
@@ -929,7 +929,7 @@ Kirigami.Page {
 
         width: yardstick * 0.2
 
-        roll: kirogi.ready ? kirogi.currentVehicle.roll * (180/Math.PI) : 0
+        roll: kirogi.currentVehicle ? kirogi.currentVehicle.roll * (180/Math.PI) : 0
     }
 
     VehicleActionsDrawer {
