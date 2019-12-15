@@ -64,7 +64,8 @@ void VehicleSupportPluginModel::Private::findPlugins()
         return metaData.serviceTypes().contains(QStringLiteral("Kirogi/VehicleSupport"));
     };
 
-    // Looking for the relative path when the application is not installed in the system
+    // Look for plugins in a relative path, covers the case when the application is 
+    // not installed in the system.
     plugins = KPluginLoader::findPlugins(QCoreApplication::applicationDirPath() + QStringLiteral("/../lib/plugins/kirogi/vehiclesupport"), filter);
     plugins += KPluginLoader::findPlugins(QStringLiteral("kirogi/vehiclesupport"), filter);
 
