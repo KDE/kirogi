@@ -111,6 +111,7 @@ int main(int argc, char *argv[])
 #endif
 
     QQmlApplicationEngine engine(&app);
+
     /* Add relative path to import paths to cover the case when the application
      * is not installed in the system. */
     engine.addImportPath(QCoreApplication::applicationDirPath() + "/../lib/qml");
@@ -133,7 +134,7 @@ int main(int argc, char *argv[])
 
     engine.load(QUrl(QStringLiteral("qrc:///main.qml")));
 
-    if( engine.rootObjects().isEmpty()) {
+    if (engine.rootObjects().isEmpty()) {
         qCritical() << "Application failed to load.";
     
         gst_deinit();
