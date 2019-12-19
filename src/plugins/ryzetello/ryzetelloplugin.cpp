@@ -45,7 +45,7 @@ RyzeTelloPlugin::~RyzeTelloPlugin()
 
 QList<Kirogi::AbstractVehicle *> RyzeTelloPlugin::vehicles() const
 {
-    return QList<Kirogi::AbstractVehicle *>() << m_vehicle;
+    return { m_vehicle };
 }
 
 K_PLUGIN_CLASS_WITH_JSON(RyzeTelloPlugin, "kirogiryzetelloplugin.json")
