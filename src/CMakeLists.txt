@@ -79,6 +79,7 @@ endif()
 set(kirogi_SRCS
     main.cpp
     permissions.cpp
+    autosettingshandler.cpp
     ${ANDROID_HEADERS}
     ${ANDROID_SOURCES}
 )
