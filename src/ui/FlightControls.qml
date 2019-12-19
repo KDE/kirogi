@@ -354,7 +354,6 @@ Kirigami.Page {
         onModeTapped: {
             selectedMode = mode;
             kirogiSettings.lastInputMode = selectedMode;
-            kirogiSettings.save();
         }
 
     }

@@ -151,7 +151,6 @@ Kirigami.ApplicationWindow {
 
     onFlyingChanged: {
         kirogiSettings.flying = flying;
-        kirogiSettings.save();
     }
 
     function switchApplicationPage(page) {
@@ -172,7 +171,6 @@ Kirigami.ApplicationWindow {
 
         onPluginLoaded: {
             kirogiSettings.lastPlugin = pluginId;
-            kirogiSettings.save();
             currentPluginName = name;
             currentPlugin = plugin;
         }
@@ -241,7 +239,6 @@ Kirigami.ApplicationWindow {
 
         onTriggered: {
             kirogiSettings.flying = flying;
-            kirogiSettings.save();
         }
     }
 

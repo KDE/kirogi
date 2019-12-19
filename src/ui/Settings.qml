@@ -37,18 +37,14 @@ Kirigami.ScrollablePage {
 
         QQC2.CheckBox {
             id: allowLocationRequests
-
             text: i18n("Allow Kirogi to request the location of this device")
-
             checked: kirogiSettings.allowLocationRequests
             onToggled: kirogiSettings.allowLocationRequests = checked
         }
 
         QQC2.CheckBox {
             id: alwaysShowDPads
-
             text: i18n("Show D-pads when a gamepad controller is connected")
-
             checked: kirogiSettings.alwaysShowDPads
             onToggled: kirogiSettings.alwaysShowDPads = checked
         }
