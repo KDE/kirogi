@@ -6,7 +6,7 @@
   <kcfgfile name="kirogirc"/>
   <group name="main">
     <entry name="lastPlugin" key="lastPlugin" type="String">
-      <label>The plugin that was in active use when the application was quit.</label>
+      <label>The plugin that was active when the application quit.</label>
       <default></default>
     </entry>
     <entry name="flying" key="flying" type="Bool">
