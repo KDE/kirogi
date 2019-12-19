@@ -244,17 +244,10 @@ public:
     Q_ENUM(Command)
 };
 
-class ParrotCommand
-{
-public:
-    struct Tuple {
-        inline explicit Tuple(quint8 _productId = 0, quint8 _classId = 0, quint16 _commandId = 0)
-            : productId(_productId)
-            , classId(_classId)
-            , commandId(_commandId)
-        {
-        }
 
+class ParrotCommand {
+    public:
+    struct Tuple {
         quint8 productId;
         quint8 classId;
         quint16 commandId;
