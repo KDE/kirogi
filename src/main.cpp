@@ -21,6 +21,7 @@
 #include "gstreamer/gstreamerintegration.h"
 #include "permissions.h"
 #include "settings.h"
+#include "autosettingshandler.h"
 
 // Remove warnings related to gstreamer library
 #ifdef __GNUC__
@@ -125,6 +126,8 @@ int main(int argc, char *argv[])
 #endif
 
     QQmlApplicationEngine engine(&app);
+    AutoSettingsHandler settingsHandler;
+    settingsHandler.addSettings(Settings::self());
 
     /* Add relative path to import paths to cover the case when the application
      * is not installed in the system. */
