@@ -6,3 +6,4 @@ MemberVariables=private
 Mutators=true
 Singleton=true
 UseEnumTypes=true
+Notify=true
