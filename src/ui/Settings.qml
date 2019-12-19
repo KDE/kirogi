@@ -28,25 +28,6 @@ Kirigami.ScrollablePage {
 
     title: i18n("Settings")
 
-    Connections {
-        target: kirogiSettings
-
-        onAllowLocationRequestsChanged: {
-            allowLocationRequests.checked = kirogiSettings.allowLocationRequests;
-            kirogiSettings.save();
-        }
-
-        onAlwaysShowDPadsChanged: {
-            alwaysShowDPads.checked = kirogiSettings.alwaysShowDPads;
-            kirogiSettings.save();
-        }
-
-        onStretchVideoChanged: {
-            stretchVideo.checked = kirogiSettings.stretchVideo;
-            kirogiSettings.save();
-        }
-    }
-
     Kirigami.FormLayout {
         Kirigami.Heading { text: page.title }
 
