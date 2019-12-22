@@ -76,7 +76,7 @@ void ParrotConnection::handshake(const QString &productSerial)
 
     QObject::connect(m_handshakeSocket, &QTcpSocket::connected, this, [this, productSerial]() {
         QJsonObject obj;
-        obj.insert(QLatin1String("d2c_port"), m_d2cPort); // FIXME TODO: Don't hardcode the receive port. Current choice taken from Parrot example docs.
+        obj.insert(QLatin1String("d2c_port"), m_d2cPort);                       // FIXME TODO: Don't hardcode the receive port. Current choice taken from Parrot example docs.
         obj.insert(QLatin1String("controller_type"), QLatin1String("desktop")); // FIXME TODO: Send different type based on host platform.
         obj.insert(QLatin1String("controller_name"), QLatin1String("KirogiParrotPlugin"));
         obj.insert(QLatin1String("arstream2_client_stream_port"), 55004);
@@ -95,9 +95,7 @@ void ParrotConnection::handshake(const QString &productSerial)
         m_handshakeSocket->write(handshakeDoc.toJson(QJsonDocument::Compact));
     });
 
-    QObject::connect(m_handshakeSocket, &QTcpSocket::disconnected, this, [this]() {
-        m_handshakeSocket->deleteLater();
-    });
+    QObject::connect(m_handshakeSocket, &QTcpSocket::disconnected, this, [this]() { m_handshakeSocket->deleteLater(); });
 
     QObject::connect(m_handshakeSocket, &QTcpSocket::readyRead, this, [this]() {
         const QByteArray &responseData = m_handshakeSocket->readAll();
@@ -106,8 +104,7 @@ void ParrotConnection::handshake(const QString &productSerial)
 
         // For Bebop 2 chopping by 1 byte, response data is \x00-terminated and the parser considers
         // this a fatal "garbage at end" error.
-        const QJsonDocument &handshakeResponse = QJsonDocument::fromJson(m_type == ParrotVehicle::Bebop2
-            ? responseData.chopped(1) : responseData, &error);
+        const QJsonDocument &handshakeResponse = QJsonDocument::fromJson(m_type == ParrotVehicle::Bebop2 ? responseData.chopped(1) : responseData, &error);
 
         qDebug() << handshakeResponse;
 
@@ -136,13 +133,11 @@ void ParrotConnection::handshake(const QString &productSerial)
         m_handshakeSocket->disconnectFromHost();
     });
 
-    QObject::connect(m_handshakeSocket, QOverload<QAbstractSocket::SocketError>::of(&QAbstractSocket::error),
-        this, [this]() {
-            qCWarning(KIROGI_VEHICLESUPPORT_PARROT) << m_vehicleName << "Handshake failed with socket error:" << m_handshakeSocket->errorString();
-            emit stateChanged(Kirogi::AbstractVehicle::Disconnected);
-            m_handshakeSocket->abort();
-        }
-    );
+    QObject::connect(m_handshakeSocket, QOverload<QAbstractSocket::SocketError>::of(&QAbstractSocket::error), this, [this]() {
+        qCWarning(KIROGI_VEHICLESUPPORT_PARROT) << m_vehicleName << "Handshake failed with socket error:" << m_handshakeSocket->errorString();
+        emit stateChanged(Kirogi::AbstractVehicle::Disconnected);
+        m_handshakeSocket->abort();
+    });
 
     qCDebug(KIROGI_VEHICLESUPPORT_PARROT) << m_vehicleName << "Performing handshake ...";
 
@@ -171,8 +166,7 @@ void ParrotConnection::reset()
     emit stateChanged(Kirogi::AbstractVehicle::Disconnected);
 }
 
-void ParrotConnection::sendCommand(Parrot::Command _command, const QVariantList &arguments,
-    bool retryForever)
+void ParrotConnection::sendCommand(Parrot::Command _command, const QVariantList &arguments, bool retryForever)
 {
     ParrotCommand command(_command, arguments);
 
@@ -183,8 +177,7 @@ void ParrotConnection::sendCommand(Parrot::Command _command, const QVariantList 
         bufferId = Parrot::BUFFER_C2D_ACK_DATA;
     }
 
-    ParrotFrame frame(Parrot::DATA_WITH_ACK, bufferId,
-        makeSeq(bufferId), command.pack());
+    ParrotFrame frame(Parrot::DATA_WITH_ACK, bufferId, makeSeq(bufferId), command.pack());
 
     if (retryForever) {
         frame.retry = -1;
@@ -204,8 +197,7 @@ void ParrotConnection::pilot(qint8 roll, qint8 pitch, qint8 yaw, qint8 gaz)
         if (!m_pilotingTimer) {
             m_pilotingTimer = new QTimer(this);
             m_pilotingTimer->setInterval(40);
-            QObject::connect(m_pilotingTimer, &QTimer::timeout,
-                this, &ParrotConnection::sendPilotingCommand);
+            QObject::connect(m_pilotingTimer, &QTimer::timeout, this, &ParrotConnection::sendPilotingCommand);
         }
 
         if (!m_pilotingTimer->isActive()) {
@@ -245,8 +237,7 @@ void ParrotConnection::pumpC2dAckQueue()
     // current thread. It's not allowed to start/stop timers across thread boundaries.
     if (!m_c2dAckTimer) {
         m_c2dAckTimer = new QTimer(this);
-        QObject::connect(m_c2dAckTimer, &QTimer::timeout,
-            this, &ParrotConnection::pumpC2dAckQueue, Qt::QueuedConnection);
+        QObject::connect(m_c2dAckTimer, &QTimer::timeout, this, &ParrotConnection::pumpC2dAckQueue, Qt::QueuedConnection);
     }
 
     m_c2dAckTimer->stop();
@@ -297,8 +288,7 @@ void ParrotConnection::initSockets()
     qCDebug(KIROGI_VEHICLESUPPORT_PARROT) << m_vehicleName << "Initializing UDP socket ...";
 
     m_d2cSocket = new QUdpSocket(this);
-    QObject::connect(m_d2cSocket, &QUdpSocket::readyRead,
-        this, &ParrotConnection::receiveData);
+    QObject::connect(m_d2cSocket, &QUdpSocket::readyRead, this, &ParrotConnection::receiveData);
 
     m_c2dSocket = new QUdpSocket(this);
 
@@ -311,8 +301,7 @@ void ParrotConnection::processIncomingFrame(const ParrotFrame &frame)
 {
     // Respond to PING with PONG.
     if (frame.bufferId == Parrot::BUFFER_PING) {
-        sendFrame(ParrotFrame(Parrot::DATA, Parrot::BUFFER_PONG,
-            makeSeq(Parrot::BUFFER_PONG), frame.data));
+        sendFrame(ParrotFrame(Parrot::DATA, Parrot::BUFFER_PONG, makeSeq(Parrot::BUFFER_PONG), frame.data));
 
         return;
     }
@@ -367,18 +356,18 @@ void ParrotConnection::sendAck(const ParrotFrame &frame)
 void ParrotConnection::sendFrame(const ParrotFrame &frame)
 {
     switch (frame.bufferId) {
-        case Parrot::BUFFER_C2D_ACK_DATA: {
-            m_c2dAckQueue.enqueue(frame);
+    case Parrot::BUFFER_C2D_ACK_DATA: {
+        m_c2dAckQueue.enqueue(frame);
 
-            if (!m_c2dAckTimer || !m_c2dAckTimer->isActive()) {
-                pumpC2dAckQueue();
-            }
+        if (!m_c2dAckTimer || !m_c2dAckTimer->isActive()) {
+            pumpC2dAckQueue();
+        }
 
-            break;
-        }
-        default: {
-            sendData(frame.pack(), frame.size);
-        }
+        break;
+    }
+    default: {
+        sendData(frame.pack(), frame.size);
+    }
     }
 }
 

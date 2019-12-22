@@ -26,22 +26,22 @@
 
 class SetPlaying : public QRunnable
 {
-    public:
-        SetPlaying(GstElement *);
-        ~SetPlaying();
+public:
+    SetPlaying(GstElement *);
+    ~SetPlaying();
 
-        void run() override;
+    void run() override;
 
-    private:
-        GstElement *m_pipeline;
+private:
+    GstElement *m_pipeline;
 };
 
 SetPlaying::SetPlaying(GstElement *pipeline)
 {
-  m_pipeline = pipeline ? static_cast<GstElement *>(gst_object_ref (pipeline)) : NULL;
+    m_pipeline = pipeline ? static_cast<GstElement *>(gst_object_ref(pipeline)) : NULL;
 }
 
-SetPlaying::~SetPlaying ()
+SetPlaying::~SetPlaying()
 {
     if (m_pipeline) {
         gst_object_unref(m_pipeline);
@@ -100,7 +100,7 @@ QString GStreamerIntegration::pipeline() const
     return m_pipeline;
 }
 
-void GStreamerIntegration::setPipeline(const QString& pipeline)
+void GStreamerIntegration::setPipeline(const QString &pipeline)
 {
     if (m_pipeline != pipeline) {
         m_pipeline = pipeline;
@@ -111,7 +111,7 @@ void GStreamerIntegration::setPipeline(const QString& pipeline)
     }
 }
 
-void GStreamerIntegration::setWindow(QQuickWindow* window)
+void GStreamerIntegration::setWindow(QQuickWindow *window)
 {
     m_window = window;
     updateGstPipeline();
@@ -138,8 +138,7 @@ void GStreamerIntegration::updateGstPipeline()
         g_object_set(sink, "widget", m_window->findChild<QQuickItem *>("videoOutput"), NULL);
 
         if (m_playing) {
-            m_window->scheduleRenderJob(new SetPlaying(m_gstPipeline),
-                QQuickWindow::BeforeSynchronizingStage);
+            m_window->scheduleRenderJob(new SetPlaying(m_gstPipeline), QQuickWindow::BeforeSynchronizingStage);
         }
     }
 

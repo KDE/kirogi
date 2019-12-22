@@ -21,16 +21,17 @@
 #ifndef PARROTPLUGIN_H
 #define PARROTPLUGIN_H
 
-#include "vehiclesupportplugin.h"
 #include "abstractvehicle.h"
+#include "vehiclesupportplugin.h"
 
 #include <QHash>
 
 class ParrotVehicle;
 
 #ifndef Q_OS_ANDROID
-namespace KDNSSD {
-    class ServiceBrowser;
+namespace KDNSSD
+{
+class ServiceBrowser;
 }
 #endif
 
@@ -38,17 +39,17 @@ class ParrotPlugin : public Kirogi::VehicleSupportPlugin
 {
     Q_OBJECT
 
-    public:
-        ParrotPlugin(QObject* parent, const QVariantList& args);
-        ~ParrotPlugin() override;
+public:
+    ParrotPlugin(QObject *parent, const QVariantList &args);
+    ~ParrotPlugin() override;
 
-        QList<Kirogi::AbstractVehicle *> vehicles() const override;
+    QList<Kirogi::AbstractVehicle *> vehicles() const override;
 
-    private:
-        QHash<QString, Kirogi::AbstractVehicle *> m_vehicles;
+private:
+    QHash<QString, Kirogi::AbstractVehicle *> m_vehicles;
 #ifndef Q_OS_ANDROID
-        KDNSSD::ServiceBrowser *m_bebop2Browser;
-        KDNSSD::ServiceBrowser *m_anafiBrowser;
+    KDNSSD::ServiceBrowser *m_bebop2Browser;
+    KDNSSD::ServiceBrowser *m_anafiBrowser;
 #endif
 };
 

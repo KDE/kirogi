@@ -21,15 +21,14 @@
 #ifndef KIROGI_ABSTRACTVEHICLE_H
 #define KIROGI_ABSTRACTVEHICLE_H
 
-#include <QObject>
 #include <QGeoCoordinate>
+#include <QObject>
 #include <QSharedPointer>
 
 #include "kirogicore_export.h"
 
 namespace Kirogi
 {
-
 class KIROGI_EXPORT AbstractVehicle : public QObject
 {
     Q_OBJECT
@@ -111,249 +110,237 @@ class KIROGI_EXPORT AbstractVehicle : public QObject
     Q_PROPERTY(quint16 numberOfFlights READ numberOfFlights NOTIFY numberOfFlightsChanged)
     Q_PROPERTY(quint16 lastFlightDuration READ lastFlightDuration NOTIFY lastFlightDurationChanged)
 
-    public:
-        enum VehicleType {
-            UnknownVehicleType = 0,
-            QuadCopter = 1
-        };
-        Q_ENUM(VehicleType)
+public:
+    enum VehicleType { UnknownVehicleType = 0, QuadCopter = 1 };
+    Q_ENUM(VehicleType)
 
-        enum ConnectionState {
-            Disconnected = 0,
-            Connecting = 1,
-            Connected = 2,
-            Ready = 3
-        };
-        Q_ENUM(ConnectionState)
+    enum ConnectionState { Disconnected = 0, Connecting = 1, Connected = 2, Ready = 3 };
+    Q_ENUM(ConnectionState)
 
-        enum FlyingState {
-            Unknown = 0,
-            Landed = 1,
-            TakingOff = 2,
-            Hovering = 3,
-            Flying = 4,
-            Landing = 5,
-// FIXME: (Parrot) Not handled yet.
-//             Emergency = 5,
-//             UserTakeoff = 6,
-//             MotorRamping = 7,
-//             EmergencyLanding = 8
-        };
-        Q_ENUM(FlyingState)
+    enum FlyingState {
+        Unknown = 0,
+        Landed = 1,
+        TakingOff = 2,
+        Hovering = 3,
+        Flying = 4,
+        Landing = 5,
+        // FIXME: (Parrot) Not handled yet.
+        //             Emergency = 5,
+        //             UserTakeoff = 6,
+        //             MotorRamping = 7,
+        //             EmergencyLanding = 8
+    };
+    Q_ENUM(FlyingState)
 
-        enum VehicleAction {
-            TakeOff = 1,
-            Land = 2,
-            MoveTo = 3,
-            FlatTrim = 4,
-            FlipForward = 5,
-            FlipBackward = 6,
-            FlipLeft = 7,
-            FlipRight = 8,
-            SwitchPerformanceMode = 9,
-            SetMaxRollSpeed = 10,
-            SetMaxPitchSpeed = 11,
-            SetMaxYawSpeed = 12,
-            SetMaxGazSpeed = 13,
-            SetMaxTilt = 14,
-            ToggleBankedTurns = 15,
-            ToggleGeofence = 16,
-            SetMaxAltitude = 17,
-            SetMaxDistance = 18,
-            ToggleVideoStream = 19,
-            ToggleVideoStabilization = 20,
-            TakePicture = 21,
-            RecordVideo = 22
-        };
-        Q_ENUM(VehicleAction)
+    enum VehicleAction {
+        TakeOff = 1,
+        Land = 2,
+        MoveTo = 3,
+        FlatTrim = 4,
+        FlipForward = 5,
+        FlipBackward = 6,
+        FlipLeft = 7,
+        FlipRight = 8,
+        SwitchPerformanceMode = 9,
+        SetMaxRollSpeed = 10,
+        SetMaxPitchSpeed = 11,
+        SetMaxYawSpeed = 12,
+        SetMaxGazSpeed = 13,
+        SetMaxTilt = 14,
+        ToggleBankedTurns = 15,
+        ToggleGeofence = 16,
+        SetMaxAltitude = 17,
+        SetMaxDistance = 18,
+        ToggleVideoStream = 19,
+        ToggleVideoStabilization = 20,
+        TakePicture = 21,
+        RecordVideo = 22
+    };
+    Q_ENUM(VehicleAction)
 
-        enum PerformanceMode {
-            CustomPerformance = 0,
-            FilmPerformance = 1,
-            SportPerformance = 2
-        };
-        Q_ENUM(PerformanceMode)
+    enum PerformanceMode { CustomPerformance = 0, FilmPerformance = 1, SportPerformance = 2 };
+    Q_ENUM(PerformanceMode)
 
-        explicit AbstractVehicle(QObject *parent = nullptr);
-        virtual ~AbstractVehicle() override;
+    explicit AbstractVehicle(QObject *parent = nullptr);
+    virtual ~AbstractVehicle() override;
 
-        int id() const;
+    int id() const;
 
-        virtual QString name() const = 0;
-        virtual QString iconName() const;
+    virtual QString name() const = 0;
+    virtual QString iconName() const;
 
-        virtual VehicleType vehicleType() const;
+    virtual VehicleType vehicleType() const;
 
-        virtual ConnectionState connectionState() const;
-        virtual FlyingState flyingState() const;
-        bool connected() const;
-        bool ready() const;
-        bool flying() const;
+    virtual ConnectionState connectionState() const;
+    virtual FlyingState flyingState() const;
+    bool connected() const;
+    bool ready() const;
+    bool flying() const;
 
-        virtual QList<VehicleAction> supportedActions() const;
-        Q_INVOKABLE virtual bool isActionSupported(VehicleAction action) const;
+    virtual QList<VehicleAction> supportedActions() const;
+    Q_INVOKABLE virtual bool isActionSupported(VehicleAction action) const;
 
-        virtual bool piloting() const;
-        Q_INVOKABLE virtual void setPiloting(bool piloting);
+    virtual bool piloting() const;
+    Q_INVOKABLE virtual void setPiloting(bool piloting);
 
-        Q_INVOKABLE virtual void requestAction(VehicleAction action);
-        Q_INVOKABLE virtual void requestTakeOff();
-        Q_INVOKABLE virtual void requestLand();
+    Q_INVOKABLE virtual void requestAction(VehicleAction action);
+    Q_INVOKABLE virtual void requestTakeOff();
+    Q_INVOKABLE virtual void requestLand();
 
-        Q_INVOKABLE virtual void pilot(qint8 roll, qint8 pitch, qint8 yaw, qint8 gaz);
-        Q_INVOKABLE virtual void requestMoveTo(QGeoCoordinate destination);
+    Q_INVOKABLE virtual void pilot(qint8 roll, qint8 pitch, qint8 yaw, qint8 gaz);
+    Q_INVOKABLE virtual void requestMoveTo(QGeoCoordinate destination);
 
-        virtual int flightTime() const;
+    virtual int flightTime() const;
 
-        virtual PerformanceMode performanceMode() const;
-        Q_INVOKABLE virtual void requestPerformanceMode(PerformanceMode mode);
+    virtual PerformanceMode performanceMode() const;
+    Q_INVOKABLE virtual void requestPerformanceMode(PerformanceMode mode);
 
-        virtual float maxRollSpeed() const;
-        Q_INVOKABLE virtual void requestMaxRollSpeed(float speed);
-        virtual float maxRollSpeedMin() const;
-        virtual float maxRollSpeedMax() const;
+    virtual float maxRollSpeed() const;
+    Q_INVOKABLE virtual void requestMaxRollSpeed(float speed);
+    virtual float maxRollSpeedMin() const;
+    virtual float maxRollSpeedMax() const;
 
-        virtual float maxPitchSpeed() const;
-        Q_INVOKABLE virtual void requestMaxPitchSpeed(float speed);
-        virtual float maxPitchSpeedMin() const;
-        virtual float maxPitchSpeedMax() const;
+    virtual float maxPitchSpeed() const;
+    Q_INVOKABLE virtual void requestMaxPitchSpeed(float speed);
+    virtual float maxPitchSpeedMin() const;
+    virtual float maxPitchSpeedMax() const;
 
-        virtual float maxYawSpeed() const;
-        Q_INVOKABLE virtual void requestMaxYawSpeed(float speed);
-        virtual float maxYawSpeedMin() const;
-        virtual float maxYawSpeedMax() const;
+    virtual float maxYawSpeed() const;
+    Q_INVOKABLE virtual void requestMaxYawSpeed(float speed);
+    virtual float maxYawSpeedMin() const;
+    virtual float maxYawSpeedMax() const;
 
-        virtual float maxGazSpeed() const;
-        Q_INVOKABLE virtual void requestMaxGazSpeed(float speed);
-        virtual float maxGazSpeedMin() const;
-        virtual float maxGazSpeedMax() const;
+    virtual float maxGazSpeed() const;
+    Q_INVOKABLE virtual void requestMaxGazSpeed(float speed);
+    virtual float maxGazSpeedMin() const;
+    virtual float maxGazSpeedMax() const;
 
-        virtual float maxTilt() const;
-        Q_INVOKABLE virtual void requestMaxTilt(float tilt);
-        virtual float maxTiltMin() const;
-        virtual float maxTiltMax() const;
+    virtual float maxTilt() const;
+    Q_INVOKABLE virtual void requestMaxTilt(float tilt);
+    virtual float maxTiltMin() const;
+    virtual float maxTiltMax() const;
 
-        virtual bool bankedTurns() const;
-        Q_INVOKABLE virtual void requestEnableBankedTurns(bool enable);
+    virtual bool bankedTurns() const;
+    Q_INVOKABLE virtual void requestEnableBankedTurns(bool enable);
 
-        virtual bool geofence() const;
-        Q_INVOKABLE virtual void requestEnableGeofence(bool enable);
+    virtual bool geofence() const;
+    Q_INVOKABLE virtual void requestEnableGeofence(bool enable);
 
-        virtual float maxAltitude() const;
-        Q_INVOKABLE virtual void requestMaxAltitude(float altitude);
-        virtual float maxAltitudeMin() const;
-        virtual float maxAltitudeMax() const;
+    virtual float maxAltitude() const;
+    Q_INVOKABLE virtual void requestMaxAltitude(float altitude);
+    virtual float maxAltitudeMin() const;
+    virtual float maxAltitudeMax() const;
 
-        virtual float maxDistance() const;
-        Q_INVOKABLE virtual void requestMaxDistance(float distance);
-        virtual float maxDistanceMin() const;
-        virtual float maxDistanceMax() const;
+    virtual float maxDistance() const;
+    Q_INVOKABLE virtual void requestMaxDistance(float distance);
+    virtual float maxDistanceMin() const;
+    virtual float maxDistanceMax() const;
 
-        virtual float roll() const;
-        virtual float pitch() const;
-        virtual float yaw() const;
+    virtual float roll() const;
+    virtual float pitch() const;
+    virtual float yaw() const;
 
-        virtual int signalStrength() const;
-        virtual int batteryLevel() const;
+    virtual int signalStrength() const;
+    virtual int batteryLevel() const;
 
-        virtual bool gpsSupported() const;
-        virtual bool gpsFix() const;
-        virtual QGeoCoordinate gpsPosition() const;
-        virtual float distance() const;
-        virtual float altitude() const;
-        virtual void setControllerGpsPosition(const QGeoCoordinate &position);
-        Q_INVOKABLE virtual void requestReturnHome();
+    virtual bool gpsSupported() const;
+    virtual bool gpsFix() const;
+    virtual QGeoCoordinate gpsPosition() const;
+    virtual float distance() const;
+    virtual float altitude() const;
+    virtual void setControllerGpsPosition(const QGeoCoordinate &position);
+    Q_INVOKABLE virtual void requestReturnHome();
 
-        virtual float speed() const;
+    virtual float speed() const;
 
-        virtual QString videoSource() const;
-        virtual bool videoStreamEnabled() const;
-        Q_INVOKABLE virtual void requestEnableVideoStream(bool enable);
-        virtual bool videoStabilization() const;
-        Q_INVOKABLE virtual void requestEnableVideoStabilization(bool enable);
-        virtual bool canTakePicture() const;
-        virtual bool isRecordingVideo() const;
+    virtual QString videoSource() const;
+    virtual bool videoStreamEnabled() const;
+    Q_INVOKABLE virtual void requestEnableVideoStream(bool enable);
+    virtual bool videoStabilization() const;
+    Q_INVOKABLE virtual void requestEnableVideoStabilization(bool enable);
+    virtual bool canTakePicture() const;
+    virtual bool isRecordingVideo() const;
 
-        virtual quint16 numberOfFlights() const;
-        virtual quint16 lastFlightDuration() const;
+    virtual quint16 numberOfFlights() const;
+    virtual quint16 lastFlightDuration() const;
 
-    Q_SIGNALS:
-        void nameChanged() const;
-        void iconNameChanged() const;
+Q_SIGNALS:
+    void nameChanged() const;
+    void iconNameChanged() const;
 
-        void connectionStateChanged() const;
-        void flyingStateChanged() const;
+    void connectionStateChanged() const;
+    void flyingStateChanged() const;
 
-        void pilotingChanged() const;
+    void pilotingChanged() const;
 
-        void flightTimeChanged() const;
+    void flightTimeChanged() const;
 
-        void performanceModeChanged() const;
+    void performanceModeChanged() const;
 
-        void maxRollSpeedChanged() const;
-        void maxRollSpeedMinChanged() const;
-        void maxRollSpeedMaxChanged() const;
+    void maxRollSpeedChanged() const;
+    void maxRollSpeedMinChanged() const;
+    void maxRollSpeedMaxChanged() const;
 
-        void maxPitchSpeedChanged() const;
-        void maxPitchSpeedMinChanged() const;
-        void maxPitchSpeedMaxChanged() const;
+    void maxPitchSpeedChanged() const;
+    void maxPitchSpeedMinChanged() const;
+    void maxPitchSpeedMaxChanged() const;
 
-        void maxYawSpeedChanged() const;
-        void maxYawSpeedMinChanged() const;
-        void maxYawSpeedMaxChanged() const;
+    void maxYawSpeedChanged() const;
+    void maxYawSpeedMinChanged() const;
+    void maxYawSpeedMaxChanged() const;
 
-        void maxGazSpeedChanged() const;
-        void maxGazSpeedMinChanged() const;
-        void maxGazSpeedMaxChanged() const;
+    void maxGazSpeedChanged() const;
+    void maxGazSpeedMinChanged() const;
+    void maxGazSpeedMaxChanged() const;
 
-        void maxTiltChanged() const;
-        void maxTiltMinChanged() const;
-        void maxTiltMaxChanged() const;
+    void maxTiltChanged() const;
+    void maxTiltMinChanged() const;
+    void maxTiltMaxChanged() const;
 
-        void bankedTurnsChanged() const;
+    void bankedTurnsChanged() const;
 
-        void geofenceChanged() const;
+    void geofenceChanged() const;
 
-        void maxAltitudeChanged() const;
-        void maxAltitudeMinChanged() const;
-        void maxAltitudeMaxChanged() const;
+    void maxAltitudeChanged() const;
+    void maxAltitudeMinChanged() const;
+    void maxAltitudeMaxChanged() const;
 
-        void maxDistanceChanged() const;
-        void maxDistanceMinChanged() const;
-        void maxDistanceMaxChanged() const;
+    void maxDistanceChanged() const;
+    void maxDistanceMinChanged() const;
+    void maxDistanceMaxChanged() const;
 
-        void attitudeChanged() const;
-        void rollChanged() const;
-        void pitchChanged() const;
-        void yawChanged() const;
+    void attitudeChanged() const;
+    void rollChanged() const;
+    void pitchChanged() const;
+    void yawChanged() const;
 
-        void signalStrengthChanged() const;
-        void batteryLevelChanged() const;
+    void signalStrengthChanged() const;
+    void batteryLevelChanged() const;
 
-        void gpsSupportedChanged() const;
-        void gpsFixChanged() const;
-        void gpsPositionChanged() const;
-        void distanceChanged() const;
-        void altitudeChanged() const;
+    void gpsSupportedChanged() const;
+    void gpsFixChanged() const;
+    void gpsPositionChanged() const;
+    void distanceChanged() const;
+    void altitudeChanged() const;
 
-        void speedChanged() const;
+    void speedChanged() const;
 
-        void videoSourceChanged() const;
-        void videoStreamEnabledChanged() const;
-        void videoStabilizationChanged() const;
-        void canTakePictureChanged() const;
-        void isRecordingVideoChanged() const;
+    void videoSourceChanged() const;
+    void videoStreamEnabledChanged() const;
+    void videoStabilizationChanged() const;
+    void canTakePictureChanged() const;
+    void isRecordingVideoChanged() const;
 
-        void numberOfFlightsChanged() const;
-        void lastFlightDurationChanged() const;
+    void numberOfFlightsChanged() const;
+    void lastFlightDurationChanged() const;
 
-    protected Q_SLOTS:
-        virtual void setConnectionState(ConnectionState state);
-        virtual void setFlyingState(FlyingState state);
+protected Q_SLOTS:
+    virtual void setConnectionState(ConnectionState state);
+    virtual void setFlyingState(FlyingState state);
 
-    private:
-        class Private;
-        QScopedPointer<Private> d;
+private:
+    class Private;
+    QScopedPointer<Private> d;
 };
 
 }

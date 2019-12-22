@@ -33,71 +33,71 @@ class RyzeTelloVehicle : public Kirogi::AbstractVehicle
 {
     Q_OBJECT
 
-    public:
-        explicit RyzeTelloVehicle(QObject *parent = nullptr);
-        ~RyzeTelloVehicle() override;
+public:
+    explicit RyzeTelloVehicle(QObject *parent = nullptr);
+    ~RyzeTelloVehicle() override;
 
-        QString name() const override;
-        QString iconName() const override;
+    QString name() const override;
+    QString iconName() const override;
 
-        Kirogi::AbstractVehicle::VehicleType vehicleType() const override;
+    Kirogi::AbstractVehicle::VehicleType vehicleType() const override;
 
-        QList<Kirogi::AbstractVehicle::VehicleAction> supportedActions() const override;
+    QList<Kirogi::AbstractVehicle::VehicleAction> supportedActions() const override;
 
-        Q_INVOKABLE void requestAction(Kirogi::AbstractVehicle::VehicleAction action) override;
+    Q_INVOKABLE void requestAction(Kirogi::AbstractVehicle::VehicleAction action) override;
 
-        Q_INVOKABLE void pilot(qint8 roll, qint8 pitch, qint8 yaw, qint8 gaz) override;
+    Q_INVOKABLE void pilot(qint8 roll, qint8 pitch, qint8 yaw, qint8 gaz) override;
 
-        Kirogi::AbstractVehicle::PerformanceMode performanceMode() const override;
-        void requestPerformanceMode(Kirogi::AbstractVehicle::PerformanceMode mode) override;
+    Kirogi::AbstractVehicle::PerformanceMode performanceMode() const override;
+    void requestPerformanceMode(Kirogi::AbstractVehicle::PerformanceMode mode) override;
 
-        float roll() const override;
-        float pitch() const override;
-        float yaw() const override;
+    float roll() const override;
+    float pitch() const override;
+    float yaw() const override;
 
-        int signalStrength() const override;
-        int batteryLevel() const override;
+    int signalStrength() const override;
+    int batteryLevel() const override;
 
-        bool gpsSupported() const override;
-        float distance() const override;
-        float altitude() const override;
+    bool gpsSupported() const override;
+    float distance() const override;
+    float altitude() const override;
 
-        float speed() const override;
+    float speed() const override;
 
-    public Q_SLOTS:
-        void connectToVehicle();
+public Q_SLOTS:
+    void connectToVehicle();
 
-    private Q_SLOTS:
-        void processIncomingResponse(const QString &response);
-        void processIncomingState(const QByteArray &state);
-        void pollSignalStrength();
+private Q_SLOTS:
+    void processIncomingResponse(const QString &response);
+    void processIncomingState(const QByteArray &state);
+    void pollSignalStrength();
 
-    private:
-        void initVehicle();
-        void sendCommand(const QString &command, bool retryForever = false);
+private:
+    void initVehicle();
+    void sendCommand(const QString &command, bool retryForever = false);
 
-        int m_stateSeq;
+    int m_stateSeq;
 
-        int m_motorOnTime;
-        int m_oldMotorOnTime;
+    int m_motorOnTime;
+    int m_oldMotorOnTime;
 
-        float m_roll;
-        float m_pitch;
-        float m_yaw;
+    float m_roll;
+    float m_pitch;
+    float m_yaw;
 
-        int m_signalStrength;
-        int m_batteryLevel;
+    int m_signalStrength;
+    int m_batteryLevel;
 
-        float m_distance;
-        float m_altitude;
+    float m_distance;
+    float m_altitude;
 
-        float m_speed;
+    float m_speed;
 
-        QTimer *m_signalStrengthTimer;
-        QTimer *m_disconnectTimer;
+    QTimer *m_signalStrengthTimer;
+    QTimer *m_disconnectTimer;
 
-        QThread m_connectionThread;
-        RyzeTelloConnection *m_connection;
+    QThread m_connectionThread;
+    RyzeTelloConnection *m_connection;
 };
 
 #endif

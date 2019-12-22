@@ -48,23 +48,19 @@ void Permissions::request()
     }
 
 #ifdef Q_OS_ANDROID
-    QtAndroid::requestPermissions(m_permissions,
-        [this](const QtAndroid::PermissionResultMap &permissions) {
-            int granted = 0;
+    QtAndroid::requestPermissions(m_permissions, [this](const QtAndroid::PermissionResultMap &permissions) {
+        int granted = 0;
 
-            for (const QString &permission : m_permissions) {
-                if (permissions.contains(permission)
-                    && permissions.value(permission) == QtAndroid::PermissionResult::Granted) {
-                    ++granted;
-                }
+        for (const QString &permission : m_permissions) {
+            if (permissions.contains(permission) && permissions.value(permission) == QtAndroid::PermissionResult::Granted) {
+                ++granted;
             }
-
-            m_granted = (granted = m_permissions.count());
         }
-    );
+
+        m_granted = (granted = m_permissions.count());
+    });
 #else
     m_granted = true;
     emit grantedChanged();
 #endif
 }
-

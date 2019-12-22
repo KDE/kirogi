@@ -18,9 +18,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "settings.h"
-#include "permissions.h"
 #include "gstreamer/gstreamerintegration.h"
+#include "permissions.h"
+#include "settings.h"
 
 #include <KAboutData>
 #ifndef Q_OS_ANDROID
@@ -44,7 +44,7 @@
 #include <QQuickView>
 
 #ifdef Q_OS_ANDROID
-extern "C" gboolean gst_qt_android_init(GError ** error);
+extern "C" gboolean gst_qt_android_init(GError **error);
 
 Q_DECL_EXPORT
 #endif
@@ -71,28 +71,24 @@ int main(int argc, char *argv[])
     KLocalizedString::setApplicationDomain("kirogi");
 
     KAboutData aboutData(QStringLiteral("kirogi"),
-        xi18nc("@title", "<application>Kirogi</application>"),
-        QStringLiteral("0.1-dev"),
-        xi18nc("@title", "A ground control application for drones."),
-        KAboutLicense::GPL,
-        xi18nc("@info:credit", "(c) 2019 The Kirogi Team"),
-        QString(),
-        QStringLiteral("https://www.kirogi.org/"));
+                         xi18nc("@title", "<application>Kirogi</application>"),
+                         QStringLiteral("0.1-dev"),
+                         xi18nc("@title", "A ground control application for drones."),
+                         KAboutLicense::GPL,
+                         xi18nc("@info:credit", "(c) 2019 The Kirogi Team"),
+                         QString(),
+                         QStringLiteral("https://www.kirogi.org/"));
 
     aboutData.setOrganizationDomain(QByteArray("kde.org"));
     aboutData.setProductName(QByteArray("kirogi"));
 
-    aboutData.addAuthor(xi18nc("@info:credit", "Eike Hein"),
-        xi18nc("@info:credit", "Founder, Lead Developer"), QStringLiteral("hein@kde.org"));
+    aboutData.addAuthor(xi18nc("@info:credit", "Eike Hein"), xi18nc("@info:credit", "Founder, Lead Developer"), QStringLiteral("hein@kde.org"));
 
-    aboutData.addAuthor(xi18nc("@info:credit", "Patrick José Pereira"),
-        xi18nc("@info:credit", "Developer"), QStringLiteral("patrickjp@kde.org"));
+    aboutData.addAuthor(xi18nc("@info:credit", "Patrick José Pereira"), xi18nc("@info:credit", "Developer"), QStringLiteral("patrickjp@kde.org"));
 
-    aboutData.addAuthor(xi18nc("@info:credit", "Rafael Brandmaier"),
-        xi18nc("@info:credit", "Application icon"), QStringLiteral("rafael.brandmaier@kdemail.net"));
+    aboutData.addAuthor(xi18nc("@info:credit", "Rafael Brandmaier"), xi18nc("@info:credit", "Application icon"), QStringLiteral("rafael.brandmaier@kdemail.net"));
 
-    aboutData.addAuthor(xi18nc("@info:credit", "L. 'AsmoArael' C."),
-        xi18nc("@info:credit", "Mascot artwork"), QStringLiteral("lc.jarryh99@outlook.fr"));
+    aboutData.addAuthor(xi18nc("@info:credit", "L. 'AsmoArael' C."), xi18nc("@info:credit", "Mascot artwork"), QStringLiteral("lc.jarryh99@outlook.fr"));
 
     KAboutData::setApplicationData(aboutData);
     QCommandLineParser parser;
@@ -122,8 +118,7 @@ int main(int argc, char *argv[])
     // For i18n.
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
 
-    engine.rootContext()->setContextProperty(QStringLiteral("kirogiAboutData"),
-        QVariant::fromValue(aboutData));
+    engine.rootContext()->setContextProperty(QStringLiteral("kirogiAboutData"), QVariant::fromValue(aboutData));
 
     engine.rootContext()->setContextProperty(QStringLiteral("kirogiSettings"), Settings::self());
 
@@ -132,17 +127,15 @@ int main(int argc, char *argv[])
     engine.rootContext()->setContextProperty(QStringLiteral("videoPlayer"), QVariant::fromValue(videoPlayer));
 
     engine.rootContext()->setContextProperty(QStringLiteral("locationPermissions"),
-        QVariant::fromValue(new Permissions({
-            QStringLiteral("android.permission.ACCESS_COARSE_LOCATION"),
-            QStringLiteral("android.permission.ACCESS_FINE_LOCATION")}, &app)));
+                                             QVariant::fromValue(new Permissions({QStringLiteral("android.permission.ACCESS_COARSE_LOCATION"), QStringLiteral("android.permission.ACCESS_FINE_LOCATION")}, &app)));
 
     engine.load(QUrl(QStringLiteral("qrc:///main.qml")));
 
     if (engine.rootObjects().isEmpty()) {
         qCritical() << "Application failed to load.";
-    
+
         gst_deinit();
-    
+
         return -1;
     }
 

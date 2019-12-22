@@ -38,65 +38,63 @@ class ParrotConnection : public QObject
 {
     Q_OBJECT
 
-    public:
-        explicit ParrotConnection(ParrotVehicle::Type type, const QString &vehicleName,
-            const QString &hostName, int port, QObject *parent = nullptr);
-        ~ParrotConnection();
+public:
+    explicit ParrotConnection(ParrotVehicle::Type type, const QString &vehicleName, const QString &hostName, int port, QObject *parent = nullptr);
+    ~ParrotConnection();
 
-    public Q_SLOTS:
-        void handshake(const QString &productSerial = QString());
-        void reset();
-        void sendCommand(Parrot::Command command, const QVariantList &arguments,
-            bool retryForever = false);
-        void pilot(qint8 roll, qint8 pitch, qint8 yaw, qint8 gaz);
+public Q_SLOTS:
+    void handshake(const QString &productSerial = QString());
+    void reset();
+    void sendCommand(Parrot::Command command, const QVariantList &arguments, bool retryForever = false);
+    void pilot(qint8 roll, qint8 pitch, qint8 yaw, qint8 gaz);
 
-    Q_SIGNALS:
-        void stateChanged(Kirogi::AbstractVehicle::ConnectionState state) const;
-        void commandReceived(const ParrotCommand &command) const;
+Q_SIGNALS:
+    void stateChanged(Kirogi::AbstractVehicle::ConnectionState state) const;
+    void commandReceived(const ParrotCommand &command) const;
 
-    private Q_SLOTS:
-        void receiveData();
-        void pumpC2dAckQueue();
-        void sendPilotingCommand();
+private Q_SLOTS:
+    void receiveData();
+    void pumpC2dAckQueue();
+    void sendPilotingCommand();
 
-    private:
-        void initSockets();
+private:
+    void initSockets();
 
-        void processIncomingFrame(const ParrotFrame &frame);
+    void processIncomingFrame(const ParrotFrame &frame);
 
-        void sendAck(const ParrotFrame &frame);
-        void sendFrame(const ParrotFrame &frame);
-        void sendData(const QByteArray &data, quint32 size);
+    void sendAck(const ParrotFrame &frame);
+    void sendFrame(const ParrotFrame &frame);
+    void sendData(const QByteArray &data, quint32 size);
 
-        quint8 makeSeq(quint8 bufferId);
+    quint8 makeSeq(quint8 bufferId);
 
-        ParrotVehicle::Type m_type;
-        QString m_vehicleName;
+    ParrotVehicle::Type m_type;
+    QString m_vehicleName;
 
-        QHostAddress m_hostAddress;
-        int m_port;
+    QHostAddress m_hostAddress;
+    int m_port;
 
-        QPointer<QTcpSocket> m_handshakeSocket;
-        QJsonObject m_handshakeResponse;
+    QPointer<QTcpSocket> m_handshakeSocket;
+    QJsonObject m_handshakeResponse;
 
-        // c2d = Controller-to-device, i.e. we send here.
-        int m_c2dport;
-        // d2c = Device-to-Controller, i.e. we listen here.
-        int m_d2cPort;
+    // c2d = Controller-to-device, i.e. we send here.
+    int m_c2dport;
+    // d2c = Device-to-Controller, i.e. we listen here.
+    int m_d2cPort;
 
-        QPointer<QUdpSocket> m_d2cSocket;
-        QPointer<QUdpSocket> m_c2dSocket;
+    QPointer<QUdpSocket> m_d2cSocket;
+    QPointer<QUdpSocket> m_c2dSocket;
 
-        QHash<quint8, quint8> m_seq;
+    QHash<quint8, quint8> m_seq;
 
-        QQueue<ParrotFrame> m_c2dAckQueue;
-        QTimer *m_c2dAckTimer;
+    QQueue<ParrotFrame> m_c2dAckQueue;
+    QTimer *m_c2dAckTimer;
 
-        QTimer *m_pilotingTimer;
-        qint8 m_roll;
-        qint8 m_pitch;
-        qint8 m_yaw;
-        qint8 m_gaz;
+    QTimer *m_pilotingTimer;
+    qint8 m_roll;
+    qint8 m_pitch;
+    qint8 m_yaw;
+    qint8 m_gaz;
 };
 
 #endif
