@@ -85,6 +85,9 @@ int main(int argc, char *argv[])
     aboutData.addAuthor(xi18nc("@info:credit", "Eike Hein"),
         xi18nc("@info:credit", "Founder, Lead Developer"), QStringLiteral("hein@kde.org"));
 
+    aboutData.addAuthor(xi18nc("@info:credit", "Patrick José Pereira"),
+        xi18nc("@info:credit", "Developer"), QStringLiteral("patrickjp@kde.org"));
+
     aboutData.addAuthor(xi18nc("@info:credit", "Rafael Brandmaier"),
         xi18nc("@info:credit", "Application icon"), QStringLiteral("rafael.brandmaier@kdemail.net"));
 
