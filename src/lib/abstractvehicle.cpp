@@ -26,23 +26,22 @@
 
 namespace Kirogi
 {
-
 class Q_DECL_HIDDEN AbstractVehicle::Private
 {
-    public:
-        Private(AbstractVehicle *q);
-        ~Private();
+public:
+    Private(AbstractVehicle *q);
+    ~Private();
 
-        static int s_availableId;
-        int id;
-        AbstractVehicle::ConnectionState connectionState = AbstractVehicle::Disconnected;
-        AbstractVehicle::FlyingState flyingState = AbstractVehicle::Unknown;
+    static int s_availableId;
+    int id;
+    AbstractVehicle::ConnectionState connectionState = AbstractVehicle::Disconnected;
+    AbstractVehicle::FlyingState flyingState = AbstractVehicle::Unknown;
 
-        QElapsedTimer *flightTime = nullptr;
-        QTimer *flightTimeTimer = nullptr;
+    QElapsedTimer *flightTime = nullptr;
+    QTimer *flightTimeTimer = nullptr;
 
-    private:
-        AbstractVehicle *q;
+private:
+    AbstractVehicle *q;
 };
 
 int AbstractVehicle::Private::s_availableId = 0;
@@ -117,8 +116,7 @@ void Kirogi::AbstractVehicle::setFlyingState(Kirogi::AbstractVehicle::FlyingStat
 
             if (!d->flightTimeTimer) {
                 d->flightTimeTimer = new QTimer(this);
-                QObject::connect(d->flightTimeTimer, &QTimer::timeout,
-                    this, &AbstractVehicle::flightTimeChanged);
+                QObject::connect(d->flightTimeTimer, &QTimer::timeout, this, &AbstractVehicle::flightTimeChanged);
                 d->flightTimeTimer->setTimerType(Qt::PreciseTimer);
                 d->flightTimeTimer->setInterval(1000);
             }

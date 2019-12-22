@@ -28,7 +28,6 @@
 
 namespace Kirogi
 {
-
 void QtQuickPlugin::registerTypes(const char *uri)
 {
     Q_ASSERT(uri == QLatin1String("org.kde.kirogi"));
@@ -39,4 +38,3 @@ void QtQuickPlugin::registerTypes(const char *uri)
 }
 
 }
-

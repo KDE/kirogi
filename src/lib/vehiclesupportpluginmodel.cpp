@@ -31,22 +31,21 @@
 
 namespace Kirogi
 {
-
 class Q_DECL_HIDDEN VehicleSupportPluginModel::Private
 {
-    public:
-        Private(VehicleSupportPluginModel *q);
-        ~Private();
+public:
+    Private(VehicleSupportPluginModel *q);
+    ~Private();
 
-        QVector<KPluginMetaData> plugins;
+    QVector<KPluginMetaData> plugins;
 
-        // This is QMap so `VehicleSupportPluginModel::loadedPlugins` returns a stable sort.
-        QMap<QString, VehicleSupportPlugin*> loadedPlugins;
+    // This is QMap so `VehicleSupportPluginModel::loadedPlugins` returns a stable sort.
+    QMap<QString, VehicleSupportPlugin *> loadedPlugins;
 
-        void findPlugins();
+    void findPlugins();
 
-    private:
-        VehicleSupportPluginModel *q;
+private:
+    VehicleSupportPluginModel *q;
 };
 
 VehicleSupportPluginModel::Private::Private(VehicleSupportPluginModel *q)
@@ -60,11 +59,9 @@ VehicleSupportPluginModel::Private::~Private()
 
 void VehicleSupportPluginModel::Private::findPlugins()
 {
-    auto filter = [](const KPluginMetaData &metaData) {
-        return metaData.serviceTypes().contains(QStringLiteral("Kirogi/VehicleSupport"));
-    };
+    auto filter = [](const KPluginMetaData &metaData) { return metaData.serviceTypes().contains(QStringLiteral("Kirogi/VehicleSupport")); };
 
-    // Look for plugins in a relative path, covers the case when the application is 
+    // Look for plugins in a relative path, covers the case when the application is
     // not installed in the system.
     plugins = KPluginLoader::findPlugins(QCoreApplication::applicationDirPath() + QStringLiteral("/../lib/plugins/kirogi/vehiclesupport"), filter);
     plugins += KPluginLoader::findPlugins(QStringLiteral("kirogi/vehiclesupport"), filter);
@@ -127,26 +124,26 @@ QVariant VehicleSupportPluginModel::data(const QModelIndex &index, int role) con
     }
 
     switch (role) {
-        case Qt::DisplayRole: {
-            return d->plugins.at(index.row()).name();
-        }
-        case Id: {
-            return d->plugins.at(index.row()).pluginId();
-        }
-        case Status: {
-            const QString &id = d->plugins.at(index.row()).pluginId();
+    case Qt::DisplayRole: {
+        return d->plugins.at(index.row()).name();
+    }
+    case Id: {
+        return d->plugins.at(index.row()).pluginId();
+    }
+    case Status: {
+        const QString &id = d->plugins.at(index.row()).pluginId();
 
-            if (d->loadedPlugins.contains(id)) {
-                return PluginLoaded;
-            } else {
-                return PluginNotLoaded;
-            }
+        if (d->loadedPlugins.contains(id)) {
+            return PluginLoaded;
+        } else {
+            return PluginNotLoaded;
         }
-        case Plugin: {
-            const QString &id = d->plugins.at(index.row()).pluginId();
+    }
+    case Plugin: {
+        const QString &id = d->plugins.at(index.row()).pluginId();
 
-            return QVariant::fromValue(d->loadedPlugins.value(id));
-        }
+        return QVariant::fromValue(d->loadedPlugins.value(id));
+    }
     }
 
     return QVariant();
@@ -179,7 +176,7 @@ bool VehicleSupportPluginModel::loadPlugin(int row)
             emit pluginLoaded(md.pluginId(), md.name(), vehicleSupportPlugin);
 
             const QModelIndex &idx = index(row, 0);
-            emit dataChanged(idx, idx, QVector<int>{Status, Plugin});
+            emit dataChanged(idx, idx, QVector<int> {Status, Plugin});
         }
     }
 
@@ -210,7 +207,7 @@ bool VehicleSupportPluginModel::unloadPlugin(int row)
     delete d->loadedPlugins.take(id);
 
     const QModelIndex &idx = index(row, 0);
-    emit dataChanged(idx, idx, QVector<int>{Status, Plugin});
+    emit dataChanged(idx, idx, QVector<int> {Status, Plugin});
 
     return true;
 }
@@ -230,7 +227,7 @@ bool VehicleSupportPluginModel::unloadAllPlugins()
             delete plugin;
 
             const QModelIndex &idx = index(i, 0);
-            emit dataChanged(idx, idx, QVector<int>{Status, Plugin});
+            emit dataChanged(idx, idx, QVector<int> {Status, Plugin});
         }
     }
 

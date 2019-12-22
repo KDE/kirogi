@@ -25,7 +25,7 @@
 #include <KLocalizedString>
 #include <KPluginFactory>
 
-RyzeTelloPlugin::RyzeTelloPlugin(QObject *parent, const QVariantList& /* args */)
+RyzeTelloPlugin::RyzeTelloPlugin(QObject *parent, const QVariantList & /* args */)
     : Kirogi::VehicleSupportPlugin(parent)
     , m_vehicle(nullptr)
 {
@@ -34,8 +34,7 @@ RyzeTelloPlugin::RyzeTelloPlugin(QObject *parent, const QVariantList& /* args */
     m_vehicle = new RyzeTelloVehicle(this);
     m_vehicle->connectToVehicle();
 
-    QMetaObject::invokeMethod(this, "vehicleAdded", Qt::QueuedConnection,
-        Q_ARG(Kirogi::AbstractVehicle *, m_vehicle));
+    QMetaObject::invokeMethod(this, "vehicleAdded", Qt::QueuedConnection, Q_ARG(Kirogi::AbstractVehicle *, m_vehicle));
 }
 
 RyzeTelloPlugin::~RyzeTelloPlugin()
@@ -45,7 +44,7 @@ RyzeTelloPlugin::~RyzeTelloPlugin()
 
 QList<Kirogi::AbstractVehicle *> RyzeTelloPlugin::vehicles() const
 {
-    return { m_vehicle };
+    return {m_vehicle};
 }
 
 K_PLUGIN_CLASS_WITH_JSON(RyzeTelloPlugin, "kirogiryzetelloplugin.json")

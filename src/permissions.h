@@ -29,20 +29,20 @@ class Permissions : public QObject
 
     Q_PROPERTY(bool granted READ granted NOTIFY grantedChanged)
 
-    public:
-        explicit Permissions(const QStringList &permissions, QObject *parent = nullptr);
-        ~Permissions();
+public:
+    explicit Permissions(const QStringList &permissions, QObject *parent = nullptr);
+    ~Permissions();
 
-        bool granted() const;
+    bool granted() const;
 
-        Q_INVOKABLE void request();
+    Q_INVOKABLE void request();
 
-    Q_SIGNALS:
-        void grantedChanged() const;
+Q_SIGNALS:
+    void grantedChanged() const;
 
-    private:
-        QStringList m_permissions;
-        bool m_granted;
+private:
+    QStringList m_permissions;
+    bool m_granted;
 };
 
 #endif

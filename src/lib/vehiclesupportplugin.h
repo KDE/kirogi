@@ -29,23 +29,22 @@
 
 namespace Kirogi
 {
-
 class KIROGI_EXPORT VehicleSupportPlugin : public QObject
 {
     Q_OBJECT
 
-    public:
-        explicit VehicleSupportPlugin(QObject *parent);
-        virtual ~VehicleSupportPlugin() override;
+public:
+    explicit VehicleSupportPlugin(QObject *parent);
+    virtual ~VehicleSupportPlugin() override;
 
-        virtual QList<AbstractVehicle *> vehicles() const = 0;
+    virtual QList<AbstractVehicle *> vehicles() const = 0;
 
-    Q_SIGNALS:
-        void vehicleAdded(Kirogi::AbstractVehicle *vehicle) const;
-        void vehicleRemoved(Kirogi::AbstractVehicle *vehicle) const;
+Q_SIGNALS:
+    void vehicleAdded(Kirogi::AbstractVehicle *vehicle) const;
+    void vehicleRemoved(Kirogi::AbstractVehicle *vehicle) const;
 
-    private:
-        class PluginPrivate *const d;
+private:
+    class PluginPrivate *const d;
 };
 
 }

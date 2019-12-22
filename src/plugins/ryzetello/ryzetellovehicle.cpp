@@ -46,11 +46,13 @@ RyzeTelloVehicle::RyzeTelloVehicle(QObject *parent)
     m_connection = new RyzeTelloConnection(name());
 
     // Queued connections across thread boundaries.
-    QObject::connect(m_connection, &RyzeTelloConnection::stateChanged,
-        this, &RyzeTelloVehicle::setConnectionState, Qt::QueuedConnection);
+    QObject::connect(m_connection, &RyzeTelloConnection::stateChanged, this, &RyzeTelloVehicle::setConnectionState, Qt::QueuedConnection);
 
-    QObject::connect(m_connection, &RyzeTelloConnection::stateChanged,
-        this, [this](AbstractVehicle::ConnectionState state) {
+    QObject::connect(
+        m_connection,
+        &RyzeTelloConnection::stateChanged,
+        this,
+        [this](AbstractVehicle::ConnectionState state) {
             if (state == Connecting) {
                 initVehicle();
             }
@@ -65,13 +67,11 @@ RyzeTelloVehicle::RyzeTelloVehicle(QObject *parent)
                 setFlyingState(Unknown);
             }
         },
-    Qt::QueuedConnection);
+        Qt::QueuedConnection);
 
-    QObject::connect(m_connection, &RyzeTelloConnection::responseReceived,
-        this, &RyzeTelloVehicle::processIncomingResponse, Qt::QueuedConnection);
+    QObject::connect(m_connection, &RyzeTelloConnection::responseReceived, this, &RyzeTelloVehicle::processIncomingResponse, Qt::QueuedConnection);
 
-    QObject::connect(m_connection, &RyzeTelloConnection::stateReceived,
-        this, &RyzeTelloVehicle::processIncomingState, Qt::QueuedConnection);
+    QObject::connect(m_connection, &RyzeTelloConnection::stateReceived, this, &RyzeTelloVehicle::processIncomingState, Qt::QueuedConnection);
 
     // Do the networking on a seperate thread, so our fixed-tick work never gets
     // blocked by activity on the main thread.
@@ -105,15 +105,13 @@ Kirogi::AbstractVehicle::VehicleType RyzeTelloVehicle::vehicleType() const
 
 QList<Kirogi::AbstractVehicle::VehicleAction> RyzeTelloVehicle::supportedActions() const
 {
-    return {
-        Kirogi::AbstractVehicle::TakeOff,
-        Kirogi::AbstractVehicle::Land,
-        Kirogi::AbstractVehicle::FlipForward,
-        Kirogi::AbstractVehicle::FlipBackward,
-        Kirogi::AbstractVehicle::FlipLeft,
-        Kirogi::AbstractVehicle::FlipRight,
-        Kirogi::AbstractVehicle::SwitchPerformanceMode
-    };
+    return {Kirogi::AbstractVehicle::TakeOff,
+            Kirogi::AbstractVehicle::Land,
+            Kirogi::AbstractVehicle::FlipForward,
+            Kirogi::AbstractVehicle::FlipBackward,
+            Kirogi::AbstractVehicle::FlipLeft,
+            Kirogi::AbstractVehicle::FlipRight,
+            Kirogi::AbstractVehicle::SwitchPerformanceMode};
 }
 
 void RyzeTelloVehicle::requestAction(Kirogi::AbstractVehicle::VehicleAction action)
@@ -125,58 +123,58 @@ void RyzeTelloVehicle::requestAction(Kirogi::AbstractVehicle::VehicleAction acti
     }
 
     switch (action) {
-        case TakeOff: {
-            if (flying()) {
-                return;
-            }
+    case TakeOff: {
+        if (flying()) {
+            return;
+        }
 
-            sendCommand(QLatin1String("takeoff"));
-            setFlyingState(TakingOff); // FIXME: We don't /really/ know that without looking at the response.
-            break;
+        sendCommand(QLatin1String("takeoff"));
+        setFlyingState(TakingOff); // FIXME: We don't /really/ know that without looking at the response.
+        break;
+    }
+    case Land: {
+        if (!flying()) {
+            return;
         }
-        case Land: {
-            if (!flying()) {
-                return;
-            }
 
-            sendCommand(QLatin1String("land"));
-            setFlyingState(Landing); // FIXME: We don't /really/ know that without looking at the response.
-            break;
+        sendCommand(QLatin1String("land"));
+        setFlyingState(Landing); // FIXME: We don't /really/ know that without looking at the response.
+        break;
+    }
+    case FlipForward: {
+        if (!flying()) {
+            return;
         }
-        case FlipForward: {
-            if (!flying()) {
-                return;
-            }
 
-            sendCommand(QLatin1String("flip f"));
-            break;
+        sendCommand(QLatin1String("flip f"));
+        break;
+    }
+    case FlipBackward: {
+        if (!flying()) {
+            return;
         }
-        case FlipBackward: {
-            if (!flying()) {
-                return;
-            }
 
-            sendCommand(QLatin1String("flip b"));
-            break;
+        sendCommand(QLatin1String("flip b"));
+        break;
+    }
+    case FlipLeft: {
+        if (!flying()) {
+            return;
         }
-        case FlipLeft: {
-            if (!flying()) {
-                return;
-            }
 
-            sendCommand(QLatin1String("flip l"));
-            break;
+        sendCommand(QLatin1String("flip l"));
+        break;
+    }
+    case FlipRight: {
+        if (!flying()) {
+            return;
         }
-        case FlipRight: {
-            if (!flying()) {
-                return;
-            }
 
-            sendCommand(QLatin1String("flip r"));
-            break;
-        }
-        default: {
-        }
+        sendCommand(QLatin1String("flip r"));
+        break;
+    }
+    default: {
+    }
     }
 }
 
@@ -188,11 +186,7 @@ void RyzeTelloVehicle::pilot(qint8 roll, qint8 pitch, qint8 yaw, qint8 gaz)
         return;
     }
 
-    QMetaObject::invokeMethod(m_connection, "pilot", Qt::QueuedConnection,
-        Q_ARG(qint8, roll),
-        Q_ARG(qint8, pitch),
-        Q_ARG(qint8, yaw),
-        Q_ARG(qint8, gaz));
+    QMetaObject::invokeMethod(m_connection, "pilot", Qt::QueuedConnection, Q_ARG(qint8, roll), Q_ARG(qint8, pitch), Q_ARG(qint8, yaw), Q_ARG(qint8, gaz));
 }
 
 Kirogi::AbstractVehicle::PerformanceMode RyzeTelloVehicle::performanceMode() const
@@ -204,18 +198,18 @@ void RyzeTelloVehicle::requestPerformanceMode(Kirogi::AbstractVehicle::Performan
 {
     if (performanceMode() != mode) {
         switch (mode) {
-            case FilmPerformance: {
-                sendCommand(QStringLiteral("speed 10"));
+        case FilmPerformance: {
+            sendCommand(QStringLiteral("speed 10"));
 
-                break;
-            }
-            case SportPerformance: {
-                sendCommand(QStringLiteral("speed 100"));
+            break;
+        }
+        case SportPerformance: {
+            sendCommand(QStringLiteral("speed 100"));
 
-                break;
-            }
-            default: {
-            }
+            break;
+        }
+        default: {
+        }
         }
     }
 }
@@ -401,12 +395,9 @@ void RyzeTelloVehicle::initVehicle()
 void RyzeTelloVehicle::sendCommand(const QString &command, bool retryForever)
 {
     if (connectionState() < Connecting) {
-        qCWarning(KIROGI_VEHICLESUPPORT_RYZETELLO) << name() << "Request to send command" << command
-        << "rejected. Connection not ready. Current connection state:" << connectionState();
+        qCWarning(KIROGI_VEHICLESUPPORT_RYZETELLO) << name() << "Request to send command" << command << "rejected. Connection not ready. Current connection state:" << connectionState();
         return;
     }
 
-    QMetaObject::invokeMethod(m_connection, "sendCommand", Qt::QueuedConnection,
-        Q_ARG(QString, command),
-        Q_ARG(bool, retryForever));
+    QMetaObject::invokeMethod(m_connection, "sendCommand", Qt::QueuedConnection, Q_ARG(QString, command), Q_ARG(bool, retryForever));
 }

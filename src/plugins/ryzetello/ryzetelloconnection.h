@@ -40,44 +40,44 @@ class RyzeTelloConnection : public QObject
 {
     Q_OBJECT
 
-    public:
-        explicit RyzeTelloConnection(const QString &vehicleName, QObject *parent = nullptr);
-        ~RyzeTelloConnection();
+public:
+    explicit RyzeTelloConnection(const QString &vehicleName, QObject *parent = nullptr);
+    ~RyzeTelloConnection();
 
-    public Q_SLOTS:
-        void handshake();
-        void reset();
-        void sendCommand(const QString &command, bool retryForever = false);
-        void pilot(qint8 roll, qint8 pitch, qint8 yaw, qint8 gaz);
+public Q_SLOTS:
+    void handshake();
+    void reset();
+    void sendCommand(const QString &command, bool retryForever = false);
+    void pilot(qint8 roll, qint8 pitch, qint8 yaw, qint8 gaz);
 
-    Q_SIGNALS:
-        void stateChanged(Kirogi::AbstractVehicle::ConnectionState state) const;
-        void responseReceived(const QString &response) const;
-        void stateReceived(const QByteArray &state) const;
+Q_SIGNALS:
+    void stateChanged(Kirogi::AbstractVehicle::ConnectionState state) const;
+    void responseReceived(const QString &response) const;
+    void stateReceived(const QByteArray &state) const;
 
-    private Q_SLOTS:
-        void receiveData();
-        void receiveState();
-        void pumpCommandQueue();
-        void sendPilotingCommand();
+private Q_SLOTS:
+    void receiveData();
+    void receiveState();
+    void pumpCommandQueue();
+    void sendPilotingCommand();
 
-    private:
-        void initSockets();
+private:
+    void initSockets();
 
-        QString m_vehicleName;
+    QString m_vehicleName;
 
-        QHostAddress m_address;
-        QPointer<QUdpSocket> m_controlSocket;
-        QPointer<QUdpSocket> m_stateSocket;
+    QHostAddress m_address;
+    QPointer<QUdpSocket> m_controlSocket;
+    QPointer<QUdpSocket> m_stateSocket;
 
-        QQueue<RyzeTelloCommand> m_commandQueue;
-        QTimer *m_commandQueueTimer;
+    QQueue<RyzeTelloCommand> m_commandQueue;
+    QTimer *m_commandQueueTimer;
 
-        QTimer *m_pilotingTimer;
-        qint8 m_roll;
-        qint8 m_pitch;
-        qint8 m_yaw;
-        qint8 m_gaz;
+    QTimer *m_pilotingTimer;
+    qint8 m_roll;
+    qint8 m_pitch;
+    qint8 m_yaw;
+    qint8 m_gaz;
 };
 
 #endif

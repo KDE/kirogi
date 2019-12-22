@@ -21,8 +21,8 @@
 #ifndef RYZETELLOPLUGIN_H
 #define RYZETELLOPLUGIN_H
 
-#include "vehiclesupportplugin.h"
 #include "abstractvehicle.h"
+#include "vehiclesupportplugin.h"
 
 #include <QHash>
 
@@ -32,14 +32,14 @@ class RyzeTelloPlugin : public Kirogi::VehicleSupportPlugin
 {
     Q_OBJECT
 
-    public:
-        RyzeTelloPlugin(QObject* parent, const QVariantList& args);
-        ~RyzeTelloPlugin() override;
+public:
+    RyzeTelloPlugin(QObject *parent, const QVariantList &args);
+    ~RyzeTelloPlugin() override;
 
-        QList<Kirogi::AbstractVehicle *> vehicles() const override;
+    QList<Kirogi::AbstractVehicle *> vehicles() const override;
 
-    private:
-        RyzeTelloVehicle *m_vehicle;
+private:
+    RyzeTelloVehicle *m_vehicle;
 };
 
 #endif

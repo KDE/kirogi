@@ -22,7 +22,6 @@
 
 namespace Kirogi
 {
-
 VehicleSupportPlugin::VehicleSupportPlugin(QObject *parent)
     : QObject(parent)
     , d(nullptr)

@@ -88,8 +88,7 @@ void RyzeTelloConnection::pilot(qint8 roll, qint8 pitch, qint8 yaw, qint8 gaz)
         if (!m_pilotingTimer) {
             m_pilotingTimer = new QTimer(this);
             m_pilotingTimer->setInterval(40);
-            QObject::connect(m_pilotingTimer, &QTimer::timeout,
-                this, &RyzeTelloConnection::sendPilotingCommand);
+            QObject::connect(m_pilotingTimer, &QTimer::timeout, this, &RyzeTelloConnection::sendPilotingCommand);
         }
 
         if (!m_pilotingTimer->isActive()) {
@@ -143,8 +142,7 @@ void RyzeTelloConnection::pumpCommandQueue()
     // current thread. It's not allowed to start/stop timers across thread boundaries.
     if (!m_commandQueueTimer) {
         m_commandQueueTimer = new QTimer(this);
-        QObject::connect(m_commandQueueTimer, &QTimer::timeout,
-            this, &RyzeTelloConnection::pumpCommandQueue, Qt::QueuedConnection);
+        QObject::connect(m_commandQueueTimer, &QTimer::timeout, this, &RyzeTelloConnection::pumpCommandQueue, Qt::QueuedConnection);
     }
 
     m_commandQueueTimer->stop();
@@ -175,21 +173,18 @@ void RyzeTelloConnection::pumpCommandQueue()
 
 void RyzeTelloConnection::sendPilotingCommand()
 {
-    const QByteArray &decoded = QString("rc %1 %2 %3 %4").arg(QString::number(m_roll), QString::number(m_pitch),
-        QString::number(m_gaz), QString::number(m_yaw)).toUtf8();
+    const QByteArray &decoded = QString("rc %1 %2 %3 %4").arg(QString::number(m_roll), QString::number(m_pitch), QString::number(m_gaz), QString::number(m_yaw)).toUtf8();
     m_controlSocket->writeDatagram(decoded, m_address, 8889);
 }
 
 void RyzeTelloConnection::initSockets()
 {
     m_controlSocket = new QUdpSocket(this);
-    QObject::connect(m_controlSocket, &QUdpSocket::readyRead,
-        this, &RyzeTelloConnection::receiveData);
+    QObject::connect(m_controlSocket, &QUdpSocket::readyRead, this, &RyzeTelloConnection::receiveData);
     m_controlSocket->bind(QHostAddress::AnyIPv4, 8889);
 
     m_stateSocket = new QUdpSocket(this);
-    QObject::connect(m_stateSocket, &QUdpSocket::readyRead,
-        this, &RyzeTelloConnection::receiveState);
+    QObject::connect(m_stateSocket, &QUdpSocket::readyRead, this, &RyzeTelloConnection::receiveState);
     m_stateSocket->bind(QHostAddress::AnyIPv4, 8890);
 
     emit stateChanged(Kirogi::AbstractVehicle::Connecting);

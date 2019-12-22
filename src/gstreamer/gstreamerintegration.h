@@ -34,33 +34,33 @@ class GStreamerIntegration : public QObject
     Q_PROPERTY(bool playing READ playing WRITE setPlaying NOTIFY playingChanged)
     Q_PROPERTY(QString pipeline READ pipeline WRITE setPipeline NOTIFY pipelineChanged)
 
-    public:
-        explicit GStreamerIntegration(QObject *parent = nullptr);
-        ~GStreamerIntegration();
+public:
+    explicit GStreamerIntegration(QObject *parent = nullptr);
+    ~GStreamerIntegration();
 
-        bool playing() const;
-        void setPlaying(bool playing);
+    bool playing() const;
+    void setPlaying(bool playing);
 
-        QString pipeline() const;
-        void setPipeline(const QString &pipeline);
+    QString pipeline() const;
+    void setPipeline(const QString &pipeline);
 
-        void setWindow(QQuickWindow *window);
+    void setWindow(QQuickWindow *window);
 
-    Q_SIGNALS:
-        void playingChanged() const;
-        void pipelineChanged() const;
+Q_SIGNALS:
+    void playingChanged() const;
+    void pipelineChanged() const;
 
-    private:
-        void updateGstPipeline();
+private:
+    void updateGstPipeline();
 
-        bool m_playing;
+    bool m_playing;
 
-        QString m_pipeline;
-        GstElement *m_gstPipeline;
+    QString m_pipeline;
+    GstElement *m_gstPipeline;
 
-        bool m_fallback;
+    bool m_fallback;
 
-        QQuickWindow *m_window;
+    QQuickWindow *m_window;
 };
 
 #endif
