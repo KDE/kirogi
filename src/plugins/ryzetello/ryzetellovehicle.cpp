@@ -105,16 +105,15 @@ Kirogi::AbstractVehicle::VehicleType RyzeTelloVehicle::vehicleType() const
 
 QList<Kirogi::AbstractVehicle::VehicleAction> RyzeTelloVehicle::supportedActions() const
 {
-    QList<Kirogi::AbstractVehicle::VehicleAction> actions;
-    actions << Kirogi::AbstractVehicle::TakeOff;
-    actions << Kirogi::AbstractVehicle::Land;
-    actions << Kirogi::AbstractVehicle::FlipForward;
-    actions << Kirogi::AbstractVehicle::FlipBackward;
-    actions << Kirogi::AbstractVehicle::FlipLeft;
-    actions << Kirogi::AbstractVehicle::FlipRight;
-    actions << Kirogi::AbstractVehicle::SwitchPerformanceMode;
-
-    return actions;
+    return {
+        Kirogi::AbstractVehicle::TakeOff,
+        Kirogi::AbstractVehicle::Land,
+        Kirogi::AbstractVehicle::FlipForward,
+        Kirogi::AbstractVehicle::FlipBackward,
+        Kirogi::AbstractVehicle::FlipLeft,
+        Kirogi::AbstractVehicle::FlipRight,
+        Kirogi::AbstractVehicle::SwitchPerformanceMode
+    };
 }
 
 void RyzeTelloVehicle::requestAction(Kirogi::AbstractVehicle::VehicleAction action)

@@ -132,8 +132,9 @@ int main(int argc, char *argv[])
     engine.rootContext()->setContextProperty(QStringLiteral("videoPlayer"), QVariant::fromValue(videoPlayer));
 
     engine.rootContext()->setContextProperty(QStringLiteral("locationPermissions"),
-        QVariant::fromValue(new Permissions(QStringList() << QStringLiteral("android.permission.ACCESS_COARSE_LOCATION")
-        << QStringLiteral("android.permission.ACCESS_FINE_LOCATION"), &app)));
+        QVariant::fromValue(new Permissions({
+            QStringLiteral("android.permission.ACCESS_COARSE_LOCATION"),
+            QStringLiteral("android.permission.ACCESS_FINE_LOCATION")}, &app)));
 
     engine.load(QUrl(QStringLiteral("qrc:///main.qml")));
 

@@ -160,33 +160,36 @@ Kirogi::AbstractVehicle::VehicleType ParrotVehicle::vehicleType() const
 
 QList<Kirogi::AbstractVehicle::VehicleAction> ParrotVehicle::supportedActions() const
 {
-    QList<Kirogi::AbstractVehicle::VehicleAction> actions;
-    actions << Kirogi::AbstractVehicle::TakeOff;
-    actions << Kirogi::AbstractVehicle::Land;
-    actions << Kirogi::AbstractVehicle::FlatTrim;
-    actions << Kirogi::AbstractVehicle::SwitchPerformanceMode;
-    actions << Kirogi::AbstractVehicle::SetMaxRollSpeed;
-    actions << Kirogi::AbstractVehicle::SetMaxPitchSpeed;
-    actions << Kirogi::AbstractVehicle::SetMaxYawSpeed;
-    actions << Kirogi::AbstractVehicle::SetMaxTilt;
-    actions << Kirogi::AbstractVehicle::SetMaxGazSpeed;
-    actions << Kirogi::AbstractVehicle::ToggleBankedTurns;
-    actions << Kirogi::AbstractVehicle::ToggleGeofence;
-    actions << Kirogi::AbstractVehicle::SetMaxAltitude;
-    actions << Kirogi::AbstractVehicle::SetMaxDistance;
-    actions << Kirogi::AbstractVehicle::ToggleVideoStream;
-    actions << Kirogi::AbstractVehicle::RecordVideo;
+     auto actions = QList<Kirogi::AbstractVehicle::VehicleAction>({
+        Kirogi::AbstractVehicle::TakeOff,
+        Kirogi::AbstractVehicle::Land,
+        Kirogi::AbstractVehicle::FlatTrim,
+        Kirogi::AbstractVehicle::SwitchPerformanceMode,
+        Kirogi::AbstractVehicle::SetMaxRollSpeed,
+        Kirogi::AbstractVehicle::SetMaxPitchSpeed,
+        Kirogi::AbstractVehicle::SetMaxYawSpeed,
+        Kirogi::AbstractVehicle::SetMaxTilt,
+        Kirogi::AbstractVehicle::SetMaxGazSpeed,
+        Kirogi::AbstractVehicle::ToggleBankedTurns,
+        Kirogi::AbstractVehicle::ToggleGeofence,
+        Kirogi::AbstractVehicle::SetMaxAltitude,
+        Kirogi::AbstractVehicle::SetMaxDistance,
+        Kirogi::AbstractVehicle::ToggleVideoStream,
+        Kirogi::AbstractVehicle::RecordVideo
+    });
 
     // FIXME TODO: Implement camera mode changing.
     // actions << Kirogi::AbstractVehicle::TakePicture;
 
     // FIXME TODO: Look for alternatives for the Anafi.
     if (m_type == Bebop2) {
-        actions << Kirogi::AbstractVehicle::FlipForward;
-        actions << Kirogi::AbstractVehicle::FlipBackward;
-        actions << Kirogi::AbstractVehicle::FlipLeft;
-        actions << Kirogi::AbstractVehicle::FlipRight;
-        actions << Kirogi::AbstractVehicle::ToggleVideoStabilization;
+         actions += QList<Kirogi::AbstractVehicle::VehicleAction>({
+            Kirogi::AbstractVehicle::FlipForward,
+            Kirogi::AbstractVehicle::FlipBackward,
+            Kirogi::AbstractVehicle::FlipLeft,
+            Kirogi::AbstractVehicle::FlipRight,
+            Kirogi::AbstractVehicle::ToggleVideoStabilization
+         });
     }
 
     return actions;
