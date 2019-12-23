@@ -18,8 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef KIROGI_PERMISSIONS_H
-#define KIROGI_PERMISSIONS_H
+#pragma once
 
 #include <QObject>
 
@@ -44,5 +43,3 @@ private:
     QStringList m_permissions;
     bool m_granted;
 };
-
-#endif
