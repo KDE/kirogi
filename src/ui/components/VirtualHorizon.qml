@@ -26,7 +26,7 @@ import org.kde.kirigami 2.6 as Kirigami
 Item {
     property alias roll: rollBar.rotation
 
-    height: width * 0.44
+    height: width
 
     clip: true
     antialiasing: true
@@ -56,7 +56,7 @@ Item {
             anchors.verticalCenter: parent.verticalCenter
             anchors.left: parent.left
 
-            width: parent.width * 0.1
+            width: parent.width * 0.25
             height: 2
 
             color: "white"
@@ -82,7 +82,7 @@ Item {
             anchors.verticalCenter: parent.verticalCenter
             anchors.right: parent.right
 
-            width: parent.width * 0.1
+            width: parent.width * 0.25
             height: 2
 
             color: "white"
@@ -91,38 +91,28 @@ Item {
         }
     }
 
-    Rectangle {
-        x: circle.x + 1
-        y: circle.y + 1
-
-        width: circle.width
-        height: circle.height
-
-        radius: circle.radius
-
-        color: circle.color
-
-        border.width: circle.border.width
-        border.color: "black"
-
-        antialiasing: true
-    }
-
-    Rectangle {
-        id: circle
-
+    // Clip circle to create semi-circle effect
+    Item {
         anchors.centerIn: parent
+        width: parent.width
+        height: width * 0.3
+        clip: true
 
-        width: parent.width * 0.8
-        height: width
+        Rectangle {
+            id: circle
 
-        radius: width / 2
+            width: parent.width
+            height: width
+            radius: width / 2
 
-        color: "transparent"
+            anchors.centerIn: parent
 
-        border.width: 2
-        border.color: "white"
+            color: "transparent"
 
-        antialiasing: true
+            border.width: 2
+            border.color: "white"
+
+            antialiasing: true
+        }
     }
 }
