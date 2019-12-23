@@ -18,8 +18,7 @@
  * License along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef PARROTCONNECTION_H
-#define PARROTCONNECTION_H
+#pragma once
 
 #include <QObject>
 
@@ -96,5 +95,3 @@ private:
     qint8 m_yaw;
     qint8 m_gaz;
 };
-
-#endif
