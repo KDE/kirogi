@@ -42,7 +42,7 @@ The Kirogi project is currently in its early stages. For now it supports the fol
 
 Support for additional vehicles, also by other manufacturers, is very much a goal. If your vehicle is not on the list yet, check back later!
 
-In particular, we plan to add support for [MAVLink](https://en.wikipedia.org/wiki/MAVLink) to interface with open vehicle systems.
+To build Kirogi with [MAVLink](https://en.wikipedia.org/wiki/MAVLink) is necessary to have MAVLink installed or defining `MAVLINK_INCLUDE_DIR` variable. The plugin is in progress and not stable at the moment.
 
 Vehicle support is subject to availability for development and testing. If you are a manufacturer and would like to see Kirogi support your hardware, please [contact the board of directors of KDE e.V.](https://ev.kde.org/contact.php) for this and any other business inquiries.
 
