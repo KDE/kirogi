@@ -1,5 +1,6 @@
 /*
  * Copyright 2019 Eike Hein <hein@kde.org>
+ *                Patrick José Pereira <patrickjp@kde.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -19,612 +20,140 @@
  */
 
 import QtQuick 2.12
-import QtQuick.Window 2.12
-
-import org.kde.kirigami 2.6 as Kirigami
+import QtQuick.Layouts 1.0
 
 Item {
+    id: root
+
     property real pitch: 0.0
-
-    Rectangle {
-        x: height
-        y: height
-
-        width: parent.width
-        height: 1
-
-        color: "grey"
-
-        opacity: 0.5
-    }
-
-    Rectangle {
-        y: 0
-
-        width: parent.width - x
-        height: 1
-
-        opacity: 0.5
-    }
-
-    Rectangle {
-        x: height
-        y: height + ((parent.height / 30) * 1)
-
-        width: parent.width
-        height: 1
-
-        color: "grey"
-
-        opacity: 0.6
-    }
-
-
-    Rectangle {
-        y: (parent.height / 30) * 1
-
-        width: parent.width - x
-        height: 1
-
-        opacity: 0.6
-    }
-
-    Rectangle {
-        x: height
-        y: height + ((parent.height / 30) * 2)
-
-        width: parent.width
-        height: 1
-
-        color: "grey"
-
-        opacity: 0.7
-    }
-
-    Rectangle {
-        y: (parent.height / 30) * 2
-
-        width: parent.width - x
-        height: 1
-
-        opacity: 0.7
-    }
-
-    Rectangle {
-        x: height
-        y: height + ((parent.height / 30) * 3)
-
-        width: parent.width
-        height: 1
-
-        color: "grey"
-
-        opacity: 0.8
-    }
-
-    Rectangle {
-        y: (parent.height / 30) * 3
-
-        width: parent.width - x
-        height: 1
-
-        opacity: 0.8
-    }
-
-    Rectangle {
-        x: height
-        y: height + ((parent.height / 30) * 4)
-
-        width: parent.width
-        height: 1
-
-        color: "grey"
-
-        opacity: 0.9
-    }
-
-    Rectangle {
-        y: (parent.height / 30) * 4
-
-        width: parent.width - x
-        height: 1
-
-        opacity: 0.9
-    }
-
-    Rectangle {
-        x: height
-        y: height + ((parent.height / 30) * 5)
-
-        width: parent.width
-        height: 1
-
-        color: "grey"
-    }
-
-    Rectangle {
-        y: (parent.height / 30) * 5
-
-        width: parent.width - x - x
-        height: 1
-    }
-
-    Rectangle {
-        x: height
-        y: height + ((parent.height / 30) * 6)
-
-        width: parent.width
-        height: 1
-
-        color: "grey"
-    }
-
-    Rectangle {
-        y: (parent.height / 30) * 6
-
-        width: parent.width - x
-        height: 1
-    }
-
-    Rectangle {
-        x: height
-        y: height + ((parent.height / 30) * 7)
-
-        width: parent.width
-        height: 1
-
-        color: "grey"
-    }
-
-    Rectangle {
-        y: (parent.height / 30) * 7
-
-        width: parent.width - x
-        height: 1
-    }
-
-    Rectangle {
-        x: height
-        y: height + ((parent.height / 30) * 8)
-
-        width: parent.width
-        height: 1
-
-        color: "grey"
-    }
-
-    Rectangle {
-        y: (parent.height / 30) * 8
-
-        width: parent.width - x
-        height: 1
-    }
-
-    Rectangle {
-        x: height
-        y: height + ((parent.height / 30) * 9)
-
-        width: parent.width
-        height: 1
-
-        color: "grey"
-    }
-
-    Rectangle {
-        y: (parent.height / 30) * 9
-
-        width: parent.width - x
-        height: 1
-    }
-
-    Rectangle {
-        x: height
-        y: height + ((parent.height / 30) * 10)
-
-        width: parent.width
-        height: 1
-
-        color: "grey"
-    }
-
-    Rectangle {
-        y: (parent.height / 30) * 10
-
-        width: parent.width - x
-        height: 1
-    }
-
-    Rectangle {
-        x: height
-        y: height + ((parent.height / 30) * 11)
-
-        width: parent.width
-        height: 1
-
-        color: "grey"
-    }
-
-    Rectangle {
-        y: (parent.height / 30) * 11
-
-        width: parent.width - x
-        height: 1
-    }
-
-    Rectangle {
-        x: height
-        y: height + ((parent.height / 30) * 12)
-
-        width: parent.width
-        height: 1
-
-        color: "grey"
-    }
-
-    Rectangle {
-        y: (parent.height / 30) * 12
-
-        width: parent.width - x
-        height: 1
-    }
-
-    Rectangle {
-        x: height
-        y: height + ((parent.height / 30) * 13)
-
-        width: parent.width
-        height: 1
-
-        color: "grey"
-    }
-
-    Rectangle {
-        y: (parent.height / 30) * 13
-
-        width: parent.width - x
-        height: 1
-    }
-
-    Rectangle {
-        x: height
-        y: height + ((parent.height / 30) * 14)
-
-        width: parent.width
-        height: 1
-
-        color: "grey"
-    }
-
-    Rectangle {
-        y: (parent.height / 30) * 14
-
-        width: parent.width - x
-        height: 1
-    }
-
-    Rectangle {
-        x: height
-        y: height + ((parent.height / 30) * 15)
-
-        width: parent.width
-        height: 1
-
-        color: "grey"
-    }
-
-    Rectangle {
-        y: (parent.height / 30) * 15
-
-        width: parent.width - x
-        height: 1
-    }
-
-    Rectangle {
-        x: height
-        y: height + ((parent.height / 30) * 16)
-
-        width: parent.width
-        height: 1
-
-        color: "grey"
-    }
-
-    Rectangle {
-        y: (parent.height / 30) * 16
-
-        width: parent.width - x
-        height: 1
-    }
-
-    Rectangle {
-        x: height
-        y: height + ((parent.height / 30) * 17)
-
-        width: parent.width
-        height: 1
-
-        color: "grey"
-    }
-
-    Rectangle {
-        y: (parent.height / 30) * 17
-
-        width: parent.width - x
-        height: 1
-    }
-
-    Rectangle {
-        x: height
-        y: height + ((parent.height / 30) * 18)
-
-        width: parent.width
-        height: 1
-
-        color: "grey"
-    }
-
-    Rectangle {
-        y: (parent.height / 30) * 18
-
-        width: parent.width - x
-        height: 1
-    }
-
-    Rectangle {
-        x: height
-        y: height + ((parent.height / 30) * 19)
-
-        width: parent.width
-        height: 1
-
-        color: "grey"
-    }
-
-    Rectangle {
-        y: (parent.height / 30) * 19
-
-        width: parent.width - x
-        height: 1
-    }
-
-    Rectangle {
-        x: height
-        y: height + ((parent.height / 30) * 20)
-
-        width: parent.width
-        height: 1
-
-        color: "grey"
-    }
-
-    Rectangle {
-        y: (parent.height / 30) * 20
-
-        width: parent.width - x
-        height: 1
-    }
-
-    Rectangle {
-        x: height
-        y: height + ((parent.height / 30) * 21)
-
-        width: parent.width
-        height: 1
-
-        color: "grey"
-    }
-
-    Rectangle {
-        y: (parent.height / 30) * 21
-
-        width: parent.width - x
-        height: 1
-    }
-
-    Rectangle {
-        x: height
-        y: height + ((parent.height / 30) * 22)
-
-        width: parent.width
-        height: 1
-
-        color: "grey"
-    }
-
-    Rectangle {
-        y: (parent.height / 30) * 22
-
-        width: parent.width - x
-        height: 1
-    }
-
-    Rectangle {
-        x: height
-        y: height + ((parent.height / 30) * 23)
-
-        width: parent.width
-        height: 1
-
-        color: "grey"
-    }
-
-    Rectangle {
-        y: (parent.height / 30) * 23
-
-        width: parent.width - x
-        height: 1
-    }
-
-    Rectangle {
-        x: height
-        y: height + ((parent.height / 30) * 24)
-
-        width: parent.width
-        height: 1
-
-        color: "grey"
-    }
-
-    Rectangle {
-        y: (parent.height / 30) * 24
-
-        width: parent.width - x
-        height: 1
-    }
-
-    Rectangle {
-        x: height
-        y: height + ((parent.height / 30) * 25)
-
-        width: parent.width
-        height: 1
-
-        color: "grey"
-    }
-
-    Rectangle {
-        y: (parent.height / 30) * 25
-
-        width: parent.width - x
-        height: 1
-    }
-
-    Rectangle {
-        x: height
-        y: height + ((parent.height / 30) * 26)
-
-        width: parent.width
-        height: 1
-
-        color: "grey"
-
-        opacity: 0.9
-    }
-
-    Rectangle {
-        y: (parent.height / 30) * 26
-
-        width: parent.width - x
-        height: 1
-
-        opacity: 0.9
-    }
-
-    Rectangle {
-        x: height
-        y: height + ((parent.height / 30) * 27)
-
-        width: parent.width
-        height: 1
-
-        color: "grey"
-
-        opacity: 0.8
-    }
-
-    Rectangle {
-        y: (parent.height / 30) * 27
-
-        width: parent.width - x
-        height: 1
-
-        opacity: 0.8
-    }
-
-    Rectangle {
-        x: height
-        y: height + ((parent.height / 30) * 28)
-
-        width: parent.width
-        height: 1
-
-        color: "grey"
-
-        opacity: 0.7
-    }
-
-    Rectangle {
-        y: (parent.height / 30) * 28
-
-        width: parent.width - x
-        height: 1
-
-        opacity: 0.7
-    }
-
-    Rectangle {
-        x: height
-        y: height + ((parent.height / 30) * 29)
-
-        width: parent.width
-        height: 1
-
-        color: "grey"
-
-        opacity: 0.6
-    }
-
-    Rectangle {
-        y: (parent.height / 30) * 29
-
-        width: parent.width - x
-        height: 1
-
-        opacity: 0.6
-    }
-
-    Rectangle {
-        x: height
-        y: height + ((parent.height / 30) * 30)
-
-        width: parent.width
-        height: 1
-
-        color: "grey"
-
-        opacity: 0.5
-    }
-
-    Rectangle {
-        y: (parent.height / 30) * 30
-
-        width: parent.width - x
-        height: 1
-
-        opacity: 0.5
-    }
-
-    Rectangle {
-        x: middleBar.x + 1
-        y: middleBar.y + 1
-
-        width: middleBar.width
-        height: middleBar.height
-
-        color: "grey"
-    }
-
-    Rectangle {
-        id: middleBar
-
-        anchors.horizontalCenter: parent.horizontalCenter
-
+    property real tickWidth: 10
+    width: tickWidth * 2
+
+    ColumnLayout {
+        id: layout
+        Layout.margins: 0
+        spacing: 0
+        height: parent.height
+
+        // Calculate position based in the pitch value.
         y: {
-            var yPos = parent.height / 2;
+            var yPos = parent.height / 2 + height / 2;
 
             if (kirogi.ready) {
-                var percent = pitch / 180;
-                var yPos = Math.round(parent.height * percent);
+                var perc = ((pitch % 10) / repeater.model) / 10;
+                yPos = Math.round(yPos + perc * height);
             }
 
             return (parent.height - yPos);
         }
 
-        width: parent.width * 2
+        // Worst case scenario width to allow right alignment.
+        TextMetrics {
+            id: textMetrics
+            font: Text.font
+            text: "000"
+        }
+
+        // Create bars.
+        Repeater {
+            id: repeater
+
+            // Use an odd value to create middle bar.
+            model: 11
+
+            Rectangle {
+                id: rectangle
+                color: "white"
+                width: root.tickWidth
+                height: 2
+
+                // Calculate opacity based in the index.
+                opacity: Math.abs(1 / (index - repeater.model / 2 )) * 2
+
+                Text {
+                    id: text
+
+                    // Display only positive values, the anchors will inform the direction.
+                    text: Math.abs(value * 10)
+                    width: textMetrics.width
+                    height: 10
+                    color: "white"
+                    horizontalAlignment: Text.AlignRight
+
+                    // Calculate real value.
+                    property var value: {
+                        readonly var multiplier = pitch > 0 ? Math.floor(pitch / 10) : Math.ceil(pitch / 10);
+                        return (index - (repeater.model - 1) / 2) + multiplier;
+                    }
+
+                    // Change anchors based in value.
+                    onValueChanged: {
+                        if(state !== "positive" && value > 0) {
+                            state = "positive";
+                            return
+                        }
+
+                        if(state !== "negative" && value < 0) {
+                            state = "negative";
+                            return
+                        }
+
+                        if(state !== "zero" && value === 0) {
+                            state = "zero";
+                            return
+                        }
+                    }
+
+                    states: [
+                        State {
+                            name: "zero"
+                            AnchorChanges {
+                                target: text
+                                anchors.verticalCenter: parent.verticalCenter
+                                anchors.top: undefined
+                                anchors.bottom: undefined
+                            }
+                        },
+                        State {
+                            name: "positive"
+                            AnchorChanges {
+                                target: text
+                                anchors.verticalCenter: undefined
+                                anchors.top: parent.bottom
+                                anchors.bottom: undefined
+                            }
+                        },
+                        State {
+                            name: "negative"
+                            AnchorChanges {
+                                target: text
+                                anchors.verticalCenter: undefined
+                                anchors.top: undefined
+                                anchors.bottom: parent.top
+                            }
+                        }
+                    ]
+                    anchors.left: parent.right
+                    anchors.leftMargin: 5
+                    anchors.verticalCenterOffset: -2
+                    anchors.bottomMargin: 2
+                    anchors.topMargin: -3
+                }
+            }
+
+        }
+    }
+
+    Rectangle {
+        id: middleBar
+
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.right: parent.left
+        anchors.rightMargin: 2
+
+        width: tickWidth
         height: 2
 
         color: "white"
-
-        Behavior on y { NumberAnimation { duration: Kirigami.Units.shortDuration } }
     }
 }
