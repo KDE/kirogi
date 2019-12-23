@@ -40,9 +40,10 @@ The Kirogi project is currently in its early stages. For now it supports the fol
 * Parrot Bebop 2
 * Ryze Tello
 
-Support for additional vehicles, also by other manufacturers, is very much a goal. If your vehicle is not on the list yet, check back later!
+Additionally, support for the [MAVLink](https://en.wikipedia.org/wiki/MAVLink) protocol is in early development, enabling control of many drones natively speaking this protocol. To build with MAVLink support, the upstream library needs to be installed or the `MAVLINK_INCLUDE_DIR` environment variable defined.
 
-To build Kirogi with [MAVLink](https://en.wikipedia.org/wiki/MAVLink) is necessary to have MAVLink installed or defining `MAVLINK_INCLUDE_DIR` variable. The plugin is in progress and not stable at the moment.
+
+Support for additional vehicles, also by other manufacturers, is very much a goal. If your vehicle is not on the list yet, check back later!
 
 Vehicle support is subject to availability for development and testing. If you are a manufacturer and would like to see Kirogi support your hardware, please [contact the board of directors of KDE e.V.](https://ev.kde.org/contact.php) for this and any other business inquiries.
 
@@ -72,7 +73,7 @@ _Wild_ geese are known as expert flyers. Kirogi's mascot is a farm goose with an
 
 ### Does Kirogi support [MAVLink](https://en.wikipedia.org/wiki/MAVLink)?
 
-Not yet. MAVLink support for both manual control and flight plans is planned for future versions.
+Support for the [MAVLink](https://en.wikipedia.org/wiki/MAVLink) protocol is in early development, enabling control of many drones natively speaking this protocol. To build with MAVLink support, the upstream library needs to be installed or the `MAVLINK_INCLUDE_DIR` environment variable defined.
 
 ### What technology does Kirogi use?
 
