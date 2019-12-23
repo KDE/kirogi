@@ -924,6 +924,15 @@ Kirigami.Page {
         roll: kirogi.currentVehicle ? kirogi.currentVehicle.roll * (180/Math.PI) : 0
     }
 
+    YawBar {
+        id: yawBar
+
+        tickWidth: 10
+        anchors.left: leftDPad.horizontalCenter
+        anchors.right: rightDPad.horizontalCenter
+        anchors.bottom: parent.bottom
+    }
+
     VehicleActionsDrawer {
         enabled: kirogi.currentPage == page // FIXME TODO: Why doesn't come down from page.enabled?
 
