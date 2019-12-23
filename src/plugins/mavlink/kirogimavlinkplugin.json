@@ -3,35 +3,12 @@
         "Authors": [
             {
                 "Email": "patrickjp@kde.org",
-                "Name": "Patrick José Pereira",
-                "Name[ca]": "Patrick José Pereira",
-                "Name[cs]": "Patrick José Pereira",
-                "Name[es]": "Patrick José Pereira",
-                "Name[it]": "Patrick José Pereira",
-                "Name[nl]": "Patrick José Pereira",
-                "Name[pl]": "Patrick José Pereira",
-                "Name[pt]": "Patrick José Pereira",
-                "Name[sk]": "Patrick José Pereira",
-                "Name[sv]": "Patrick José Pereira",
-                "Name[uk]": "Patrick José Pereira",
-                "Name[x-test]": "xxPatrick José Pereiraxx"
+                "Name": "Patrick José Pereira"
             }
         ],
         "Description": "A Kirogi plugin to support MAVLink vehicles",
-        "Description[pt]": "Um 'plugin' do Kirogi para suportar veiculos que utilizam MAVLink",
         "Icon": "uav",
         "Name": "MAVLink",
-        "Name[ca]": "MAVLink",
-        "Name[cs]": "MAVLink",
-        "Name[es]": "MAVLink",
-        "Name[it]": "MAVLink",
-        "Name[nl]": "MAVLink",
-        "Name[pl]": "MAVLink",
-        "Name[pt]": "MAVLink",
-        "Name[sk]": "MAVLink",
-        "Name[sv]": "MAVLink",
-        "Name[uk]": "MAVLink",
-        "Name[x-test]": "xxMAVLinkxx",
         "ServiceTypes": [
             "Kirogi/VehicleSupport"
         ]
