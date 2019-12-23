@@ -7,6 +7,6 @@ if (ANDROID)
     install(FILES ${fileName} DESTINATION ${KDE_INSTALL_LIBDIR})
 endif()
 
-add_subdirectory(mavlink)
+#add_subdirectory(mavlink)
 add_subdirectory(parrot)
 add_subdirectory(ryzetello)
