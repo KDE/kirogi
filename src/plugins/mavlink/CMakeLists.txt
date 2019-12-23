@@ -1,5 +1,14 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"kirogimavlinkplugin\")
 
+find_package(MAVLink)
+
+if(MAVLink_FOUND)
+    message(STATUS "MAVLink found: Kirogi will build with MAVLink integration.")
+else()
+    message(WARNING "MAVLink not found.")
+    return()
+endif()
+
 set(kirogimavlinkplugin_SRCS
     mavlinkconnection.cpp
     mavlinkplugin.cpp
@@ -17,8 +26,6 @@ kcoreaddons_add_plugin(kirogimavlinkplugin
     JSON "${CMAKE_CURRENT_SOURCE_DIR}/kirogimavlinkplugin.json"
     INSTALL_NAMESPACE "kirogi/vehiclesupport"
 )
-
-find_package(MAVLink REQUIRED)
 
 include_directories(
     ${MAVLINK_INCLUDE_DIR}
