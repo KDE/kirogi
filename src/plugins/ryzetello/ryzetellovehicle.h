@@ -18,8 +18,7 @@
  * License along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef RYZETELLOVEHICLE_H
-#define RYZETELLOVEHICLE_H
+#pragma once
 
 #include "abstractvehicle.h"
 
@@ -99,5 +98,3 @@ private:
     QThread m_connectionThread;
     RyzeTelloConnection *m_connection;
 };
-
-#endif

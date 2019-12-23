@@ -18,8 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef KIROGI_GSTREAMER_H
-#define KIROGI_GSTREAMER_H
+#pragma once
 
 #include <QObject>
 
@@ -62,5 +61,3 @@ private:
 
     QQuickWindow *m_window;
 };
-
-#endif

@@ -18,8 +18,7 @@
  * License along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef RYZETELLOPLUGIN_H
-#define RYZETELLOPLUGIN_H
+#pragma once
 
 #include "abstractvehicle.h"
 #include "vehiclesupportplugin.h"
@@ -41,5 +40,3 @@ public:
 private:
     RyzeTelloVehicle *m_vehicle;
 };
-
-#endif

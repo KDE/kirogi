@@ -18,8 +18,7 @@
  * License along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef PARROTPROTOCOL_H
-#define PARROTPROTOCOL_H
+#pragma once
 
 #include <QObject>
 
@@ -311,5 +310,3 @@ public:
     QByteArray data;
     int retry = 0; // NOTE: Setting to -1 before sending means infinite retries.
 };
-
-#endif

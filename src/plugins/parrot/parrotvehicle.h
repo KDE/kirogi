@@ -18,8 +18,7 @@
  * License along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef PARROTVEHICLE_H
-#define PARROTVEHICLE_H
+#pragma once
 
 #include "abstractvehicle.h"
 
@@ -201,5 +200,3 @@ private:
     QThread m_connectionThread;
     ParrotConnection *m_connection;
 };
-
-#endif

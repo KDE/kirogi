@@ -18,8 +18,7 @@
  * License along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef RYZETELLOCONNECTION_H
-#define RYZETELLOCONNECTION_H
+#pragma once
 
 #include <QObject>
 
@@ -79,5 +78,3 @@ private:
     qint8 m_yaw;
     qint8 m_gaz;
 };
-
-#endif

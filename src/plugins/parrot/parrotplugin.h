@@ -18,8 +18,7 @@
  * License along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef PARROTPLUGIN_H
-#define PARROTPLUGIN_H
+#pragma once
 
 #include "abstractvehicle.h"
 #include "vehiclesupportplugin.h"
@@ -52,5 +51,3 @@ private:
     KDNSSD::ServiceBrowser *m_anafiBrowser;
 #endif
 };
-
-#endif
