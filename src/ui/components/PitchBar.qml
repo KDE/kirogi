@@ -81,8 +81,8 @@ Item {
                     horizontalAlignment: Text.AlignRight
 
                     // Calculate real value.
-                    property var value: {
-                        readonly var multiplier = pitch > 0 ? Math.floor(pitch / 10) : Math.ceil(pitch / 10);
+                    readonly property var value: {
+                        var multiplier = pitch > 0 ? Math.floor(pitch / 10) : Math.ceil(pitch / 10);
                         return (index - (repeater.model - 1) / 2) + multiplier;
                     }
 
