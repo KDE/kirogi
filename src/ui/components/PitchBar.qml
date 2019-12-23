@@ -1,6 +1,6 @@
 /*
  * Copyright 2019 Eike Hein <hein@kde.org>
- *                Patrick José Pereira <patrickjp@kde.org>
+ * Copyright 2019 Patrick José Pereira <patrickjp@kde.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
