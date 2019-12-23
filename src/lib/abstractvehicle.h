@@ -18,8 +18,7 @@
  * License along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef KIROGI_ABSTRACTVEHICLE_H
-#define KIROGI_ABSTRACTVEHICLE_H
+#pragma once
 
 #include <QGeoCoordinate>
 #include <QObject>
@@ -344,5 +343,3 @@ private:
 };
 
 }
-
-#endif

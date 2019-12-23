@@ -18,8 +18,7 @@
  * License along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef KIROGI_QTQUICKPLUGIN_H
-#define KIROGI_QTQUICKPLUGIN_H
+#pragma once
 
 #include <QQmlEngine>
 #include <QQmlExtensionPlugin>
@@ -36,5 +35,3 @@ public:
 };
 
 }
-
-#endif
