@@ -170,19 +170,24 @@ void MAVLinkVehicle::processMavlinkMessage(const mavlink_message_t &message)
     }
 
     case MAVLINK_MSG_ID_GLOBAL_POSITION_INT: {
+        // Both latitude and longitude are provided in degE7
+        // Altitude is provided in mm
         mavlink_global_position_int_t global_position_int;
         mavlink_msg_global_position_int_decode(&message, &global_position_int);
 
-        // TODO: Add timer to invalidate it
-        m_gpsFix = true;
+        m_gpsFix = !(qFuzzyCompare(global_position_int.lat, 0.0) && qFuzzyCompare(global_position_int.lon, 0.0));
         emit gpsFixChanged();
 
-        m_gpsPosition = QGeoCoordinate {
-            global_position_int.lat / 1e7, // degE7
-            global_position_int.lon / 1e7, // degE7
-            global_position_int.alt / 1e3  // mm
-        };
+        if(m_gpsFix) {
+            m_gpsPosition.setLatitude(global_position_int.lat / 1e7);
+            m_gpsPosition.setLongitude(global_position_int.lon / 1e7);
+        } else {
+            // Invalidate position if there is no fix
+            m_gpsPosition.setLatitude(qQNaN());
+            m_gpsPosition.setLongitude(qQNaN());
+        }
 
+        m_gpsPosition.setAltitude(global_position_int.alt / 1e3);
         emit gpsPositionChanged();
         break;
     }
