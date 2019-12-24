@@ -931,6 +931,8 @@ Kirigami.Page {
         anchors.left: leftDPad.horizontalCenter
         anchors.right: rightDPad.horizontalCenter
         anchors.bottom: parent.bottom
+
+        yaw: kirogi.currentVehicle ? kirogi.currentVehicle.yaw * (180 / Math.PI) : 0
     }
 
     VehicleActionsDrawer {
