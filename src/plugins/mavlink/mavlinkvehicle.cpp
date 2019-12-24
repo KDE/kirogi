@@ -178,7 +178,7 @@ void MAVLinkVehicle::processMavlinkMessage(const mavlink_message_t &message)
         m_gpsFix = !(qFuzzyCompare(global_position_int.lat, 0.0) && qFuzzyCompare(global_position_int.lon, 0.0));
         emit gpsFixChanged();
 
-        if(m_gpsFix) {
+        if (m_gpsFix) {
             m_gpsPosition.setLatitude(global_position_int.lat / 1e7);
             m_gpsPosition.setLongitude(global_position_int.lon / 1e7);
         } else {
@@ -191,7 +191,7 @@ void MAVLinkVehicle::processMavlinkMessage(const mavlink_message_t &message)
         emit gpsPositionChanged();
 
         // Check if altitude message was received
-        if(!m_altitudeSource.altitudeMessage) {
+        if (!m_altitudeSource.altitudeMessage) {
             m_altitudeSource.altitude = m_gpsPosition.altitude();
             emit altitudeChanged();
         }
