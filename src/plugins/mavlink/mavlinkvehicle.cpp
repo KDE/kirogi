@@ -33,7 +33,6 @@ MAVLinkVehicle::MAVLinkVehicle(QObject *parent)
     , m_signalStrength(-1)
     , m_batteryLevel(-1)
     , m_gpsFix(false)
-    , m_altitude(0.0)
     , m_connection(nullptr)
 {
     m_connection = new MAVLinkConnection(name());
@@ -138,7 +137,8 @@ void MAVLinkVehicle::processMavlinkMessage(const mavlink_message_t &message)
         mavlink_altitude_t altitude;
         mavlink_msg_altitude_decode(&message, &altitude);
 
-        m_altitude = altitude.altitude_terrain;
+        m_altitudeSource.altitudeMessage = true;
+        m_altitudeSource.altitude = altitude.altitude_terrain;
 
         emit altitudeChanged();
         break;
@@ -184,6 +184,12 @@ void MAVLinkVehicle::processMavlinkMessage(const mavlink_message_t &message)
         };
 
         emit gpsPositionChanged();
+
+        // Check if altitude message was received
+        if(!m_altitudeSource.altitudeMessage) {
+            m_altitudeSource.altitude = m_gpsPosition.altitude();
+            emit altitudeChanged();
+        }
         break;
     }
 
@@ -363,7 +369,7 @@ bool MAVLinkVehicle::gpsSupported() const
 
 float MAVLinkVehicle::altitude() const
 {
-    return m_altitude;
+    return m_altitudeSource.altitude;
 }
 
 void MAVLinkVehicle::connectToVehicle()

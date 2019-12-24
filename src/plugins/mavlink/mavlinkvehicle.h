@@ -76,7 +76,11 @@ private:
 
     bool m_gpsFix;
     QGeoCoordinate m_gpsPosition;
-    float m_altitude;
+
+    struct {
+        bool altitudeMessage{false};
+        float altitude{0.0f};
+    } m_altitudeSource;
 
     QThread m_connectionThread;
     MAVLinkConnection *m_connection;
