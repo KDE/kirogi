@@ -37,12 +37,10 @@ Item {
 
         // Set position of ticks and values.
         x: {
-            var xPos = root.width / 2 + width / 2 - (root.width / (repeater.model * 2))
+            var middlePos = root.width / 2 + width / 2 - (root.width / (repeater.model * 2));
+            var perc = ((yaw % 15) / repeater.model) / 15;
+            var xPos = Math.round(middlePos + perc * width);
 
-            if (kirogi.ready) {
-                var perc = ((yaw % 15) / repeater.model) / 15;
-                xPos = Math.round(xPos + perc * width);
-            }
             return parent.width - xPos - 1;
         }
 

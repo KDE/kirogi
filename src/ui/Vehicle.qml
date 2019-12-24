@@ -318,7 +318,7 @@ Kirigami.Page {
                             height: width
 
                             source: {
-                                if (kirogi.ready) {
+                                if (kirogi.currentVehicle) {
                                     if (kirogi.currentVehicle.signalStrength === 0) {
                                         return "network-wireless-connected-00";
                                     } else if (kirogi.currentVehicle.signalStrength < 25) {
@@ -348,7 +348,7 @@ Kirigami.Page {
                             Layout.alignment: Qt.AlignVCenter
 
                             text: {
-                                var state = kirogi.ready ? i18n("%1%", kirogi.currentVehicle.signalStrength) : i18n("N/A");
+                                var state = kirogi.currentVehicle ? i18n("%1%", kirogi.currentVehicle.signalStrength) : i18n("N/A");
                                 return i18n("<b>Signal:</b> %1", state);
                             }
 
@@ -373,7 +373,7 @@ Kirigami.Page {
                             height: width
 
                             source: {
-                                if (kirogi.ready) {
+                                if (kirogi.currentVehicle) {
                                     var roundedBatteryLevel = Math.round(kirogi.currentVehicle.batteryLevel / 10);
                                     return "battery-" + roundedBatteryLevel.toString().padStart(2, "0") + "0";
                                 }
@@ -390,7 +390,7 @@ Kirigami.Page {
                             Layout.alignment: Qt.AlignVCenter
 
                             text: {
-                                var state = kirogi.ready ? i18n("%1%", kirogi.currentVehicle.batteryLevel) : i18n("N/A");
+                                var state = kirogi.currentVehicle ? i18n("%1%", kirogi.currentVehicle.batteryLevel) : i18n("N/A");
                                 return i18n("<b>Battery:</b> %1", state);
                             }
 

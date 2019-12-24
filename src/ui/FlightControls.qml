@@ -671,7 +671,7 @@ Kirigami.Page {
             QQC2.Label {
                 anchors.verticalCenter: parent.verticalCenter
 
-                width: kirogi.ready ? Math.round(Math.max(implicitWidth, fontMetrics.tightBoundingRect(i18n("%1 m/s", "0.0")).width))
+                width: kirogi.currentVehicle ? Math.round(Math.max(implicitWidth, fontMetrics.tightBoundingRect(i18n("%1 m/s", "0.0")).width))
                     : Math.round(implicitWidth)
 
                 color: "white"
@@ -679,7 +679,7 @@ Kirigami.Page {
                 horizontalAlignment: Text.AlignRight
 
                 text: {
-                    if (kirogi.ready) {
+                    if(kirogi.currentVehicle) {
                         return i18n("%1 m/s", kirogi.flying ? kirogi.currentVehicle.speed : "0");
                     }
 
@@ -713,8 +713,8 @@ Kirigami.Page {
                 horizontalAlignment: Text.AlignRight
 
                 text: {
-                    if (kirogi.ready) {
-                        return i18n("%1 m", kirogi.currentVehicle ? kirogi.currentVehicle.altitude.toFixed(2) : "0")
+                    if (kirogi.currentVehicle) {
+                        return i18n("%1 m", kirogi.currentVehicle.altitude.toFixed(2))
                     }
 
                     return i18n("– m");
@@ -739,7 +739,7 @@ Kirigami.Page {
             QQC2.Label {
                 anchors.verticalCenter: parent.verticalCenter
 
-                width: kirogi.ready ? Math.round(Math.max(implicitWidth, fontMetrics.tightBoundingRect(i18n("%1 m", "0.0")).width))
+                width: kirogi.currentVehicle ? Math.round(Math.max(implicitWidth, fontMetrics.tightBoundingRect(i18n("%1 m", "0.0")).width))
                     : Math.round(implicitWidth)
 
                 color: "white"
@@ -747,8 +747,7 @@ Kirigami.Page {
                 horizontalAlignment: Text.AlignRight
 
                 text: {
-                    if (kirogi.currentVehicle && kirogi.currentVehicle.distance >= 0
-                        && kirogi.ready) {
+                    if (kirogi.currentVehicle && kirogi.currentVehicle.distance >= 0) {
                         return i18n("%1 m", kirogi.currentVehicle.distance.toFixed(1));
                     }
 
@@ -801,7 +800,7 @@ Kirigami.Page {
             QQC2.Label {
                 anchors.verticalCenter: parent.verticalCenter
 
-                width: kirogi.ready ? Math.round(Math.max(implicitWidth, fontMetrics.tightBoundingRect(i18n("%1 m", "0:00")).width))
+                width: kirogi.currentVehicle ? Math.round(Math.max(implicitWidth, fontMetrics.tightBoundingRect(i18n("%1 m", "0:00")).width))
                     : Math.round(implicitWidth)
 
                 color: "white"
@@ -828,10 +827,10 @@ Kirigami.Page {
 
                 color: "white"
                 smooth: true
-                isMask: kirogi.ready
+                isMask: kirogi.currentVehicle
 
                 source: {
-                    if (kirogi.ready) {
+                    if (kirogi.currentVehicle) {
                         if (kirogi.currentVehicle.signalStrength === 0) {
                             return "network-wireless-connected-00";
                         } else if (kirogi.currentVehicle.signalStrength < 25) {
@@ -856,14 +855,14 @@ Kirigami.Page {
             QQC2.Label {
                 anchors.verticalCenter: parent.verticalCenter
 
-                width: kirogi.ready ? Math.round(Math.max(implicitWidth, fontMetrics.tightBoundingRect(i18n("%1%", 00)).width))
+                width: kirogi.currentVehicle ? Math.round(Math.max(implicitWidth, fontMetrics.tightBoundingRect(i18n("%1%", 00)).width))
                     : Math.round(implicitWidth)
 
                 color: "white"
 
                 horizontalAlignment: Text.AlignRight
 
-                text: kirogi.ready ? i18n("%1%", kirogi.currentVehicle.signalStrength) : i18n("N/A")
+                text: kirogi.currentVehicle ? i18n("%1%", kirogi.currentVehicle.signalStrength) : i18n("N/A")
             }
 
             PillBoxSeparator {}
@@ -876,10 +875,10 @@ Kirigami.Page {
 
                 color: "white"
                 smooth: true
-                isMask: kirogi.ready
+                isMask: kirogi.currentVehicle
 
                 source: {
-                    if (kirogi.ready) {
+                    if (kirogi.currentVehicle) {
                         var roundedBatteryLevel = Math.round(kirogi.currentVehicle.batteryLevel / 10);
                         return "battery-" + roundedBatteryLevel.toString().padStart(2, "0") + "0";
                     }
@@ -891,14 +890,14 @@ Kirigami.Page {
             QQC2.Label {
                 anchors.verticalCenter: parent.verticalCenter
 
-                width: kirogi.ready ? Math.round(Math.max(implicitWidth, fontMetrics.tightBoundingRect(i18n("%1%", 00)).width))
+                width: kirogi.currentVehicle ? Math.round(Math.max(implicitWidth, fontMetrics.tightBoundingRect(i18n("%1%", 00)).width))
                     : Math.round(implicitWidth)
 
                 color: "white"
 
                 horizontalAlignment: Text.AlignRight
 
-                text: kirogi.ready ?  i18n("%1%", kirogi.currentVehicle.batteryLevel) : i18n("N/A")
+                text: kirogi.currentVehicle ?  i18n("%1%", kirogi.currentVehicle.batteryLevel) : i18n("N/A")
             }
         }
     }
