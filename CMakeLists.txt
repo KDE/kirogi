@@ -43,6 +43,9 @@ add_feature_info(BUILD_PLUGINS BUILD_PLUGINS "Build the Kirogi plugins.")
 option(COMPILE_QML "Pre-compile QML files using the Qt Quick compiler." FALSE)
 add_feature_info(COMPILE_QML COMPILE_QML "Pre-compile QML files using the Qt Quick compiler.")
 
+option(DEBUG_QML "Compile Kirogi with QML profiller." FALSE)
+add_feature_info(DEBUG_QML DEBUG_QML "Compile Kirogi with QML profiller.")
+
 if (BUILD_APP)
     if(NOT ANDROID)
         set(qtDesktopComponents "Widgets")
@@ -139,6 +142,13 @@ if(COMPILE_QML)
         DESCRIPTION "Pre-compile QML files using the Qt Quick compiler."
         TYPE OPTIONAL
     )
+endif()
+
+if(DEBUG_QML)
+    message(STATUS "It's necessary to run Kirogi with the following argument '-qmljsdebugger=port:1234' to enable the QML debugger.")
+    add_definitions(-DQMLJSDEBUGGER)
+    add_definitions(-DQT_DECLARATIVE_DEBUG)
+    add_definitions(-DQT_QML_DEBUG)
 endif()
 
 add_definitions(
