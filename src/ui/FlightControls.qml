@@ -930,7 +930,7 @@ Kirigami.Page {
         tickWidth: 10
         anchors.left: leftDPad.horizontalCenter
         anchors.right: rightDPad.horizontalCenter
-        anchors.bottom: parent.bottom
+        anchors.bottom: inputMode.visible ? inputMode.top : parent.bottom
 
         yaw: kirogi.currentVehicle ? kirogi.currentVehicle.yaw * (180 / Math.PI) : 0
     }
