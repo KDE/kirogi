@@ -78,8 +78,8 @@ private:
     QGeoCoordinate m_gpsPosition;
 
     struct {
-        bool altitudeMessage{false};
-        float altitude{0.0f};
+        bool altitudeMessage {false};
+        float altitude {0.0f};
     } m_altitudeSource;
 
     QThread m_connectionThread;
