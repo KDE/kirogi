@@ -37,12 +37,9 @@ Item {
 
         // Calculate position based in the pitch value.
         y: {
-            var yPos = parent.height / 2 + height / 2;
-
-            if (kirogi.ready) {
-                var perc = ((pitch % 10) / repeater.model) / 10;
-                yPos = Math.round(yPos + perc * height);
-            }
+            var middlePos = parent.height / 2 + height / 2;
+            var perc = ((pitch % 10) / repeater.model) / 10;
+            var yPos = Math.round(middlePos + perc * height);
 
             return (parent.height - yPos);
         }
