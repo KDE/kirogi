@@ -101,5 +101,4 @@ void MAVLinkConnection::initSockets()
     }
 
     emit stateChanged(Kirogi::AbstractVehicle::Connecting);
-    emit stateChanged(Kirogi::AbstractVehicle::Connected);
 }
