@@ -22,7 +22,7 @@ void PositionSource::createPositionSource()
 
     qCDebug(POSITIONSOURCE) << "New position source:" << m_geoPositionSource->sourceName();
 
-    // Set the update interval to 3s
+    // Set the update interval to 3s.
     m_geoPositionSource->setUpdateInterval(3000);
     m_geoPositionSource->setPreferredPositioningMethods(QGeoPositionInfoSource::SatellitePositioningMethods);
     m_geoPositionSource->startUpdates();
