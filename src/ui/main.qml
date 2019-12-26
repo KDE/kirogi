@@ -41,7 +41,28 @@ Kirigami.ApplicationWindow {
     property var currentPage: pageStack.currentItem
     property alias currentPlugin: pluginModel.currentPlugin
     property alias currentPluginName: pluginModel.currentPluginName
-    property alias position: gpsPosition._lastKnownCoordinate
+
+    readonly property var position: Kirogi.PositionSource.coordinate
+    readonly property real distance: {
+        if (!position || !position.isValid) {
+            return 0.0;
+        }
+
+        // If currentVehicle is null or there is no valid position
+        // set distance to zero.
+        if (!currentVehicle || !currentVehicle.gpsPosition.isValid) {
+            return 0.0;
+        }
+
+        return position.distanceTo(currentVehicle.gpsPosition);
+    }
+
+    onPositionChanged: {
+        // Position via internet IP does not provide a valid altitude.
+        if (position.isValid && currentVehicle) {
+            currentVehicle.setControllerGpsPosition(position)
+        }
+    }
 
     pageStack.interactive: false
     pageStack.defaultColumnWidth: width
@@ -171,46 +192,6 @@ Kirigami.ApplicationWindow {
         }
     }
 
-    PositionSource {
-        id: gpsPosition
-
-        readonly property real distance: {
-            if (!valid || !active) {
-                return 0.0;
-            }
-
-            if (!_lastKnownCoordinate || !_lastKnownCoordinate.isValid) {
-                return 0.0;
-            }
-
-            // If currentVehicle is null or there is no valid position
-            // set distance to zero.
-            if (!currentVehicle || !currentVehicle.gpsPosition.isValid) {
-                return 0.0;
-            }
-
-            return _lastKnownCoordinate.distanceTo(currentVehicle.gpsPosition);
-        }
-
-        property var _lastKnownCoordinate: null
-
-        active: kirogiSettings.allowLocationRequests && locationPermissions.granted
-        updateInterval: 5000
-
-        preferredPositioningMethods: PositionSource.SatellitePositioningMethods
-
-        onPositionChanged: {
-            // Position via internet IP does not provide a valid altitude.
-            if (position.latitudeValid && position.longitudeValid) {
-                _lastKnownCoordinate = position.coordinate
-
-                if(currentVehicle) {
-                    currentVehicle.setControllerGpsPosition(_lastKnownCoordinate)
-                }
-            }
-        }
-    }
-
     FontMetrics {
         id: fontMetrics
     }
@@ -267,5 +248,6 @@ Kirigami.ApplicationWindow {
     Component.onCompleted: {
         switchApplicationPage(kirogiSettings.flying ? flightControlsPage : vehiclePage);
         resetPersistentFlyingStateTimer.start();
+        Kirogi.PositionSource.enabled = Qt.binding(function() { return kirogiSettings.allowLocationRequests && locationPermissions.granted });
     }
 }
