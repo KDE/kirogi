@@ -751,8 +751,8 @@ Kirigami.Page {
                         return i18n("%1 m", kirogi.currentVehicle.distance.toFixed(1));
                     }
 
-                    if (gpsPosition.distance !== 0) {
-                        return i18n("%1 m", gpsPosition.distance.toFixed(1));
+                    if (kirogi.distance !== 0) {
+                        return i18n("%1 m", kirogi.distance.toFixed(1));
                     }
 
                     return i18n("– m");

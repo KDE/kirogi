@@ -24,6 +24,8 @@
 #include "vehiclesupportplugin.h"
 #include "vehiclesupportpluginmodel.h"
 
+#include "positionsource/positionsource.h"
+
 #include <QQmlEngine>
 
 namespace Kirogi
@@ -35,6 +37,7 @@ void QtQuickPlugin::registerTypes(const char *uri)
     qmlRegisterUncreatableType<AbstractVehicle>(uri, 0, 1, "AbstractVehicle", "AbstractVehicle cannot be created from QML.");
 
     qmlRegisterType<VehicleSupportPluginModel>(uri, 0, 1, "VehicleSupportPluginModel");
-}
 
+    qmlRegisterSingletonType<PositionSource>(uri, 0, 1, "PositionSource", PositionSource::qmlSingletonRegister);
+}
 }

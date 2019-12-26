@@ -25,6 +25,8 @@ ecm_generate_headers(Kirogi_CamelCase_HEADERS
     PREFIX kirogi
 )
 
+add_subdirectory(positionsource)
+
 add_library(kirogicore SHARED ${kirogicore_SRCS} ${Kirogi_HEADERS})
 add_library(KirogiCore ALIAS kirogicore)
 
@@ -41,6 +43,7 @@ target_link_libraries(kirogicore
         Qt5::Qml
         Qt5::Quick
         KF5::CoreAddons
+        positionsource
 )
 
 set_target_properties(kirogicore
@@ -98,7 +101,9 @@ target_link_libraries(kirogiqtquickplugin
     Qt5::Positioning
     Qt5::Qml
     Qt5::Quick
-    KirogiCore)
+    KirogiCore
+    positionsource
+    )
 
 install(TARGETS kirogiqtquickplugin DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/kirogi)
 install(FILES qmldir DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/kirogi)
