@@ -45,6 +45,7 @@ target_link_libraries(kirogimavlinkplugin
         KF5::CoreAddons
         KF5::I18n
         KirogiCore
+        vehicleparameters
 )
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
