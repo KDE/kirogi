@@ -26,6 +26,8 @@
 
 #include "kirogicore_export.h"
 
+class ParameterModel;
+
 namespace Kirogi
 {
 class KIROGI_EXPORT AbstractVehicle : public QObject
@@ -108,6 +110,8 @@ class KIROGI_EXPORT AbstractVehicle : public QObject
 
     Q_PROPERTY(quint16 numberOfFlights READ numberOfFlights NOTIFY numberOfFlightsChanged)
     Q_PROPERTY(quint16 lastFlightDuration READ lastFlightDuration NOTIFY lastFlightDurationChanged)
+
+    Q_PROPERTY(ParameterModel *parameters READ parameters NOTIFY parametersChanged)
 
 public:
     enum VehicleType { UnknownVehicleType = 0, QuadCopter = 1 };
@@ -263,6 +267,8 @@ public:
     virtual quint16 numberOfFlights() const;
     virtual quint16 lastFlightDuration() const;
 
+    ParameterModel *parameters();
+
 Q_SIGNALS:
     void nameChanged() const;
     void iconNameChanged() const;
@@ -332,6 +338,8 @@ Q_SIGNALS:
 
     void numberOfFlightsChanged() const;
     void lastFlightDurationChanged() const;
+
+    void parametersChanged() const;
 
 protected Q_SLOTS:
     virtual void setConnectionState(ConnectionState state);

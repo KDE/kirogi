@@ -20,6 +20,7 @@
 
 #include "abstractvehicle.h"
 #include "debug.h"
+#include "parametermodel.h"
 
 #include <QElapsedTimer>
 #include <QTimer>
@@ -39,6 +40,8 @@ public:
 
     QElapsedTimer *flightTime = nullptr;
     QTimer *flightTimeTimer = nullptr;
+
+    ParameterModel parameters;
 
 private:
     AbstractVehicle *q;
@@ -501,6 +504,11 @@ quint16 AbstractVehicle::numberOfFlights() const
 quint16 AbstractVehicle::lastFlightDuration() const
 {
     return 0;
+}
+
+ParameterModel *AbstractVehicle::parameters()
+{
+    return &d->parameters;
 }
 
 }
