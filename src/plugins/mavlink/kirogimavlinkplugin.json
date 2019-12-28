@@ -9,6 +9,7 @@
                 "Name[it]": "Patrick José Pereira",
                 "Name[nl]": "Patrick José Pereira",
                 "Name[pt]": "Patrick José Pereira",
+                "Name[sv]": "Patrick José Pereira",
                 "Name[uk]": "Patrick José Pereira",
                 "Name[x-test]": "xxPatrick José Pereiraxx"
             }
@@ -19,6 +20,7 @@
         "Description[it]": "Un'estensione di Kirogi per supportare i veicoli MAVLink",
         "Description[nl]": "Een Kirogi plug-in om MAVLink voertuigen te ondersteunen",
         "Description[pt]": "Um 'plugin' do Kirogi para suportar os veículos MAVLink",
+        "Description[sv]": "Ett Kirogi insticksprogram för att stödja MAVLink-fordon",
         "Description[uk]": "Додаток до Kirogi для підтримки машин MAVLink",
         "Description[x-test]": "xxA Kirogi plugin to support MAVLink vehiclesxx",
         "Icon": "uav",
@@ -28,6 +30,7 @@
         "Name[it]": "MAVLink",
         "Name[nl]": "MAVLink",
         "Name[pt]": "MAVLink",
+        "Name[sv]": "MAVLink",
         "Name[uk]": "MAVLink",
         "Name[x-test]": "xxMAVLinkxx",
         "ServiceTypes": [
