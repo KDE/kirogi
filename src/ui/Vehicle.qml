@@ -58,10 +58,10 @@ Kirigami.Page {
 
             height: Math.max(implicitHeight, Kirigami.Units.iconSizes.medium)
 
-            supportsMouseEvents: model.Status == Kirogi.VehicleSupportPluginModel.PluginNotLoaded
+            supportsMouseEvents: model.status == Kirogi.VehicleSupportPluginModel.PluginNotLoaded
 
             reserveSpaceForIcon: kirogi.currentPlugin
-            icon: model.Status == Kirogi.VehicleSupportPluginModel.PluginLoaded ? "emblem-default-symbolic" : ""
+            icon: model.status == Kirogi.VehicleSupportPluginModel.PluginLoaded ? "emblem-default-symbolic" : ""
 
             label: model.display
 
