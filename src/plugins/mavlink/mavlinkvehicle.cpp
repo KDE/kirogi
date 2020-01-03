@@ -20,6 +20,7 @@
 
 #include "mavlinkvehicle.h"
 #include "debug.h"
+#include "parametermodel.h"
 
 #include <QDataStream>
 #include <QDateTime>
@@ -40,9 +41,12 @@ MAVLinkVehicle::MAVLinkVehicle(QObject *parent)
     // Queued connections across thread boundaries.
     QObject::connect(m_connection, &MAVLinkConnection::stateChanged, this, &MAVLinkVehicle::setConnectionState, Qt::QueuedConnection);
 
+    // Request vehicle parameters if we are in connected state.
+    QObject::connect(this, &MAVLinkVehicle::connectionStateChanged, this, &MAVLinkVehicle::fetchParameters, Qt::QueuedConnection);
+
     QObject::connect(m_connection, &MAVLinkConnection::mavlinkMessage, this, &MAVLinkVehicle::processMavlinkMessage);
 
-    // Do the networking on a seperate thread, so our fixed-tick work never gets
+    // Do the networking on a separate thread, so our fixed-tick work never gets
     // blocked by activity on the main thread.
     m_connection->moveToThread(&m_connectionThread);
     QObject::connect(&m_connectionThread, &QThread::finished, m_connection, &QObject::deleteLater);
@@ -196,6 +200,17 @@ void MAVLinkVehicle::processMavlinkMessage(const mavlink_message_t &message)
             emit altitudeChanged();
         }
         break;
+    }
+
+    case MAVLINK_MSG_ID_PARAM_VALUE: {
+        mavlink_param_value_t param_value;
+        mavlink_msg_param_value_decode(&message, &param_value);
+
+        parameters()->update({
+            {ParameterModel::Roles::Name, QString(param_value.param_id)},
+            {ParameterModel::Roles::Value, static_cast<float>(param_value.param_value)},
+            {ParameterModel::Roles::Index, static_cast<int>(param_value.param_index)},
+        });
     }
 
     default: {
@@ -399,6 +414,23 @@ void MAVLinkVehicle::connectToVehicle()
             connectToVehicle();
         }
     });
+}
+
+void MAVLinkVehicle::fetchParameters() const
+{
+    // We need to handle this in a different way to ensure that we are going to receive all parameters.
+    static bool requested = false;
+    if (connectionState() < Kirogi::AbstractVehicle::ConnectionState::Connected || requested) {
+        return;
+    }
+    requested = true;
+
+    mavlink_message_t message;
+    mavlink_param_request_list_t param_request_list;
+    param_request_list.target_system = 1;
+    param_request_list.target_component = 1;
+    mavlink_msg_param_request_list_encode(255, MAV_COMP_ID_MISSIONPLANNER, &message, &param_request_list);
+    m_connection->sendMessage(message);
 }
 
 QString MAVLinkVehicle::videoSource() const

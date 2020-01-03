@@ -101,8 +101,13 @@ QHash<int, QByteArray> VehicleSupportPluginModel::roleNames() const
 
     QMetaEnum e = metaObject()->enumerator(metaObject()->indexOfEnumerator("AdditionalRoles"));
 
+    auto desCapitalize = [](const char *input) -> QByteArray {
+        QByteArray array(input);
+        return array.left(1).toLower() + array.mid(1);
+    };
+
     for (int i = 0; i < e.keyCount(); ++i) {
-        roles.insert(e.value(i), e.key(i));
+        roles.insert(e.value(i), desCapitalize(e.key(i)));
     }
 
     return roles;

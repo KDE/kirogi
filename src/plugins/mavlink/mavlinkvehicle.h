@@ -64,6 +64,7 @@ public Q_SLOTS:
     void connectToVehicle();
 
 private Q_SLOTS:
+    void fetchParameters() const;
     void processMavlinkMessage(const mavlink_message_t &message);
 
 private:
