@@ -132,16 +132,20 @@ void GStreamerIntegration::updateGstPipeline()
 
     // If we fail to build the pipeline, we also fail to load the qml gst plugin
     // and the entire application will crash after that
-    m_gstPipeline = gst_parse_launch(pipeline.toLatin1().data(), NULL);
-    Q_ASSERT_X(m_gstPipeline, "gstreamer pipeline", QStringLiteral("Not possible to build pipeline: %0").arg(pipeline).toStdString().c_str());
+    GError *error = nullptr;
+    m_gstPipeline = gst_parse_launch(pipeline.toLatin1().data(), &error);
+    Q_ASSERT_X(m_gstPipeline, "gstreamer pipeline", QStringLiteral("%0 with pieline: %1").arg(error->message).arg(pipeline).toStdString().c_str());
 
     GstElement *sink = gst_bin_get_by_name(GST_BIN(m_gstPipeline), "sink");
 
     if (m_window) {
-        g_object_set(sink, "widget", m_window->findChild<QQuickItem *>("videoOutput"), NULL);
+        auto videoOutput = m_window->findChild<QQuickItem *>("videoOutput");
+        if (videoOutput) {
+            g_object_set(sink, "widget", videoOutput, NULL);
 
-        if (m_playing) {
-            m_window->scheduleRenderJob(new SetPlaying(m_gstPipeline), QQuickWindow::BeforeSynchronizingStage);
+            if (m_playing) {
+                m_window->scheduleRenderJob(new SetPlaying(m_gstPipeline), QQuickWindow::BeforeSynchronizingStage);
+            }
         }
     }
 
