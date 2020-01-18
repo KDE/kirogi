@@ -63,11 +63,6 @@ MAVLinkVehicle::~MAVLinkVehicle()
 
 void MAVLinkVehicle::processMavlinkMessage(const mavlink_message_t &message)
 {
-    if (message.sysid == 255) {
-        // GSC sysid
-        return;
-    }
-
     switch (message.msgid) {
     case MAVLINK_MSG_ID_HEARTBEAT: {
         mavlink_heartbeat_t heartbeat;
