@@ -54,6 +54,7 @@ void ParameterModel::initializeRoleNames()
 
 void ParameterModel::loadDescriptionFile(const QString &path)
 {
+    Q_UNUSED(path)
     // TODO: Deal with description files.
 }
 
