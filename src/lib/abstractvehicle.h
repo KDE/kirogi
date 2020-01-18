@@ -247,7 +247,7 @@ public:
     virtual QGeoCoordinate gpsPosition() const;
     virtual float distance() const;
     virtual float altitude() const;
-    virtual void setControllerGpsPosition(const QGeoCoordinate &position);
+    Q_INVOKABLE virtual void setControllerGpsPosition(const QGeoCoordinate &position);
     Q_INVOKABLE virtual void requestReturnHome();
 
     virtual float speed() const;
