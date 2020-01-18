@@ -77,7 +77,10 @@ void MAVLinkConnection::receiveData()
             const QByteArray &data = datagram.data();
             for (const auto &byte : data) {
                 if (mavlink_parse_char(0, byte, &message, &status)) {
-                    emit mavlinkMessage(message);
+                    // GSC sysid
+                    if (message.sysid != 255) {
+                        emit mavlinkMessage(message);
+                    }
                 }
             }
         }
