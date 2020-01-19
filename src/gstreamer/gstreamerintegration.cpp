@@ -130,8 +130,8 @@ void GStreamerIntegration::updateGstPipeline()
         gst_object_unref(m_gstPipeline);
     }
 
-    // If we fail to build the pipeline, we also fail to load the qml gst plugin
-    // and the entire application will crash after that
+    // If we fail to build the pipeline, we also fail to load the QML gst plugin
+    // and the entire application will crash after that.
     GError *error = nullptr;
     m_gstPipeline = gst_parse_launch(pipeline.toLatin1().data(), &error);
     Q_ASSERT_X(m_gstPipeline, "gstreamer pipeline", QStringLiteral("%0 with pieline: %1").arg(error->message).arg(pipeline).toStdString().c_str());
