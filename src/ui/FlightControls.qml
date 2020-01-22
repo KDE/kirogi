@@ -25,7 +25,7 @@ import org.kde.kirigami 2.6 as Kirigami
 
 import org.freedesktop.gstreamer.GLVideoItem 1.0
 
-import org.kde.kirogi 0.1 as Kirogi
+import org.kde.kirogi 1.0 as Kirogi
 
 Kirigami.Page {
     id: page
@@ -80,27 +80,36 @@ Kirigami.Page {
             target: kirogi
 
             onCurrentVehicleChanged: {
-                videoPlayer.playing = kirogi.currentVehicle != null;
+                videoSurface.playing = kirogi.currentVehicle != null;
             }
 
             onCurrentPageChanged: {
-                videoPlayer.playing = (kirogi.currentPage == page || kirogi.currentVehicle);
+                videoSurface.playing = (kirogi.currentPage == page || kirogi.currentVehicle);
             }
         }
 
         Binding {
-            target: videoPlayer
+            target: videoReceiver
             property: "pipeline"
             value: kirogi.currentVehicle ? kirogi.currentVehicle.videoSource : ""
         }
 
+        Kirogi.VideoReceiver {
+            id: videoReceiver
+        }
+
+        Kirogi.VideoSurface {
+            id: videoSurface
+            videoItem: video
+            videoReceiver: videoReceiver
+        }
+
         GstGLVideoItem {
+            id: video
             anchors.centerIn: parent
 
             width: parent.width
             height: parent.width/1.77 // FIXME: Work with non-16:9 videos.
-
-            objectName: "videoOutput"
         }
 
         Rectangle {
@@ -954,6 +963,4 @@ Kirigami.Page {
         // Android (blocking multi-tasking) that need to be investigated.
         active: !Kirigami.Settings.isMobile
     }
-
-    Component.onCompleted: videoPlayer.playing = kirogiSettings.flying
 }

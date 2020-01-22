@@ -666,9 +666,9 @@ QString ParrotVehicle::videoSource() const
 {
     if (videoStreamEnabled()) {
         if (m_type == Bebop2) {
-            return QLatin1String("udpsrc port=55004 ! application/x-rtp, clock-rate=90000,payload=96 ! rtph264depay ! video/x-h264 ! queue ! h264parse ! decodebin ! glupload ! glcolorconvert ! qmlglsink name=sink");
+            return QLatin1String("udpsrc port=55004 ! application/x-rtp, clock-rate=90000,payload=96 ! rtph264depay ! video/x-h264 ! queue ! h264parse ! decodebin !");
         } else if (m_type == Anafi) {
-            return QLatin1String("rtspsrc location=rtsp://192.168.42.1/live latency=5 ! rtph264depay ! video/x-h264 ! queue ! h264parse ! decodebin ! glupload ! glcolorconvert ! qmlglsink name=sink");
+            return QLatin1String("rtspsrc location=rtsp://192.168.42.1/live latency=5 ! rtph264depay ! video/x-h264 ! queue ! h264parse ! decodebin !");
         }
     }
 

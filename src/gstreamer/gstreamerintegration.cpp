@@ -19,48 +19,27 @@
  */
 
 #include "gstreamerintegration.h"
+#include "videosurface.h"
 
 #include <QQuickItem>
 #include <QQuickWindow>
 #include <QRunnable>
+#include <QStandardPaths>
+#include <QDateTime>
 
-class SetPlaying : public QRunnable
-{
-public:
-    SetPlaying(GstElement *);
-    ~SetPlaying();
+#include <gst/gst.h>
+#include <gst/gstsample.h>
+#include <gst/gstcaps.h>
 
-    void run() override;
 
-private:
-    GstElement *m_pipeline;
-};
-
-SetPlaying::SetPlaying(GstElement *pipeline)
-{
-    m_pipeline = pipeline ? static_cast<GstElement *>(gst_object_ref(pipeline)) : NULL;
-}
-
-SetPlaying::~SetPlaying()
-{
-    if (m_pipeline) {
-        gst_object_unref(m_pipeline);
-    }
-}
-
-void SetPlaying::run()
-{
-    if (m_pipeline) {
-        gst_element_set_state(m_pipeline, GST_STATE_PLAYING);
-    }
-}
+Q_LOGGING_CATEGORY(videoLogging, "kirogi.videosuppoert.gstreamerintegration")
 
 GStreamerIntegration::GStreamerIntegration(QObject *parent)
     : QObject(parent)
     , m_playing(false)
     , m_gstPipeline(nullptr)
+    , m_videoSink(nullptr)
     , m_fallback(true)
-    , m_window(nullptr)
 {
     updateGstPipeline();
 }
@@ -69,7 +48,6 @@ GStreamerIntegration::~GStreamerIntegration()
 {
     if (m_gstPipeline) {
         gst_element_set_state(m_gstPipeline, GST_STATE_NULL);
-        gst_object_unref(m_gstPipeline);
     }
 }
 
@@ -91,39 +69,34 @@ void GStreamerIntegration::setPlaying(bool playing)
             updateGstPipeline();
         }
 
-        emit playingChanged();
+        Q_EMIT playingChanged();
     }
 }
 
-QString GStreamerIntegration::pipeline() const
+QString GStreamerIntegration::stringPipeline() const
 {
-    return m_pipeline;
+    return m_stringPipeline;
 }
 
-void GStreamerIntegration::setPipeline(const QString &pipeline)
+void GStreamerIntegration::setStringPipeline(const QString &pipeline)
 {
-    if (m_pipeline != pipeline) {
-        m_pipeline = pipeline;
+    if (m_stringPipeline != pipeline) {
+        m_stringPipeline = pipeline;
 
         updateGstPipeline();
 
-        emit pipelineChanged();
+        Q_EMIT stringPipelineChanged();
     }
-}
-
-void GStreamerIntegration::setWindow(QQuickWindow *window)
-{
-    m_window = window;
-    updateGstPipeline();
 }
 
 void GStreamerIntegration::updateGstPipeline()
 {
-    QString pipeline = m_pipeline;
+    QString pipeline = m_stringPipeline;
 
     if (pipeline.isEmpty()) {
-        pipeline = QLatin1String("videotestsrc pattern=snow ! video/x-raw,width=800,height=450 ! glupload ! qmlglsink name=sink");
+        pipeline = QLatin1String("videotestsrc pattern=snow ! video/x-raw,width=800,height=450 !");
     }
+    pipeline += QStringLiteral("glupload ! glcolorconvert ! qmlglsink name=sink");
 
     if (m_gstPipeline) {
         gst_element_set_state(m_gstPipeline, GST_STATE_NULL);
@@ -136,18 +109,22 @@ void GStreamerIntegration::updateGstPipeline()
     m_gstPipeline = gst_parse_launch(pipeline.toLatin1().data(), &error);
     Q_ASSERT_X(m_gstPipeline, "gstreamer pipeline", QStringLiteral("%0 with pieline: %1").arg(error->message).arg(pipeline).toStdString().c_str());
 
-    GstElement *sink = gst_bin_get_by_name(GST_BIN(m_gstPipeline), "sink");
+    m_videoSink = gst_bin_get_by_name(GST_BIN(m_gstPipeline), "sink");
+    Q_ASSERT_X(m_videoSink, "gstreamer video sink", "Could not retrieve the video sink.");
 
-    if (m_window) {
-        auto videoOutput = m_window->findChild<QQuickItem *>("videoOutput");
-        if (videoOutput) {
-            g_object_set(sink, "widget", videoOutput, NULL);
+}
 
-            if (m_playing) {
-                m_window->scheduleRenderJob(new SetPlaying(m_gstPipeline), QQuickWindow::BeforeSynchronizingStage);
-            }
-        }
-    }
+void GStreamerIntegration::init()
+{
+    // GStreamer needs the sink to be created before any Qml elements
+    // so that the Qml elements are registered in the system. so we create
+    // and free it.
+    GstElement *sink = gst_element_factory_make ("qmlglsink", nullptr);
+    Q_ASSERT_X(sink, "Video Initialization", "Could not find the Qml Gl Sink GStreamer Plugin, please check your installation.");
 
     gst_object_unref(sink);
+
+    qmlRegisterType<GStreamerIntegration> ("org.kde.kirogi", 1, 0, "VideoReceiver");
+    qmlRegisterType<VideoSurface> ("org.kde.kirogi", 1, 0, "VideoSurface");
 }
+

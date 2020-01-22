@@ -436,8 +436,5 @@ QString MAVLinkVehicle::videoSource() const
         "video/x-h264 ! "
         "queue ! "
         "h264parse ! "
-        "decodebin ! "
-        "glupload ! "
-        "glcolorconvert ! "
-        "qmlglsink name=sink");
+        "decodebin ! ");
 }

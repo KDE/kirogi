@@ -54,6 +54,7 @@ int main(int argc, char *argv[])
 
 #ifndef Q_OS_ANDROID
     gst_init(&argc, &argv);
+    GStreamerIntegration::init();
 #else
     if (!gst_qt_android_init(NULL)) {
         return -1;
@@ -122,10 +123,6 @@ int main(int argc, char *argv[])
 
     engine.rootContext()->setContextProperty(QStringLiteral("kirogiSettings"), Settings::self());
 
-    // Initialize video stack.
-    GStreamerIntegration *videoPlayer = new GStreamerIntegration(&app);
-    engine.rootContext()->setContextProperty(QStringLiteral("videoPlayer"), QVariant::fromValue(videoPlayer));
-
     engine.rootContext()->setContextProperty(QStringLiteral("locationPermissions"),
                                              QVariant::fromValue(new Permissions({QStringLiteral("android.permission.ACCESS_COARSE_LOCATION"), QStringLiteral("android.permission.ACCESS_FINE_LOCATION")}, &app)));
 
@@ -133,23 +130,13 @@ int main(int argc, char *argv[])
 
     if (engine.rootObjects().isEmpty()) {
         qCritical() << "Application failed to load.";
-
-        gst_deinit();
-
         return -1;
     }
-
-    videoPlayer->setWindow(qobject_cast<QQuickWindow *>(engine.rootObjects().first()));
 
 #ifdef Q_OS_ANDROID
     QtAndroid::hideSplashScreen();
 #endif
 
     ret = app.exec();
-
-    delete videoPlayer;
-
-    gst_deinit();
-
     return ret;
 }

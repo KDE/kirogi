@@ -21,6 +21,7 @@
 #pragma once
 
 #include <QObject>
+#include <QLoggingCategory>
 
 #include <gst/gst.h>
 
@@ -31,7 +32,7 @@ class GStreamerIntegration : public QObject
     Q_OBJECT
 
     Q_PROPERTY(bool playing READ playing WRITE setPlaying NOTIFY playingChanged)
-    Q_PROPERTY(QString pipeline READ pipeline WRITE setPipeline NOTIFY pipelineChanged)
+    Q_PROPERTY(QString stringPipeline READ stringPipeline WRITE setStringPipeline NOTIFY stringPipelineChanged)
 
 public:
     explicit GStreamerIntegration(QObject *parent = nullptr);
@@ -40,24 +41,27 @@ public:
     bool playing() const;
     void setPlaying(bool playing);
 
-    QString pipeline() const;
-    void setPipeline(const QString &pipeline);
+    QString stringPipeline() const;
+    void setStringPipeline(const QString &pipeline);
+    static void init();
 
-    void setWindow(QQuickWindow *window);
+    GstElement *videoSink() const { return m_videoSink; }
+    GstElement *pipeline() const { return m_gstPipeline; }
 
 Q_SIGNALS:
     void playingChanged() const;
-    void pipelineChanged() const;
+    void stringPipelineChanged() const;
 
 private:
     void updateGstPipeline();
 
     bool m_playing;
 
-    QString m_pipeline;
+    QString m_stringPipeline;
     GstElement *m_gstPipeline;
+    GstElement *m_videoSink;
 
     bool m_fallback;
-
-    QQuickWindow *m_window;
 };
+
+Q_DECLARE_LOGGING_CATEGORY(videoLogging)
