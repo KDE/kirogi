@@ -34,6 +34,20 @@
 
 Q_LOGGING_CATEGORY(videoLogging, "kirogi.videosuppoert.gstreamerintegration")
 
+namespace
+{
+    int pipelineWatcher(GstBus *bus, GstMessage *message, gpointer user_data)
+    {
+        Q_UNUSED(bus)
+        auto videoController = qobject_cast<GStreamerIntegration*>(static_cast<QObject*>(user_data));
+        if(videoController) {
+            videoController->processPipelineMessage(message);
+        }
+        return G_SOURCE_CONTINUE;
+    }
+
+}
+
 GStreamerIntegration::GStreamerIntegration(QObject *parent)
     : QObject(parent)
     , m_playing(false)
@@ -112,6 +126,8 @@ void GStreamerIntegration::updateGstPipeline()
     m_videoSink = gst_bin_get_by_name(GST_BIN(m_gstPipeline), "sink");
     Q_ASSERT_X(m_videoSink, "gstreamer video sink", "Could not retrieve the video sink.");
 
+    // Add watcher in pipeline to detect and notify if any problem is detected
+    gst_bus_add_watch(gst_pipeline_get_bus(GST_PIPELINE(m_gstPipeline)), &pipelineWatcher, this);
 }
 
 void GStreamerIntegration::takeSnapshot()
@@ -169,6 +185,43 @@ void GStreamerIntegration::takeSnapshot()
         qCDebug(videoLogging) << "Error saving image in" << savePath << "please verify your access rights";
     }
 }
+
+void GStreamerIntegration::processPipelineMessage(GstMessage* message)
+{
+    QString string;
+    GError *gerror = nullptr;
+
+    switch(message->type)
+    {
+        case GST_MESSAGE_ERROR:
+            gst_message_parse_error(message, &gerror, nullptr);
+            string = gerror->message;
+            break;
+
+        case GST_MESSAGE_WARNING:
+            gst_message_parse_warning(message, &gerror, nullptr);
+            string = gerror->message;
+            break;
+
+        case GST_MESSAGE_INFO:
+            gst_message_parse_info(message, &gerror, nullptr);
+            string = gerror->message;
+            break;
+
+        default:
+            break;
+    }
+
+    if(!string.isEmpty()) {
+        qCDebug(videoLogging) << "From:" << GST_MESSAGE_SRC_NAME(message) << "event type"
+                 << GST_MESSAGE_TYPE_NAME(message) << "happened with" << string;
+    }
+
+    if(gerror) {
+        g_error_free(gerror);
+    }
+}
+
 
 void GStreamerIntegration::init()
 {

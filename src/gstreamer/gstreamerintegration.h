@@ -49,6 +49,7 @@ public:
     GstElement *pipeline() const { return m_gstPipeline; }
 
     void takeSnapshot();
+    void processPipelineMessage(GstMessage* message);
 
 Q_SIGNALS:
     void playingChanged() const;
