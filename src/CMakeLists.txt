@@ -79,6 +79,7 @@ set(kirogi_SRCS
     main.cpp
     permissions.cpp
     gstreamer/gstreamerintegration.cpp
+    gstreamer/videosurface.cpp
     ${ANDROID_HEADERS}
     ${ANDROID_SOURCES}
 )
