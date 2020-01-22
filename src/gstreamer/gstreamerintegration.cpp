@@ -114,6 +114,62 @@ void GStreamerIntegration::updateGstPipeline()
 
 }
 
+void GStreamerIntegration::takeSnapshot()
+{
+    if (!m_videoSink) {
+        qCDebug(videoLogging) << "No video, exiting";
+        return;
+    }
+
+    GstSample *videobuffer = nullptr;
+    g_object_get(G_OBJECT(m_videoSink), "last-sample", &videobuffer, nullptr);
+    if (!videobuffer) {
+        qCDebug(videoLogging) << "No video buffer, exiting";
+        return;
+    }
+
+    GstCaps *capsStructure = gst_sample_get_caps(videobuffer);
+    if (!capsStructure) {
+        qCDebug(videoLogging) << "Can't get caps from video buffer, exiting";
+        return;
+    }
+
+    GstStructure *s = gst_caps_get_structure(capsStructure, 0);
+    gint width, height;
+
+    gboolean res = gst_structure_get_int (s, "width", &width)
+                && gst_structure_get_int (s, "height", &height);
+    if (!res) {
+        qCDebug(videoLogging) << "Can't get width or height from caps";
+        return;
+    }
+
+    GstBuffer *snapbuffer = gst_sample_get_buffer(videobuffer);
+    if (!snapbuffer) {
+        qCDebug(videoLogging) << "Can't get the sample buffer from the video";
+        return;
+    }
+
+    GstMapInfo map;
+    gst_buffer_map (snapbuffer, &map, GST_MAP_READ);
+
+    uchar* bufferData = reinterpret_cast<uchar*>(map.data);
+    QImage::Format imageFormat = QImage::Format_RGB32;
+    QImage image(bufferData, width, height, imageFormat);
+
+    QString savePath; // TODO: Add a setting on KConfigXT
+    if(savePath.isEmpty()) {
+        savePath = QStandardPaths::writableLocation(QStandardPaths::PicturesLocation);
+    }
+    savePath += "/" + QDateTime::currentDateTime().toString("yyyy-MM-dd_hh.mm.ss") + ".png";
+
+    if (image.save(savePath)) {
+        qCDebug(videoLogging) << "Image saved in" << savePath;
+    } else {
+        qCDebug(videoLogging) << "Error saving image in" << savePath << "please verify your access rights";
+    }
+}
+
 void GStreamerIntegration::init()
 {
     // GStreamer needs the sink to be created before any Qml elements

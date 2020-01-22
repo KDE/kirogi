@@ -48,6 +48,8 @@ public:
     GstElement *videoSink() const { return m_videoSink; }
     GstElement *pipeline() const { return m_gstPipeline; }
 
+    void takeSnapshot();
+
 Q_SIGNALS:
     void playingChanged() const;
     void stringPipelineChanged() const;
