@@ -88,14 +88,9 @@ Kirigami.Page {
             }
         }
 
-        Binding {
-            target: videoReceiver
-            property: "pipeline"
-            value: kirogi.currentVehicle ? kirogi.currentVehicle.videoSource : ""
-        }
-
         Kirogi.VideoReceiver {
             id: videoReceiver
+            stringPipeline: kirogi.currentVehicle ? kirogi.currentVehicle.videoSource : ""
         }
 
         Kirogi.VideoSurface {
