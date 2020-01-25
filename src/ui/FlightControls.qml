@@ -25,7 +25,8 @@ import org.kde.kirigami 2.6 as Kirigami
 
 import org.freedesktop.gstreamer.GLVideoItem 1.0
 
-import org.kde.kirogi 1.0 as Kirogi
+import org.kde.kirogi 0.1 as Kirogi
+import org.kde.kirogi.video 0.1 as KirogiVideo
 
 Kirigami.Page {
     id: page
@@ -88,12 +89,12 @@ Kirigami.Page {
             }
         }
 
-        Kirogi.VideoReceiver {
+        KirogiVideo.VideoReceiver {
             id: videoReceiver
             stringPipeline: kirogi.currentVehicle ? kirogi.currentVehicle.videoSource : ""
         }
 
-        Kirogi.VideoSurface {
+        KirogiVideo.VideoSurface {
             id: videoSurface
             videoItem: video
             videoReceiver: videoReceiver

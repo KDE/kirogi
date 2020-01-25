@@ -233,7 +233,7 @@ void GStreamerIntegration::init()
 
     gst_object_unref(sink);
 
-    qmlRegisterType<GStreamerIntegration> ("org.kde.kirogi", 1, 0, "VideoReceiver");
-    qmlRegisterType<VideoSurface> ("org.kde.kirogi", 1, 0, "VideoSurface");
+    qmlRegisterType<GStreamerIntegration> ("org.kde.kirogi.video", 0, 1, "VideoReceiver");
+    qmlRegisterType<VideoSurface> ("org.kde.kirogi.video", 0, 1, "VideoSurface");
 }
 
