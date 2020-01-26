@@ -13,6 +13,7 @@ find_path(MAVLINK_INCLUDE_DIR
     PATH_SUFFIXES
       include
       include/mavlink
+      include/mavlink/v2.0
       include/mavlink/v1.0
 )
 
