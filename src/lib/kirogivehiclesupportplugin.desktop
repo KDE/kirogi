@@ -4,6 +4,7 @@ X-KDE-ServiceType=Kirogi/VehicleSupport
 X-KDE-Derived=
 Comment=Kirogi Vehicle Support Plugin
 Comment[ca]=Connector de suport de vehicles Kirogi
+Comment[ca@valencia]=Connector de suport de vehicles Kirogi
 Comment[es]=Complemento de uso de vehículos Kirogi
 Comment[et]=Kirogi drooni toetuse plugin
 Comment[it]=Estensione di supporto per veicoli Kirogi

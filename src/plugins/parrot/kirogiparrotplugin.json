@@ -4,6 +4,7 @@
             {
                 "Email": "hein@kde.org",
                 "Name": "Eike Hein",
+                "Name[ca@valencia]": "Eike Hein",
                 "Name[ca]": "Eike Hein",
                 "Name[cs]": "Eike Hein",
                 "Name[es]": "Eike Hein",
@@ -19,6 +20,7 @@
             }
         ],
         "Description": "A Kirogi plugin to support Parrot UAVs",
+        "Description[ca@valencia]": "Un connector del Kirogi per admetre l'UAV Parrot",
         "Description[ca]": "Un connector del Kirogi per admetre l'UAV Parrot",
         "Description[es]": "Un complemento de Kirogi para usar los vehículos voladores no tripulados Parrot",
         "Description[et]": "Kirogi plugin Parroti droonide toetusega",
@@ -31,6 +33,7 @@
         "Description[x-test]": "xxA Kirogi plugin to support Parrot UAVsxx",
         "Icon": "uav",
         "Name": "Parrot",
+        "Name[ca@valencia]": "Parrot",
         "Name[ca]": "Parrot",
         "Name[es]": "Parrot",
         "Name[et]": "Parrot",
