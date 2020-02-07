@@ -151,6 +151,10 @@ void GStreamerIntegration::takeSnapshot()
     }
 
     GstStructure *s = gst_caps_get_structure(capsStructure, 0);
+    if (!s) {
+        qCDebug(videoLogging) << "Could not get the structure from the caps for the video.";
+        return;
+    }
     gint width, height;
 
     gboolean res = gst_structure_get_int (s, "width", &width)
@@ -160,17 +164,34 @@ void GStreamerIntegration::takeSnapshot()
         return;
     }
 
+    const gchar *format = gst_structure_get_string(s, "format");
+    if (!format) {
+        qCDebug(videoLogging) << "Could not get the video format.";
+        return;
+    }
+
     GstBuffer *snapbuffer = gst_sample_get_buffer(videobuffer);
     if (!snapbuffer) {
         qCDebug(videoLogging) << "Can't get the sample buffer from the video";
         return;
     }
 
-    GstMapInfo map;
+    if (GST_BUFFER_FLAG_IS_SET(snapbuffer, GST_BUFFER_FLAG_CORRUPTED)) {
+        qCDebug(videoLogging) << "Buffer is corrupted, ignoring screenshoot";
+    }
+
+    GstMapInfo map{};
     gst_buffer_map (snapbuffer, &map, GST_MAP_READ);
 
     uchar* bufferData = reinterpret_cast<uchar*>(map.data);
-    QImage::Format imageFormat = QImage::Format_RGB32;
+    QImage::Format imageFormat{};
+    if (g_str_equal(format, "RGBA")) {
+        imageFormat = QImage::Format_RGB32;
+    } else {
+        qCDebug(videoLogging) << "Video Format unrecognized, ignoring screenshoot";
+        return;
+    }
+
     QImage image(bufferData, width, height, imageFormat);
 
     QString savePath; // TODO: Add a setting on KConfigXT
