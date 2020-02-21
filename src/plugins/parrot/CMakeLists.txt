@@ -35,6 +35,17 @@ set_target_properties(kirogiparrotplugin
     LIBRARY_OUTPUT_DIRECTORY "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}"
 )
 
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+    target_compile_options(kirogiparrotplugin PRIVATE
+        -pedantic
+        -Wall
+        -Wextra
+        -Wshadow
+        -Wnon-virtual-dtor
+        -Wold-style-cast
+    )
+endif()
+
 target_link_libraries(kirogiparrotplugin
     PRIVATE
         Qt5::Core
@@ -49,10 +60,6 @@ if(NOT ANDROID)
     target_link_libraries(kirogiparrotplugin PRIVATE KF5::DNSSD)
 else()
     target_link_libraries(kirogiparrotplugin PRIVATE ${QTZEROCONF_LIBRARIES})
-endif()
-
-if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-    target_compile_options(kirogiparrotplugin PRIVATE -pedantic)
 endif()
 
 # Note: SDP file for a Bebop 2 RTP stream. In case we ever use a video stack that wants one.
