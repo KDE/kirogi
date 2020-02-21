@@ -31,8 +31,8 @@ void AutoSettingsHandler::addSettings(KCoreConfigSkeleton* setting)
     auto settingsChangedSlotIndex = metaObject()->indexOfMethod("triggerSave()");
     auto settingsChangedSlot = metaObject()->method(settingsChangedSlotIndex);
 
-    for (auto item : setting->items()) {
-        auto signallingItem = dynamic_cast<KConfigCompilerSignallingItem*>(item);
+    for (const auto &item : setting->items()) {
+        const auto signallingItem = dynamic_cast<KConfigCompilerSignallingItem*>(item);
 
         if (!signallingItem) {
             continue;
@@ -56,7 +56,7 @@ void AutoSettingsHandler::addSettings(KCoreConfigSkeleton* setting)
 
 void AutoSettingsHandler::triggerSave()
 {
-    for(auto setting : qAsConst(m_settings)) {
+    for(const auto &setting : qAsConst(m_settings)) {
         setting->save();
     }
 }
