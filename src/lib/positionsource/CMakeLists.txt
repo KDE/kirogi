@@ -14,6 +14,17 @@ STATIC
     ${positionsource_SRCS}
 )
 
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+    target_compile_options(positionsource PRIVATE
+        -pedantic
+        -Wall
+        -Wextra
+        -Wshadow
+        -Wnon-virtual-dtor
+        -Wold-style-cast
+    )
+endif()
+
 target_link_libraries(positionsource
     PRIVATE
         Qt5::Core
@@ -21,7 +32,3 @@ target_link_libraries(positionsource
         Qt5::Positioning
         Qt5::Quick
 )
-
-if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-    target_compile_options(positionsource PRIVATE -pedantic)
-endif()
