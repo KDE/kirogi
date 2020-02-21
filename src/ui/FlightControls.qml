@@ -67,6 +67,10 @@ Kirigami.Page {
         }
     }
 
+    function setNewStickPosition() {
+        kirogi.currentVehicle.pilot(rightDPad.axisX, rightDPad.axisY, leftDPad.axisX, leftDPad.axisY);
+    }
+
     Image {
         id: cameraStream
 
@@ -461,13 +465,8 @@ Kirigami.Page {
 
         onXChanged: moved = aboutToMove
 
-        onAxisXChanged: {
-            kirogi.currentVehicle.pilot(rightDPad.axisX, rightDPad.axisY, leftDPad.axisX, leftDPad.axisY);
-        }
-
-        onAxisYChanged: {
-            kirogi.currentVehicle.pilot(rightDPad.axisX, rightDPad.axisY, leftDPad.axisX, leftDPad.axisY);
-        }
+        onAxisXChanged: setNewStickPosition()
+        onAxisYChanged: setNewStickPosition()
 
         touchPos: {
             if (moved && leftTouchPoint) {
@@ -563,13 +562,8 @@ Kirigami.Page {
 
         onXChanged: moved = aboutToMove
 
-        onAxisXChanged: {
-            kirogi.currentVehicle.pilot(rightDPad.axisX, rightDPad.axisY, leftDPad.axisX, leftDPad.axisY);
-        }
-
-        onAxisYChanged: {
-            kirogi.currentVehicle.pilot(rightDPad.axisX, rightDPad.axisY, leftDPad.axisX, leftDPad.axisY);
-        }
+        onAxisXChanged: setNewStickPosition()
+        onAxisYChanged: setNewStickPosition()
 
         touchPos: {
             if (moved && rightTouchPoint.active) {
