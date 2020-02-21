@@ -4,7 +4,7 @@ Kirogi is a ground control application for drones. Take to the skies, open sourc
 
 ### Screenshot
 
-![A screenshot of Kirogi's in-flight UI](https://kirogi.org/assets/img/kirogi.webp "Kirogi's in-flight UI")
+![A screenshot of Kirogi's in-flight UI](https://kirogi.org/assets/img/kirogi.png "Kirogi's in-flight UI")
 
 ### Features
 
