@@ -23,9 +23,12 @@
 #include <QObject>
 #include <QLoggingCategory>
 
-#include <gst/gst.h>
-
 class QQuickWindow;
+
+struct _GstElement;
+struct _GstMessage;
+typedef struct _GstElement GstElement;
+typedef struct _GstMessage GstMessage;
 
 class GStreamerIntegration : public QObject
 {
