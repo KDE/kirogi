@@ -112,12 +112,24 @@ target_compile_definitions(kirogi PRIVATE -DUSE_QRC)
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
     target_compile_options(kirogi PRIVATE
         -pedantic
+        -Woverloaded-virtual
+        -Wunused
         -Wall
         -Wextra
         -Wshadow
         -Wnon-virtual-dtor
         -Wold-style-cast
     )
+
+    if(CMAKE_COMPILER_IS_GNUCXX)
+        target_compile_options(kirogi PRIVATE
+            -Wduplicated-cond
+            -Wduplicated-branches
+            -Wlogical-op
+            -Wnull-dereference
+            -fsanitize=leak
+        )
+    endif()
 endif()
 
 target_link_libraries(kirogi
