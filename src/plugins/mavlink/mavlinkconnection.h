@@ -31,11 +31,25 @@
 
 // It's necessary to disable some warnings to avoid the amount of noise
 // messages from MAVLink source code
+#ifdef __GNUC__
+#if __GNUC__ > 8
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Waddress-of-packed-member"
-#pragma GCC diagnostic ignored "-Wpedantic"
+#else
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wall"
+#endif
+#else
+#pragma warning(push, 0)
+#endif
+
 #include "mavlink.h"
+
+#ifdef __GNUC__
 #pragma GCC diagnostic pop
+#else
+#pragma warning(pop, 0)
+#endif
 
 namespace
 {
