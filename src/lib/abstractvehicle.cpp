@@ -44,13 +44,13 @@ public:
     ParameterModel parameters;
 
 private:
-    AbstractVehicle *q;
+    AbstractVehicle *m_q;
 };
 
 int AbstractVehicle::Private::s_availableId = 0;
 
 AbstractVehicle::Private::Private(AbstractVehicle *q)
-    : q(q)
+    : m_q(q)
 {
     id = s_availableId;
     ++s_availableId;
