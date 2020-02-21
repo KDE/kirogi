@@ -14,11 +14,18 @@ STATIC
     ${vehicleparameters_SRCS}
 )
 
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+    target_compile_options(vehicleparameters PRIVATE
+        -pedantic
+        -Wall
+        -Wextra
+        -Wshadow
+        -Wnon-virtual-dtor
+        -Wold-style-cast
+    )
+endif()
+
 target_link_libraries(vehicleparameters
     PRIVATE
         Qt5::Core
 )
-
-if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-    target_compile_options(vehicleparameters PRIVATE -pedantic)
-endif()
