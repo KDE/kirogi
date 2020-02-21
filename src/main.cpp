@@ -22,6 +22,20 @@
 #include "permissions.h"
 #include "settings.h"
 
+// Remove warnings related to gstreamer library
+#ifdef __GNUC__
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wold-style-cast"
+#else
+#pragma warning(push, 0)
+#endif
+#include <gst/gst.h>
+#ifdef __GNUC__
+#pragma GCC diagnostic pop
+#else
+#pragma warning(pop, 0)
+#endif
+
 #include <KAboutData>
 #ifndef Q_OS_ANDROID
 #include <KCrash>
