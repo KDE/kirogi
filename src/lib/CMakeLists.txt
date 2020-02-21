@@ -37,6 +37,17 @@ generate_export_header(kirogicore
 
 target_include_directories(kirogicore INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/kirogi>")
 
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+    target_compile_options(kirogicore PRIVATE
+        -pedantic
+        -Wall
+        -Wextra
+        -Wshadow
+        -Wnon-virtual-dtor
+        -Wold-style-cast
+    )
+endif()
+
 target_link_libraries(kirogicore
     PRIVATE
         Qt5::Core
@@ -55,10 +66,6 @@ set_target_properties(kirogicore
     EXPORT_NAME KirogiCore
     OUTPUT_NAME kirogicore
 )
-
-if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-    target_compile_options(kirogicore PRIVATE -pedantic)
-endif()
 
 install(TARGETS kirogicore EXPORT kirogicoreLibraryTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
