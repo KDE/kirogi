@@ -1,4 +1,5 @@
 add_subdirectory(lib)
+add_subdirectory(gstreamer)
 
 if(BUILD_PLUGINS)
     add_subdirectory(plugins)
@@ -78,8 +79,6 @@ endif()
 set(kirogi_SRCS
     main.cpp
     permissions.cpp
-    gstreamer/gstreamerintegration.cpp
-    gstreamer/videosurface.cpp
     ${ANDROID_HEADERS}
     ${ANDROID_SOURCES}
 )
@@ -122,6 +121,7 @@ target_link_libraries(kirogi
     KF5::ConfigWidgets
     KF5::CoreAddons
     KF5::I18n
+    gstreamer
     ${GSTREAMER_LIBRARIES}
 )
 
