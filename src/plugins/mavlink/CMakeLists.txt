@@ -37,6 +37,17 @@ set_target_properties(kirogimavlinkplugin
     LIBRARY_OUTPUT_DIRECTORY "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}"
 )
 
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+    target_compile_options(kirogimavlinkplugin PRIVATE
+        -pedantic
+        -Wall
+        -Wextra
+        -Wshadow
+        -Wnon-virtual-dtor
+        -Wold-style-cast
+    )
+endif()
+
 target_link_libraries(kirogimavlinkplugin
     PRIVATE
         Qt5::Core
@@ -47,9 +58,5 @@ target_link_libraries(kirogimavlinkplugin
         KirogiCore
         vehicleparameters
 )
-
-if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-    target_compile_options(kirogimavlinkplugin PRIVATE -pedantic)
-endif()
 
 install(FILES kirogimavlinkplugin.categories DESTINATION ${KDE_INSTALL_CONFDIR})
