@@ -45,11 +45,11 @@ public:
     void findPlugins();
 
 private:
-    VehicleSupportPluginModel *q;
+    VehicleSupportPluginModel *m_q;
 };
 
 VehicleSupportPluginModel::Private::Private(VehicleSupportPluginModel *q)
-    : q(q)
+    : m_q(q)
 {
 }
 
