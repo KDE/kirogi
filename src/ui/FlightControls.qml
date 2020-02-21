@@ -68,7 +68,9 @@ Kirigami.Page {
     }
 
     function setNewStickPosition() {
-        kirogi.currentVehicle.pilot(rightDPad.axisX, rightDPad.axisY, leftDPad.axisX, leftDPad.axisY);
+        if (kirogi.currentVehicle) {
+            kirogi.currentVehicle.pilot(rightDPad.axisX, rightDPad.axisY, leftDPad.axisX, leftDPad.axisY);
+        }
     }
 
     Image {
