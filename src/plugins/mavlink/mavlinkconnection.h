@@ -35,6 +35,7 @@
 #if __GNUC__ > 8
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Waddress-of-packed-member"
+#pragma GCC diagnostic ignored "-Wpedantic"
 #else
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wall"
