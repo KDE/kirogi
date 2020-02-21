@@ -110,7 +110,14 @@ add_executable(kirogi ${kirogi_SRCS} ${RESOURCES})
 target_compile_definitions(kirogi PRIVATE -DUSE_QRC)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-    target_compile_options(kirogi PRIVATE -pedantic)
+    target_compile_options(kirogi PRIVATE
+        -pedantic
+        -Wall
+        -Wextra
+        -Wshadow
+        -Wnon-virtual-dtor
+        -Wold-style-cast
+    )
 endif()
 
 target_link_libraries(kirogi
