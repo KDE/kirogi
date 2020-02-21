@@ -23,6 +23,17 @@ set_target_properties(kirogiryzetelloplugin
     LIBRARY_OUTPUT_DIRECTORY "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}"
 )
 
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+    target_compile_options(kirogiryzetelloplugin PRIVATE
+        -pedantic
+        -Wall
+        -Wextra
+        -Wshadow
+        -Wnon-virtual-dtor
+        -Wold-style-cast
+    )
+endif()
+
 target_link_libraries(kirogiryzetelloplugin
     PRIVATE
         Qt5::Core
@@ -32,9 +43,5 @@ target_link_libraries(kirogiryzetelloplugin
         KF5::I18n
         KirogiCore
 )
-
-if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-    target_compile_options(kirogiryzetelloplugin PRIVATE -pedantic)
-endif()
 
 install(FILES kirogiryzetelloplugin.categories DESTINATION ${KDE_INSTALL_CONFDIR})
