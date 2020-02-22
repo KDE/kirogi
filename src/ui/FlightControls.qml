@@ -105,7 +105,7 @@ Kirigami.Page {
             anchors.centerIn: parent
 
             width: parent.width
-            height: parent.width/1.77 // FIXME: Work with non-16:9 videos.
+            height: kirogiSettings.stretchVideo ? parent.height : parent.width / 1.77
         }
 
         Rectangle {
