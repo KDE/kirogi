@@ -40,6 +40,11 @@ Kirigami.ScrollablePage {
             alwaysShowDPads.checked = kirogiSettings.alwaysShowDPads;
             kirogiSettings.save();
         }
+
+        onStretchVideoChanged: {
+            stretchVideo.checked = kirogiSettings.stretchVideo;
+            kirogiSettings.save();
+        }
     }
 
     Kirigami.FormLayout {
@@ -65,6 +70,17 @@ Kirigami.ScrollablePage {
 
             checked: kirogiSettings.alwaysShowDPads
             onToggled: kirogiSettings.alwaysShowDPads = checked
+        }
+
+        Kirigami.Heading { text: "Video" }
+
+        QQC2.CheckBox {
+            id: stretchVideo
+
+            text: i18n("Stretch video to fit device screen.")
+
+            checked: kirogiSettings.stretchVideo
+            onToggled: kirogiSettings.stretchVideo = checked
         }
     }
 }
