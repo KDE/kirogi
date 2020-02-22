@@ -111,7 +111,7 @@ void GStreamerIntegration::updateGstPipeline()
         qCDebug(videoLogging) << "Empty pipeline, using snow pattern.";
         pipeline = QLatin1String("videotestsrc pattern=snow ! video/x-raw,width=800,height=450 !");
     }
-    pipeline += QStringLiteral("glupload ! glcolorconvert ! qmlglsink name=sink");
+    pipeline += QStringLiteral("glupload ! glcolorconvert ! qmlglsink name=sink force-aspect-ratio=false");
 
     qCDebug(videoLogging) << "Using new pipeline:" << pipeline;
 
