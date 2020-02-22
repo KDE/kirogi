@@ -210,7 +210,7 @@ Kirigami.Page {
         background: map
 
         icon: "transform-move"
-        toolTipText: i18nc("%1 = Keyboard shortcut", "Flight Controls (%1)", flightControlsPageAction.__shortcut.nativeText)
+        toolTipText: i18nc("%1 = Keyboard shortcut", "Flight Controls (%1)", flightControlsPageAction.shortcut)
 
         onTapped: switchApplicationPage(flightControlsPage)
     }
