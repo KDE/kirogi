@@ -108,9 +108,12 @@ void GStreamerIntegration::updateGstPipeline()
     QString pipeline = m_stringPipeline;
 
     if (pipeline.isEmpty()) {
+        qCDebug(videoLogging) << "Empty pipeline, using snow pattern.";
         pipeline = QLatin1String("videotestsrc pattern=snow ! video/x-raw,width=800,height=450 !");
     }
     pipeline += QStringLiteral("glupload ! glcolorconvert ! qmlglsink name=sink");
+
+    qCDebug(videoLogging) << "Using new pipeline:" << pipeline;
 
     if (m_gstPipeline) {
         gst_element_set_state(m_gstPipeline, GST_STATE_NULL);
