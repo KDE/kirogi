@@ -166,7 +166,7 @@ Kirigami.Page {
 
         background: cameraStream
         icon: kirogi.currentVehicle ? kirogi.currentVehicle.iconName : "uav"
-        toolTipText: i18nc("%1 = Keyboard shortcut", "Drone (%1)", vehiclePageAction.__shortcut.nativeText)
+        toolTipText: i18nc("%1 = Keyboard shortcut", "Drone (%1)", vehiclePageAction.shortcut)
 
         onTapped: switchApplicationPage(vehiclePage)
     }
@@ -271,7 +271,7 @@ Kirigami.Page {
 
         background: cameraStream
         icon: "map-flat"
-        toolTipText: i18nc("%1 = Keyboard shortcut", "Navigation Map (%1)", navigationMapPageAction.__shortcut.nativeText)
+        toolTipText: i18nc("%1 = Keyboard shortcut", "Navigation Map (%1)", navigationMapPageAction.shortcut)
 
         onTapped: switchApplicationPage(navigationMapPage)
     }
