@@ -35,5 +35,9 @@
       <label>The last user-selected input mode. 0 = on-screen d=pads, 1 = controller.</label>
       <default>0</default>
     </entry>
+    <entry name="stretchVideo" key="stretchVideo" type="Bool">
+      <label>Stretch video to fit device screen.</label>
+      <default>true</default>
+    </entry>
   </group>
 </kcfg>
