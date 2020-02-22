@@ -124,7 +124,7 @@ void GStreamerIntegration::updateGstPipeline()
     // and the entire application will crash after that.
     GError *error = nullptr;
     m_gstPipeline = gst_parse_launch(pipeline.toLatin1().data(), &error);
-    Q_ASSERT_X(m_gstPipeline, "gstreamer pipeline", QStringLiteral("%0 with pieline: %1").arg(error->message).arg(pipeline).toStdString().c_str());
+    Q_ASSERT_X(m_gstPipeline, "gstreamer pipeline", QStringLiteral("%0 with pipeline: %1").arg(error->message).arg(pipeline).toStdString().c_str());
 
     m_videoSink = gst_bin_get_by_name(GST_BIN(m_gstPipeline), "sink");
     Q_ASSERT_X(m_videoSink, "gstreamer video sink", "Could not retrieve the video sink.");
