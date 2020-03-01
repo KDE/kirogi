@@ -1,6 +1,7 @@
 #pragma once
 
 #include <gst/gst.h>
+#include <jni.h>
 
 G_BEGIN_DECLS
 
