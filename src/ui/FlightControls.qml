@@ -349,7 +349,9 @@ Kirigami.Page {
         showLabels: false
         showIcons: true
 
-        selectedMode: kirogiSettings.lastInputMode
+        // If there is no gamepad connected, the user will not be able to change back to virtual joystick mode.
+        // It's necessary to force the virtual joystick as default if no joystick is connected.
+        selectedMode: gamepad.connected ? kirogiSettings.lastInputMode : 0
 
         onModeTapped: {
             selectedMode = mode;
