@@ -52,6 +52,10 @@
 #pragma warning(pop, 0)
 #endif
 
+struct MAVLinkHelper {
+    static constexpr uint8_t GCS_SYSTEM_ID = 255;
+};
+
 namespace
 {
 /**
@@ -63,7 +67,7 @@ QByteArray createHeartbeatMessage()
 {
     mavlink_message_t message;
     uint8_t buffer[1024];
-    mavlink_msg_heartbeat_pack(255, MAV_COMP_ID_MISSIONPLANNER, &message, MAV_TYPE_GCS, MAV_AUTOPILOT_INVALID, MAV_MODE_FLAG_SAFETY_ARMED, 0, MAV_STATE_ACTIVE);
+    mavlink_msg_heartbeat_pack(MAVLinkHelper::GCS_SYSTEM_ID, MAV_COMP_ID_MISSIONPLANNER, &message, MAV_TYPE_GCS, MAV_AUTOPILOT_INVALID, MAV_MODE_FLAG_SAFETY_ARMED, 0, MAV_STATE_ACTIVE);
     auto length = mavlink_msg_to_send_buffer(buffer, &message);
     return QByteArray(reinterpret_cast<const char *>(buffer), length);
 }
@@ -77,12 +81,37 @@ public:
     explicit MAVLinkConnection(const QString &vehicleName, QObject *parent = nullptr);
     ~MAVLinkConnection() = default;
 
+    template<typename T> constexpr void sendMessage(const T &message) const
+    {
+        if constexpr (std::is_same<T, mavlink_message_t>::value) {
+            const int length = mavlink_msg_to_send_buffer(m_buffer, &message);
+            sendByteArray({reinterpret_cast<const char *>(m_buffer), length});
+
+        } else if constexpr (std::is_same<T, mavlink_command_long_t>::value) {
+            mavlink_message_t mavlink_message = {};
+            mavlink_msg_command_long_encode(MAVLinkHelper::GCS_SYSTEM_ID, MAV_COMP_ID_MISSIONPLANNER, &mavlink_message, &message);
+            sendMessage(mavlink_message);
+
+        } else if constexpr (std::is_same<T, mavlink_manual_control_t>::value) {
+            mavlink_message_t mavlink_message = {};
+            mavlink_msg_manual_control_encode(MAVLinkHelper::GCS_SYSTEM_ID, MAV_COMP_ID_MISSIONPLANNER, &mavlink_message, &message);
+            sendMessage(mavlink_message);
+
+        } else if constexpr (std::is_same<T, mavlink_param_request_list_t>::value) {
+            mavlink_message_t mavlink_message = {};
+            mavlink_msg_param_request_list_encode(MAVLinkHelper::GCS_SYSTEM_ID, MAV_COMP_ID_MISSIONPLANNER, &mavlink_message, &message);
+            sendMessage(mavlink_message);
+
+        } else {
+            static_assert(std::is_same<T, void>::value, "Invalid message type.");
+        }
+    }
+
 public Q_SLOTS:
     void handshake();
     void reset();
 
     void sendByteArray(const QByteArray &byteArray) const;
-    void sendMessage(const mavlink_message_t &message) const;
 
 Q_SIGNALS:
     void mavlinkMessage(const mavlink_message_t &message) const;

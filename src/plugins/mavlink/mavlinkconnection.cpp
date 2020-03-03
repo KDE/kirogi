@@ -44,12 +44,6 @@ void MAVLinkConnection::sendByteArray(const QByteArray &byteArray) const
     }
 }
 
-void MAVLinkConnection::sendMessage(const mavlink_message_t &message) const
-{
-    const int length = mavlink_msg_to_send_buffer(m_buffer, &message);
-    sendByteArray({reinterpret_cast<const char *>(m_buffer), length});
-}
-
 void MAVLinkConnection::handshake()
 {
     initSockets();
