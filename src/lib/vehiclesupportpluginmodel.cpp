@@ -68,7 +68,7 @@ void VehicleSupportPluginModel::Private::findPlugins()
 
     // Unload plugins that apparently got uninstalled at runtime.
     for (const QString &id : loadedPlugins.keys()) {
-        const bool found = std::any_of(plugins.constBegin(), plugins.constEnd(), [id](const auto& md) { return md.pluginId() == id; });
+        const bool found = std::any_of(plugins.constBegin(), plugins.constEnd(), [id](const auto &md) { return md.pluginId() == id; });
         if (!found) {
             delete loadedPlugins.take(id);
         }
