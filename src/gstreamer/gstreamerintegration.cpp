@@ -21,30 +21,29 @@
 #include "gstreamerintegration.h"
 #include "videosurface.h"
 
+#include <QDateTime>
 #include <QQuickItem>
 #include <QQuickWindow>
 #include <QRunnable>
 #include <QStandardPaths>
-#include <QDateTime>
 
 #include <gst/gst.h>
-#include <gst/gstsample.h>
 #include <gst/gstcaps.h>
-
+#include <gst/gstsample.h>
 
 Q_LOGGING_CATEGORY(videoLogging, "kirogi.videosuppoert.gstreamerintegration")
 
 namespace
 {
-    int pipelineWatcher(GstBus *bus, GstMessage *message, gpointer user_data)
-    {
-        Q_UNUSED(bus)
-        auto videoController = qobject_cast<GStreamerIntegration*>(static_cast<QObject*>(user_data));
-        if(videoController) {
-            videoController->processPipelineMessage(message);
-        }
-        return G_SOURCE_CONTINUE;
+int pipelineWatcher(GstBus *bus, GstMessage *message, gpointer user_data)
+{
+    Q_UNUSED(bus)
+    auto videoController = qobject_cast<GStreamerIntegration *>(static_cast<QObject *>(user_data));
+    if (videoController) {
+        videoController->processPipelineMessage(message);
     }
+    return G_SOURCE_CONTINUE;
+}
 
 }
 
@@ -160,8 +159,7 @@ void GStreamerIntegration::takeSnapshot()
     }
     gint width, height;
 
-    gboolean res = gst_structure_get_int (s, "width", &width)
-                && gst_structure_get_int (s, "height", &height);
+    gboolean res = gst_structure_get_int(s, "width", &width) && gst_structure_get_int(s, "height", &height);
     if (!res) {
         qCDebug(videoLogging) << "Can't get width or height from caps";
         return;
@@ -183,11 +181,11 @@ void GStreamerIntegration::takeSnapshot()
         qCDebug(videoLogging) << "Buffer is corrupted, ignoring screenshoot";
     }
 
-    GstMapInfo map{};
-    gst_buffer_map (snapbuffer, &map, GST_MAP_READ);
+    GstMapInfo map {};
+    gst_buffer_map(snapbuffer, &map, GST_MAP_READ);
 
-    uchar* bufferData = reinterpret_cast<uchar*>(map.data);
-    QImage::Format imageFormat{};
+    uchar *bufferData = reinterpret_cast<uchar *>(map.data);
+    QImage::Format imageFormat {};
     if (g_str_equal(format, "RGBA")) {
         imageFormat = QImage::Format_RGB32;
     } else {
@@ -198,7 +196,7 @@ void GStreamerIntegration::takeSnapshot()
     QImage image(bufferData, width, height, imageFormat);
 
     QString savePath; // TODO: Add a setting on KConfigXT
-    if(savePath.isEmpty()) {
+    if (savePath.isEmpty()) {
         savePath = QStandardPaths::writableLocation(QStandardPaths::PicturesLocation);
     }
     savePath += "/" + QDateTime::currentDateTime().toString("yyyy-MM-dd_hh.mm.ss") + ".png";
@@ -210,54 +208,50 @@ void GStreamerIntegration::takeSnapshot()
     }
 }
 
-void GStreamerIntegration::processPipelineMessage(GstMessage* message)
+void GStreamerIntegration::processPipelineMessage(GstMessage *message)
 {
     QString string;
     GError *gerror = nullptr;
 
-    switch(message->type)
-    {
-        case GST_MESSAGE_ERROR:
-            gst_message_parse_error(message, &gerror, nullptr);
-            string = gerror->message;
-            break;
+    switch (message->type) {
+    case GST_MESSAGE_ERROR:
+        gst_message_parse_error(message, &gerror, nullptr);
+        string = gerror->message;
+        break;
 
-        case GST_MESSAGE_WARNING:
-            gst_message_parse_warning(message, &gerror, nullptr);
-            string = gerror->message;
-            break;
+    case GST_MESSAGE_WARNING:
+        gst_message_parse_warning(message, &gerror, nullptr);
+        string = gerror->message;
+        break;
 
-        case GST_MESSAGE_INFO:
-            gst_message_parse_info(message, &gerror, nullptr);
-            string = gerror->message;
-            break;
+    case GST_MESSAGE_INFO:
+        gst_message_parse_info(message, &gerror, nullptr);
+        string = gerror->message;
+        break;
 
-        default:
-            break;
+    default:
+        break;
     }
 
-    if(!string.isEmpty()) {
-        qCDebug(videoLogging) << "From:" << GST_MESSAGE_SRC_NAME(message) << "event type"
-                 << GST_MESSAGE_TYPE_NAME(message) << "happened with" << string;
+    if (!string.isEmpty()) {
+        qCDebug(videoLogging) << "From:" << GST_MESSAGE_SRC_NAME(message) << "event type" << GST_MESSAGE_TYPE_NAME(message) << "happened with" << string;
     }
 
-    if(gerror) {
+    if (gerror) {
         g_error_free(gerror);
     }
 }
-
 
 void GStreamerIntegration::init()
 {
     // GStreamer needs the sink to be created before any Qml elements
     // so that the Qml elements are registered in the system. so we create
     // and free it.
-    GstElement *sink = gst_element_factory_make ("qmlglsink", nullptr);
+    GstElement *sink = gst_element_factory_make("qmlglsink", nullptr);
     Q_ASSERT_X(sink, "Video Initialization", "Could not find the Qml Gl Sink GStreamer Plugin, please check your installation.");
 
     gst_object_unref(sink);
 
-    qmlRegisterType<GStreamerIntegration> ("org.kde.kirogi.video", 0, 1, "VideoReceiver");
-    qmlRegisterType<VideoSurface> ("org.kde.kirogi.video", 0, 1, "VideoSurface");
+    qmlRegisterType<GStreamerIntegration>("org.kde.kirogi.video", 0, 1, "VideoReceiver");
+    qmlRegisterType<VideoSurface>("org.kde.kirogi.video", 0, 1, "VideoSurface");
 }
-
