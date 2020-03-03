@@ -35,7 +35,8 @@ class GStreamerIntegration;
  * The 'VideoItem' element is a GstGlVideoItem, that's the real paint surface.
  * This class plug things together and controlls playing / pausing / screenshooting, etc.
  */
-class VideoSurface : public QQuickItem {
+class VideoSurface : public QQuickItem
+{
     Q_OBJECT
     Q_PROPERTY(QObject *videoItem WRITE setVideoItem READ videoItem NOTIFY videoItemChanged)
     Q_PROPERTY(GStreamerIntegration *videoReceiver WRITE setVideoReceiver READ videoReceiver NOTIFY videoReceiverChanged)
@@ -45,7 +46,7 @@ public:
     VideoSurface(QQuickItem *parent = nullptr);
     virtual ~VideoSurface();
 
-   /* This is the Qml GstGLVideoItem  */
+    /* This is the Qml GstGLVideoItem  */
     QObject *videoItem() const;
     Q_SLOT void setVideoItem(QObject *videoItem);
     Q_SIGNAL void videoItemChanged(QObject *videoItem);
