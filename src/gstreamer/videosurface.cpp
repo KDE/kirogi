@@ -26,19 +26,20 @@
 Q_LOGGING_CATEGORY(surfaceLogging, "kirogi.videosuppoert.videosurface")
 
 VideoSurface::VideoSurface(QQuickItem *parent)
-  : QQuickItem(parent)
-  , _videoItem(nullptr)
-  , _videoReceiver(nullptr)
-  , _shouldStartVideo(false)
-  , _shouldPauseVideo(false)
+    : QQuickItem(parent)
+    , _videoItem(nullptr)
+    , _videoReceiver(nullptr)
+    , _shouldStartVideo(false)
+    , _shouldPauseVideo(false)
 {
     // This flag is needed so the item will call updatePaintNode.
     setFlag(ItemHasContents);
 }
 
-VideoSurface::~VideoSurface() {
+VideoSurface::~VideoSurface()
+{
     if (_videoReceiver) {
-        auto *sink =_videoReceiver->videoSink();
+        auto *sink = _videoReceiver->videoSink();
         auto *pipeline = _videoReceiver->pipeline();
 
         if (pipeline) {
@@ -50,7 +51,8 @@ VideoSurface::~VideoSurface() {
     }
 }
 
-void VideoSurface::setVideoItem(QObject *videoItem) {
+void VideoSurface::setVideoItem(QObject *videoItem)
+{
     if (!videoItem) {
         return;
     }
@@ -68,7 +70,8 @@ void VideoSurface::pauseVideo()
     update();
 }
 
-void VideoSurface::startVideo() {
+void VideoSurface::startVideo()
+{
     if (!_videoItem || !_videoReceiver) {
         qDebug() << "Can't start the video yet";
         return;
@@ -80,16 +83,16 @@ void VideoSurface::startVideo() {
         return;
     }
 
-    auto *sink =_videoReceiver->videoSink();
+    auto *sink = _videoReceiver->videoSink();
     if (!sink) {
         qCDebug(surfaceLogging) << "Could not retrieve the video sink, can't start the video.";
         return;
     }
 
     /* the qtqmlsink needs a property named 'Widget' to be set,
-        * then it will send data to that widget directly without our intervention
-        * this widget is the GstGlVideoItem we need to create in Qml
-        */
+     * then it will send data to that widget directly without our intervention
+     * this widget is the GstGlVideoItem we need to create in Qml
+     */
     GObject *videoSinkHasWidget = nullptr;
     g_object_get(sink, "widget", videoSinkHasWidget, nullptr);
     if (!videoSinkHasWidget) {
@@ -100,7 +103,8 @@ void VideoSurface::startVideo() {
     update();
 }
 
-QObject *VideoSurface::videoItem() const {
+QObject *VideoSurface::videoItem() const
+{
     return _videoItem;
 }
 
@@ -116,7 +120,6 @@ void VideoSurface::setVideoReceiver(GStreamerIntegration *videoReceiver)
     }
     startVideo();
 }
-
 
 GStreamerIntegration *VideoSurface::videoReceiver() const
 {
