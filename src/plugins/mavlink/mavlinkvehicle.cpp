@@ -263,7 +263,6 @@ void MAVLinkVehicle::requestAction(Kirogi::AbstractVehicle::VehicleAction action
         }
 
         // Set the vehicle in stabilize mode and after that arm
-        mavlink_message_t message;
         mavlink_command_long_t command_long;
         command_long.target_system = 1;    // TODO: get from system heartbeat
         command_long.target_component = 1; // TODO: get from system heartbeat
@@ -276,8 +275,7 @@ void MAVLinkVehicle::requestAction(Kirogi::AbstractVehicle::VehicleAction action
         command_long.param5 = 0;
         command_long.param6 = 0;
         command_long.param7 = 0;
-        mavlink_msg_command_long_encode(255, MAV_COMP_ID_MISSIONPLANNER, &message, &command_long);
-        m_connection->sendMessage(message);
+        m_connection->sendMessage(command_long);
 
         command_long.target_system = 1;    // TODO: get from system heartbeat
         command_long.target_component = 1; // TODO: get from system heartbeat
@@ -290,8 +288,7 @@ void MAVLinkVehicle::requestAction(Kirogi::AbstractVehicle::VehicleAction action
         command_long.param5 = 0;
         command_long.param6 = 0;
         command_long.param7 = 0;
-        mavlink_msg_command_long_encode(255, MAV_COMP_ID_MISSIONPLANNER, &message, &command_long);
-        m_connection->sendMessage(message);
+        m_connection->sendMessage(command_long);
 
         setFlyingState(TakingOff); // FIXME: We don't /really/ know that without
                                    // looking at the response.
@@ -303,7 +300,6 @@ void MAVLinkVehicle::requestAction(Kirogi::AbstractVehicle::VehicleAction action
         }
 
         // Disarm vehicle
-        mavlink_message_t message;
         mavlink_command_long_t command_long;
         command_long.target_system = 1;    // TODO: get from system heartbeat
         command_long.target_component = 1; // TODO: get from system heartbeat
@@ -316,8 +312,7 @@ void MAVLinkVehicle::requestAction(Kirogi::AbstractVehicle::VehicleAction action
         command_long.param5 = 0;
         command_long.param6 = 0;
         command_long.param7 = 0;
-        mavlink_msg_command_long_encode(255, MAV_COMP_ID_MISSIONPLANNER, &message, &command_long);
-        m_connection->sendMessage(message);
+        m_connection->sendMessage(command_long);
 
         setFlyingState(Landed); // FIXME: We don't /really/ know that without
                                 // looking at the response.
@@ -330,7 +325,6 @@ void MAVLinkVehicle::requestAction(Kirogi::AbstractVehicle::VehicleAction action
 
 void MAVLinkVehicle::pilot(qint8 roll, qint8 pitch, qint8 yaw, qint8 gaz)
 {
-    mavlink_message_t message;
     mavlink_manual_control_t manual_control;
     manual_control.target = 1;
     manual_control.x = pitch * 10; // [-1000,1000] range
@@ -338,8 +332,7 @@ void MAVLinkVehicle::pilot(qint8 roll, qint8 pitch, qint8 yaw, qint8 gaz)
     manual_control.z = gaz * 10;   // [-1000,1000] range
     manual_control.r = yaw * 10;   // [-1000,1000] range
     manual_control.buttons = 0;
-    mavlink_msg_manual_control_encode(255, MAV_COMP_ID_MISSIONPLANNER, &message, &manual_control);
-    m_connection->sendMessage(message);
+    m_connection->sendMessage(manual_control);
 }
 
 float MAVLinkVehicle::roll() const
@@ -420,12 +413,10 @@ void MAVLinkVehicle::fetchParameters() const
     }
     requested = true;
 
-    mavlink_message_t message;
     mavlink_param_request_list_t param_request_list;
     param_request_list.target_system = 1;
     param_request_list.target_component = 1;
-    mavlink_msg_param_request_list_encode(255, MAV_COMP_ID_MISSIONPLANNER, &message, &param_request_list);
-    m_connection->sendMessage(message);
+    m_connection->sendMessage(param_request_list);
 }
 
 QString MAVLinkVehicle::videoSource() const
