@@ -926,10 +926,11 @@ Kirigami.Page {
     YawBar {
         id: yawBar
 
-        tickWidth: 10
-        anchors.left: leftDPad.horizontalCenter
-        anchors.right: rightDPad.horizontalCenter
         anchors.bottom: inputMode.visible ? inputMode.top : parent.bottom
+        anchors.horizontalCenter: parent.horizontalCenter
+        width: parent.width / 2
+
+        tickWidth: 10
 
         yaw: kirogi.currentVehicle ? kirogi.currentVehicle.yaw * (180 / Math.PI) : 0
     }
