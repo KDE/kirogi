@@ -20,8 +20,8 @@
 
 #pragma once
 
-#include <QObject>
 #include <QLoggingCategory>
+#include <QObject>
 
 class QQuickWindow;
 
@@ -48,11 +48,17 @@ public:
     void setStringPipeline(const QString &pipeline);
     static void init();
 
-    GstElement *videoSink() const { return m_videoSink; }
-    GstElement *pipeline() const { return m_gstPipeline; }
+    GstElement *videoSink() const
+    {
+        return m_videoSink;
+    }
+    GstElement *pipeline() const
+    {
+        return m_gstPipeline;
+    }
 
     void takeSnapshot();
-    void processPipelineMessage(GstMessage* message);
+    void processPipelineMessage(GstMessage *message);
 
 Q_SIGNALS:
     void playingChanged() const;
