@@ -77,9 +77,10 @@ Kirigami.OverlayDrawer {
     QQC2.ScrollView {
         id: scrollView
 
-        states: State{
+        states: State {
             when: !Kirigami.Settings.isMobile
-            AnchorChanges{
+            
+            AnchorChanges {
                 target: scrollView
                 anchors.top: parent.top
             }
