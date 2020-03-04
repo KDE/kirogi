@@ -128,9 +128,9 @@ QVariant VehicleSupportPluginModel::data(const QModelIndex &index, int role) con
 
         if (d->loadedPlugins.contains(id)) {
             return PluginLoaded;
-        } else {
-            return PluginNotLoaded;
         }
+        return PluginNotLoaded;
+
     }
     case Plugin: {
         const QString &id = d->plugins.at(index.row()).pluginId();
