@@ -57,9 +57,7 @@ ParrotConnection::ParrotConnection(ParrotVehicle::Type type, const QString &vehi
 #endif
 }
 
-ParrotConnection::~ParrotConnection()
-{
-}
+ParrotConnection::~ParrotConnection() = default;
 
 void ParrotConnection::handshake(const QString &productSerial)
 {
