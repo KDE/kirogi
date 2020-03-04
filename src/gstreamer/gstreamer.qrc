@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/video">
+        <file alias="GstVideo.qml">GstVideo.qml</file>
+    </qresource>
+</RCC>
