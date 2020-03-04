@@ -656,13 +656,9 @@ ParrotCommand::ParrotCommand(const QByteArray &_data)
     }
 }
 
-ParrotCommand::ParrotCommand()
-{
-}
+ParrotCommand::ParrotCommand() = default;
 
-ParrotCommand::~ParrotCommand()
-{
-}
+ParrotCommand::~ParrotCommand() = default;
 
 QByteArray ParrotCommand::pack() const
 {
@@ -726,9 +722,7 @@ ParrotFrame::ParrotFrame(const QByteArray &_data, int start = 0)
     s.readRawData(data.data(), dataSize);
 }
 
-ParrotFrame::~ParrotFrame()
-{
-}
+ParrotFrame::~ParrotFrame() = default;
 
 QByteArray ParrotFrame::pack() const
 {
