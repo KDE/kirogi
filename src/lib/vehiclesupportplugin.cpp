@@ -28,8 +28,6 @@ VehicleSupportPlugin::VehicleSupportPlugin(QObject *parent)
 {
 }
 
-VehicleSupportPlugin::~VehicleSupportPlugin()
-{
-}
+VehicleSupportPlugin::~VehicleSupportPlugin() = default;
 
 }

@@ -53,9 +53,7 @@ VehicleSupportPluginModel::Private::Private(VehicleSupportPluginModel *q)
 {
 }
 
-VehicleSupportPluginModel::Private::~Private()
-{
-}
+VehicleSupportPluginModel::Private::~Private() = default;
 
 void VehicleSupportPluginModel::Private::findPlugins()
 {
@@ -83,9 +81,7 @@ VehicleSupportPluginModel::VehicleSupportPluginModel(QObject *parent)
     d->findPlugins();
 }
 
-VehicleSupportPluginModel::~VehicleSupportPluginModel()
-{
-}
+VehicleSupportPluginModel::~VehicleSupportPluginModel() = default;
 
 QHash<int, QByteArray> VehicleSupportPluginModel::roleNames() const
 {
