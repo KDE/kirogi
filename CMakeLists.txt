@@ -40,11 +40,18 @@ add_feature_info(BUILD_QT_QUICK_LIB BUILD_QT_QUICK_LIB "Build the Kirogi library
 option(BUILD_PLUGINS "Build the Kirogi plugins." TRUE)
 add_feature_info(BUILD_PLUGINS BUILD_PLUGINS "Build the Kirogi plugins.")
 
+option(CLANG_TIDY "Enable clang-tidy during the build process." FALSE)
+add_feature_info(CLANG_TIDY CLANG_TIDY "Enable clang-tidy during the build process.")
+
 option(COMPILE_QML "Pre-compile QML files using the Qt Quick compiler." FALSE)
 add_feature_info(COMPILE_QML COMPILE_QML "Pre-compile QML files using the Qt Quick compiler.")
 
 option(DEBUG_QML "Build Kirogi with QML debugging/profiling support." FALSE)
 add_feature_info(DEBUG_QML DEBUG_QML "Build Kirogi with QML debugging/profiling support.")
+
+if (CLANG_TIDY)
+    set(CMAKE_CXX_CLANG_TIDY "clang-tidy;-checks=*;-fix")
+endif()
 
 if (BUILD_APP)
     if(NOT ANDROID)
