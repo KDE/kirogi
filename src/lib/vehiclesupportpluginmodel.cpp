@@ -34,7 +34,7 @@ namespace Kirogi
 class Q_DECL_HIDDEN VehicleSupportPluginModel::Private
 {
 public:
-    Private(VehicleSupportPluginModel *q);
+    explicit Private(VehicleSupportPluginModel *q);
     ~Private();
 
     QVector<KPluginMetaData> plugins;
