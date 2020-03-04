@@ -115,11 +115,11 @@ int main(int argc, char *argv[])
     parser.process(app);
     aboutData.processCommandLine(&parser);
 
-    app.setApplicationName(aboutData.componentName());
-    app.setApplicationDisplayName(aboutData.displayName());
-    app.setOrganizationDomain(aboutData.organizationDomain());
-    app.setApplicationVersion(aboutData.version());
-    app.setWindowIcon(QIcon::fromTheme(QStringLiteral("kirogi")));
+    QApplication::setApplicationName(aboutData.componentName());
+    QApplication::setApplicationDisplayName(aboutData.displayName());
+    QApplication::setOrganizationDomain(aboutData.organizationDomain());
+    QApplication::setApplicationVersion(aboutData.version());
+    QApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("kirogi")));
 
 #ifndef Q_OS_ANDROID
     KCrash::initialize();
@@ -154,6 +154,6 @@ int main(int argc, char *argv[])
     QtAndroid::hideSplashScreen();
 #endif
 
-    ret = app.exec();
+    ret = QApplication::exec();
     return ret;
 }
