@@ -30,7 +30,7 @@ namespace Kirogi
 class Q_DECL_HIDDEN AbstractVehicle::Private
 {
 public:
-    Private(AbstractVehicle *q);
+    explicit Private(AbstractVehicle *q);
     ~Private();
 
     static int s_availableId;
