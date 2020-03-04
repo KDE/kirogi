@@ -113,7 +113,7 @@ private:
      *
      * @param positioningError
      */
-    void setPositionSourceError(QGeoPositionInfoSource::Error positioningError);
+    static void setPositionSourceError(QGeoPositionInfoSource::Error positioningError);
 
     bool m_enabled;
     QGeoCoordinate m_geoCoordinate;
