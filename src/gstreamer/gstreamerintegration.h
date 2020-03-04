@@ -58,7 +58,7 @@ public:
     }
 
     void takeSnapshot();
-    void processPipelineMessage(GstMessage *message);
+    static void processPipelineMessage(GstMessage *message);
 
 Q_SIGNALS:
     void playingChanged() const;
