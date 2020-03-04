@@ -9,10 +9,17 @@ ecm_qt_declare_logging_category(gstreamer_SRCS
     CATEGORY_NAME "kirogi.gstreamer"
 )
 
+if(COMPILE_QML)
+    qtquick_compiler_add_resources(RESOURCES gstreamer.qrc)
+else()
+    qt5_add_resources(RESOURCES gstreamer.qrc)
+endif()
+
 add_library(
     gstreamer
 STATIC
     ${gstreamer_SRCS}
+    ${RESOURCES}
 )
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
