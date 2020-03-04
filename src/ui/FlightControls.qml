@@ -23,8 +23,6 @@ import QtQuick.Controls 2.12 as QQC2
 
 import org.kde.kirigami 2.6 as Kirigami
 
-import org.freedesktop.gstreamer.GLVideoItem 1.0
-
 import org.kde.kirogi 0.1 as Kirogi
 import org.kde.kirogi.video 0.1 as KirogiVideo
 
@@ -102,13 +100,7 @@ Kirigami.Page {
 
         KirogiVideo.VideoSurface {
             id: videoSurface
-            videoItem: video
             videoReceiver: videoReceiver
-        }
-
-        GstGLVideoItem {
-            id: video
-            anchors.centerIn: parent
 
             width: parent.width
             height: kirogiSettings.stretchVideo ? parent.height : parent.width / 1.77
