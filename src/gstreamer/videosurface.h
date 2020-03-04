@@ -38,18 +38,12 @@ class GStreamerIntegration;
 class VideoSurface : public QQuickItem
 {
     Q_OBJECT
-    Q_PROPERTY(QObject *videoItem WRITE setVideoItem READ videoItem NOTIFY videoItemChanged)
     Q_PROPERTY(GStreamerIntegration *videoReceiver WRITE setVideoReceiver READ videoReceiver NOTIFY videoReceiverChanged)
     Q_PROPERTY(bool playing WRITE setPlaying READ playing NOTIFY playingChanged)
 
 public:
     VideoSurface(QQuickItem *parent = nullptr);
     virtual ~VideoSurface();
-
-    /* This is the Qml GstGLVideoItem  */
-    QObject *videoItem() const;
-    Q_SLOT void setVideoItem(QObject *videoItem);
-    Q_SIGNAL void videoItemChanged(QObject *videoItem);
 
     /* This is the Video Receiver, that controls the creation of the pipeline and a few other helper functions */
     GStreamerIntegration *videoReceiver() const;
@@ -70,7 +64,13 @@ public:
     QSGNode *updatePaintNode(QSGNode *node, UpdatePaintNodeData *) override;
 
 private:
-    QObject *_videoItem;
+    /**
+     * @brief Create GST Video widget
+     *
+     */
+    void createVideoItem();
+
+    QQuickItem *_videoItem;
     GStreamerIntegration *_videoReceiver;
     bool _shouldStartVideo;
     bool _shouldPauseVideo;

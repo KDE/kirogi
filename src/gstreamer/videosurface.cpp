@@ -32,6 +32,8 @@ VideoSurface::VideoSurface(QQuickItem *parent)
     , _shouldStartVideo(false)
     , _shouldPauseVideo(false)
 {
+    Q_INIT_RESOURCE(gstreamer);
+
     // This flag is needed so the item will call updatePaintNode.
     setFlag(ItemHasContents);
 }
@@ -51,19 +53,6 @@ VideoSurface::~VideoSurface()
     }
 }
 
-void VideoSurface::setVideoItem(QObject *videoItem)
-{
-    if (!videoItem) {
-        return;
-    }
-
-    if (_videoItem != videoItem) {
-        _videoItem = videoItem;
-        Q_EMIT videoItemChanged(_videoItem);
-    }
-    startVideo();
-}
-
 void VideoSurface::pauseVideo()
 {
     _shouldPauseVideo = true;
@@ -72,6 +61,8 @@ void VideoSurface::pauseVideo()
 
 void VideoSurface::startVideo()
 {
+    createVideoItem();
+
     if (!_videoItem || !_videoReceiver) {
         qDebug() << "Can't start the video yet";
         return;
@@ -101,11 +92,6 @@ void VideoSurface::startVideo()
 
     _shouldStartVideo = true;
     update();
-}
-
-QObject *VideoSurface::videoItem() const
-{
-    return _videoItem;
 }
 
 void VideoSurface::setVideoReceiver(GStreamerIntegration *videoReceiver)
@@ -167,4 +153,34 @@ void VideoSurface::setPlaying(bool value)
         pauseVideo();
     }
     Q_EMIT playingChanged(_playing);
+}
+
+void VideoSurface::createVideoItem()
+{
+    // Video widget already exist, abort
+    if (_videoItem) {
+        return;
+    }
+
+    QQmlEngine *engine = qmlEngine(this);
+    if (!engine) {
+        qCWarning(surfaceLogging) << "No qml engine to load visualization.";
+        return;
+    }
+
+    // Create GST video widget
+    QQmlComponent component(engine, "qrc:/video/GstVideo.qml", this);
+    _videoItem = qobject_cast<QQuickItem *>(component.create());
+    if (!_videoItem) {
+        qCCritical(surfaceLogging) << "Failed to load QML component.";
+        qCDebug(surfaceLogging) << "Component status:" << component.status();
+        if (component.isError()) {
+            qCDebug(surfaceLogging) << "Error list:" << component.errors();
+        }
+        return;
+    }
+
+    // Set this item as parent to user anchors
+    _videoItem->setParentItem(this);
+    qvariant_cast<QObject *>(_videoItem->property("anchors"))->setProperty("fill", QVariant::fromValue<VideoSurface *>(this));
 }
