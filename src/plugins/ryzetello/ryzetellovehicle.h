@@ -20,6 +20,8 @@
 
 #pragma once
 
+#include <memory>
+
 #include "abstractvehicle.h"
 
 #include <QThread>
@@ -92,8 +94,8 @@ private:
 
     float m_speed;
 
-    QTimer *m_signalStrengthTimer;
-    QTimer *m_disconnectTimer;
+    std::unique_ptr<QTimer> m_signalStrengthTimer;
+    std::unique_ptr<QTimer> m_disconnectTimer;
 
     QThread m_connectionThread;
     RyzeTelloConnection *m_connection;

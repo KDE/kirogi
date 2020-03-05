@@ -33,8 +33,6 @@ ParrotConnection::ParrotConnection(ParrotVehicle::Type type, const QString &vehi
     , m_port(port)
     , m_c2dport(-1)
     , m_d2cPort(54321)
-    , m_c2dAckTimer(nullptr)
-    , m_pilotingTimer(nullptr)
     , m_roll(0)
     , m_pitch(0)
     , m_yaw(0)
@@ -151,8 +149,7 @@ void ParrotConnection::reset()
         m_handshakeSocket->deleteLater();
     }
 
-    delete m_c2dAckTimer;
-    m_c2dAckTimer = nullptr;
+    m_c2dAckTimer.reset();
 
     m_c2dAckQueue.clear();
 
@@ -193,9 +190,9 @@ void ParrotConnection::pilot(qint8 roll, qint8 pitch, qint8 yaw, qint8 gaz)
 
     if (roll > 0 || pitch > 0 || yaw > 0 || gaz > 0) {
         if (!m_pilotingTimer) {
-            m_pilotingTimer = new QTimer(this);
+            m_pilotingTimer = std::make_unique<QTimer>(this);
             m_pilotingTimer->setInterval(40);
-            QObject::connect(m_pilotingTimer, &QTimer::timeout, this, &ParrotConnection::sendPilotingCommand);
+            QObject::connect(m_pilotingTimer.get(), &QTimer::timeout, this, &ParrotConnection::sendPilotingCommand);
         }
 
         if (!m_pilotingTimer->isActive()) {
@@ -234,8 +231,8 @@ void ParrotConnection::pumpC2dAckQueue()
     // We do this here instead of in the constructor so the timer is created on the
     // current thread. It's not allowed to start/stop timers across thread boundaries.
     if (!m_c2dAckTimer) {
-        m_c2dAckTimer = new QTimer(this);
-        QObject::connect(m_c2dAckTimer, &QTimer::timeout, this, &ParrotConnection::pumpC2dAckQueue, Qt::QueuedConnection);
+        m_c2dAckTimer = std::make_unique<QTimer>(this);
+        QObject::connect(m_c2dAckTimer.get(), &QTimer::timeout, this, &ParrotConnection::pumpC2dAckQueue, Qt::QueuedConnection);
     }
 
     m_c2dAckTimer->stop();

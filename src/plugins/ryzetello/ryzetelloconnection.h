@@ -20,6 +20,8 @@
 
 #pragma once
 
+#include <memory>
+
 #include <QObject>
 
 #include "abstractvehicle.h"
@@ -70,9 +72,9 @@ private:
     QPointer<QUdpSocket> m_stateSocket;
 
     QQueue<RyzeTelloCommand> m_commandQueue;
-    QTimer *m_commandQueueTimer;
+    std::unique_ptr<QTimer> m_commandQueueTimer;
 
-    QTimer *m_pilotingTimer;
+    std::unique_ptr<QTimer> m_pilotingTimer;
     qint8 m_roll;
     qint8 m_pitch;
     qint8 m_yaw;

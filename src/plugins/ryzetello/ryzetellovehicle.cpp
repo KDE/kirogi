@@ -39,8 +39,8 @@ RyzeTelloVehicle::RyzeTelloVehicle(QObject *parent)
     , m_distance(0.0)
     , m_altitude(0.0)
     , m_speed(0.0)
-    , m_signalStrengthTimer(new QTimer(this))
-    , m_disconnectTimer(new QTimer(this))
+    , m_signalStrengthTimer(std::make_unique<QTimer>(this))
+    , m_disconnectTimer(std::make_unique<QTimer>(this))
     , m_connection(nullptr)
 {
     m_connection = new RyzeTelloConnection(name());

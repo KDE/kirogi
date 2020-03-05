@@ -27,8 +27,6 @@ RyzeTelloConnection::RyzeTelloConnection(const QString &vehicleName, QObject *pa
     : QObject(parent)
     , m_vehicleName(vehicleName)
     , m_address(QHostAddress("192.168.10.1"))
-    , m_commandQueueTimer(nullptr)
-    , m_pilotingTimer(nullptr)
     , m_roll(0)
     , m_pitch(0)
     , m_yaw(0)
@@ -47,8 +45,7 @@ void RyzeTelloConnection::handshake()
 
 void RyzeTelloConnection::reset()
 {
-    delete m_commandQueueTimer;
-    m_commandQueueTimer = nullptr;
+    m_commandQueueTimer.reset();
 
     m_commandQueue.clear();
 
@@ -86,9 +83,9 @@ void RyzeTelloConnection::pilot(qint8 roll, qint8 pitch, qint8 yaw, qint8 gaz)
 
     if (roll > 0 || pitch > 0 || yaw > 0 || gaz > 0) {
         if (!m_pilotingTimer) {
-            m_pilotingTimer = new QTimer(this);
+            m_pilotingTimer = std::make_unique<QTimer>(this);
             m_pilotingTimer->setInterval(40);
-            QObject::connect(m_pilotingTimer, &QTimer::timeout, this, &RyzeTelloConnection::sendPilotingCommand);
+            QObject::connect(m_pilotingTimer.get(), &QTimer::timeout, this, &RyzeTelloConnection::sendPilotingCommand);
         }
 
         if (!m_pilotingTimer->isActive()) {
@@ -141,8 +138,8 @@ void RyzeTelloConnection::pumpCommandQueue()
     // We do this here instead of in the constructor so the timer is created on the
     // current thread. It's not allowed to start/stop timers across thread boundaries.
     if (!m_commandQueueTimer) {
-        m_commandQueueTimer = new QTimer(this);
-        QObject::connect(m_commandQueueTimer, &QTimer::timeout, this, &RyzeTelloConnection::pumpCommandQueue, Qt::QueuedConnection);
+        m_commandQueueTimer = std::make_unique<QTimer>(this);
+        QObject::connect(m_commandQueueTimer.get(), &QTimer::timeout, this, &RyzeTelloConnection::pumpCommandQueue, Qt::QueuedConnection);
     }
 
     m_commandQueueTimer->stop();

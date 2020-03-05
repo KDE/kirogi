@@ -20,6 +20,8 @@
 
 #pragma once
 
+#include <memory>
+
 #include <QObject>
 
 #include "parrotprotocol.h"
@@ -87,9 +89,9 @@ private:
     QHash<quint8, quint8> m_seq;
 
     QQueue<ParrotFrame> m_c2dAckQueue;
-    QTimer *m_c2dAckTimer;
+    std::unique_ptr<QTimer> m_c2dAckTimer;
 
-    QTimer *m_pilotingTimer;
+    std::unique_ptr<QTimer> m_pilotingTimer;
     qint8 m_roll;
     qint8 m_pitch;
     qint8 m_yaw;

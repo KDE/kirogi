@@ -18,6 +18,8 @@
  * License along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include <memory>
+
 #include "abstractvehicle.h"
 #include "debug.h"
 #include "parametermodel.h"
@@ -39,7 +41,7 @@ public:
     AbstractVehicle::FlyingState flyingState = AbstractVehicle::Unknown;
 
     QElapsedTimer *flightTime = nullptr;
-    QTimer *flightTimeTimer = nullptr;
+    std::unique_ptr<QTimer> flightTimeTimer;
 
     ParameterModel parameters;
 
@@ -118,8 +120,8 @@ void Kirogi::AbstractVehicle::setFlyingState(Kirogi::AbstractVehicle::FlyingStat
             }
 
             if (!d->flightTimeTimer) {
-                d->flightTimeTimer = new QTimer(this);
-                QObject::connect(d->flightTimeTimer, &QTimer::timeout, this, &AbstractVehicle::flightTimeChanged);
+                d->flightTimeTimer = std::make_unique<QTimer>(this);
+                QObject::connect(d->flightTimeTimer.get(), &QTimer::timeout, this, &AbstractVehicle::flightTimeChanged);
                 d->flightTimeTimer->setTimerType(Qt::PreciseTimer);
                 d->flightTimeTimer->setInterval(1000);
             }
