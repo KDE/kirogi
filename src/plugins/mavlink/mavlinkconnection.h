@@ -20,6 +20,8 @@
 
 #pragma once
 
+#include <memory>
+
 #include <QObject>
 
 #include "abstractvehicle.h"
@@ -136,7 +138,9 @@ private:
     QPointer<QUdpSocket> m_controlSocket;
     QVector<AddressPort> m_senders;
 
-    QTimer heartbeatTimer;
+    /* Allocating heartbeatTimer on the heap so that the QTimer's thread 
+    affinity doesn't get broken when the destructor is called. */
+    std::unique_ptr<QTimer> heartbeatTimer;
 
     // Used by sendMessage
     mutable uint8_t m_buffer[1024];

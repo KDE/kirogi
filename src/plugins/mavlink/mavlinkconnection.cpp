@@ -30,9 +30,10 @@ MAVLinkConnection::MAVLinkConnection(const QString &vehicleName, QObject *parent
 {
     qRegisterMetaType<mavlink_message_t>("mavlink_message_t");
 
+    heartbeatTimer = std::make_unique<QTimer>(this);
     // Send periodically heartbeats to say that GCS is alive
-    connect(&heartbeatTimer, &QTimer::timeout, this, [this] { sendByteArray(_heartbeatMessage); });
-    heartbeatTimer.start(1000);
+    connect(heartbeatTimer.get(), &QTimer::timeout, this, [this] { sendByteArray(_heartbeatMessage); });
+    heartbeatTimer->start(1000);
 }
 
 void MAVLinkConnection::sendByteArray(const QByteArray &byteArray) const
