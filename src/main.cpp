@@ -71,7 +71,7 @@ int main(int argc, char *argv[])
     gst_init(&argc, &argv);
     GStreamerIntegration::init();
 #else
-    if (!gst_qt_android_init(NULL)) {
+    if (!gst_qt_android_init(nullptr)) {
         return -1;
     }
 #endif
