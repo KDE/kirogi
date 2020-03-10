@@ -81,7 +81,7 @@ void RyzeTelloConnection::pilot(qint8 roll, qint8 pitch, qint8 yaw, qint8 gaz)
     m_yaw = yaw;
     m_gaz = gaz;
 
-    if (roll > 0 || pitch > 0 || yaw > 0 || gaz > 0) {
+    if (roll != 0 || pitch != 0 || yaw != 0 || gaz != 0) {
         if (!m_pilotingTimer) {
             m_pilotingTimer = std::make_unique<QTimer>(this);
             m_pilotingTimer->setInterval(40);
