@@ -8,6 +8,7 @@ set(kirogicore_SRCS
     abstractvehicle.cpp
     vehiclesupportplugin.cpp
     vehiclesupportpluginmodel.cpp
+    joystickconfiguration.cpp
 )
 
 ecm_qt_declare_logging_category(kirogicore_SRCS
@@ -21,9 +22,12 @@ ecm_generate_headers(Kirogi_CamelCase_HEADERS
         AbstractVehicle
         VehicleSupportPlugin
         VehicleSupportPluginModel
+        JoystickConfiguration
     REQUIRED_HEADERS Kirogi_HEADERS
     PREFIX kirogi
 )
+
+include_directories(${CMAKE_CURRENT_BINARY_DIR}/../)
 
 add_subdirectory(positionsource)
 add_subdirectory(vehicleparameters)
@@ -67,6 +71,8 @@ target_link_libraries(kirogicore
         Qt5::Qml
         Qt5::Quick
         KF5::CoreAddons
+        KF5::I18n
+        KF5::ConfigGui
         positionsource
         vehicleparameters
 )

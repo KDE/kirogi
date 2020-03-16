@@ -20,6 +20,7 @@
 
 #include "ryzetelloconnection.h"
 #include "debug.h"
+#include "joystickconfiguration.h"
 
 #include <QNetworkDatagram>
 
@@ -76,6 +77,8 @@ void RyzeTelloConnection::sendCommand(const QString &_command, bool retryForever
 
 void RyzeTelloConnection::pilot(qint8 roll, qint8 pitch, qint8 yaw, qint8 gaz)
 {
+    Kirogi::JoystickConfiguration::pilot(roll, pitch, yaw, gaz);
+    
     m_roll = roll;
     m_pitch = pitch;
     m_yaw = yaw;

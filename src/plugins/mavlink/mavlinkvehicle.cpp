@@ -20,6 +20,7 @@
 
 #include "mavlinkvehicle.h"
 #include "debug.h"
+#include "joystickconfiguration.h"
 #include "parametermodel.h"
 
 #include <QDataStream>
@@ -325,6 +326,8 @@ void MAVLinkVehicle::requestAction(Kirogi::AbstractVehicle::VehicleAction action
 
 void MAVLinkVehicle::pilot(qint8 roll, qint8 pitch, qint8 yaw, qint8 gaz)
 {
+    Kirogi::JoystickConfiguration::pilot(roll, pitch, yaw, gaz);
+
     mavlink_manual_control_t manual_control;
     manual_control.target = 1;
     manual_control.x = pitch * 10; // [-1000,1000] range

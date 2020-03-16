@@ -30,6 +30,7 @@ kcoreaddons_add_plugin(kirogimavlinkplugin
 include_directories(
     ${MAVLINK_INCLUDE_DIR}
     ${MAVLINK_INCLUDE_DIR}/ardupilotmega
+    ${CMAKE_CURRENT_BINARY_DIR}/../../
 )
 
 set_target_properties(kirogimavlinkplugin
@@ -67,6 +68,7 @@ target_link_libraries(kirogimavlinkplugin
         Qt5::Positioning
         KF5::CoreAddons
         KF5::I18n
+        KF5::ConfigGui
         KirogiCore
         vehicleparameters
 )

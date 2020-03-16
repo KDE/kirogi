@@ -20,6 +20,7 @@
 
 #include "parrotconnection.h"
 #include "debug.h"
+#include "joystickconfiguration.h"
 
 #include <QDataStream>
 #include <QHostInfo>
@@ -183,6 +184,8 @@ void ParrotConnection::sendCommand(Parrot::Command _command, const QVariantList 
 
 void ParrotConnection::pilot(qint8 roll, qint8 pitch, qint8 yaw, qint8 gaz)
 {
+    Kirogi::JoystickConfiguration::pilot(roll, pitch, yaw, gaz);
+    
     m_roll = roll;
     m_pitch = pitch;
     m_yaw = yaw;

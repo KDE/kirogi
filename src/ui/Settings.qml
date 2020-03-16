@@ -59,5 +59,16 @@ Kirigami.ScrollablePage {
             checked: kirogiSettings.stretchVideo
             onToggled: kirogiSettings.stretchVideo = checked
         }
+
+        Kirigami.Heading { text: "Joystick" }
+
+        QQC2.CheckBox {
+            id: exponentialFitting
+
+            text: i18n("Enable exponential fitting for joysticks")
+
+            checked: kirogiSettings.exponentialFitting
+            onToggled: kirogiSettings.exponentialFitting = checked
+        }
     }
 }

@@ -17,6 +17,10 @@
       <label>Allow Kirogi to request the device location.</label>
       <default>true</default>
     </entry>
+    <entry name="exponentialFitting" key="exponentialFitting" type="Bool">
+      <label>Enable exponential fitting for joystick.</label>
+      <default>false</default>
+    </entry>
   </group>
   <group name="ui">
     <entry name="inputMode" key="InputMode" type="Enum">

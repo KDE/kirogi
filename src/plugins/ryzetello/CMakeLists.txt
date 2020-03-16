@@ -18,6 +18,8 @@ kcoreaddons_add_plugin(kirogiryzetelloplugin
     INSTALL_NAMESPACE "kirogi/vehiclesupport"
 )
 
+include_directories(${CMAKE_CURRENT_BINARY_DIR}/../../)
+
 set_target_properties(kirogiryzetelloplugin
     PROPERTIES
     LIBRARY_OUTPUT_DIRECTORY "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}"
@@ -53,6 +55,7 @@ target_link_libraries(kirogiryzetelloplugin
         Qt5::Positioning
         KF5::CoreAddons
         KF5::I18n
+        KF5::ConfigGui
         KirogiCore
 )
 

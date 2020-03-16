@@ -9,7 +9,10 @@ if(ANDROID)
             PURPOSE "Zeroconf discovery on Android.")
 endif()
 
-include_directories(${QTZEROCONF_INCLUDE_DIR})
+include_directories(
+    ${QTZEROCONF_INCLUDE_DIR}
+    ${CMAKE_CURRENT_BINARY_DIR}/../../
+)
 
 set(kirogiparrotplugin_SRCS
     parrotconnection.cpp
@@ -65,6 +68,7 @@ target_link_libraries(kirogiparrotplugin
         Qt5::Positioning
         KF5::CoreAddons
         KF5::I18n
+        KF5::ConfigGui
         KirogiCore
 )
 
