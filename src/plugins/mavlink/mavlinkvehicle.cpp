@@ -25,6 +25,7 @@
 #include <QDataStream>
 #include <QDateTime>
 #include <QStandardPaths>
+#include <qloggingcategory.h>
 
 MAVLinkVehicle::MAVLinkVehicle(QObject *parent)
     : Kirogi::AbstractVehicle(parent)
@@ -53,6 +54,11 @@ MAVLinkVehicle::MAVLinkVehicle(QObject *parent)
 
     m_connectionThread.setObjectName(QLatin1String("MAVLinkConnectionThread"));
     m_connectionThread.start();
+
+    m_commandTimer.setSingleShot(true);
+    // TODO: Set appropriate resending interval.
+    m_commandTimer.setInterval(3000);
+    QObject::connect(&m_commandTimer, &QTimer::timeout, this, &MAVLinkVehicle::sendCommandInQueue);
 }
 
 MAVLinkVehicle::~MAVLinkVehicle()
@@ -99,7 +105,17 @@ void MAVLinkVehicle::processMavlinkMessage(const mavlink_message_t &message)
     case MAVLINK_MSG_ID_COMMAND_ACK: {
         mavlink_command_ack_t command_ack;
         mavlink_msg_command_ack_decode(&message, &command_ack);
-        // TODO: Do something related to nack
+
+        // TODO: Need to more stuffs related to ack command.
+        if (command_ack.command == m_commandQueue[0].command) {
+            m_cmdResendCnt = 0;
+            m_commandTimer.stop();
+            m_commandQueue.removeFirst();
+            sendCommandInQueue();
+        } else {
+            qCDebug(KIROGI_VEHICLESUPPORT_MAVLINK) << "Received unintended ack message.";
+        }
+
         break;
     }
 
@@ -275,7 +291,8 @@ void MAVLinkVehicle::requestAction(Kirogi::AbstractVehicle::VehicleAction action
         command_long.param5 = 0;
         command_long.param6 = 0;
         command_long.param7 = 0;
-        m_connection->sendMessage(command_long);
+
+        m_commandQueue.append(command_long);
 
         command_long.target_system = 1;    // TODO: get from system heartbeat
         command_long.target_component = 1; // TODO: get from system heartbeat
@@ -288,10 +305,17 @@ void MAVLinkVehicle::requestAction(Kirogi::AbstractVehicle::VehicleAction action
         command_long.param5 = 0;
         command_long.param6 = 0;
         command_long.param7 = 0;
-        m_connection->sendMessage(command_long);
+
+        m_commandQueue.append(command_long);
 
         setFlyingState(TakingOff); // FIXME: We don't /really/ know that without
                                    // looking at the response.
+
+        if (m_commandQueue.count() == 2) {
+            m_cmdResendCnt = 0;
+            sendCommandInQueue();
+        }
+
         break;
     }
     case Land: {
@@ -312,15 +336,44 @@ void MAVLinkVehicle::requestAction(Kirogi::AbstractVehicle::VehicleAction action
         command_long.param5 = 0;
         command_long.param6 = 0;
         command_long.param7 = 0;
-        m_connection->sendMessage(command_long);
+
+        m_commandQueue.append(command_long);
 
         setFlyingState(Landed); // FIXME: We don't /really/ know that without
                                 // looking at the response.
+
+        if (m_commandQueue.count() == 1) {
+            m_cmdResendCnt = 0;
+            sendCommandInQueue();
+        }
+
         break;
     }
     default: {
     }
     }
+}
+
+void MAVLinkVehicle::sendCommandInQueue()
+{
+    if (m_commandQueue.count() == 0)
+        return;
+
+    // TODO: Need to set appropriate maximum resend count.
+    if (m_cmdResendCnt++ > 10) {
+        m_commandQueue.removeFirst();
+        sendCommandInQueue();
+        return;
+    }
+
+    /*
+     * TODO:
+     * As mentioned in mavlinkvehicle.h, we need to create new type that can
+     * store information of more than COMMAND_LONG type.
+     */
+    mavlink_command_long_t command_long = m_commandQueue[0];
+    m_commandTimer.start();
+    m_connection->sendMessage(command_long);
 }
 
 void MAVLinkVehicle::pilot(qint8 roll, qint8 pitch, qint8 yaw, qint8 gaz)

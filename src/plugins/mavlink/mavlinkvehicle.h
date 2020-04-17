@@ -24,6 +24,7 @@
 #include "mavlinkconnection.h"
 
 #include <QThread>
+#include <QTimer>
 
 class MAVLinkConnection;
 class QTimer;
@@ -85,4 +86,16 @@ private:
 
     QThread m_connectionThread;
     MAVLinkConnection *m_connection;
+
+    int m_cmdResendCnt;
+    /*
+     * TODO:
+     * There are three kinds of commands (COMMAND_INT, COMMAND_LONG, COMMAND_ACK).
+     * We need to create new type that can store information of first two kinds
+     * of commands. And that should be entity of this command queue.
+     */
+    QList<mavlink_command_long_t> m_commandQueue;
+    QTimer m_commandTimer;
+
+    void sendCommandInQueue();
 };
