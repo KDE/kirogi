@@ -279,34 +279,37 @@ void MAVLinkVehicle::requestAction(Kirogi::AbstractVehicle::VehicleAction action
         }
 
         // Set the vehicle in stabilize mode and after that arm
-        mavlink_command_long_t command_long;
-        command_long.target_system = 1;    // TODO: get from system heartbeat
-        command_long.target_component = 1; // TODO: get from system heartbeat
-        command_long.command = MAV_CMD_DO_SET_MODE;
-        command_long.confirmation = 0;
-        command_long.param1 = MAV_MODE_FLAG_CUSTOM_MODE_ENABLED;
-        command_long.param2 = 0; // 0 for stabilize
-        command_long.param3 = 0;
-        command_long.param4 = 0;
-        command_long.param5 = 0;
-        command_long.param6 = 0;
-        command_long.param7 = 0;
+        CommandQueueEntry_t cmdQueueEntry;
 
-        m_commandQueue.append(command_long);
+        cmdQueueEntry.command_int = false;
+        cmdQueueEntry.target_system = 1;    // TODO: get from system heartbeat
+        cmdQueueEntry.target_component = 1; // TODO: get from system heartbeat
+        cmdQueueEntry.command = MAV_CMD_DO_SET_MODE;
+        cmdQueueEntry.confirmation = 0;
+        cmdQueueEntry.params[0] = MAV_MODE_FLAG_CUSTOM_MODE_ENABLED;
+        cmdQueueEntry.params[1] = 0;
+        cmdQueueEntry.params[2] = 0; // 0 for stabilize
+        cmdQueueEntry.params[3] = 0;
+        cmdQueueEntry.params[4] = 0;
+        cmdQueueEntry.params[5] = 0;
+        cmdQueueEntry.params[6] = 0;
 
-        command_long.target_system = 1;    // TODO: get from system heartbeat
-        command_long.target_component = 1; // TODO: get from system heartbeat
-        command_long.command = MAV_CMD_COMPONENT_ARM_DISARM;
-        command_long.confirmation = 0;
-        command_long.param1 = 1;
-        command_long.param2 = 0;
-        command_long.param3 = 0;
-        command_long.param4 = 0;
-        command_long.param5 = 0;
-        command_long.param6 = 0;
-        command_long.param7 = 0;
+        m_commandQueue.append(cmdQueueEntry);
 
-        m_commandQueue.append(command_long);
+        cmdQueueEntry.command_int = false;
+        cmdQueueEntry.target_system = 1;    // TODO: get from system heartbeat
+        cmdQueueEntry.target_component = 1; // TODO: get from system heartbeat
+        cmdQueueEntry.command = MAV_CMD_COMPONENT_ARM_DISARM;
+        cmdQueueEntry.confirmation = 0;
+        cmdQueueEntry.params[0] = 1;
+        cmdQueueEntry.params[1] = 0;
+        cmdQueueEntry.params[2] = 0;
+        cmdQueueEntry.params[3] = 0;
+        cmdQueueEntry.params[4] = 0;
+        cmdQueueEntry.params[5] = 0;
+        cmdQueueEntry.params[6] = 0;
+
+        m_commandQueue.append(cmdQueueEntry);
 
         setFlyingState(TakingOff); // FIXME: We don't /really/ know that without
                                    // looking at the response.
@@ -324,20 +327,22 @@ void MAVLinkVehicle::requestAction(Kirogi::AbstractVehicle::VehicleAction action
         }
 
         // Disarm vehicle
-        mavlink_command_long_t command_long;
-        command_long.target_system = 1;    // TODO: get from system heartbeat
-        command_long.target_component = 1; // TODO: get from system heartbeat
-        command_long.command = MAV_CMD_COMPONENT_ARM_DISARM;
-        command_long.confirmation = 0;
-        command_long.param1 = 0;
-        command_long.param2 = 0;
-        command_long.param3 = 0;
-        command_long.param4 = 0;
-        command_long.param5 = 0;
-        command_long.param6 = 0;
-        command_long.param7 = 0;
+        CommandQueueEntry_t cmdQueueEntry;
 
-        m_commandQueue.append(command_long);
+        cmdQueueEntry.command_int = false;
+        cmdQueueEntry.target_system = 1;    // TODO: get from system heartbeat
+        cmdQueueEntry.target_component = 1; // TODO: get from system heartbeat
+        cmdQueueEntry.command = MAV_CMD_COMPONENT_ARM_DISARM;
+        cmdQueueEntry.confirmation = 0;
+        cmdQueueEntry.params[0] = 0;
+        cmdQueueEntry.params[1] = 0;
+        cmdQueueEntry.params[2] = 0;
+        cmdQueueEntry.params[3] = 0;
+        cmdQueueEntry.params[4] = 0;
+        cmdQueueEntry.params[5] = 0;
+        cmdQueueEntry.params[6] = 0;
+
+        m_commandQueue.append(cmdQueueEntry);
 
         setFlyingState(Landed); // FIXME: We don't /really/ know that without
                                 // looking at the response.
@@ -366,12 +371,21 @@ void MAVLinkVehicle::sendCommandInQueue()
         return;
     }
 
-    /*
-     * TODO:
-     * As mentioned in mavlinkvehicle.h, we need to create new type that can
-     * store information of more than COMMAND_LONG type.
-     */
-    mavlink_command_long_t command_long = m_commandQueue[0];
+    CommandQueueEntry_t cmdQueueEntry = m_commandQueue[0];
+    mavlink_command_long_t command_long;
+
+    command_long.target_system = cmdQueueEntry.target_system;
+    command_long.target_component = cmdQueueEntry.target_component;
+    command_long.command = cmdQueueEntry.command;
+    command_long.confirmation = cmdQueueEntry.confirmation;
+    command_long.param1 = cmdQueueEntry.params[0];
+    command_long.param2 = cmdQueueEntry.params[1];
+    command_long.param3 = cmdQueueEntry.params[2];
+    command_long.param4 = cmdQueueEntry.params[3];
+    command_long.param5 = cmdQueueEntry.params[4];
+    command_long.param6 = cmdQueueEntry.params[5];
+    command_long.param7 = cmdQueueEntry.params[6];
+
     m_commandTimer.start();
     m_connection->sendMessage(command_long);
 }

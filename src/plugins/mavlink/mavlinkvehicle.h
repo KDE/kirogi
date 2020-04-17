@@ -87,15 +87,21 @@ private:
     QThread m_connectionThread;
     MAVLinkConnection *m_connection;
 
-    int m_cmdResendCnt;
-    /*
-     * TODO:
-     * There are three kinds of commands (COMMAND_INT, COMMAND_LONG, COMMAND_ACK).
-     * We need to create new type that can store information of first two kinds
-     * of commands. And that should be entity of this command queue.
-     */
-    QList<mavlink_command_long_t> m_commandQueue;
+    typedef struct {
+        bool command_int;
+        float params[7];
+        MAV_CMD command;
+        uint8_t target_system;
+        uint8_t target_component;
+        uint8_t confirmation;
+        MAV_FRAME frame; // Coordinate system of the command. (COMMAND_INT)
+        uint8_t current; // False: 0, True: 1.
+        uint8_t autocontinue; // Continue to next wp automatically.
+    } CommandQueueEntry_t;
+
+    QList<CommandQueueEntry_t> m_commandQueue;
     QTimer m_commandTimer;
+    int m_cmdResendCnt;
 
     void sendCommandInQueue();
 };
