@@ -3,7 +3,6 @@
 #include <QtGlobal>
 
 #include "kirogicore_export.h"
-#include "settings.h"
 
 namespace Kirogi
 {

@@ -30,6 +30,7 @@ ecm_generate_headers(Kirogi_CamelCase_HEADERS
 include_directories(${CMAKE_CURRENT_BINARY_DIR}/../)
 
 add_subdirectory(positionsource)
+add_subdirectory(settings)
 add_subdirectory(vehicleparameters)
 
 add_library(kirogicore SHARED ${kirogicore_SRCS} ${Kirogi_HEADERS})
@@ -74,6 +75,7 @@ target_link_libraries(kirogicore
         KF5::I18n
         KF5::ConfigGui
         positionsource
+        settings
         vehicleparameters
 )
 
@@ -130,6 +132,7 @@ target_link_libraries(kirogiqtquickplugin
     Qt5::Quick
     KirogiCore
     positionsource
+    settings
     vehicleparameters
     )
 

@@ -79,7 +79,6 @@ endif()
 set(kirogi_SRCS
     main.cpp
     permissions.cpp
-    autosettingshandler.cpp
     ${ANDROID_HEADERS}
     ${ANDROID_SOURCES}
 )
@@ -89,8 +88,6 @@ ecm_qt_declare_logging_category(kirogi_SRCS
     IDENTIFIER KIROGI_APP
     CATEGORY_NAME "kirogi.app"
 )
-
-kconfig_add_kcfg_files(kirogi_SRCS GENERATE_MOC settings.kcfgc)
 
 file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/../data/icons/*apps-kirogi.svg")
 ecm_add_app_icon(kirogi_SRCS ICONS ${ICONS_SRCS})
@@ -143,6 +140,7 @@ target_link_libraries(kirogi
     KF5::I18n
     gstreamer
     ${GSTREAMER_LIBRARIES}
+    settings
 )
 
 if(NOT ANDROID)
@@ -177,5 +175,4 @@ else()
     )
 endif()
 
-install(FILES kirogi.kcfg DESTINATION ${KCFG_INSTALL_DIR})
 install(TARGETS kirogi ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})

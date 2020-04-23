@@ -1,4 +1,5 @@
 #include "joystickconfiguration.h"
+#include "autosettingshandler.h"
 
 #include <QEasingCurve>
 
