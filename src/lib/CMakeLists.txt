@@ -26,6 +26,7 @@ ecm_generate_headers(Kirogi_CamelCase_HEADERS
 )
 
 add_subdirectory(positionsource)
+add_subdirectory(settings)
 add_subdirectory(vehicleparameters)
 
 add_library(kirogicore SHARED ${kirogicore_SRCS} ${Kirogi_HEADERS})
@@ -68,6 +69,7 @@ target_link_libraries(kirogicore
         Qt5::Quick
         KF5::CoreAddons
         positionsource
+        settings
         vehicleparameters
 )
 
@@ -124,6 +126,7 @@ target_link_libraries(kirogiqtquickplugin
     Qt5::Quick
     KirogiCore
     positionsource
+    settings
     vehicleparameters
     )
 
