@@ -25,6 +25,8 @@ import QtQuick.Window 2.12
 import QtQuick.Controls 2.12 as QQC2
 import QtQuick.Shapes 1.12
 
+import QtGraphicalEffects 1.12
+
 import org.kde.kirigami 2.6 as Kirigami
 
 Kirigami.Page {
@@ -135,9 +137,22 @@ Kirigami.Page {
         sourceItem: Kirigami.Icon {
             width: Kirigami.Units.iconSizes.medium
             height: width
-
-            color: kirogi.currentVehicle && kirogi.currentVehicle.gpsFix ? Kirigami.Theme.positiveTextColor : Kirigami.Theme.negativeTextColor
             source: centerOnDroneButton.icon
+
+            LinearGradient {
+                anchors.fill: parent
+                source: parent
+                start: Qt.point(0, 0)
+                end: Qt.point(0, height)
+                gradient: Gradient {
+                    GradientStop { position: 0.49; color: "green" }
+                    GradientStop { position: 0.51; color: "red" }
+                }
+                transform: Rotation {
+                    origin.x: droneLocationMarker.width / 2
+                    origin.y: droneLocationMarker.height / 2
+                    angle: kirogi.currentVehicle.yaw * 180 / 3.1415}
+            }
         }
     }
 
