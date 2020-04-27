@@ -68,7 +68,7 @@ if (BUILD_APP)
         )
     endif()
 
-    ecm_find_qmlmodule(QtGamePad 5.12)
+    ecm_find_qmlmodule(QtGamepad 1.12)
     ecm_find_qmlmodule(QtGraphicalEffects 1.12)
     ecm_find_qmlmodule(QtLocation 5.12)
     ecm_find_qmlmodule(org.kde.kirigami 2.6)
