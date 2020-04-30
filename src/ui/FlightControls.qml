@@ -71,52 +71,8 @@ Kirigami.Page {
         }
     }
 
-    Image {
-        id: cameraStream
-
+    VideoElement {
         anchors.fill: parent
-
-        fillMode: Image.PreserveAspectCrop
-        smooth: true
-
-        source: "fallback.jpg"
-
-        Connections {
-            target: kirogi
-
-            onCurrentVehicleChanged: {
-                videoSurface.playing = kirogi.currentVehicle != null;
-            }
-
-            onCurrentPageChanged: {
-                videoSurface.playing = (kirogi.currentPage == page || kirogi.currentVehicle);
-            }
-        }
-
-        KirogiVideo.VideoReceiver {
-            id: videoReceiver
-            stringPipeline: kirogi.currentVehicle ? kirogi.currentVehicle.videoSource : ""
-        }
-
-        KirogiVideo.VideoSurface {
-            id: videoSurface
-            videoReceiver: videoReceiver
-
-            width: parent.width
-            height: kirogiSettings.stretchVideo ? parent.height : parent.width / 1.77
-        }
-
-        Rectangle {
-            id: videoOverlay
-
-            anchors.fill: parent
-
-            visible: !kirogi.currentVehicle || kirogi.currentVehicle.videoSource === ""
-
-            opacity: 0.4
-
-            color: "black"
-        }
     }
 
     // FIXME TODO: This is a workaround around the org.kde.desktop+Breeze style engine

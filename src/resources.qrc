@@ -16,6 +16,7 @@
         <file alias="TouchDPad.qml">ui/components/TouchDPad.qml</file>
         <file alias="Vehicle.qml">ui/Vehicle.qml</file>
         <file alias="VehicleActionsDrawer.qml">ui/VehicleActionsDrawer.qml</file>
+        <file alias="VideoElement.qml">ui/components/VideoElement.qml</file>
         <file alias="VirtualHorizon.qml">ui/components/VirtualHorizon.qml</file>
         <file alias="YawBar.qml">ui/components/YawBar.qml</file>
     </qresource>
