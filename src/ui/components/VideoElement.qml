@@ -5,6 +5,7 @@ Item {
     Image {
         source: "fallback.jpg"
         smooth: true
+        visible: !videoSurface.playing
         fillMode: Image.PreserveAspectCrop
         anchors.fill: parent
     }
