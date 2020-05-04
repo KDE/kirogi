@@ -20,7 +20,7 @@
 
 #pragma once
 
-#include <QAbstractListModel>
+#include "abstractpluginmodel.h"
 
 #include "kirogicore_export.h"
 
@@ -28,7 +28,7 @@ namespace Kirogi
 {
 class VehicleSupportPlugin;
 
-class KIROGI_EXPORT VehicleSupportPluginModel : public QAbstractListModel
+class KIROGI_EXPORT VehicleSupportPluginModel : public AbstractPluginModel
 {
     Q_OBJECT
 
@@ -42,25 +42,10 @@ public:
     explicit VehicleSupportPluginModel(QObject *parent = nullptr);
     ~VehicleSupportPluginModel() override;
 
-    QHash<int, QByteArray> roleNames() const override;
-
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
 
-    int rowCount(const QModelIndex &parent = QModelIndex()) const override;
-
-    Q_INVOKABLE bool loadPlugin(int row);
-    Q_INVOKABLE bool loadPluginById(const QString &id);
-    Q_INVOKABLE bool unloadPlugin(int row);
-
-    Q_INVOKABLE bool unloadAllPlugins();
-
-Q_SIGNALS:
-    // FIXME TODO: QObject -> VehicleSupportPlugin
-    void pluginLoaded(const QString &pluginId, const QString &name, QObject *plugin) const;
-
-private:
-    class Private;
-    QScopedPointer<Private> d;
+protected:
+    QObject *requestFromFactory(KPluginFactory *factory) override;
 };
 
 }

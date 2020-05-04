@@ -29,86 +29,16 @@
 #include <QCoreApplication>
 #include <QMetaEnum>
 
-namespace Kirogi
-{
-class Q_DECL_HIDDEN VehicleSupportPluginModel::Private
-{
-public:
-    explicit Private(VehicleSupportPluginModel *q);
-    ~Private();
-
-    QVector<KPluginMetaData> plugins;
-
-    // This is QMap so `VehicleSupportPluginModel::loadedPlugins` returns a stable sort.
-    QMap<QString, VehicleSupportPlugin *> loadedPlugins;
-
-    void findPlugins();
-
-private:
-    VehicleSupportPluginModel *m_q;
-};
-
-VehicleSupportPluginModel::Private::Private(VehicleSupportPluginModel *q)
-    : m_q(q)
-{
-}
-
-VehicleSupportPluginModel::Private::~Private() = default;
-
-void VehicleSupportPluginModel::Private::findPlugins()
-{
-    auto filter = [](const KPluginMetaData &metaData) { return metaData.serviceTypes().contains(QStringLiteral("Kirogi/VehicleSupport")); };
-
-    // Look for plugins in a relative path, covers the case when the application is
-    // not installed in the system.
-    plugins = KPluginLoader::findPlugins(QCoreApplication::applicationDirPath() + QStringLiteral("/../lib/plugins/kirogi/vehiclesupport"), filter);
-    plugins += KPluginLoader::findPlugins(QStringLiteral("kirogi/vehiclesupport"), filter);
-
-    // Unload plugins that apparently got uninstalled at runtime.
-    for (const QString &id : loadedPlugins.keys()) {
-        const bool found = std::any_of(plugins.constBegin(), plugins.constEnd(), [id](const auto &md) { return md.pluginId() == id; });
-        if (!found) {
-            delete loadedPlugins.take(id);
-        }
-    }
-}
+namespace Kirogi {
 
 VehicleSupportPluginModel::VehicleSupportPluginModel(QObject *parent)
-    : QAbstractListModel(parent)
-    , d(new Private(this))
+    : AbstractPluginModel(parent)
 {
-    // FIXME TODO: Watch KSycoca and reload when new plugins are installed at runtime.
-    d->findPlugins();
+    loadPluginByService(QStringLiteral("Kirogi/VehicleSupport"));
 }
 
 VehicleSupportPluginModel::~VehicleSupportPluginModel() = default;
 
-QHash<int, QByteArray> VehicleSupportPluginModel::roleNames() const
-{
-    QHash<int, QByteArray> roles = QAbstractItemModel::roleNames();
-
-    QMetaEnum e = metaObject()->enumerator(metaObject()->indexOfEnumerator("AdditionalRoles"));
-
-    auto desCapitalize = [](const char *input) -> QByteArray {
-        QByteArray array(input);
-        return array.left(1).toLower() + array.mid(1);
-    };
-
-    for (int i = 0; i < e.keyCount(); ++i) {
-        roles.insert(e.value(i), desCapitalize(e.key(i)));
-    }
-
-    return roles;
-}
-
-int VehicleSupportPluginModel::rowCount(const QModelIndex &parent) const
-{
-    if (!checkIndex(parent, CheckIndexOption::ParentIsInvalid)) {
-        return 0;
-    }
-
-    return d->plugins.count();
-}
 
 QVariant VehicleSupportPluginModel::data(const QModelIndex &index, int role) const
 {
@@ -116,115 +46,26 @@ QVariant VehicleSupportPluginModel::data(const QModelIndex &index, int role) con
         return QVariant();
     }
 
+    auto metadata = metadataAt(index.row());
+    const QString &id = metadata.pluginId();
+
     switch (role) {
-    case Qt::DisplayRole: {
-        return d->plugins.at(index.row()).name();
-    }
-    case Id: {
-        return d->plugins.at(index.row()).pluginId();
-    }
-    case Status: {
-        const QString &id = d->plugins.at(index.row()).pluginId();
-
-        if (d->loadedPlugins.contains(id)) {
-            return PluginLoaded;
-        }
-        return PluginNotLoaded;
-
-    }
-    case Plugin: {
-        const QString &id = d->plugins.at(index.row()).pluginId();
-
-        return QVariant::fromValue(d->loadedPlugins.value(id));
-    }
+    case Qt::DisplayRole:
+        return metadata.name();
+    case Id:
+        return metadata.pluginId();
+    case Status:
+        return pluginForId(id) ? PluginLoaded : PluginNotLoaded;
+    case Plugin:
+        return QVariant::fromValue(pluginForId(id));
     }
 
     return QVariant();
 }
 
-bool VehicleSupportPluginModel::loadPlugin(int row)
+QObject *VehicleSupportPluginModel::requestFromFactory(KPluginFactory *factory)
 {
-    const KPluginMetaData &md = d->plugins.at(row);
-
-    if (d->loadedPlugins.contains(md.pluginId())) {
-        return false;
-    }
-
-    KPluginLoader loader(md.fileName(), this);
-    KPluginFactory *factory = loader.factory();
-
-    if (!factory) {
-        qCWarning(KIROGI_CORE) << "Error loading plugin:" << md.pluginId() << "-" << loader.errorString();
-    } else {
-        VehicleSupportPlugin *vehicleSupportPlugin = factory->create<VehicleSupportPlugin>(this);
-
-        if (!vehicleSupportPlugin) {
-            qCWarning(KIROGI_CORE) << "Scheduling invalid plugin to be deleted:" << md.pluginId() << "/" << factory;
-            factory->deleteLater();
-        } else {
-            qCWarning(KIROGI_CORE) << "Loaded plugin with id:" << md.pluginId();
-
-            d->loadedPlugins[md.pluginId()] = vehicleSupportPlugin;
-
-            emit pluginLoaded(md.pluginId(), md.name(), vehicleSupportPlugin);
-
-            const QModelIndex &idx = index(row, 0);
-            emit dataChanged(idx, idx, QVector<int> {Status, Plugin});
-        }
-    }
-
-    return false;
-}
-
-bool VehicleSupportPluginModel::loadPluginById(const QString &id)
-{
-    for (int i = 0; i < d->plugins.count(); ++i) {
-        const KPluginMetaData &md = d->plugins.at(i);
-
-        if (md.pluginId() == id) {
-            return loadPlugin(i);
-        }
-    }
-
-    return false;
-}
-
-bool VehicleSupportPluginModel::unloadPlugin(int row)
-{
-    const QString &id = d->plugins.at(row).pluginId();
-
-    if (!d->loadedPlugins.contains(id)) {
-        return false;
-    }
-
-    delete d->loadedPlugins.take(id);
-
-    const QModelIndex &idx = index(row, 0);
-    emit dataChanged(idx, idx, QVector<int> {Status, Plugin});
-
-    return true;
-}
-
-bool VehicleSupportPluginModel::unloadAllPlugins()
-{
-    if (!d->loadedPlugins.count()) {
-        return false;
-    }
-
-    for (int i = 0; i < d->plugins.count(); ++i) {
-        const KPluginMetaData &md = d->plugins.at(i);
-
-        VehicleSupportPlugin *plugin = d->loadedPlugins.take(md.pluginId());
-
-        if (plugin) {
-            delete plugin;
-
-            const QModelIndex &idx = index(i, 0);
-            emit dataChanged(idx, idx, QVector<int> {Status, Plugin});
-        }
-    }
-
-    return true;
+    return factory->create<VehicleSupportPlugin>(this);
 }
 
 }

@@ -6,6 +6,7 @@ ecm_setup_version(PROJECT
 
 set(kirogicore_SRCS
     abstractvehicle.cpp
+    abstractpluginmodel.cpp
     vehiclesupportplugin.cpp
     vehiclesupportpluginmodel.cpp
 )
@@ -19,6 +20,7 @@ ecm_qt_declare_logging_category(kirogicore_SRCS
 ecm_generate_headers(Kirogi_CamelCase_HEADERS
     HEADER_NAMES
         AbstractVehicle
+        AbstractPluginModel
         VehicleSupportPlugin
         VehicleSupportPluginModel
     REQUIRED_HEADERS Kirogi_HEADERS
@@ -68,6 +70,7 @@ target_link_libraries(kirogicore
         Qt5::Qml
         Qt5::Quick
         KF5::CoreAddons
+
         positionsource
         settings
         vehicleparameters
@@ -124,6 +127,8 @@ target_link_libraries(kirogiqtquickplugin
     Qt5::Positioning
     Qt5::Qml
     Qt5::Quick
+    KF5::CoreAddons
+
     KirogiCore
     positionsource
     settings
