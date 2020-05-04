@@ -67,7 +67,7 @@ AbstractPluginModel::~AbstractPluginModel()
 
 void AbstractPluginModel::Private::loadPluginByService(const QString& serviceType)
 {
-    auto filter = [serviceType](const KPluginMetaData &metaData) { return metaData.serviceTypes().contains(serviceType); };
+    auto filterLambda = [serviceType](const KPluginMetaData &metaData) -> bool { return metaData.serviceTypes().contains(serviceType); };
     const QString lowercaseMetadata = serviceType.toLower();
 
     // Look for plugins in a relative path, covers the case when the application is
@@ -75,8 +75,8 @@ void AbstractPluginModel::Private::loadPluginByService(const QString& serviceTyp
     const QString possiblePluginPath = QCoreApplication::applicationDirPath()
         + QStringLiteral("/../lib/plugins/%1").arg(lowercaseMetadata);
 
-    plugins = KPluginLoader::findPlugins(possiblePluginPath, filter);
-    plugins += KPluginLoader::findPlugins(lowercaseMetadata, filter);
+    plugins = KPluginLoader::findPlugins(possiblePluginPath, filterLambda);
+    plugins += KPluginLoader::findPlugins(lowercaseMetadata, filterLambda);
 
     // Unload plugins that apparently got uninstalled at runtime.
     for (const QString &id : loadedPlugins.keys()) {
