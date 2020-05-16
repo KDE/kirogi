@@ -68,7 +68,7 @@ Kirigami.Page {
             onClicked: {
                 pluginSheet.sheetOpen = false;
                 pluginModel.unloadAllPlugins();
-                pluginModel.loadPlugin(index);
+                pluginModel.loadPluginByIndex(index);
             }
         }
     }
