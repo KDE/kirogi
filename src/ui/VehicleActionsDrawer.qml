@@ -155,7 +155,7 @@ Kirigami.OverlayDrawer {
                     Layout.preferredHeight: Kirigami.Units.iconSizes.smallMedium
                     Layout.preferredWidth: Layout.preferredHeight
 
-                    source: flipAction.collapsed ? "go-up-symbolic" : "go-down-symbolic"
+                    source: flipAction.collapsed ? "go-down-symbolic" : "go-up-symbolic"
                     isMask: true
                 }
             }
@@ -266,7 +266,7 @@ Kirigami.OverlayDrawer {
                     Layout.preferredHeight: Kirigami.Units.iconSizes.smallMedium
                     Layout.preferredWidth: Layout.preferredHeight
 
-                    source: geofenceAction.collapsed ? "go-up-symbolic" : "go-down-symbolic"
+                    source: geofenceAction.collapsed ? "go-down-symbolic" : "go-up-symbolic"
                     isMask: true
                 }
             }
@@ -464,7 +464,7 @@ Kirigami.OverlayDrawer {
                     Layout.preferredHeight: Kirigami.Units.iconSizes.smallMedium
                     Layout.preferredWidth: Layout.preferredHeight
 
-                    source: performanceAction.collapsed ? "go-up-symbolic" : "go-down-symbolic"
+                    source: performanceAction.collapsed ? "go-down-symbolic" : "go-up-symbolic" 
                     isMask: true
                 }
             }
