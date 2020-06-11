@@ -16,6 +16,7 @@
                 "Name[pl]": "Eike Hein",
                 "Name[pt]": "Eike Hein",
                 "Name[sk]": "Eike Hein",
+                "Name[sl]": "Eike Hein",
                 "Name[sv]": "Eike Hein",
                 "Name[uk]": "Eike Hein",
                 "Name[x-test]": "xxEike Heinxx"
@@ -32,6 +33,7 @@
         "Description[nl]": "Een Kirogi plug-in om Parrot UAV's te ondersteunen",
         "Description[pl]": "Wtyczka Kirogi do obsługi Parrot UAVs",
         "Description[pt]": "Um 'plugin' do Kirogi para ter suporte para os UAV's da Parrot",
+        "Description[sl]": "Kirogi vtičnik za podporo naprav Parrot UAV",
         "Description[sv]": "Ett Kirogi insticksprogram för att stödja Parrot drönare",
         "Description[uk]": "Додаток до Kirogi для підтримки дронів Parrot",
         "Description[x-test]": "xxA Kirogi plugin to support Parrot UAVsxx",
@@ -48,6 +50,7 @@
         "Name[pl]": "Parrot",
         "Name[pt]": "Parrot",
         "Name[sk]": "Parrot",
+        "Name[sl]": "Parrot",
         "Name[sv]": "Parrot",
         "Name[uk]": "Parrot",
         "Name[x-test]": "xxParrotxx",
