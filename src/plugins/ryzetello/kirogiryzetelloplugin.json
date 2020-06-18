@@ -18,7 +18,8 @@
                 "Name[sk]": "Eike Hein",
                 "Name[sl]": "Eike Hein",
                 "Name[sv]": "Eike Hein",
-                "Name[uk]": "Eike Hein"
+                "Name[uk]": "Eike Hein",
+                "Name[x-test]": "xxEike Heinxx"
             }
         ],
         "Description": "A Kirogi plugin to support the Ryze Tello UAV",
@@ -35,6 +36,7 @@
         "Description[sl]": "Kirogi vtičnik za podporo naprav Ryze Tello UAV",
         "Description[sv]": "Ett Kirogi insticksprogram för att stödja Ryze Tello drönare",
         "Description[uk]": "Додаток до Kirogi для підтримки дронів Ryze Tello",
+        "Description[x-test]": "xxA Kirogi plugin to support the Ryze Tello UAVxx",
         "Icon": "uav",
         "Name": "Ryze Tello",
         "Name[ca@valencia]": "Ryze Tello",
@@ -52,6 +54,7 @@
         "Name[sl]": "Ryze Tello",
         "Name[sv]": "Ryze Tello",
         "Name[uk]": "Ryze Tello",
+        "Name[x-test]": "xxRyze Telloxx",
         "ServiceTypes": [
             "Kirogi/VehicleSupport"
         ]
