@@ -18,10 +18,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include "autosettingshandler.h"
 #include "gstreamer/gstreamerintegration.h"
 #include "permissions.h"
 #include "settings.h"
-#include "autosettingshandler.h"
 
 // Remove warnings related to gstreamer library
 #ifdef __GNUC__

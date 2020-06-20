@@ -94,8 +94,8 @@ private:
         uint8_t target_system;
         uint8_t target_component;
         uint8_t confirmation;
-        MAV_FRAME frame; // Coordinate system of the command. (COMMAND_INT)
-        uint8_t current; // False: 0, True: 1.
+        MAV_FRAME frame;      // Coordinate system of the command. (COMMAND_INT)
+        uint8_t current;      // False: 0, True: 1.
         uint8_t autocontinue; // Continue to next wp automatically.
     } CommandQueueEntry_t;
 

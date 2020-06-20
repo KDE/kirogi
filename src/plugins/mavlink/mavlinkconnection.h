@@ -138,7 +138,7 @@ private:
     QPointer<QUdpSocket> m_controlSocket;
     QVector<AddressPort> m_senders;
 
-    /* Allocating heartbeatTimer on the heap so that the QTimer's thread 
+    /* Allocating heartbeatTimer on the heap so that the QTimer's thread
     affinity doesn't get broken when the destructor is called. */
     std::unique_ptr<QTimer> heartbeatTimer;
 
