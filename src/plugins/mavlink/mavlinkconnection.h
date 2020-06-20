@@ -115,13 +115,13 @@ public Q_SLOTS:
     void handshake();
     void reset();
 
-    void sendByteArray(const QByteArray &byteArray) const;
+    void sendByteArray(const QByteArray &byteArray);
 
 Q_SIGNALS:
-    void mavlinkMessage(const mavlink_message_t &message) const;
-    void stateChanged(Kirogi::AbstractVehicle::ConnectionState state) const;
-    void responseReceived(const QString &response) const;
-    void stateReceived(const QByteArray &state) const;
+    void mavlinkMessage(const mavlink_message_t &message);
+    void stateChanged(Kirogi::AbstractVehicle::ConnectionState state);
+    void responseReceived(const QString &response);
+    void stateReceived(const QByteArray &state);
 
 private Q_SLOTS:
     void receiveData();
