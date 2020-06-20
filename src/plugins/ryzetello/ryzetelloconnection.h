@@ -52,9 +52,9 @@ public Q_SLOTS:
     void pilot(qint8 roll, qint8 pitch, qint8 yaw, qint8 gaz);
 
 Q_SIGNALS:
-    void stateChanged(Kirogi::AbstractVehicle::ConnectionState state) const;
-    void responseReceived(const QString &response) const;
-    void stateReceived(const QByteArray &state) const;
+    void stateChanged(Kirogi::AbstractVehicle::ConnectionState state);
+    void responseReceived(const QString &response);
+    void stateReceived(const QByteArray &state);
 
 private Q_SLOTS:
     void receiveData();
