@@ -114,7 +114,7 @@ ParrotVehicle::ParrotVehicle(Type type, const QString &hostName, int port, const
     m_connection->moveToThread(&m_connectionThread);
     QObject::connect(&m_connectionThread, &QThread::finished, m_connection, &QObject::deleteLater);
 
-    m_connectionThread.setObjectName(QLatin1String("ParrotConnectionThread"));
+    m_connectionThread.setObjectName(QStringLiteral("ParrotConnectionThread"));
     m_connectionThread.start();
 }
 
@@ -666,13 +666,13 @@ QString ParrotVehicle::videoSource() const
 {
     if (videoStreamEnabled()) {
         if (m_type == Bebop2) {
-            return QLatin1String("udpsrc port=55004 ! application/x-rtp, clock-rate=90000,payload=96 ! rtph264depay ! video/x-h264 ! queue ! h264parse ! decodebin !");
+            return QStringLiteral("udpsrc port=55004 ! application/x-rtp, clock-rate=90000,payload=96 ! rtph264depay ! video/x-h264 ! queue ! h264parse ! decodebin !");
         } else if (m_type == Anafi) {
-            return QLatin1String("rtspsrc location=rtsp://192.168.42.1/live latency=5 ! rtph264depay ! video/x-h264 ! queue ! h264parse ! decodebin !");
+            return QStringLiteral("rtspsrc location=rtsp://192.168.42.1/live latency=5 ! rtph264depay ! video/x-h264 ! queue ! h264parse ! decodebin !");
         }
     }
 
-    return QString();
+    return {};
 }
 
 bool ParrotVehicle::videoStreamEnabled() const
