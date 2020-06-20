@@ -80,7 +80,7 @@ int AbstractVehicle::id() const
 
 QString AbstractVehicle::iconName() const
 {
-    return QLatin1String("uav");
+    return QStringLiteral("uav");
 }
 
 Kirogi::AbstractVehicle::VehicleType AbstractVehicle::vehicleType() const
