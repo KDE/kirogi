@@ -33,8 +33,8 @@
 
 // It's necessary to disable some warnings to avoid the amount of noise
 // messages from MAVLink source code
-#ifdef __GNUC__
-#if __GNUC__ > 8
+#if defined(__GNUC__) || defined(__clang__)
+#if __GNUC__ > 8 || defined(__clang__)
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Waddress-of-packed-member"
 #pragma GCC diagnostic ignored "-Wpedantic"
