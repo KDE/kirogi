@@ -14,6 +14,12 @@ build_clazy_clang_tidy:
     - git clone --depth=1 https://invent.kde.org/sysadmin/repo-metadata.git $CI_TOOLING/repo-metadata
     - git clone --depth=1 https://invent.kde.org/sysadmin/kde-build-metadata.git $CI_TOOLING/kde-build-metadata
     - git clone --depth=1 https://invent.kde.org/sdk/kde-dev-scripts.git $CI_TOOLING/kde-dev-scripts
+    # Install mavlink
+    - git clone https://github.com/mavlink/mavlink /tmp/mavlink
+    - mkdir -p /tmp/mavlink/build && cd /tmp/mavlink/build && git submodule update --init
+    - pip install future
+    - cmake .. && make install &> /dev/null
+    - cd -
 
   script:
     - export CXX=clazy
