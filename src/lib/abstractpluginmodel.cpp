@@ -21,8 +21,8 @@
 #include "abstractpluginmodel.h"
 #include "debug.h"
 
-#include <KPluginLoader>
 #include <KPluginFactory>
+#include <KPluginLoader>
 
 #include <QCoreApplication>
 #include <QMetaEnum>
@@ -38,9 +38,10 @@ public:
     QVector<KPluginMetaData> plugins;
 
     // This is QMap so `AbstractPluginModel::loadedPlugins` returns a stable sort.
-    QMap<QString, QObject*> loadedPlugins;
+    QMap<QString, QObject *> loadedPlugins;
 
-    void loadPluginByService(const QString& serviceType);
+    void loadPluginByService(const QString &serviceType);
+
 private:
     AbstractPluginModel *m_q;
 };
@@ -51,12 +52,10 @@ AbstractPluginModel::Private::Private(AbstractPluginModel *q)
 }
 AbstractPluginModel::Private::~Private() = default;
 
-
 AbstractPluginModel::AbstractPluginModel(QObject *parent)
-: QAbstractListModel(parent)
-, d(new AbstractPluginModel::Private(this))
+    : QAbstractListModel(parent)
+    , d(new AbstractPluginModel::Private(this))
 {
-
 }
 
 AbstractPluginModel::~AbstractPluginModel()
@@ -65,34 +64,31 @@ AbstractPluginModel::~AbstractPluginModel()
     delete d;
 }
 
-void AbstractPluginModel::Private::loadPluginByService(const QString& serviceType)
+void AbstractPluginModel::Private::loadPluginByService(const QString &serviceType)
 {
     auto filterLambda = [serviceType](const KPluginMetaData &metaData) -> bool { return metaData.serviceTypes().contains(serviceType); };
     const QString lowercaseMetadata = serviceType.toLower();
 
     // Look for plugins in a relative path, covers the case when the application is
     // not installed in the system.
-    const QString possiblePluginPath = QCoreApplication::applicationDirPath()
-        + QStringLiteral("/../lib/plugins/%1").arg(lowercaseMetadata);
+    const QString possiblePluginPath = QCoreApplication::applicationDirPath() + QStringLiteral("/../lib/plugins/%1").arg(lowercaseMetadata);
 
     plugins = KPluginLoader::findPlugins(possiblePluginPath, filterLambda);
     plugins += KPluginLoader::findPlugins(lowercaseMetadata, filterLambda);
 
     // Unload plugins that apparently got uninstalled at runtime.
     for (const QString &id : loadedPlugins.keys()) {
-        const bool found = std::any_of(plugins.constBegin(), plugins.constEnd(),
-                         [id](const auto &md) { return md.pluginId() == id; });
+        const bool found = std::any_of(plugins.constBegin(), plugins.constEnd(), [id](const auto &md) { return md.pluginId() == id; });
         if (!found) {
             loadedPlugins.take(id)->deleteLater();
         }
     }
 }
 
-void AbstractPluginModel::loadPluginByService(const QString& serviceType)
+void AbstractPluginModel::loadPluginByService(const QString &serviceType)
 {
     d->loadPluginByService(serviceType);
 }
-
 
 bool AbstractPluginModel::loadPluginByIndex(int row)
 {
@@ -127,7 +123,6 @@ bool AbstractPluginModel::loadPluginByIndex(int row)
 
     return true;
 }
-
 
 bool AbstractPluginModel::loadPluginById(const QString &id)
 {
@@ -213,10 +208,9 @@ KPluginMetaData AbstractPluginModel::metadataAt(int row) const
     return d->plugins.at(row);
 }
 
-QObject * AbstractPluginModel::pluginForId(const QString& id) const
+QObject *AbstractPluginModel::pluginForId(const QString &id) const
 {
     return d->loadedPlugins.value(id, nullptr);
 }
-
 
 }

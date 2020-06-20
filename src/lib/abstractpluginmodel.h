@@ -20,27 +20,29 @@
 
 #pragma once
 
-#include <QAbstractListModel>
-#include <KPluginMetaData>
 #include <KPluginFactory>
+#include <KPluginMetaData>
+#include <QAbstractListModel>
 
 #include "kirogicore_export.h"
 
-namespace Kirogi {
+namespace Kirogi
+{
 /* This class is the base class of different models for plugins in Kirogi
-*/
-class KIROGI_EXPORT AbstractPluginModel : public QAbstractListModel {
-Q_OBJECT
+ */
+class KIROGI_EXPORT AbstractPluginModel : public QAbstractListModel
+{
+    Q_OBJECT
 public:
     explicit AbstractPluginModel(QObject *parent = nullptr);
     ~AbstractPluginModel() override;
 
     QHash<int, QByteArray> roleNames() const override;
     int rowCount(const QModelIndex &parent = QModelIndex()) const override final;
-    QObject *pluginForId(const QString& id) const;
+    QObject *pluginForId(const QString &id) const;
     KPluginMetaData metadataAt(int row) const;
 
-    void loadPluginByService(const QString& serviceType);
+    void loadPluginByService(const QString &serviceType);
     Q_INVOKABLE bool loadPluginByIndex(int idx);
     Q_INVOKABLE bool loadPluginById(const QString &id);
 
