@@ -22,6 +22,8 @@ build_clazy_clang_tidy:
     - cd -
 
   script:
+    # Help clazy to ignore warnings from system libraries
+    - export CLAZY_IGNORE_DIRS="/usr/include/.*"
     - export CXX=clazy
     - export CC=clang
     - export CLAZY_CHECKS="level0,level1,detaching-member,ifndef-define-typo,isempty-vs-count,qrequiredresult-candidates,reserve-candidates,signal-with-return-value,unneeded-cast,function-args-by-ref,function-args-by-value,returning-void-expression,no-ctor-missing-parent-argument,isempty-vs-count,qhash-with-char-pointer-key,raw-environment-function,qproperty-type-mismatch,old-style-connect,qstring-allocations,container-inside-loop,heap-allocated-small-trivial-type,inefficient-qlist,qstring-varargs"
