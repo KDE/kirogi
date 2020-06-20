@@ -29,8 +29,8 @@
 #include <QCoreApplication>
 #include <QMetaEnum>
 
-namespace Kirogi {
-
+namespace Kirogi
+{
 VehicleSupportPluginModel::VehicleSupportPluginModel(QObject *parent)
     : AbstractPluginModel(parent)
 {
@@ -38,7 +38,6 @@ VehicleSupportPluginModel::VehicleSupportPluginModel(QObject *parent)
 }
 
 VehicleSupportPluginModel::~VehicleSupportPluginModel() = default;
-
 
 QVariant VehicleSupportPluginModel::data(const QModelIndex &index, int role) const
 {
