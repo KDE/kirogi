@@ -37,7 +37,7 @@ public:
     Q_INVOKABLE void request();
 
 Q_SIGNALS:
-    void grantedChanged() const;
+    void grantedChanged();
 
 private:
     QStringList m_permissions;
