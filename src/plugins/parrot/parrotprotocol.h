@@ -244,9 +244,9 @@ public:
     Q_ENUM(Command)
 };
 
-
-class ParrotCommand {
-    public:
+class ParrotCommand
+{
+public:
     struct Tuple {
         quint8 productId;
         quint8 classId;
