@@ -23,6 +23,11 @@ build_clazy_clang_tidy:
     - python3 -u $CI_TOOLING/helpers/configure-build.py --product $PRODUCT --project $PROJECT --branchGroup $BRANCH_GROUP --platform $PLATFORM --installTo $INSTALL_PREFIX
     - python3 -u $CI_TOOLING/helpers/compile-build.py --product $PRODUCT --project $PROJECT --branchGroup $BRANCH_GROUP --platform $PLATFORM --usingInstall $INSTALL_PREFIX
     - cd build && run-clang-tidy
+    # Check if style is valid
+    - cd .. && find src -name "*.cpp" -o -name "*.h" | xargs clang-format -i
+    - git diff
+    - git diff --quiet --ignore-submodules HEAD 2>/dev/null && echo "Style is good!"
+
   variables:
     PLATFORM: SUSEQt5.14
     BRANCH_GROUP: kf5-qt5
