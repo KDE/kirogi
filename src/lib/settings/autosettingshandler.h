@@ -25,20 +25,20 @@
 class KCoreConfigSkeleton;
 
 /* This class is a complete hack and should be removed when
-* kconfig fixes the `settingsChanged` signal.
-* it iterates over all the notify signals created by the
-* kconfig compiler, and connects to the save() call.
-* This code is based on the ManagedConfigModule of the KDeclarative.
-*/
+ * kconfig fixes the `settingsChanged` signal.
+ * it iterates over all the notify signals created by the
+ * kconfig compiler, and connects to the save() call.
+ * This code is based on the ManagedConfigModule of the KDeclarative.
+ */
 
 class AutoSettingsHandler : public QObject
 {
     Q_OBJECT
 public:
     AutoSettingsHandler() = default;
-    void addSettings(KCoreConfigSkeleton* settings);
+    void addSettings(KCoreConfigSkeleton *settings);
     Q_SLOT void triggerSave();
 
 private:
-    QList<KCoreConfigSkeleton*> m_settings;
+    QList<KCoreConfigSkeleton *> m_settings;
 };

@@ -22,17 +22,17 @@
 #include "autosettingshandler.h"
 
 #include <KCoreConfigSkeleton>
-#include <QMetaProperty>
 #include <QDebug>
+#include <QMetaProperty>
 
-void AutoSettingsHandler::addSettings(KCoreConfigSkeleton* setting)
+void AutoSettingsHandler::addSettings(KCoreConfigSkeleton *setting)
 {
     m_settings.append(setting);
     auto settingsChangedSlotIndex = metaObject()->indexOfMethod("triggerSave()");
     auto settingsChangedSlot = metaObject()->method(settingsChangedSlotIndex);
 
     for (const auto &item : setting->items()) {
-        const auto signallingItem = dynamic_cast<KConfigCompilerSignallingItem*>(item);
+        const auto signallingItem = dynamic_cast<KConfigCompilerSignallingItem *>(item);
 
         if (!signallingItem) {
             continue;
@@ -56,7 +56,7 @@ void AutoSettingsHandler::addSettings(KCoreConfigSkeleton* setting)
 
 void AutoSettingsHandler::triggerSave()
 {
-    for(const auto &setting : qAsConst(m_settings)) {
+    for (const auto &setting : qAsConst(m_settings)) {
         setting->save();
     }
 }
