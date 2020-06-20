@@ -199,7 +199,7 @@ void GStreamerIntegration::takeSnapshot()
     if (savePath.isEmpty()) {
         savePath = QStandardPaths::writableLocation(QStandardPaths::PicturesLocation);
     }
-    savePath += "/" + QDateTime::currentDateTime().toString("yyyy-MM-dd_hh.mm.ss") + ".png";
+    savePath += "/" + QDateTime::currentDateTime().toString(QStringLiteral("yyyy-MM-dd_hh.mm.ss")) + ".png";
 
     if (image.save(savePath)) {
         qCDebug(videoLogging) << "Image saved in" << savePath;

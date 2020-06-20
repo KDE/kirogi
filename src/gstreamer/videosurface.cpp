@@ -169,7 +169,7 @@ void VideoSurface::createVideoItem()
     }
 
     // Create GST video widget
-    QQmlComponent component(engine, "qrc:/video/GstVideo.qml", this);
+    QQmlComponent component(engine, QStringLiteral("qrc:/video/GstVideo.qml"), this);
     _videoItem = qobject_cast<QQuickItem *>(component.create());
     if (!_videoItem) {
         qCCritical(surfaceLogging) << "Failed to load QML component.";
