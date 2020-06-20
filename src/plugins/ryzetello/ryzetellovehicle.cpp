@@ -78,7 +78,7 @@ RyzeTelloVehicle::RyzeTelloVehicle(QObject *parent)
     m_connection->moveToThread(&m_connectionThread);
     QObject::connect(&m_connectionThread, &QThread::finished, m_connection, &QObject::deleteLater);
 
-    m_connectionThread.setObjectName(QLatin1String("RyzeTelloConnectionThread"));
+    m_connectionThread.setObjectName(QStringLiteral("RyzeTelloConnectionThread"));
     m_connectionThread.start();
 }
 
