@@ -52,7 +52,7 @@ MAVLinkVehicle::MAVLinkVehicle(QObject *parent)
     m_connection->moveToThread(&m_connectionThread);
     QObject::connect(&m_connectionThread, &QThread::finished, m_connection, &QObject::deleteLater);
 
-    m_connectionThread.setObjectName(QLatin1String("MAVLinkConnectionThread"));
+    m_connectionThread.setObjectName(QStringLiteral("MAVLinkConnectionThread"));
     m_connectionThread.start();
 
     m_commandTimer.setSingleShot(true);
@@ -488,7 +488,7 @@ void MAVLinkVehicle::fetchParameters() const
 
 QString MAVLinkVehicle::videoSource() const
 {
-    return QLatin1String(
+    return QStringLiteral(
         "rtspsrc location=rtsp://192.168.99.1/media/stream2 latency=5 ! "
         "rtph264depay ! "
         "video/x-h264 ! "
