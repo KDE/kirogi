@@ -270,76 +270,76 @@ public:
     ParameterModel *parameters();
 
 Q_SIGNALS:
-    void nameChanged() const;
-    void iconNameChanged() const;
+    void nameChanged();
+    void iconNameChanged();
 
-    void connectionStateChanged() const;
-    void flyingStateChanged() const;
+    void connectionStateChanged();
+    void flyingStateChanged();
 
-    void pilotingChanged() const;
+    void pilotingChanged();
 
-    void flightTimeChanged() const;
+    void flightTimeChanged();
 
-    void performanceModeChanged() const;
+    void performanceModeChanged();
 
-    void maxRollSpeedChanged() const;
-    void maxRollSpeedMinChanged() const;
-    void maxRollSpeedMaxChanged() const;
+    void maxRollSpeedChanged();
+    void maxRollSpeedMinChanged();
+    void maxRollSpeedMaxChanged();
 
-    void maxPitchSpeedChanged() const;
-    void maxPitchSpeedMinChanged() const;
-    void maxPitchSpeedMaxChanged() const;
+    void maxPitchSpeedChanged();
+    void maxPitchSpeedMinChanged();
+    void maxPitchSpeedMaxChanged();
 
-    void maxYawSpeedChanged() const;
-    void maxYawSpeedMinChanged() const;
-    void maxYawSpeedMaxChanged() const;
+    void maxYawSpeedChanged();
+    void maxYawSpeedMinChanged();
+    void maxYawSpeedMaxChanged();
 
-    void maxGazSpeedChanged() const;
-    void maxGazSpeedMinChanged() const;
-    void maxGazSpeedMaxChanged() const;
+    void maxGazSpeedChanged();
+    void maxGazSpeedMinChanged();
+    void maxGazSpeedMaxChanged();
 
-    void maxTiltChanged() const;
-    void maxTiltMinChanged() const;
-    void maxTiltMaxChanged() const;
+    void maxTiltChanged();
+    void maxTiltMinChanged();
+    void maxTiltMaxChanged();
 
-    void bankedTurnsChanged() const;
+    void bankedTurnsChanged();
 
-    void geofenceChanged() const;
+    void geofenceChanged();
 
-    void maxAltitudeChanged() const;
-    void maxAltitudeMinChanged() const;
-    void maxAltitudeMaxChanged() const;
+    void maxAltitudeChanged();
+    void maxAltitudeMinChanged();
+    void maxAltitudeMaxChanged();
 
-    void maxDistanceChanged() const;
-    void maxDistanceMinChanged() const;
-    void maxDistanceMaxChanged() const;
+    void maxDistanceChanged();
+    void maxDistanceMinChanged();
+    void maxDistanceMaxChanged();
 
-    void attitudeChanged() const;
-    void rollChanged() const;
-    void pitchChanged() const;
-    void yawChanged() const;
+    void attitudeChanged();
+    void rollChanged();
+    void pitchChanged();
+    void yawChanged();
 
-    void signalStrengthChanged() const;
-    void batteryLevelChanged() const;
+    void signalStrengthChanged();
+    void batteryLevelChanged();
 
-    void gpsSupportedChanged() const;
-    void gpsFixChanged() const;
-    void gpsPositionChanged() const;
-    void distanceChanged() const;
-    void altitudeChanged() const;
+    void gpsSupportedChanged();
+    void gpsFixChanged();
+    void gpsPositionChanged();
+    void distanceChanged();
+    void altitudeChanged();
 
-    void speedChanged() const;
+    void speedChanged();
 
-    void videoSourceChanged() const;
-    void videoStreamEnabledChanged() const;
-    void videoStabilizationChanged() const;
-    void canTakePictureChanged() const;
-    void isRecordingVideoChanged() const;
+    void videoSourceChanged();
+    void videoStreamEnabledChanged();
+    void videoStabilizationChanged();
+    void canTakePictureChanged();
+    void isRecordingVideoChanged();
 
-    void numberOfFlightsChanged() const;
-    void lastFlightDurationChanged() const;
+    void numberOfFlightsChanged();
+    void lastFlightDurationChanged();
 
-    void parametersChanged() const;
+    void parametersChanged();
 
 protected Q_SLOTS:
     virtual void setConnectionState(ConnectionState state);

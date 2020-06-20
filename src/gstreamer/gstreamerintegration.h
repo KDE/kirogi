@@ -61,8 +61,8 @@ public:
     static void processPipelineMessage(GstMessage *message);
 
 Q_SIGNALS:
-    void playingChanged() const;
-    void stringPipelineChanged() const;
+    void playingChanged();
+    void stringPipelineChanged();
 
 private:
     void updateGstPipeline();
