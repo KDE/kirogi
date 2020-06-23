@@ -86,7 +86,7 @@ ParrotPlugin::ParrotPlugin(QObject *parent, const QVariantList & /* args */)
             QString productSerial;
 
             if (!service->data.isNull() || !service->data.isObject()) {
-                productSerial = service->data.object().value(QLatin1String("device_id")).toString();
+                productSerial = service->data.object().value(QStringLiteral("device_id")).toString();
             } else {
                 qCWarning(KIROGI_VEHICLESUPPORT_PARROT) << "mDNS service has no text data. We will be unable to decode the product serial.";
             }
