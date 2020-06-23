@@ -128,7 +128,7 @@ void RyzeTelloVehicle::requestAction(Kirogi::AbstractVehicle::VehicleAction acti
             return;
         }
 
-        sendCommand(QLatin1String("takeoff"));
+        sendCommand(QStringLiteral("takeoff"));
         setFlyingState(TakingOff); // FIXME: We don't /really/ know that without looking at the response.
         break;
     }
@@ -137,7 +137,7 @@ void RyzeTelloVehicle::requestAction(Kirogi::AbstractVehicle::VehicleAction acti
             return;
         }
 
-        sendCommand(QLatin1String("land"));
+        sendCommand(QStringLiteral("land"));
         setFlyingState(Landing); // FIXME: We don't /really/ know that without looking at the response.
         break;
     }
@@ -146,7 +146,7 @@ void RyzeTelloVehicle::requestAction(Kirogi::AbstractVehicle::VehicleAction acti
             return;
         }
 
-        sendCommand(QLatin1String("flip f"));
+        sendCommand(QStringLiteral("flip f"));
         break;
     }
     case FlipBackward: {
@@ -154,7 +154,7 @@ void RyzeTelloVehicle::requestAction(Kirogi::AbstractVehicle::VehicleAction acti
             return;
         }
 
-        sendCommand(QLatin1String("flip b"));
+        sendCommand(QStringLiteral("flip b"));
         break;
     }
     case FlipLeft: {
@@ -162,7 +162,7 @@ void RyzeTelloVehicle::requestAction(Kirogi::AbstractVehicle::VehicleAction acti
             return;
         }
 
-        sendCommand(QLatin1String("flip l"));
+        sendCommand(QStringLiteral("flip l"));
         break;
     }
     case FlipRight: {
@@ -170,7 +170,7 @@ void RyzeTelloVehicle::requestAction(Kirogi::AbstractVehicle::VehicleAction acti
             return;
         }
 
-        sendCommand(QLatin1String("flip r"));
+        sendCommand(QStringLiteral("flip r"));
         break;
     }
     default: {
