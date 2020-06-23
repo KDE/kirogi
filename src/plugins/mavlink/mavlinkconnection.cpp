@@ -36,7 +36,7 @@ MAVLinkConnection::MAVLinkConnection(const QString &vehicleName, QObject *parent
     heartbeatTimer->start(1000);
 }
 
-void MAVLinkConnection::sendByteArray(const QByteArray &byteArray) const
+void MAVLinkConnection::sendByteArray(const QByteArray &byteArray)
 {
     if (m_controlSocket) {
         for (const auto &sender : m_senders) {

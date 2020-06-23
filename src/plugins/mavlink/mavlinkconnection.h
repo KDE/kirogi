@@ -85,7 +85,7 @@ public:
     explicit MAVLinkConnection(const QString &vehicleName, QObject *parent = nullptr);
     ~MAVLinkConnection() = default;
 
-    template<typename T> constexpr void sendMessage(const T &message) const
+    template<typename T> constexpr void sendMessage(const T &message)
     {
         if constexpr (std::is_same<T, mavlink_message_t>::value) {
             const int length = mavlink_msg_to_send_buffer(m_buffer, &message);
