@@ -72,15 +72,15 @@ void ParrotConnection::handshake(const QString &productSerial)
 
     QObject::connect(m_handshakeSocket, &QTcpSocket::connected, this, [this, productSerial]() {
         QJsonObject obj;
-        obj.insert(QLatin1String("d2c_port"), m_d2cPort);                       // FIXME TODO: Don't hardcode the receive port. Current choice taken from Parrot example docs.
-        obj.insert(QLatin1String("controller_type"), QLatin1String("desktop")); // FIXME TODO: Send different type based on host platform.
-        obj.insert(QLatin1String("controller_name"), QLatin1String("KirogiParrotPlugin"));
-        obj.insert(QLatin1String("arstream2_client_stream_port"), 55004);
-        obj.insert(QLatin1String("arstream2_client_control_port"), 55005);
-        obj.insert(QLatin1String("arstream2_supported_metadata_version"), 1);
+        obj.insert(QStringLiteral("d2c_port"), m_d2cPort);                       // FIXME TODO: Don't hardcode the receive port. Current choice taken from Parrot example docs.
+        obj.insert(QStringLiteral("controller_type"), QStringLiteral("desktop")); // FIXME TODO: Send different type based on host platform.
+        obj.insert(QStringLiteral("controller_name"), QStringLiteral("KirogiParrotPlugin"));
+        obj.insert(QStringLiteral("arstream2_client_stream_port"), 55004);
+        obj.insert(QStringLiteral("arstream2_client_control_port"), 55005);
+        obj.insert(QStringLiteral("arstream2_supported_metadata_version"), 1);
 
         if (!productSerial.isEmpty()) {
-            obj.insert(QLatin1String("device_id"), productSerial);
+            obj.insert(QStringLiteral("device_id"), productSerial);
         }
 
         qCDebug(KIROGI_VEHICLESUPPORT_PARROT) << m_vehicleName << "Sending handshake data:" << obj;
@@ -110,7 +110,7 @@ void ParrotConnection::handshake(const QString &productSerial)
             qCWarning(KIROGI_VEHICLESUPPORT_PARROT) << m_vehicleName << "Unable to decode handshake response.";
         }
 
-        const int vehicleStatus = m_handshakeResponse.value(QLatin1String("status")).toInt();
+        const int vehicleStatus = m_handshakeResponse.value(QStringLiteral("status")).toInt();
 
         if (vehicleStatus != 0) {
             qCWarning(KIROGI_VEHICLESUPPORT_PARROT) << m_vehicleName << "Handshake unsuccessful. Vehicle status:";
@@ -118,7 +118,7 @@ void ParrotConnection::handshake(const QString &productSerial)
         } else {
             qCDebug(KIROGI_VEHICLESUPPORT_PARROT) << m_vehicleName << "Handshake response:" << m_handshakeResponse;
 
-            m_c2dport = m_handshakeResponse.value(QLatin1String("c2d_port")).toInt();
+            m_c2dport = m_handshakeResponse.value(QStringLiteral("c2d_port")).toInt();
             qCDebug(KIROGI_VEHICLESUPPORT_PARROT) << m_vehicleName << "Got Controller-to-Device (c2d) port:" << m_c2dport;
 
             qCDebug(KIROGI_VEHICLESUPPORT_PARROT) << m_vehicleName << "Handshake successful.";
