@@ -1139,7 +1139,7 @@ void ParrotVehicle::initVehicle()
     const QDateTime &now = QDateTime::currentDateTime();
 
     sendCommand(Parrot::CommonCommonCurrentDate, {now.date().toString(Qt::ISODate)}, true);
-    sendCommand(Parrot::CommonCommonCurrentTime, {now.time().toString(QLatin1String("THHmmss+0000"))}, true);
+    sendCommand(Parrot::CommonCommonCurrentTime, {now.time().toString(QStringLiteral("THHmmss+0000"))}, true);
     sendCommand(Parrot::CommonCommonAllStates, QVariantList(), true);
     sendCommand(Parrot::CommonSettingsAllSettings, QVariantList(), true);
 
