@@ -33,7 +33,7 @@ namespace Kirogi
 {
 void QtQuickPlugin::registerTypes(const char *uri)
 {
-    Q_ASSERT(uri == QLatin1String("org.kde.kirogi"));
+    Q_ASSERT(uri == QStringLiteral("org.kde.kirogi"));
 
     qmlRegisterUncreatableType<AbstractVehicle>(uri, 0, 1, "AbstractVehicle", "AbstractVehicle cannot be created from QML.");
 
