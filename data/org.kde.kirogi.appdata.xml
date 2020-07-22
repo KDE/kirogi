@@ -58,8 +58,8 @@
   <update_contact>hein_AT_kde.org</update_contact>
   <description>
     <p>Kirogi is a ground control application for drones. Take to the skies, open source-style.</p>
-    <p xml:lang="ca">El Kirogi és una aplicació de control terrestre de drons. Els porta al cel, a l'estil de codi font obert.</p>
-    <p xml:lang="ca-valencia">El Kirogi és una aplicació de control terrestre de drons. Els porta al cel, a l'estil de codi font obert.</p>
+    <p xml:lang="ca">El Kirogi és una aplicació per al control terrestre de drons. Els porta al cel, a l'estil del codi font obert.</p>
+    <p xml:lang="ca-valencia">El Kirogi és una aplicació per al control terrestre de drons. Els porta al cel, a l'estil del codi font obert.</p>
     <p xml:lang="es">Kirogi es una aplicación de control desde tierra para drones. Toma los cielos, al estilo código abierto.</p>
     <p xml:lang="et">Kirogi on droonide maapealse juhtimise rakendus. Kerki taevasse avatud lähtekoodi vaimus!</p>
     <p xml:lang="fr">Kirogi est une application de contrôle sol pour les drones. Prenez votre envol en mode « Logiciel Libre ».</p>
@@ -158,8 +158,8 @@
       <li xml:lang="uk">Підтримка пультів керування</li>
       <li xml:lang="x-test">xxGamepad/joypad supportxx</li>
       <li>Live video</li>
-      <li xml:lang="ca"> vídeo en directe</li>
-      <li xml:lang="ca-valencia"> vídeo en directe</li>
+      <li xml:lang="ca">Vídeo en directe</li>
+      <li xml:lang="ca-valencia">Vídeo en directe</li>
       <li xml:lang="es">Vídeo en vivo</li>
       <li xml:lang="et">Reaalajas video</li>
       <li xml:lang="fr">Vidéo en temps réel</li>
@@ -175,8 +175,8 @@
       <li xml:lang="uk">Інтерактивне відео</li>
       <li xml:lang="x-test">xxLive videoxx</li>
       <li>Take photo and record video</li>
-      <li xml:lang="ca">Prendre fotos i enregistrar vídeos</li>
-      <li xml:lang="ca-valencia">Prendre fotos i enregistrar vídeos</li>
+      <li xml:lang="ca">Prendre fotos i enregistrar vídeo</li>
+      <li xml:lang="ca-valencia">Prendre fotos i enregistrar vídeo</li>
       <li xml:lang="es">Tome fotografías y grabe vídeos</li>
       <li xml:lang="et">Fotode ja video tegemine</li>
       <li xml:lang="fr">Prendre une photo et enregistrer une vidéo</li>
