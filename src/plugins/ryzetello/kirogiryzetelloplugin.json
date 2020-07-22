@@ -23,8 +23,8 @@
             }
         ],
         "Description": "A Kirogi plugin to support the Ryze Tello UAV",
-        "Description[ca@valencia]": "Un connector del Kirogi per admetre l'UAV Ryze Tello",
-        "Description[ca]": "Un connector del Kirogi per admetre l'UAV Ryze Tello",
+        "Description[ca@valencia]": "Un connector del Kirogi per a admetre l'UAV Ryze Tello",
+        "Description[ca]": "Un connector del Kirogi per a admetre l'UAV Ryze Tello",
         "Description[es]": "Un complemento de Kirogi para usar el vehículo volador no tripulado Ryze Tello",
         "Description[et]": "Kirogi plugin Ryze Tello droonide toetusega",
         "Description[fr]": "Un module externe Kirogi pour prendre en charge des drones Ryze Tello",
