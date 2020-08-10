@@ -20,83 +20,40 @@
 
 #include "mavlinkconnection.h"
 
-#include <QNetworkDatagram>
-#include <QNetworkProxy>
-
-MAVLinkConnection::MAVLinkConnection(const QString &vehicleName, QObject *parent)
-    : QObject(parent)
-    , m_vehicleName(vehicleName)
-    , m_connectionHost({QHostAddress("0.0.0.0"), 14550})
+MAVLinkConnection::MAVLinkConnection(uint8_t channel, QObject *parent)
+    : Kirogi::AbstractConnection(parent)
+    , m_channel(channel)
 {
-    qRegisterMetaType<mavlink_message_t>("mavlink_message_t");
-
-    heartbeatTimer = std::make_unique<QTimer>(this);
-    // Send periodically heartbeats to say that GCS is alive
-    connect(heartbeatTimer.get(), &QTimer::timeout, this, [this] { sendByteArray(_heartbeatMessage); });
-    heartbeatTimer->start(1000);
+    m_gcsHeartbeatTimer.setInterval(1000);
+    QObject::connect(&m_gcsHeartbeatTimer, &QTimer::timeout, this, &MAVLinkConnection::sendHeartbeat);
+    m_gcsHeartbeatTimer.start();
 }
 
-void MAVLinkConnection::sendByteArray(const QByteArray &byteArray)
+MAVLinkConnection::~MAVLinkConnection()
 {
-    if (m_controlSocket) {
-        for (const auto &sender : m_senders) {
-            m_controlSocket->writeDatagram(byteArray, sender.address, sender.port);
+}
+
+void MAVLinkConnection::parseData(const QByteArray &bytes)
+{
+    mavlink_status_t *status = mavlink_get_channel_status(m_channel);
+
+    for (const auto &byte : bytes) {
+        if (!mavlink_parse_char(m_channel, byte, &m_message, status)) {
+            continue;
         }
-    }
-}
-
-void MAVLinkConnection::handshake()
-{
-    initSockets();
-}
-
-void MAVLinkConnection::reset()
-{
-    if (m_controlSocket) {
-        m_controlSocket->abort();
-        delete m_controlSocket;
-    }
-
-    emit stateChanged(Kirogi::AbstractVehicle::Disconnected);
-}
-
-void MAVLinkConnection::receiveData()
-{
-    static mavlink_message_t message;
-    mavlink_status_t status;
-    while (m_controlSocket->hasPendingDatagrams()) {
-        const QNetworkDatagram &datagram = m_controlSocket->receiveDatagram();
-        m_senders.append({datagram.senderAddress(), datagram.senderPort()});
-
-        if (datagram.isValid()) {
-            const QByteArray &data = datagram.data();
-            for (const auto &byte : data) {
-                if (mavlink_parse_char(0, byte, &message, &status)) {
-                    // GSC sysid
-                    if (message.sysid != 255) {
-                        emit mavlinkMessage(message);
-                    }
-                }
-            }
+        if (m_message.sysid == MAVLinkPluginConfig::instance().sysid()) {
+            continue;
         }
+        if (state() < State::Connected) {
+            setState(State::Connected);
+        }
+        emit messageReceived(this, m_message);
     }
-
-    m_senders.erase(std::unique(m_senders.begin(), m_senders.end(), [](const auto first, const auto second) { return (first.address == second.address && first.port == second.port); }), m_senders.end());
 }
 
-void MAVLinkConnection::initSockets()
+void MAVLinkConnection::sendHeartbeat()
 {
-    m_controlSocket = new QUdpSocket(this);
-    QObject::connect(m_controlSocket, &QUdpSocket::readyRead, this, &MAVLinkConnection::receiveData);
-
-    m_controlSocket->setProxy(QNetworkProxy::NoProxy);
-    const bool bindState = m_controlSocket->bind(QHostAddress::AnyIPv4, m_connectionHost.port, QAbstractSocket::ReuseAddressHint | QUdpSocket::ShareAddress);
-
-    if (bindState) {
-        // The All Hosts multicast group addresses all hosts on the same network
-        // segment.
-        m_controlSocket->joinMulticastGroup(QHostAddress("224.0.0.1"));
-    }
-
-    emit stateChanged(Kirogi::AbstractVehicle::Connecting);
+    mavlink_message_t message;
+    mavlink_msg_heartbeat_pack_chan(MAVLinkPluginConfig::instance().sysid(), MAVLinkPluginConfig::instance().compid(), m_channel, &message, MAV_TYPE_GCS, MAV_AUTOPILOT_INVALID, MAV_MODE_MANUAL_ARMED, 0, MAV_STATE_ACTIVE);
+    sendMessage(message);
 }

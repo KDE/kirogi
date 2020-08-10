@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Patrick José Pereira <patrickjp@kde.org>
+ * Copyright 2020 Kitae Kim <develoot@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -18,26 +18,36 @@
  * License along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#pragma once
+#include "mavlinkpluginconfig.h"
 
-#include "vehiclesupportplugin.h"
-
-#include <QSharedPointer>
-
-class MAVLinkUdpConnection;
-class MAVLinkVehicle;
-
-class MAVLinkPlugin : public Kirogi::VehicleSupportPlugin
+MAVLinkPluginConfig::MAVLinkPluginConfig()
+    // System id of GCS starts from top range.
+    // See: https://mavlink.io/en/guide/routing.html
+    : m_sysid(255)
+    , m_compid(0)
 {
-    Q_OBJECT
+}
 
-public:
-    MAVLinkPlugin(QObject *parent, const QVariantList &args);
-    ~MAVLinkPlugin() override;
+MAVLinkPluginConfig::~MAVLinkPluginConfig()
+{
+}
 
-    QList<Kirogi::AbstractVehicle *> vehicles() const override;
+int MAVLinkPluginConfig::sysid() const
+{
+    return m_sysid;
+}
 
-private:
-    QSharedPointer<MAVLinkUdpConnection> m_connection;
-    QSharedPointer<MAVLinkVehicle> m_vehicle;
-};
+void MAVLinkPluginConfig::setSysid(int sysid)
+{
+    m_sysid = sysid;
+}
+
+int MAVLinkPluginConfig::compid() const
+{
+    return m_compid;
+}
+
+void MAVLinkPluginConfig::setCompid(int compid)
+{
+    m_compid = compid;
+}

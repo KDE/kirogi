@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Patrick José Pereira <patrickjp@kde.org>
+ * Copyright 2020 Kitae Kim <develoot@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -18,26 +18,34 @@
  * License along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#pragma once
+#include <abstractconnection.h>
 
-#include "vehiclesupportplugin.h"
+#include "debug.h"
 
-#include <QSharedPointer>
-
-class MAVLinkUdpConnection;
-class MAVLinkVehicle;
-
-class MAVLinkPlugin : public Kirogi::VehicleSupportPlugin
+namespace Kirogi
 {
-    Q_OBJECT
+AbstractConnection::AbstractConnection(QObject *parent)
+    : QObject(parent)
+    , m_state(State::Disconnected)
+{
+}
 
-public:
-    MAVLinkPlugin(QObject *parent, const QVariantList &args);
-    ~MAVLinkPlugin() override;
+AbstractConnection::~AbstractConnection()
+{
+}
 
-    QList<Kirogi::AbstractVehicle *> vehicles() const override;
+AbstractConnection::State AbstractConnection::state() const
+{
+    return m_state;
+}
 
-private:
-    QSharedPointer<MAVLinkUdpConnection> m_connection;
-    QSharedPointer<MAVLinkVehicle> m_vehicle;
-};
+void AbstractConnection::setState(State state)
+{
+    if (m_state == state) {
+        return;
+    }
+
+    m_state = state;
+    emit stateChanged();
+}
+}

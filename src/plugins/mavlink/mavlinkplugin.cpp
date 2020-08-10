@@ -19,32 +19,46 @@
  */
 
 #include "mavlinkplugin.h"
-#include "debug.h"
+
+#include "mavlinkudpconnection.h"
 #include "mavlinkvehicle.h"
 
 #include <KLocalizedString>
 #include <KPluginFactory>
 
+#include "mavlink_plugin_debug.h"
+
 MAVLinkPlugin::MAVLinkPlugin(QObject *parent, const QVariantList & /* args */)
     : Kirogi::VehicleSupportPlugin(parent)
-    , m_vehicle(nullptr)
 {
-    qCDebug(KIROGI_VEHICLESUPPORT_MAVLINK) << "MAVLink Vehicle Support Plugin initializing ...";
+    qCDebug(KIROGI_VEHICLESUPPORT_MAVLINK_PLUGIN) << "MAVLink Vehicle Support Plugin initializing ...";
+    qRegisterMetaType<mavlink_message_t>("mavlink_message_t");
 
-    m_vehicle = new MAVLinkVehicle(this);
-    m_vehicle->connectToVehicle();
+    Kirogi::UdpConfiguration connectionConfiguration;
+    connectionConfiguration.setName("Main Connection");
+    connectionConfiguration.setHost(QHostAddress("0.0.0.0"));
+    connectionConfiguration.setPort(14550);
+    m_connection = QSharedPointer<MAVLinkUdpConnection>(new MAVLinkUdpConnection(connectionConfiguration, 0, this));
+    m_connection->connect();
 
-    QMetaObject::invokeMethod(this, "vehicleAdded", Qt::QueuedConnection, Q_ARG(Kirogi::AbstractVehicle *, m_vehicle));
+    MAVLinkVehicle::Configuration vehicleConfiguration;
+    vehicleConfiguration.sysid = 0;
+    vehicleConfiguration.compid = 0;
+    vehicleConfiguration.type = MAV_TYPE_QUADROTOR;
+    vehicleConfiguration.name = "Main Vehicle";
+    m_vehicle = QSharedPointer<MAVLinkVehicle>(new MAVLinkVehicle(vehicleConfiguration, m_connection.data(), this));
+
+    QMetaObject::invokeMethod(this, "vehicleAdded", Qt::QueuedConnection, Q_ARG(Kirogi::AbstractVehicle *, m_vehicle.data()));
 }
 
 MAVLinkPlugin::~MAVLinkPlugin()
 {
-    qCDebug(KIROGI_VEHICLESUPPORT_MAVLINK) << "MAVLink Vehicle Support Plugin unloaded.";
+    qCDebug(KIROGI_VEHICLESUPPORT_MAVLINK_PLUGIN) << "MAVLink Vehicle Support Plugin unloaded.";
 }
 
 QList<Kirogi::AbstractVehicle *> MAVLinkPlugin::vehicles() const
 {
-    return QList<Kirogi::AbstractVehicle *>() << m_vehicle;
+    return QList<Kirogi::AbstractVehicle *>() << m_vehicle.data();
 }
 
 K_PLUGIN_CLASS_WITH_JSON(MAVLinkPlugin, "kirogimavlinkplugin.json")

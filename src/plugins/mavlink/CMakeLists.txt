@@ -10,15 +10,23 @@ else()
 endif()
 
 set(kirogimavlinkplugin_SRCS
-    mavlinkconnection.cpp
     mavlinkplugin.cpp
+    mavlinkpluginconfig.cpp
+    mavlinkconnection.cpp
+    mavlinkudpconnection.cpp
     mavlinkvehicle.cpp
 )
 
 ecm_qt_declare_logging_category(kirogimavlinkplugin_SRCS
-    HEADER debug.h
-    IDENTIFIER KIROGI_VEHICLESUPPORT_MAVLINK
-    CATEGORY_NAME "kirogi.vehiclesupport.mavlink"
+    HEADER mavlink_plugin_debug.h
+    IDENTIFIER KIROGI_VEHICLESUPPORT_MAVLINK_PLUGIN
+    CATEGORY_NAME "kirogi.vehiclesupport.mavlink.plugin"
+)
+
+ecm_qt_declare_logging_category(kirogimavlinkplugin_SRCS
+    HEADER mavlink_connection_debug.h
+    IDENTIFIER KIROGI_VEHICLESUPPORT_MAVLINK_CONNECTION
+    CATEGORY_NAME "kirogi.vehiclesupport.mavlink.connection"
 )
 
 kcoreaddons_add_plugin(kirogimavlinkplugin

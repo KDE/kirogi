@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Patrick José Pereira <patrickjp@kde.org>
+ * Copyright 2020 Kitae Kim <develoot@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -20,24 +20,38 @@
 
 #pragma once
 
-#include "vehiclesupportplugin.h"
+#include <QObject>
 
-#include <QSharedPointer>
-
-class MAVLinkUdpConnection;
-class MAVLinkVehicle;
-
-class MAVLinkPlugin : public Kirogi::VehicleSupportPlugin
+/**
+ * A singleton class for storing plugin-wide configurations.
+ *
+ * This class stores plugin-wide configurations of mavlink plugin and provides interfaces for
+ * managing them to QML.
+ */
+class MAVLinkPluginConfig
 {
-    Q_OBJECT
+    Q_GADGET
+
+    Q_PROPERTY(int sysid READ sysid WRITE setSysid)
+    Q_PROPERTY(int compid READ compid WRITE setCompid)
 
 public:
-    MAVLinkPlugin(QObject *parent, const QVariantList &args);
-    ~MAVLinkPlugin() override;
+    static MAVLinkPluginConfig &instance()
+    {
+        static MAVLinkPluginConfig instance;
+        return instance;
+    }
 
-    QList<Kirogi::AbstractVehicle *> vehicles() const override;
+    int sysid() const;  ///< Returns system id of this GCS.
+    int compid() const; ///< Returns default component id of this GCS.
+
+    void setSysid(int sysid);
+    void setCompid(int compid);
 
 private:
-    QSharedPointer<MAVLinkUdpConnection> m_connection;
-    QSharedPointer<MAVLinkVehicle> m_vehicle;
+    explicit MAVLinkPluginConfig();
+    ~MAVLinkPluginConfig();
+
+    int m_sysid;  ///< A system id of this GCS.
+    int m_compid; ///< A component id of this GCS.
 };

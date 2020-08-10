@@ -6,9 +6,12 @@ ecm_setup_version(PROJECT
 
 set(kirogicore_SRCS
     abstractvehicle.cpp
+    abstractconnection.cpp
     abstractpluginmodel.cpp
     vehiclesupportplugin.cpp
     vehiclesupportpluginmodel.cpp
+    connectionconfiguration.cpp
+    udpconfiguration.cpp
 )
 
 ecm_qt_declare_logging_category(kirogicore_SRCS
@@ -20,9 +23,12 @@ ecm_qt_declare_logging_category(kirogicore_SRCS
 ecm_generate_headers(Kirogi_CamelCase_HEADERS
     HEADER_NAMES
         AbstractVehicle
+        AbstractConnection
         AbstractPluginModel
         VehicleSupportPlugin
         VehicleSupportPluginModel
+        ConnectionConfiguration
+        UdpConfiguration
     REQUIRED_HEADERS Kirogi_HEADERS
     PREFIX kirogi
 )

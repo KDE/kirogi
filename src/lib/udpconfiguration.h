@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Patrick José Pereira <patrickjp@kde.org>
+ * Copyright 2020 Kitae Kim <develoot@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -20,24 +20,48 @@
 
 #pragma once
 
-#include "vehiclesupportplugin.h"
+#include "connectionconfiguration.h"
 
-#include <QSharedPointer>
+#include <QHostAddress>
+#include <QObject>
 
-class MAVLinkUdpConnection;
-class MAVLinkVehicle;
+#include "kirogicore_export.h"
 
-class MAVLinkPlugin : public Kirogi::VehicleSupportPlugin
+/**
+ * A class that stores properties of UDP connection.
+ *
+ * This class provides interfaces to read/write properties of UDP connection to QML.
+ */
+namespace Kirogi
 {
-    Q_OBJECT
+class KIROGI_EXPORT UdpConfiguration : public ConnectionConfiguration
+{
+    Q_GADGET
+
+    Q_PROPERTY(QHostAddress host READ host WRITE setHost)
+    Q_PROPERTY(int port READ port WRITE setPort)
 
 public:
-    MAVLinkPlugin(QObject *parent, const QVariantList &args);
-    ~MAVLinkPlugin() override;
+    struct UdpClient {
+        QHostAddress address;
+        int port;
+    };
 
-    QList<Kirogi::AbstractVehicle *> vehicles() const override;
+    UdpConfiguration();
+    ~UdpConfiguration();
+
+    ConnectionConfiguration::Type type() const final
+    {
+        return ConnectionConfiguration::Type::UDP;
+    }
+
+    void setHost(QHostAddress host);
+    void setPort(int port);
+
+    QHostAddress host() const;
+    int port() const;
 
 private:
-    QSharedPointer<MAVLinkUdpConnection> m_connection;
-    QSharedPointer<MAVLinkVehicle> m_vehicle;
+    UdpClient m_host;
 };
+}

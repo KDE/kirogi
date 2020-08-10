@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Patrick José Pereira <patrickjp@kde.org>
+ * Copyright 2020 Kitae Kim <develoot@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -20,24 +20,42 @@
 
 #pragma once
 
-#include "vehiclesupportplugin.h"
+#include <QObject>
+#include <QString>
 
-#include <QSharedPointer>
+#include "kirogicore_export.h"
 
-class MAVLinkUdpConnection;
-class MAVLinkVehicle;
-
-class MAVLinkPlugin : public Kirogi::VehicleSupportPlugin
+/**
+ * A class that stores common properties of connections.
+ *
+ * This class provides interfaces to read/write properties to QML.
+ */
+namespace Kirogi
 {
-    Q_OBJECT
+class KIROGI_EXPORT ConnectionConfiguration
+{
+    Q_GADGET
+
+    Q_PROPERTY(QString name READ name WRITE setName)
+    Q_PROPERTY(bool autoconnect READ autoconnect WRITE setAutoconnect)
+    Q_PROPERTY(Type type READ type CONSTANT)
 
 public:
-    MAVLinkPlugin(QObject *parent, const QVariantList &args);
-    ~MAVLinkPlugin() override;
+    enum class Type { UDP, TCP, Serial };
+    Q_ENUM(Type);
 
-    QList<Kirogi::AbstractVehicle *> vehicles() const override;
+    ConnectionConfiguration();
+    virtual ~ConnectionConfiguration() = default;
+
+    QString name() const;
+    bool autoconnect() const;
+    virtual Type type() const = 0;
+
+    void setName(const QString &name);
+    void setAutoconnect(bool autoconnect);
 
 private:
-    QSharedPointer<MAVLinkUdpConnection> m_connection;
-    QSharedPointer<MAVLinkVehicle> m_vehicle;
+    QString m_name;
+    bool m_autoconnect;
 };
+}

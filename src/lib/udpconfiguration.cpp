@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Patrick José Pereira <patrickjp@kde.org>
+ * Copyright 2020 Kitae Kim <develoot@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -18,26 +18,38 @@
  * License along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#pragma once
+#include "udpconfiguration.h"
 
-#include "vehiclesupportplugin.h"
+#include "debug.h"
 
-#include <QSharedPointer>
-
-class MAVLinkUdpConnection;
-class MAVLinkVehicle;
-
-class MAVLinkPlugin : public Kirogi::VehicleSupportPlugin
+namespace Kirogi
 {
-    Q_OBJECT
+UdpConfiguration::UdpConfiguration()
+    : ConnectionConfiguration()
+{
+}
 
-public:
-    MAVLinkPlugin(QObject *parent, const QVariantList &args);
-    ~MAVLinkPlugin() override;
+UdpConfiguration::~UdpConfiguration()
+{
+}
 
-    QList<Kirogi::AbstractVehicle *> vehicles() const override;
+QHostAddress UdpConfiguration::host() const
+{
+    return m_host.address;
+}
 
-private:
-    QSharedPointer<MAVLinkUdpConnection> m_connection;
-    QSharedPointer<MAVLinkVehicle> m_vehicle;
-};
+void UdpConfiguration::setHost(QHostAddress host)
+{
+    m_host.address = host;
+}
+
+int UdpConfiguration::port() const
+{
+    return m_host.port;
+}
+
+void UdpConfiguration::setPort(int port)
+{
+    m_host.port = port;
+}
+}

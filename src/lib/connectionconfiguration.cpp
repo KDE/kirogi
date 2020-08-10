@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Patrick José Pereira <patrickjp@kde.org>
+ * Copyright 2020 Kitae Kim <develoot@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -18,26 +18,35 @@
  * License along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#pragma once
+#include "connectionconfiguration.h"
 
-#include "vehiclesupportplugin.h"
+#include "debug.h"
 
-#include <QSharedPointer>
-
-class MAVLinkUdpConnection;
-class MAVLinkVehicle;
-
-class MAVLinkPlugin : public Kirogi::VehicleSupportPlugin
+namespace Kirogi
 {
-    Q_OBJECT
+ConnectionConfiguration::ConnectionConfiguration()
+    : m_name("Unnamed")
+    , m_autoconnect(false)
+{
+}
 
-public:
-    MAVLinkPlugin(QObject *parent, const QVariantList &args);
-    ~MAVLinkPlugin() override;
+QString ConnectionConfiguration::name() const
+{
+    return m_name;
+}
 
-    QList<Kirogi::AbstractVehicle *> vehicles() const override;
+void ConnectionConfiguration::setName(const QString &name)
+{
+    m_name = name;
+}
 
-private:
-    QSharedPointer<MAVLinkUdpConnection> m_connection;
-    QSharedPointer<MAVLinkVehicle> m_vehicle;
-};
+bool ConnectionConfiguration::autoconnect() const
+{
+    return m_autoconnect;
+}
+
+void ConnectionConfiguration::setAutoconnect(bool autoconnect)
+{
+    m_autoconnect = autoconnect;
+}
+}

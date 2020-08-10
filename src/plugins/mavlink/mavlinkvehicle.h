@@ -21,21 +21,32 @@
 #pragma once
 
 #include "abstractvehicle.h"
-#include "mavlinkconnection.h"
 
-#include <QThread>
+#include "mavlinkpluginconfig.h"
+#include "mavlinkudpconnection.h"
+
 #include <QTimer>
+#include <QVector>
 
-class MAVLinkConnection;
-class QTimer;
-
+/**
+ * A class for managing mavlink vehicle.
+ */
 class MAVLinkVehicle : public Kirogi::AbstractVehicle
 {
     Q_OBJECT
 
 public:
-    explicit MAVLinkVehicle(QObject *parent = nullptr);
+    struct Configuration {
+        uint8_t sysid;  ///< System id that is used to identify vehicle on network.
+        uint8_t compid; ///< Default component id of vehicle.
+        MAV_TYPE type;  ///< Type of vehicle.
+        QString name;
+    };
+
+    MAVLinkVehicle(Configuration configuration, MAVLinkConnection *connection, QObject *parent = nullptr);
     ~MAVLinkVehicle() override;
+
+    void processMessage(MAVLinkConnection *connection, const mavlink_message_t &message);
 
     QString name() const override;
     QString iconName() const override;
@@ -61,33 +72,16 @@ public:
 
     QString videoSource() const override;
 
-public Q_SLOTS:
-    void connectToVehicle();
-
 private Q_SLOTS:
-    void fetchParameters() const;
-    void processMavlinkMessage(const mavlink_message_t &message);
+    void fetchParameters();
 
 private:
-    float m_roll;
-    float m_pitch;
-    float m_yaw;
-
-    int m_signalStrength;
-    int m_batteryLevel;
-
-    bool m_gpsFix;
-    QGeoCoordinate m_gpsPosition;
-
-    struct {
+    struct AltitudeSource {
         bool altitudeMessage {false};
         float altitude {0.0f};
-    } m_altitudeSource;
+    };
 
-    QThread m_connectionThread;
-    MAVLinkConnection *m_connection;
-
-    typedef struct {
+    struct CommandQueueItem {
         bool command_int;
         float params[7];
         MAV_CMD command;
@@ -97,11 +91,35 @@ private:
         MAV_FRAME frame;      // Coordinate system of the command. (COMMAND_INT)
         uint8_t current;      // False: 0, True: 1.
         uint8_t autocontinue; // Continue to next wp automatically.
-    } CommandQueueEntry_t;
-
-    QList<CommandQueueEntry_t> m_commandQueue;
-    QTimer m_commandTimer;
-    int m_cmdResendCnt;
+    };
 
     void sendCommandInQueue();
+
+    void handleHeartbeat(const mavlink_message_t &message);
+    void handleCommandAck(const mavlink_message_t &message);
+    void handleRcChannelsScaled(const mavlink_message_t &message);
+    void handleRcChannelsRaw(const mavlink_message_t &message);
+    void handleRcChannels(const mavlink_message_t &message);
+    void handleAltitude(const mavlink_message_t &message);
+    void handleAttitude(const mavlink_message_t &message);
+    void handleBatteryStatus(const mavlink_message_t &message);
+    void handleGlobalPositionInt(const mavlink_message_t &message);
+    void handleParamValue(const mavlink_message_t &message);
+
+    MAVLinkConnection *m_connection;
+    Configuration m_configuration;
+
+    QVector<CommandQueueItem> m_commandQueue;
+    QTimer m_commandResendTimer;
+    uint8_t m_commandResendCount;
+
+    AltitudeSource m_altitudeSource;
+    QString m_name;
+    float m_roll;
+    float m_pitch;
+    float m_yaw;
+    int m_signalStrength;
+    int m_batteryLevel;
+    bool m_gpsFix;
+    QGeoCoordinate m_gpsPosition;
 };
