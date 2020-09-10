@@ -478,7 +478,7 @@ void gst_android_init(JNIEnv *env, jclass klass, jobject context)
     if (!gst_init_check(NULL, NULL, &error)) {
         gchar *message = g_strdup_printf("GStreamer initialization failed: %s", error && error->message ? error->message : "(no message)");
         jclass exception_class = (*env)->FindClass(env, "java/lang/Exception");
-        __android_log_print(ANDROID_LOG_ERROR, "GStreamer", message);
+        __android_log_print(ANDROID_LOG_ERROR, "GStreamer", "%s", message);
         (*env)->ThrowNew(env, exception_class, message);
         g_free(message);
         return;

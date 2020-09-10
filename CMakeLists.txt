@@ -140,6 +140,11 @@ if(ANDROID)
     )
 
     link_directories(${GSTREAMER_LIBRARY_DIRS}/gstreamer-1.0/)
+
+    find_library(liblog log)
+    find_library(libandroid android)
+    find_library(libEGL EGL)
+    find_library(libGLESv2 GLESv2)
 endif()
 
 if(COMPILE_QML)

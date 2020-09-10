@@ -69,12 +69,12 @@ int main(int argc, char *argv[])
 
 #ifndef Q_OS_ANDROID
     gst_init(&argc, &argv);
-    GStreamerIntegration::init();
 #else
     if (!gst_qt_android_init(nullptr)) {
         return -1;
     }
 #endif
+    GStreamerIntegration::init();
 
     QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
@@ -115,11 +115,11 @@ int main(int argc, char *argv[])
     parser.process(app);
     aboutData.processCommandLine(&parser);
 
-    QApplication::setApplicationName(aboutData.componentName());
-    QApplication::setApplicationDisplayName(aboutData.displayName());
-    QApplication::setOrganizationDomain(aboutData.organizationDomain());
-    QApplication::setApplicationVersion(aboutData.version());
-    QApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("kirogi")));
+    app.setApplicationName(aboutData.componentName());
+    app.setApplicationDisplayName(aboutData.displayName());
+    app.setOrganizationDomain(aboutData.organizationDomain());
+    app.setApplicationVersion(aboutData.version());
+    app.setWindowIcon(QIcon::fromTheme(QStringLiteral("kirogi")));
 
 #ifndef Q_OS_ANDROID
     KCrash::initialize();
@@ -154,6 +154,6 @@ int main(int argc, char *argv[])
     QtAndroid::hideSplashScreen();
 #endif
 
-    ret = QApplication::exec();
+    ret = app.exec();
     return ret;
 }
