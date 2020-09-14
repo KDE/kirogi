@@ -1,0 +1,11 @@
+# Docker context ignore list
+.git
+.idea
+.vagrant
+
+build
+data
+cmake
+platforms
+src
+
