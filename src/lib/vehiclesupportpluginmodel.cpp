@@ -23,8 +23,6 @@
 #include "vehiclesupportplugin.h"
 
 #include <KPluginFactory>
-#include <KPluginLoader>
-#include <KPluginMetaData>
 
 #include <QCoreApplication>
 #include <QMetaEnum>
