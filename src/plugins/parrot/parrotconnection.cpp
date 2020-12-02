@@ -129,7 +129,7 @@ void ParrotConnection::handshake(const QString &productSerial)
         m_handshakeSocket->disconnectFromHost();
     });
 
-    QObject::connect(m_handshakeSocket, QOverload<QAbstractSocket::SocketError>::of(&QAbstractSocket::error), this, [this]() {
+    QObject::connect(m_handshakeSocket, &QAbstractSocket::errorOccurred, this, [this]() {
         qCWarning(KIROGI_VEHICLESUPPORT_PARROT) << m_vehicleName << "Handshake failed with socket error:" << m_handshakeSocket->errorString();
         emit stateChanged(Kirogi::AbstractVehicle::Disconnected);
         m_handshakeSocket->abort();
