@@ -37,5 +37,5 @@ build_clazy_clang_tidy:
     - git diff --quiet --ignore-submodules HEAD 2>/dev/null && echo "Style is good!"
 
   variables:
-    PLATFORM: SUSEQt5.14
+    PLATFORM: SUSEQt5.15
     BRANCH_GROUP: kf5-qt5
