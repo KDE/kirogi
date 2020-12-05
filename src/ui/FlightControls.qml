@@ -842,7 +842,7 @@ Kirigami.Page {
 
         anchors.centerIn: parent
 
-        width: yardstick * 0.04
+        width: 25
         height: parent.height * 0.6
 
         pitch: kirogi.currentVehicle ? kirogi.currentVehicle.pitch * (180/Math.PI) : 0.0
@@ -853,7 +853,7 @@ Kirigami.Page {
 
         anchors.centerIn: pitchBar
 
-        width: yardstick * 0.2
+        width: 110
 
         roll: kirogi.currentVehicle ? kirogi.currentVehicle.roll * (180/Math.PI) : 0
     }
