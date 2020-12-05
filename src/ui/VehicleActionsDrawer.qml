@@ -87,10 +87,10 @@ Kirigami.OverlayDrawer {
         }
 
         width: parent.width
-        height: Math.min(parent.height, contentHeight)
+        height: parent.height
 
         contentHeight: actionsColumn.implicitHeight
-        contentWidth: drawer.width
+        contentWidth: drawer.width - scrollBarWidth
 
         onContentHeightChanged: {
             if (contentHeight < parent.height) {
@@ -121,6 +121,7 @@ Kirigami.OverlayDrawer {
             id: actionsColumn
 
             width: drawer.width - scrollView.scrollBarWidth
+            height: parent.height
 
             spacing: Kirigami.Units.smallSpacing
 
