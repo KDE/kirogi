@@ -132,7 +132,7 @@ Kirogi::AbstractVehicle::VehicleType MAVLinkVehicle::vehicleType() const
 
 QList<Kirogi::AbstractVehicle::VehicleAction> MAVLinkVehicle::supportedActions() const
 {
-    // TODO: Improve this to work with mavlink infraestructure
+    // TODO: Improve this to work with mavlink infrastructure
     QList<Kirogi::AbstractVehicle::VehicleAction> actions;
 
     actions << Kirogi::AbstractVehicle::TakeOff;

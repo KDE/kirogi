@@ -33,7 +33,7 @@ class GStreamerIntegration;
  * but never directly.
  *
  * The 'VideoItem' element is a GstGlVideoItem, that's the real paint surface.
- * This class plug things together and controlls playing / pausing / screenshooting, etc.
+ * This class plug things together and controls playing / pausing / screenshooting, etc.
  */
 class VideoSurface : public QQuickItem
 {

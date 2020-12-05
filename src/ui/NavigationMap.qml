@@ -84,7 +84,7 @@ Kirigami.Page {
         }
 
         onMapReadyChanged: {
-// FIXME TODO: Preferrably get a satellite map.
+// FIXME TODO: Preferably get a satellite map.
 //             if (mapReady) {
 //                 for (var i = 0; i < supportedMapTypes.length; i++) {
 //                     if (supportedMapTypes[i].style == MapType.SatelliteMapDay) {
