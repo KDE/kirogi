@@ -130,10 +130,18 @@ ParrotPlugin::ParrotPlugin(QObject *parent, const QVariantList & /* args */)
         qCWarning(KIROGI_VEHICLESUPPORT_PARROT) << "KDNSSD mDNS browsing (Anafi) unavailable:" << m_anafiBrowser->isAvailable();
     }
 
-    QObject::connect(m_bebop2Browser, &KDNSSD::ServiceBrowser::serviceAdded, this, [serviceAdded](KDNSSD::RemoteService::Ptr service) { serviceAdded(new AbstractMDNSService(service), ParrotVehicle::Bebop2); });
-    QObject::connect(m_bebop2Browser, &KDNSSD::ServiceBrowser::serviceRemoved, this, [serviceRemoved](KDNSSD::RemoteService::Ptr service) { serviceRemoved(new AbstractMDNSService(service)); });
-    QObject::connect(m_anafiBrowser, &KDNSSD::ServiceBrowser::serviceAdded, this, [serviceAdded](KDNSSD::RemoteService::Ptr service) { serviceAdded(new AbstractMDNSService(service), ParrotVehicle::Anafi); });
-    QObject::connect(m_anafiBrowser, &KDNSSD::ServiceBrowser::serviceRemoved, this, [serviceRemoved](KDNSSD::RemoteService::Ptr service) { serviceRemoved(new AbstractMDNSService(service)); });
+    QObject::connect(m_bebop2Browser, &KDNSSD::ServiceBrowser::serviceAdded, this, [serviceAdded](KDNSSD::RemoteService::Ptr service) {
+        serviceAdded(new AbstractMDNSService(service), ParrotVehicle::Bebop2);
+    });
+    QObject::connect(m_bebop2Browser, &KDNSSD::ServiceBrowser::serviceRemoved, this, [serviceRemoved](KDNSSD::RemoteService::Ptr service) {
+        serviceRemoved(new AbstractMDNSService(service));
+    });
+    QObject::connect(m_anafiBrowser, &KDNSSD::ServiceBrowser::serviceAdded, this, [serviceAdded](KDNSSD::RemoteService::Ptr service) {
+        serviceAdded(new AbstractMDNSService(service), ParrotVehicle::Anafi);
+    });
+    QObject::connect(m_anafiBrowser, &KDNSSD::ServiceBrowser::serviceRemoved, this, [serviceRemoved](KDNSSD::RemoteService::Ptr service) {
+        serviceRemoved(new AbstractMDNSService(service));
+    });
 
     m_bebop2Browser->startBrowse();
     m_anafiBrowser->startBrowse();
@@ -141,12 +149,24 @@ ParrotPlugin::ParrotPlugin(QObject *parent, const QVariantList & /* args */)
     QZeroConf *bebop2Browser = new QZeroConf(this);
     QZeroConf *anafiBrowser = new QZeroConf(this);
 
-    QObject::connect(bebop2Browser, &QZeroConf::serviceAdded, this, [serviceAdded](QZeroConfService service) { serviceAdded(new AbstractMDNSService(service), ParrotVehicle::Bebop2); });
-    QObject::connect(bebop2Browser, &QZeroConf::serviceRemoved, this, [serviceRemoved](QZeroConfService service) { serviceRemoved(new AbstractMDNSService(service)); });
-    QObject::connect(bebop2Browser, &QZeroConf::error, this, [](QZeroConf::error_t error) { qCWarning(KIROGI_VEHICLESUPPORT_PARROT) << "QZeroConf mDNS browsing (Bebop 2) error:" << error; });
-    QObject::connect(anafiBrowser, &QZeroConf::serviceAdded, this, [serviceAdded](QZeroConfService service) { serviceAdded(new AbstractMDNSService(service), ParrotVehicle::Anafi); });
-    QObject::connect(anafiBrowser, &QZeroConf::serviceRemoved, this, [serviceRemoved](QZeroConfService service) { serviceRemoved(new AbstractMDNSService(service)); });
-    QObject::connect(anafiBrowser, &QZeroConf::error, this, [](QZeroConf::error_t error) { qCWarning(KIROGI_VEHICLESUPPORT_PARROT) << "QZeroConf mDNS browsing (Anafi) error:" << error; });
+    QObject::connect(bebop2Browser, &QZeroConf::serviceAdded, this, [serviceAdded](QZeroConfService service) {
+        serviceAdded(new AbstractMDNSService(service), ParrotVehicle::Bebop2);
+    });
+    QObject::connect(bebop2Browser, &QZeroConf::serviceRemoved, this, [serviceRemoved](QZeroConfService service) {
+        serviceRemoved(new AbstractMDNSService(service));
+    });
+    QObject::connect(bebop2Browser, &QZeroConf::error, this, [](QZeroConf::error_t error) {
+        qCWarning(KIROGI_VEHICLESUPPORT_PARROT) << "QZeroConf mDNS browsing (Bebop 2) error:" << error;
+    });
+    QObject::connect(anafiBrowser, &QZeroConf::serviceAdded, this, [serviceAdded](QZeroConfService service) {
+        serviceAdded(new AbstractMDNSService(service), ParrotVehicle::Anafi);
+    });
+    QObject::connect(anafiBrowser, &QZeroConf::serviceRemoved, this, [serviceRemoved](QZeroConfService service) {
+        serviceRemoved(new AbstractMDNSService(service));
+    });
+    QObject::connect(anafiBrowser, &QZeroConf::error, this, [](QZeroConf::error_t error) {
+        qCWarning(KIROGI_VEHICLESUPPORT_PARROT) << "QZeroConf mDNS browsing (Anafi) error:" << error;
+    });
 
     bebop2Browser->startBrowser(QStringLiteral("_arsdk-090c._udp"));
     anafiBrowser->startBrowser(QStringLiteral("_arsdk-0914._udp"));

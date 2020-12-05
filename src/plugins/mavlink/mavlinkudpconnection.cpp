@@ -88,7 +88,9 @@ void MAVLinkUdpConnection::processDataOnSocket()
 {
     while (m_socket->hasPendingDatagrams()) {
         const QNetworkDatagram &datagram = m_socket->receiveDatagram();
-        auto checkOverlapped = [datagram](auto &target) { return datagram.senderAddress() == target.address && datagram.senderPort() == target.port; };
+        auto checkOverlapped = [datagram](auto &target) {
+            return datagram.senderAddress() == target.address && datagram.senderPort() == target.port;
+        };
 
         if (std::find_if(m_targets.begin(), m_targets.end(), checkOverlapped) == m_targets.end()) {
             m_targets.append({datagram.senderAddress(), datagram.senderPort()});

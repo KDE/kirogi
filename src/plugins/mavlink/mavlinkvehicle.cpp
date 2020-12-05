@@ -276,9 +276,9 @@ void MAVLinkVehicle::pilot(qint8 roll, qint8 pitch, qint8 yaw, qint8 gaz)
 
     manual_control.target = 1;
     manual_control.x = pitch * 10; // [-1000,1000] range
-    manual_control.y = roll * 10;  // [-1000,1000] range
-    manual_control.z = gaz * 10;   // [-1000,1000] range
-    manual_control.r = yaw * 10;   // [-1000,1000] range
+    manual_control.y = roll * 10; // [-1000,1000] range
+    manual_control.z = gaz * 10; // [-1000,1000] range
+    manual_control.r = yaw * 10; // [-1000,1000] range
     manual_control.buttons = 0;
 
     m_connection->sendMessage(manual_control);

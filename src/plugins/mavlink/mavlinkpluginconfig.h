@@ -42,7 +42,7 @@ public:
         return instance;
     }
 
-    int sysid() const;  ///< Returns system id of this GCS.
+    int sysid() const; ///< Returns system id of this GCS.
     int compid() const; ///< Returns default component id of this GCS.
 
     void setSysid(int sysid);
@@ -52,6 +52,6 @@ private:
     explicit MAVLinkPluginConfig();
     ~MAVLinkPluginConfig();
 
-    int m_sysid;  ///< A system id of this GCS.
+    int m_sysid; ///< A system id of this GCS.
     int m_compid; ///< A component id of this GCS.
 };

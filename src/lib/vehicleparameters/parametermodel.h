@@ -53,16 +53,16 @@ public:
      */
     enum Roles {
         Name = Qt::UserRole, // ACRO_BAL_PITCH
-        HumanName,           // Acro Balance Pitch
-        Description,         // rate at which pitch angle returns...
-        Index,               // 0
-        Value,               // X
-        ValidValues,         // { 0: "Disabled", "0.1": "Very Low", ... }
-        Bitmask,             // True/False
-        Units,               // deg
-        Increment,           // 0.1
-        Range,               // [0, 3]
-        UserType,            // Advanced/Standard
+        HumanName, // Acro Balance Pitch
+        Description, // rate at which pitch angle returns...
+        Index, // 0
+        Value, // X
+        ValidValues, // { 0: "Disabled", "0.1": "Very Low", ... }
+        Bitmask, // True/False
+        Units, // deg
+        Increment, // 0.1
+        Range, // [0, 3]
+        UserType, // Advanced/Standard
     };
     Q_ENUM(Roles)
 

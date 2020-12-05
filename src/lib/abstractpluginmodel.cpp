@@ -66,7 +66,9 @@ AbstractPluginModel::~AbstractPluginModel()
 
 void AbstractPluginModel::Private::loadPluginByService(const QString &serviceType)
 {
-    auto filterLambda = [serviceType](const KPluginMetaData &metaData) -> bool { return metaData.serviceTypes().contains(serviceType); };
+    auto filterLambda = [serviceType](const KPluginMetaData &metaData) -> bool {
+        return metaData.serviceTypes().contains(serviceType);
+    };
     const QString lowercaseMetadata = serviceType.toLower();
 
     // Look for plugins in a relative path, covers the case when the application is
@@ -78,7 +80,9 @@ void AbstractPluginModel::Private::loadPluginByService(const QString &serviceTyp
 
     // Unload plugins that apparently got uninstalled at runtime.
     for (const QString &id : loadedPlugins.keys()) {
-        const bool found = std::any_of(plugins.constBegin(), plugins.constEnd(), [id](const auto &md) { return md.pluginId() == id; });
+        const bool found = std::any_of(plugins.constBegin(), plugins.constEnd(), [id](const auto &md) {
+            return md.pluginId() == id;
+        });
         if (!found) {
             loadedPlugins.take(id)->deleteLater();
         }

@@ -72,7 +72,7 @@ void ParrotConnection::handshake(const QString &productSerial)
 
     QObject::connect(m_handshakeSocket, &QTcpSocket::connected, this, [this, productSerial]() {
         QJsonObject obj;
-        obj.insert(QStringLiteral("d2c_port"), m_d2cPort);                        // FIXME TODO: Don't hardcode the receive port. Current choice taken from Parrot example docs.
+        obj.insert(QStringLiteral("d2c_port"), m_d2cPort); // FIXME TODO: Don't hardcode the receive port. Current choice taken from Parrot example docs.
         obj.insert(QStringLiteral("controller_type"), QStringLiteral("desktop")); // FIXME TODO: Send different type based on host platform.
         obj.insert(QStringLiteral("controller_name"), QStringLiteral("KirogiParrotPlugin"));
         obj.insert(QStringLiteral("arstream2_client_stream_port"), 55004);
@@ -91,7 +91,9 @@ void ParrotConnection::handshake(const QString &productSerial)
         m_handshakeSocket->write(handshakeDoc.toJson(QJsonDocument::Compact));
     });
 
-    QObject::connect(m_handshakeSocket, &QTcpSocket::disconnected, this, [this]() { m_handshakeSocket->deleteLater(); });
+    QObject::connect(m_handshakeSocket, &QTcpSocket::disconnected, this, [this]() {
+        m_handshakeSocket->deleteLater();
+    });
 
     QObject::connect(m_handshakeSocket, &QTcpSocket::readyRead, this, [this]() {
         const QByteArray &responseData = m_handshakeSocket->readAll();
