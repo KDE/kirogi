@@ -2,9 +2,8 @@
 
 Kirogi is a ground control application for drones. Take to the skies, open source-style.
 
-[![Flatpak](https://binary-factory.kde.org/view/Android/job/Kirogi_flatpak/lastBuild/badge/icon?subject=Flatpak)](https://binary-factory.kde.org/view/Android/job/Kirogi_flatpak/lastBuild)
-[![ARM Flatpak](https://binary-factory.kde.org/view/Android/job/Kirogi_arm_flatpak/lastBuild/badge/icon?subject=ARM%20Flatpak)](https://binary-factory.kde.org/view/Android/job/Kirogi_arm_flatpak/lastBuild)
-[![Android](https://binary-factory.kde.org/view/Android/job/Kirogi_android/lastBuild/badge/icon?subject=Android)](https://binary-factory.kde.org/view/Android/job/Kirogi_android/lastBuild)
+[![Flatpak](https://binary-factory.kde.org/buildStatus/icon?job=Kirogi_x86_64_flatpak&subject=Flatpak)](https://binary-factory.kde.org/view/Android/job/Kirogi_x86_64_flatpak/lastBuild)
+[![Android](https://binary-factory.kde.org/buildStatus/icon?job=Kirogi_android&subject=Android)](https://binary-factory.kde.org/view/Android/job/Kirogi_android/lastBuild)
 
 ### Screenshot
 
