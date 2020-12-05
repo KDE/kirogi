@@ -128,10 +128,13 @@ Kirigami.Page {
 
             clip: true
 
+            property int scrollBarWidth: QQC2.ScrollBar.vertical && QQC2.ScrollBar.vertical.visible
+                ? QQC2.ScrollBar.vertical.width : 0
+
             Column {
                 id: col
 
-                width: checksList.width
+                width: checksList.width - checksList.scrollBarWidth
                 height: implicitHeight
 
                 Kirigami.BasicListItem {
