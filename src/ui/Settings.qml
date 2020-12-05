@@ -49,7 +49,7 @@ Kirigami.ScrollablePage {
             onToggled: kirogiSettings.alwaysShowDPads = checked
         }
 
-        Kirigami.Heading { text: "Video" }
+        Kirigami.Heading { text: i18n("Video") }
 
         QQC2.CheckBox {
             id: stretchVideo
