@@ -29,8 +29,14 @@
 #include <QJsonDocument>
 
 #ifndef Q_OS_ANDROID
-#include <KDNSSD/DNSSD/RemoteService>
-#include <KDNSSD/DNSSD/ServiceBrowser>
+#include <kdnssd_version.h>
+#if KDNSSD_VERSION >= QT_VERSION_CHECK(5, 84, 0)
+#include <KDNSSD/RemoteService>
+#include <KDNSSD/ServiceBrowser>
+#else
+#include <DNSSD/RemoteService>
+#include <DNSSD/ServiceBrowser>
+#endif
 #else
 #include "QtZeroConf/qzeroconf.h"
 #include "QtZeroConf/qzeroconfservice.h"
