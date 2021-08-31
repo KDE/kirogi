@@ -77,8 +77,8 @@ private Q_SLOTS:
 
 private:
     struct AltitudeSource {
-        bool altitudeMessage {false};
-        float altitude {0.0f};
+        bool altitudeMessage{false};
+        float altitude{0.0f};
     };
 
     struct CommandQueueItem {

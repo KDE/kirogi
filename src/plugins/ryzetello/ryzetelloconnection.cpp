@@ -170,7 +170,8 @@ void RyzeTelloConnection::pumpCommandQueue()
 
 void RyzeTelloConnection::sendPilotingCommand()
 {
-    const QByteArray &decoded = QString("rc %1 %2 %3 %4").arg(QString::number(m_roll), QString::number(m_pitch), QString::number(m_gaz), QString::number(m_yaw)).toUtf8();
+    const QByteArray &decoded =
+        QString("rc %1 %2 %3 %4").arg(QString::number(m_roll), QString::number(m_pitch), QString::number(m_gaz), QString::number(m_yaw)).toUtf8();
     m_controlSocket->writeDatagram(decoded, m_address, 8889);
 }
 

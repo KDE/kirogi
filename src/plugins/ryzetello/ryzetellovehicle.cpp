@@ -395,7 +395,8 @@ void RyzeTelloVehicle::initVehicle()
 void RyzeTelloVehicle::sendCommand(const QString &command, bool retryForever)
 {
     if (connectionState() < Connecting) {
-        qCWarning(KIROGI_VEHICLESUPPORT_RYZETELLO) << name() << "Request to send command" << command << "rejected. Connection not ready. Current connection state:" << connectionState();
+        qCWarning(KIROGI_VEHICLESUPPORT_RYZETELLO) << name() << "Request to send command" << command
+                                                   << "rejected. Connection not ready. Current connection state:" << connectionState();
         return;
     }
 

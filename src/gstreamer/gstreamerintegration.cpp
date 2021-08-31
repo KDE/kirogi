@@ -181,11 +181,11 @@ void GStreamerIntegration::takeSnapshot()
         qCDebug(videoLogging) << "Buffer is corrupted, ignoring screenshoot";
     }
 
-    GstMapInfo map {};
+    GstMapInfo map{};
     gst_buffer_map(snapbuffer, &map, GST_MAP_READ);
 
     uchar *bufferData = reinterpret_cast<uchar *>(map.data);
-    QImage::Format imageFormat {};
+    QImage::Format imageFormat{};
     if (g_str_equal(format, "RGBA")) {
         imageFormat = QImage::Format_RGB32;
     } else {

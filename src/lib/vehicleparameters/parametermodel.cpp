@@ -47,7 +47,7 @@ void ParameterModel::initializeRoleNames()
     };
 
     QMetaEnum e = metaObject()->enumerator(metaObject()->indexOfEnumerator("Roles"));
-    for (int i {0}; i < e.keyCount(); i++) {
+    for (int i{0}; i < e.keyCount(); i++) {
         m_roleNames.insert(e.value(i), desCapitalize(e.key(i)));
     }
 }
@@ -76,7 +76,7 @@ void ParameterModel::doUpdate(const QMap<ParameterModel::Roles, QVariant> &param
 
     beginInsertRows(QModelIndex(), line, line);
     // Run over all keys in the parameter argument and update the model.
-    QMapIterator<ParameterModel::Roles, QVariant> parameterIterator {parameter};
+    QMapIterator<ParameterModel::Roles, QVariant> parameterIterator{parameter};
     while (parameterIterator.hasNext()) {
         parameterIterator.next();
         // Ignore name if already exist in the model.

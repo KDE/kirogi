@@ -45,7 +45,8 @@ Kirogi::ConnectionConfiguration *MAVLinkUdpConnection::configuration()
 bool MAVLinkUdpConnection::connect()
 {
     if (state() > State::Disconnected) {
-        qCDebug(KIROGI_VEHICLESUPPORT_MAVLINK_CONNECTION) << QString("Tried to create UDP connection %1 when it's not disconnected.").arg(m_configuration.name());
+        qCDebug(KIROGI_VEHICLESUPPORT_MAVLINK_CONNECTION)
+            << QString("Tried to create UDP connection %1 when it's not disconnected.").arg(m_configuration.name());
         return false;
     }
 
@@ -103,7 +104,8 @@ void MAVLinkUdpConnection::processDataOnSocket()
 void MAVLinkUdpConnection::sendBytes(const QByteArray &bytes)
 {
     if (state() < State::Connected) {
-        qCDebug(KIROGI_VEHICLESUPPORT_MAVLINK_CONNECTION) << QString("Tried to send bytes on connection %1 when it's not connected.").arg(m_configuration.name());
+        qCDebug(KIROGI_VEHICLESUPPORT_MAVLINK_CONNECTION)
+            << QString("Tried to send bytes on connection %1 when it's not connected.").arg(m_configuration.name());
         return;
     }
 

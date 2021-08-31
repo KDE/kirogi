@@ -51,7 +51,20 @@ public:
     };
     Q_ENUM(BufferId)
 
-    enum ArgumentType { TYPE_U8 = 0, TYPE_I8 = 1, TYPE_U16 = 2, TYPE_I16 = 3, TYPE_U32 = 4, TYPE_I32 = 5, TYPE_U64 = 6, TYPE_I64 = 7, TYPE_FLOAT = 8, TYPE_DOUBLE = 9, TYPE_STRING = 10, TYPE_ENUM = 11 };
+    enum ArgumentType {
+        TYPE_U8 = 0,
+        TYPE_I8 = 1,
+        TYPE_U16 = 2,
+        TYPE_I16 = 3,
+        TYPE_U32 = 4,
+        TYPE_I32 = 5,
+        TYPE_U64 = 6,
+        TYPE_I64 = 7,
+        TYPE_FLOAT = 8,
+        TYPE_DOUBLE = 9,
+        TYPE_STRING = 10,
+        TYPE_ENUM = 11
+    };
     Q_ENUM(ArgumentType)
 
     enum Command {

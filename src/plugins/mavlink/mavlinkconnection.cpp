@@ -54,6 +54,14 @@ void MAVLinkConnection::parseData(const QByteArray &bytes)
 void MAVLinkConnection::sendHeartbeat()
 {
     mavlink_message_t message;
-    mavlink_msg_heartbeat_pack_chan(MAVLinkPluginConfig::instance().sysid(), MAVLinkPluginConfig::instance().compid(), m_channel, &message, MAV_TYPE_GCS, MAV_AUTOPILOT_INVALID, MAV_MODE_MANUAL_ARMED, 0, MAV_STATE_ACTIVE);
+    mavlink_msg_heartbeat_pack_chan(MAVLinkPluginConfig::instance().sysid(),
+                                    MAVLinkPluginConfig::instance().compid(),
+                                    m_channel,
+                                    &message,
+                                    MAV_TYPE_GCS,
+                                    MAV_AUTOPILOT_INVALID,
+                                    MAV_MODE_MANUAL_ARMED,
+                                    0,
+                                    MAV_STATE_ACTIVE);
     sendMessage(message);
 }

@@ -47,7 +47,10 @@ void PositionSource::createPositionSource()
     m_geoPositionSource->setPreferredPositioningMethods(QGeoPositionInfoSource::SatellitePositioningMethods);
     m_geoPositionSource->startUpdates();
 
-    connect(m_geoPositionSource.get(), QOverload<QGeoPositionInfoSource::Error>::of(&QGeoPositionInfoSource::error), this, &PositionSource::setPositionSourceError);
+    connect(m_geoPositionSource.get(),
+            QOverload<QGeoPositionInfoSource::Error>::of(&QGeoPositionInfoSource::error),
+            this,
+            &PositionSource::setPositionSourceError);
     connect(m_geoPositionSource.get(), &QGeoPositionInfoSource::positionUpdated, this, &PositionSource::setPositionInfo);
 }
 

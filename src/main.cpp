@@ -102,7 +102,9 @@ int main(int argc, char *argv[])
 
     aboutData.addAuthor(xi18nc("@info:credit", "Patrick José Pereira"), xi18nc("@info:credit", "Developer"), QStringLiteral("patrickjp@kde.org"));
 
-    aboutData.addAuthor(xi18nc("@info:credit", "Rafael Brandmaier"), xi18nc("@info:credit", "Application icon"), QStringLiteral("rafael.brandmaier@kdemail.net"));
+    aboutData.addAuthor(xi18nc("@info:credit", "Rafael Brandmaier"),
+                        xi18nc("@info:credit", "Application icon"),
+                        QStringLiteral("rafael.brandmaier@kdemail.net"));
 
     aboutData.addAuthor(xi18nc("@info:credit", "L. 'AsmoArael' C."), xi18nc("@info:credit", "Mascot artwork"), QStringLiteral("lc.jarryh99@outlook.fr"));
 
@@ -140,8 +142,10 @@ int main(int argc, char *argv[])
 
     engine.rootContext()->setContextProperty(QStringLiteral("kirogiSettings"), Settings::self());
 
-    engine.rootContext()->setContextProperty(QStringLiteral("locationPermissions"),
-                                             QVariant::fromValue(new Permissions({QStringLiteral("android.permission.ACCESS_COARSE_LOCATION"), QStringLiteral("android.permission.ACCESS_FINE_LOCATION")}, &app)));
+    engine.rootContext()->setContextProperty(
+        QStringLiteral("locationPermissions"),
+        QVariant::fromValue(
+            new Permissions({QStringLiteral("android.permission.ACCESS_COARSE_LOCATION"), QStringLiteral("android.permission.ACCESS_FINE_LOCATION")}, &app)));
 
     engine.load(QUrl(QStringLiteral("qrc:///main.qml")));
 

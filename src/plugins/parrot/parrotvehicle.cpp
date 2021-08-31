@@ -181,8 +181,11 @@ QList<Kirogi::AbstractVehicle::VehicleAction> ParrotVehicle::supportedActions() 
 
     // FIXME TODO: Look for alternatives for the Anafi.
     if (m_type == Bebop2) {
-        actions += QList<Kirogi::AbstractVehicle::VehicleAction>(
-            {Kirogi::AbstractVehicle::FlipForward, Kirogi::AbstractVehicle::FlipBackward, Kirogi::AbstractVehicle::FlipLeft, Kirogi::AbstractVehicle::FlipRight, Kirogi::AbstractVehicle::ToggleVideoStabilization});
+        actions += QList<Kirogi::AbstractVehicle::VehicleAction>({Kirogi::AbstractVehicle::FlipForward,
+                                                                  Kirogi::AbstractVehicle::FlipBackward,
+                                                                  Kirogi::AbstractVehicle::FlipLeft,
+                                                                  Kirogi::AbstractVehicle::FlipRight,
+                                                                  Kirogi::AbstractVehicle::ToggleVideoStabilization});
     }
 
     return actions;
@@ -330,9 +333,11 @@ Kirogi::AbstractVehicle::PerformanceMode ParrotVehicle::performanceMode() const
 
     if (ready()) {
         if (m_type == Bebop2) {
-            if (m_maxRollPitchSpeed == 80 && m_maxYawSpeed == 13 && m_maxGazSpeed == 1 && m_maxTilt == 8 && m_bankedTurns == true && m_videoStreamMode == 1 && videoStabilization()) {
+            if (m_maxRollPitchSpeed == 80 && m_maxYawSpeed == 13 && m_maxGazSpeed == 1 && m_maxTilt == 8 && m_bankedTurns == true && m_videoStreamMode == 1
+                && videoStabilization()) {
                 return FilmPerformance;
-            } else if (m_maxRollPitchSpeed == 200 && m_maxYawSpeed == 150 && m_maxGazSpeed == 5 && m_maxTilt == 35 && m_bankedTurns == false && m_videoStreamMode == 0 && !videoStabilization()) {
+            } else if (m_maxRollPitchSpeed == 200 && m_maxYawSpeed == 150 && m_maxGazSpeed == 5 && m_maxTilt == 35 && m_bankedTurns == false
+                       && m_videoStreamMode == 0 && !videoStabilization()) {
                 return SportPerformance;
             }
         } else if (m_type == Anafi) {
@@ -343,7 +348,8 @@ Kirogi::AbstractVehicle::PerformanceMode ParrotVehicle::performanceMode() const
             // may need before long.
             if (m_maxRollPitchSpeed == 80 && m_maxYawSpeed == 10 && m_maxGazSpeed == 1 && m_maxTilt == 10 && m_bankedTurns == true) {
                 return FilmPerformance;
-            } else if (m_maxRollPitchSpeed == 200 && m_maxYawSpeed == 30 && m_maxGazSpeed == 2 // FreeFlight 6 uses 1.9, but there's some weird precision mismatch issue.
+            } else if (m_maxRollPitchSpeed == 200 && m_maxYawSpeed == 30
+                       && m_maxGazSpeed == 2 // FreeFlight 6 uses 1.9, but there's some weird precision mismatch issue.
                        && m_maxTilt == 25 && m_bankedTurns == false) {
                 return SportPerformance;
             }
@@ -666,7 +672,8 @@ QString ParrotVehicle::videoSource() const
 {
     if (videoStreamEnabled()) {
         if (m_type == Bebop2) {
-            return QStringLiteral("udpsrc port=55004 ! application/x-rtp, clock-rate=90000,payload=96 ! rtph264depay ! video/x-h264 ! queue ! h264parse ! decodebin !");
+            return QStringLiteral(
+                "udpsrc port=55004 ! application/x-rtp, clock-rate=90000,payload=96 ! rtph264depay ! video/x-h264 ! queue ! h264parse ! decodebin !");
         } else if (m_type == Anafi) {
             return QStringLiteral("rtspsrc location=rtsp://192.168.42.1/live latency=5 ! rtph264depay ! video/x-h264 ! queue ! h264parse ! decodebin !");
         }
@@ -1167,9 +1174,15 @@ void ParrotVehicle::initVehicle()
 void ParrotVehicle::sendCommand(Parrot::Command command, const QVariantList &arguments, bool retryForever)
 {
     if (!connected()) {
-        qCWarning(KIROGI_VEHICLESUPPORT_PARROT) << name() << "Request to send command" << command << "rejected. Connection not ready. Current connection state:" << connectionState();
+        qCWarning(KIROGI_VEHICLESUPPORT_PARROT) << name() << "Request to send command" << command
+                                                << "rejected. Connection not ready. Current connection state:" << connectionState();
         return;
     }
 
-    QMetaObject::invokeMethod(m_connection, "sendCommand", Qt::QueuedConnection, Q_ARG(Parrot::Command, command), Q_ARG(QVariantList, arguments), Q_ARG(bool, retryForever));
+    QMetaObject::invokeMethod(m_connection,
+                              "sendCommand",
+                              Qt::QueuedConnection,
+                              Q_ARG(Parrot::Command, command),
+                              Q_ARG(QVariantList, arguments),
+                              Q_ARG(bool, retryForever));
 }
