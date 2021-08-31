@@ -21,7 +21,8 @@
                 "Name[sl]": "Eike Hein",
                 "Name[sv]": "Eike Hein",
                 "Name[uk]": "Eike Hein",
-                "Name[x-test]": "xxEike Heinxx"
+                "Name[x-test]": "xxEike Heinxx",
+                "Name[zh_CN]": "Eike Hein"
             }
         ],
         "Description": "A Kirogi plugin to support Parrot UAVs",
@@ -40,6 +41,7 @@
         "Description[sv]": "Ett Kirogi insticksprogram för att stödja Parrot drönare",
         "Description[uk]": "Додаток до Kirogi для підтримки дронів Parrot",
         "Description[x-test]": "xxA Kirogi plugin to support Parrot UAVsxx",
+        "Description[zh_CN]": "用于支持 Parrot 无人机的 Kirogi 插件",
         "Icon": "uav",
         "Name": "Parrot",
         "Name[ca@valencia]": "Parrot",
@@ -59,6 +61,7 @@
         "Name[sv]": "Parrot",
         "Name[uk]": "Parrot",
         "Name[x-test]": "xxParrotxx",
+        "Name[zh_CN]": "Parrot",
         "ServiceTypes": [
             "Kirogi/VehicleSupport"
         ]

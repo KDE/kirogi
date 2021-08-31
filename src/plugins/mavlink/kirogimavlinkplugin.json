@@ -20,7 +20,8 @@
                 "Name[sl]": "Patrick José Pereira",
                 "Name[sv]": "Patrick José Pereira",
                 "Name[uk]": "Patrick José Pereira",
-                "Name[x-test]": "xxPatrick José Pereiraxx"
+                "Name[x-test]": "xxPatrick José Pereiraxx",
+                "Name[zh_CN]": "Patrick José Pereira"
             }
         ],
         "Description": "A Kirogi plugin to support MAVLink vehicles",
@@ -39,6 +40,7 @@
         "Description[sv]": "Ett Kirogi insticksprogram för att stödja MAVLink-fordon",
         "Description[uk]": "Додаток до Kirogi для підтримки машин MAVLink",
         "Description[x-test]": "xxA Kirogi plugin to support MAVLink vehiclesxx",
+        "Description[zh_CN]": "用于支持 MAVLink 协议载具的插件",
         "Icon": "uav",
         "Name": "MAVLink",
         "Name[ca@valencia]": "MAVLink",
@@ -58,6 +60,7 @@
         "Name[sv]": "MAVLink",
         "Name[uk]": "MAVLink",
         "Name[x-test]": "xxMAVLinkxx",
+        "Name[zh_CN]": "MAVLink",
         "ServiceTypes": [
             "Kirogi/VehicleSupport"
         ]
