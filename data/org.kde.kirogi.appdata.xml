@@ -161,7 +161,7 @@
       <li xml:lang="sv">Utlös fordonsåtgärder (t.ex. vändningar, trimning)</li>
       <li xml:lang="uk">Фігури вищого пілотажу (наприклад петлі, бочки)</li>
       <li xml:lang="x-test">xxTrigger vehicle actions (e.g. flips, trim)xx</li>
-      <li xml:lang="zh-CN">操控载具动作 (如翻转和校准)</li>
+      <li xml:lang="zh-CN">触发载具动作 (如翻转和平飞)</li>
       <li>Gamepad/joypad support</li>
       <li xml:lang="ca">Admet comandaments de joc</li>
       <li xml:lang="ca-valencia">Admet comandaments de joc</li>
