@@ -26,7 +26,7 @@
             }
         ],
         "Description": "A Kirogi plugin to support Parrot UAVs",
-        "Description[ca@valencia]": "Un connector del Kirogi per a admetre l'UAV Parrot",
+        "Description[ca@valencia]": "Un connector de Kirogi per a admetre l'UAV Parrot",
         "Description[ca]": "Un connector del Kirogi per a admetre l'UAV Parrot",
         "Description[en_GB]": "A Kirogi plugin to support Parrot UAVs",
         "Description[es]": "Un complemento de Kirogi para usar los vehículos voladores no tripulados Parrot",
