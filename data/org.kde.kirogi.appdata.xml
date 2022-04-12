@@ -23,6 +23,7 @@
   <name xml:lang="sk">Kirogi</name>
   <name xml:lang="sl">Kirogi</name>
   <name xml:lang="sv">Kirogi</name>
+  <name xml:lang="tr">Kirogi</name>
   <name xml:lang="uk">Kirogi</name>
   <name xml:lang="x-test">xxKirogixx</name>
   <name xml:lang="zh-CN">Kirogi</name>
@@ -42,6 +43,7 @@
   <summary xml:lang="pt">Controlo terrestre de UAV (drone)</summary>
   <summary xml:lang="sl">Zemeljska kontrola UAV (droni)</summary>
   <summary xml:lang="sv">Markkontroll av drönare (UAV)</summary>
+  <summary xml:lang="tr">İHA (uçangöz) yer denetimi</summary>
   <summary xml:lang="uk">Програма для керування UAV (дроном)</summary>
   <summary xml:lang="x-test">xxUAV (drone) ground controlxx</summary>
   <summary xml:lang="zh-CN">在地面上控制无人航空载具 (无人机)</summary>
@@ -62,6 +64,7 @@
   <developer_name xml:lang="sk">Vývojári KDE Kirogi</developer_name>
   <developer_name xml:lang="sl">Razvijalci KDE Kirogi</developer_name>
   <developer_name xml:lang="sv">KDE Kirogi-utvecklarna</developer_name>
+  <developer_name xml:lang="tr">KDE Kirogi Geliştiricileri</developer_name>
   <developer_name xml:lang="uk">Розробники KDE Kirogi</developer_name>
   <developer_name xml:lang="x-test">xxKDE Kirogi Developersxx</developer_name>
   <developer_name xml:lang="zh-CN">KDE Kirogi 开发者</developer_name>
@@ -83,6 +86,7 @@
     <p xml:lang="pt">O Kirogi é uma aplicação de controlo de drones a nível terrestre. Leve-os aos céus com um estilo de código aberto.</p>
     <p xml:lang="sl">Kirogi je program zemeljske kontrole za drone. Prevzemite v nebo v slogu odprte kode.</p>
     <p xml:lang="sv">Kirogi är ett markkontrollprogram för drönare. </p>
+    <p xml:lang="tr">Kirogi, uçangözler için bir yer denetim uygulamasıdır. Göklere uçun, açık kaynakli bir biçimde.</p>
     <p xml:lang="uk">Kirogi — програма для керування дронами з землі. Підніміться у небо у стилі відкритості.</p>
     <p xml:lang="x-test">xxKirogi is a ground control application for drones. Take to the skies, open source-style.xx</p>
     <p xml:lang="zh-CN">Kirogi 是一款可在地面上控制无人机的应用程序。以开源之道，展翅高飞。</p>
@@ -104,6 +108,7 @@
     <p xml:lang="sk">Funkcie:</p>
     <p xml:lang="sl">Možnosti:</p>
     <p xml:lang="sv">Funktioner:</p>
+    <p xml:lang="tr">Özellikler:</p>
     <p xml:lang="uk">Можливості:</p>
     <p xml:lang="x-test">xxFeatures:xx</p>
     <p xml:lang="zh-CN">功能：</p>
@@ -124,6 +129,7 @@
       <li xml:lang="pt">Controlos de voo directos</li>
       <li xml:lang="sl">Neposredna kontrola leta</li>
       <li xml:lang="sv">Direkt flygkontroller</li>
+      <li xml:lang="tr">Doğrudan uçuş denetimleri</li>
       <li xml:lang="uk">Безпосереднє керування польотом</li>
       <li xml:lang="x-test">xxDirect flight controlsxx</li>
       <li xml:lang="zh-CN">直接控制飞行轨迹</li>
@@ -142,6 +148,7 @@
       <li xml:lang="pt">Voar por toque num Mapa de Navegação</li>
       <li xml:lang="sl">Let z dotikom navigacijskega zemljevida</li>
       <li xml:lang="sv">Flyg genom att peka på navigeringskarta</li>
+      <li xml:lang="tr">Bir yerbulum haritasına dokunarak uçun</li>
       <li xml:lang="uk">Політ із сенсорним визначенням маршруту на навігаційній карті</li>
       <li xml:lang="x-test">xxFly by touch on a Navigation Mapxx</li>
       <li xml:lang="zh-CN">在导航图上设定飞行位置</li>
@@ -160,6 +167,7 @@
       <li xml:lang="pt">Activar as acções do veículo (p.ex., inversões e limitações)</li>
       <li xml:lang="sl">Sproži aktivnosti naprave (npr. zasuki, nagibi)</li>
       <li xml:lang="sv">Utlös fordonsåtgärder (t.ex. vändningar, trimning)</li>
+      <li xml:lang="tr">Araç eylemlerini tetikleyin (örn. tersyüz, denge)</li>
       <li xml:lang="uk">Фігури вищого пілотажу (наприклад петлі, бочки)</li>
       <li xml:lang="x-test">xxTrigger vehicle actions (e.g. flips, trim)xx</li>
       <li xml:lang="zh-CN">触发载具动作 (如翻转和平飞)</li>
@@ -180,6 +188,7 @@
       <li xml:lang="sk">Podpora Gamepadu/joypadu</li>
       <li xml:lang="sl">Podpora za igralno konzolo ali igralno palico</li>
       <li xml:lang="sv">Stöd för handkontroll</li>
+      <li xml:lang="tr">Oyun tablası/çubuğu desteği</li>
       <li xml:lang="uk">Підтримка пультів керування</li>
       <li xml:lang="x-test">xxGamepad/joypad supportxx</li>
       <li xml:lang="zh-CN">手柄支持</li>
@@ -200,6 +209,7 @@
       <li xml:lang="sk">Živé video</li>
       <li xml:lang="sl">Video v živo</li>
       <li xml:lang="sv">Direktsänd video</li>
+      <li xml:lang="tr">Canlı video</li>
       <li xml:lang="uk">Інтерактивне відео</li>
       <li xml:lang="x-test">xxLive videoxx</li>
       <li xml:lang="zh-CN">实时视频</li>
@@ -219,6 +229,7 @@
       <li xml:lang="pt">Tirar fotografias e gravar vídeos</li>
       <li xml:lang="sl">Napravi fotografijo in posnemi video</li>
       <li xml:lang="sv">Ta foto och spela in video</li>
+      <li xml:lang="tr">Fotoğraf çekin ve video kaydedin</li>
       <li xml:lang="uk">Створення знімків та запис відео</li>
       <li xml:lang="x-test">xxTake photo and record videoxx</li>
       <li xml:lang="zh-CN">拍照和录像</li>
@@ -238,6 +249,7 @@
       <li xml:lang="pt">Configurar os parâmetros de voo (velocidade, limites de altitude)</li>
       <li xml:lang="sl">Nastavi parametre leta (hitrost, omejitve višine)</li>
       <li xml:lang="sv">Anpassa flygparametrar (hastighet, elevationsgränser)</li>
+      <li xml:lang="tr">Uçuş parametrelerini yapılandırın (hız, irtifa sınırlandırmaları)</li>
       <li xml:lang="uk">Налаштовування параметрів польоту (обмежень на швидкість і висоту)</li>
       <li xml:lang="x-test">xxConfigure flight parameters (speed, altitude limits)xx</li>
       <li xml:lang="zh-CN">配置飞行参数 (速度和高度限制)</li>
@@ -257,6 +269,7 @@
       <li xml:lang="pt">Suporte para os drones da Parrot (Anafi, Bebop 2) e Ryze Tello (estão planeados mais)</li>
       <li xml:lang="sl">Podpora za drone Parrot (Anafi, Bebop 2) in Ryze Tello (več v planu)</li>
       <li xml:lang="sv">Stöd för Parrot (Anafi, Bebop 2) och Ryze Tello drönare (flera planerade)</li>
+      <li xml:lang="tr">Parrot (Anafi, Bebop 2) ve Ryze Tello uçangözleri için destek (daha fazlası gelecek)</li>
       <li xml:lang="uk">Підтримка дронів Parrot (Anafi, Bebop 2) та Ryze Tello (плануємо розширення підтримки)</li>
       <li xml:lang="x-test">xxSupport for Parrot (Anafi, Bebop 2) and Ryze Tello drones (more planned)xx</li>
       <li xml:lang="zh-CN">支持 Parrot (Anafi、Bebop 2) 和 Ryze Tello 无人机 (计划支持更多无人机)</li>
@@ -288,6 +301,7 @@
       <caption xml:lang="pt">A interface em voo do Kirogi</caption>
       <caption xml:lang="sl">Uporabniški vmesnik Kirogi med letom</caption>
       <caption xml:lang="sv">Kirogi användargränssnitt för flygning</caption>
+      <caption xml:lang="tr">Kirogi uçuş kullanıcı arayüzü</caption>
       <caption xml:lang="uk">Інтерфейс Kirogi під час керування польотом</caption>
       <caption xml:lang="x-test">xxThe Kirogi in-flight UIxx</caption>
       <caption xml:lang="zh-CN">Kirogi 在飞行中的界面</caption>
