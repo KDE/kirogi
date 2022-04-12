@@ -20,6 +20,7 @@
                 "Name[sk]": "Eike Hein",
                 "Name[sl]": "Eike Hein",
                 "Name[sv]": "Eike Hein",
+                "Name[tr]": "Eike Hein",
                 "Name[uk]": "Eike Hein",
                 "Name[x-test]": "xxEike Heinxx",
                 "Name[zh_CN]": "Eike Hein"
@@ -39,6 +40,7 @@
         "Description[pt]": "Um 'plugin' do Kirogi para suportar o UAV Ryze Tello",
         "Description[sl]": "Kirogi vtičnik za podporo naprav Ryze Tello UAV",
         "Description[sv]": "Ett Kirogi insticksprogram för att stödja Ryze Tello drönare",
+        "Description[tr]": "Ryze Tello İHA'larını desteklemek için bir Kirogi eklentisi",
         "Description[uk]": "Додаток до Kirogi для підтримки дронів Ryze Tello",
         "Description[x-test]": "xxA Kirogi plugin to support the Ryze Tello UAVxx",
         "Description[zh_CN]": "用于支持 Ryze Tello 无人机的插件",
@@ -60,6 +62,7 @@
         "Name[sk]": "Ryze Tello",
         "Name[sl]": "Ryze Tello",
         "Name[sv]": "Ryze Tello",
+        "Name[tr]": "Ryze Tello",
         "Name[uk]": "Ryze Tello",
         "Name[x-test]": "xxRyze Telloxx",
         "Name[zh_CN]": "Ryze Tello",
