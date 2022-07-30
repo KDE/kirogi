@@ -1,44 +1,6 @@
+# SPDX-FileCopyrightText: None
+# SPDX-License-Identifier: CC0-1.0
+
 include:
-  - https://invent.kde.org/sysadmin/ci-tooling/raw/master/invent/ci-before.yml
-  - https://invent.kde.org/sysadmin/ci-tooling/raw/master/invent/ci-applications-linux.yml
-
-build_clazy_clang_tidy:
-  stage: build
-  image: kdeorg/ci-suse-qt515
-  extends: .linux
-
-  before_script:
-    - pip --quiet install future
-    - zypper --non-interactive install clazy
-
-    - git clone --depth=1 https://invent.kde.org/sysadmin/ci-tooling.git $CI_TOOLING
-    - git clone --depth=1 https://invent.kde.org/sysadmin/repo-metadata.git $CI_TOOLING/repo-metadata
-    - git clone --depth=1 https://invent.kde.org/sysadmin/kde-build-metadata.git $CI_TOOLING/kde-build-metadata
-    - git clone --depth=1 https://invent.kde.org/sdk/kde-dev-scripts.git $CI_TOOLING/kde-dev-scripts
-
-    - mkdir -p /tmp/mavlink && cd /tmp/mavlink
-    - git clone --depth=1 https://github.com/mavlink/mavlink src
-    - git -C src submodule update --init
-    - cmake -S src -B build && cmake --build build --parallel $(nproc) --target install &> /dev/null
-
-    - cd -
-
-  script:
-    - export CC=clang
-    - export CXX=clazy
-    - export CLAZY_CHECKS="level0,level1,detaching-member,ifndef-define-typo,isempty-vs-count,qrequiredresult-candidates,reserve-candidates,signal-with-return-value,unneeded-cast,function-args-by-ref,function-args-by-value,returning-void-expression,isempty-vs-count,qhash-with-char-pointer-key,raw-environment-function,qproperty-type-mismatch,old-style-connect,qstring-allocations,container-inside-loop,heap-allocated-small-trivial-type,inefficient-qlist,qstring-varargs"
-    - export CLAZY_IGNORE_DIRS="/usr/include/.*"
-
-    - python3 -u $CI_TOOLING/helpers/prepare-dependencies.py --product $PRODUCT --project $PROJECT --branchGroup $BRANCH_GROUP --environment production --platform $PLATFORM --installTo $INSTALL_PREFIX
-    - python3 -u $CI_TOOLING/helpers/configure-build.py --product $PRODUCT --project $PROJECT --branchGroup $BRANCH_GROUP --platform $PLATFORM --installTo $INSTALL_PREFIX
-    - python3 -u $CI_TOOLING/helpers/compile-build.py --product $PRODUCT --project $PROJECT --branchGroup $BRANCH_GROUP --platform $PLATFORM --usingInstall $INSTALL_PREFIX
-
-    - run-clang-tidy -p build
-    - find src -name "*.cpp" -o -name "*.h" | xargs clang-format -i
-
-    - git diff
-    - git diff --quiet --ignore-submodules HEAD 2>/dev/null && echo "Style is good!"
-
-  variables:
-    PLATFORM: SUSEQt5.15
-    BRANCH_GROUP: kf5-qt5
+  - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/linux.yml
+  - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/freebsd.yml

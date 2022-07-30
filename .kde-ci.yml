@@ -1,0 +1,16 @@
+# SPDX-FileCopyrightText: None
+# SPDX-License-Identifier: CC0-1.0
+
+Dependencies:
+- 'on': ['@all']
+  'require':
+    'frameworks/extra-cmake-modules': '@stable'
+    'frameworks/kconfigwidgets': '@stable'
+    'frameworks/kcoreaddons': '@stable'
+    'frameworks/ki18n': '@stable'
+    'frameworks/kirigami': '@stable'
+
+- 'on': ['Linux', 'FreeBSD']
+  'require':
+    'frameworks/kcrash': '@stable'
+    'frameworks/kdnssd': '@stable'
