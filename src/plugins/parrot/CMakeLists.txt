@@ -26,7 +26,6 @@ ecm_qt_declare_logging_category(kirogiparrotplugin_SRCS
 
 kcoreaddons_add_plugin(kirogiparrotplugin
     SOURCES ${kirogiparrotplugin_SRCS}
-    JSON "${CMAKE_CURRENT_SOURCE_DIR}/kirogiparrotplugin.json"
     INSTALL_NAMESPACE "kirogi/vehiclesupport"
 )
 

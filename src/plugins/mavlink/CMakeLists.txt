@@ -31,7 +31,6 @@ ecm_qt_declare_logging_category(kirogimavlinkplugin_SRCS
 
 kcoreaddons_add_plugin(kirogimavlinkplugin
     SOURCES ${kirogimavlinkplugin_SRCS}
-    JSON "${CMAKE_CURRENT_SOURCE_DIR}/kirogimavlinkplugin.json"
     INSTALL_NAMESPACE "kirogi/vehiclesupport"
 )
 

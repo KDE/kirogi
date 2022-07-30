@@ -14,7 +14,6 @@ ecm_qt_declare_logging_category(kirogiryzetelloplugin_SRCS
 
 kcoreaddons_add_plugin(kirogiryzetelloplugin
     SOURCES ${kirogiryzetelloplugin_SRCS}
-    JSON "${CMAKE_CURRENT_SOURCE_DIR}/kirogiryzetelloplugin.json"
     INSTALL_NAMESPACE "kirogi/vehiclesupport"
 )
 

@@ -65,9 +65,6 @@
         "Name[tr]": "Parrot",
         "Name[uk]": "Parrot",
         "Name[x-test]": "xxParrotxx",
-        "Name[zh_CN]": "Parrot",
-        "ServiceTypes": [
-            "Kirogi/VehicleSupport"
-        ]
+        "Name[zh_CN]": "Parrot"
     }
 }

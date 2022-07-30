@@ -22,7 +22,6 @@
 #include "debug.h"
 
 #include <KPluginFactory>
-#include <KPluginLoader>
 
 #include <QCoreApplication>
 #include <QMetaEnum>
@@ -40,7 +39,7 @@ public:
     // This is QMap so `AbstractPluginModel::loadedPlugins` returns a stable sort.
     QMap<QString, QObject *> loadedPlugins;
 
-    void loadPluginByService(const QString &serviceType);
+    void loadPluginByType(const QString &serviceType);
 
 private:
     AbstractPluginModel *m_q;
@@ -64,19 +63,9 @@ AbstractPluginModel::~AbstractPluginModel()
     delete d;
 }
 
-void AbstractPluginModel::Private::loadPluginByService(const QString &serviceType)
+void AbstractPluginModel::Private::loadPluginByType(const QString &type)
 {
-    auto filterLambda = [serviceType](const KPluginMetaData &metaData) -> bool {
-        return metaData.serviceTypes().contains(serviceType);
-    };
-    const QString lowercaseMetadata = serviceType.toLower();
-
-    // Look for plugins in a relative path, covers the case when the application is
-    // not installed in the system.
-    const QString possiblePluginPath = QCoreApplication::applicationDirPath() + QStringLiteral("/../lib/plugins/%1").arg(lowercaseMetadata);
-
-    plugins = KPluginLoader::findPlugins(possiblePluginPath, filterLambda);
-    plugins += KPluginLoader::findPlugins(lowercaseMetadata, filterLambda);
+    plugins = KPluginMetaData::findPlugins(QLatin1String("kirogi/") + type);
 
     // Unload plugins that apparently got uninstalled at runtime.
     for (const QString &id : loadedPlugins.keys()) {
@@ -89,9 +78,9 @@ void AbstractPluginModel::Private::loadPluginByService(const QString &serviceTyp
     }
 }
 
-void AbstractPluginModel::loadPluginByService(const QString &serviceType)
+void AbstractPluginModel::loadPluginByType(const QString &serviceType)
 {
-    d->loadPluginByService(serviceType);
+    d->loadPluginByType(serviceType);
 }
 
 bool AbstractPluginModel::loadPluginByIndex(int row)
@@ -102,19 +91,16 @@ bool AbstractPluginModel::loadPluginByIndex(int row)
         return false;
     }
 
-    KPluginLoader loader(md.fileName(), this);
-    KPluginFactory *factory = loader.factory();
+    const auto result = KPluginFactory::loadFactory(md);
 
-    if (!factory) {
-        qCWarning(KIROGI_CORE) << "Error loading plugin:" << md.pluginId() << "-" << loader.errorString();
+    if (!result) {
+        qCWarning(KIROGI_CORE) << "Error loading plugin:" << md.pluginId() << "-" << result.errorString;
         return false;
     }
 
-    QObject *plugin = requestFromFactory(factory);
+    QObject *plugin = requestFromFactory(result.plugin);
 
     if (!plugin) {
-        qCWarning(KIROGI_CORE) << "Scheduling invalid plugin to be deleted:" << md.pluginId() << "/" << factory;
-        factory->deleteLater();
         return false;
     }
 

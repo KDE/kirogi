@@ -119,8 +119,6 @@ install(EXPORT kirogicoreLibraryTargets
         DESTINATION ${CMAKECONFIG_INSTALL_DIR}
         FILE KirogiCoreLibraryTargets.cmake)
 
-install(FILES kirogivehiclesupportplugin.desktop DESTINATION ${KDE_INSTALL_KSERVICETYPES5DIR})
-
 install(FILES kirogi.categories DESTINATION ${KDE_INSTALL_CONFDIR})
 
 if(NOT BUILD_QT_QUICK_LIB)

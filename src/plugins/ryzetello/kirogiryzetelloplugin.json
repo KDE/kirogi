@@ -67,9 +67,6 @@
         "Name[tr]": "Ryze Tello",
         "Name[uk]": "Ryze Tello",
         "Name[x-test]": "xxRyze Telloxx",
-        "Name[zh_CN]": "Ryze Tello",
-        "ServiceTypes": [
-            "Kirogi/VehicleSupport"
-        ]
+        "Name[zh_CN]": "Ryze Tello"
     }
 }

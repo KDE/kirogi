@@ -64,9 +64,6 @@
         "Name[tr]": "MAVLink",
         "Name[uk]": "MAVLink",
         "Name[x-test]": "xxMAVLinkxx",
-        "Name[zh_CN]": "MAVLink",
-        "ServiceTypes": [
-            "Kirogi/VehicleSupport"
-        ]
+        "Name[zh_CN]": "MAVLink"
     }
 }

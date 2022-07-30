@@ -32,7 +32,7 @@ namespace Kirogi
 VehicleSupportPluginModel::VehicleSupportPluginModel(QObject *parent)
     : AbstractPluginModel(parent)
 {
-    loadPluginByService(QStringLiteral("Kirogi/VehicleSupport"));
+    loadPluginByType(QStringLiteral("vehiclesupport"));
 }
 
 VehicleSupportPluginModel::~VehicleSupportPluginModel() = default;

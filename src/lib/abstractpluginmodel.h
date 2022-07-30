@@ -42,7 +42,7 @@ public:
     QObject *pluginForId(const QString &id) const;
     KPluginMetaData metadataAt(int row) const;
 
-    void loadPluginByService(const QString &serviceType);
+    void loadPluginByType(const QString &type);
     Q_INVOKABLE bool loadPluginByIndex(int idx);
     Q_INVOKABLE bool loadPluginById(const QString &id);
 
