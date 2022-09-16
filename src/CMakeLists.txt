@@ -180,4 +180,4 @@ else()
     )
 endif()
 
-install(TARGETS kirogi ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS kirogi ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
