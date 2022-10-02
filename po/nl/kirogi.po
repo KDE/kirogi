@@ -1,0 +1,648 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the kirogi package.
+#
+# Freek de Kruijf <f.de.kruijf@gmail.com>, 2019, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: kirogi\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-09-01 00:21+0000\n"
+"PO-Revision-Date: 2020-12-06 15:31+0100\n"
+"Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
+"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 20.08.3\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Freek de Kruijf - 2019 t/m 2020"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "freekdekruijf@kde.nl"
+
+#: src/main.cpp:90
+#, kde-kuit-format
+msgctxt "@title"
+msgid "<application>Kirogi</application>"
+msgstr "<application>Kirogi</application>"
+
+#: src/main.cpp:92
+#, kde-kuit-format
+msgctxt "@title"
+msgid "A ground control application for drones."
+msgstr "Een besturingstoepassing vanaf de grond voor drones."
+
+#: src/main.cpp:94
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "(c) 2019 The Kirogi Team"
+msgstr "(c) 2019 Het team van Kirogi"
+
+#: src/main.cpp:101
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Eike Hein"
+msgstr "Eike Hein"
+
+#: src/main.cpp:101
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Founder, Lead Developer"
+msgstr "Oprichter, hoofdontwerper"
+
+#: src/main.cpp:103
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Patrick José Pereira"
+msgstr "Patrick José Pereira"
+
+#: src/main.cpp:103
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Developer"
+msgstr "Ontwikkelaar"
+
+#: src/main.cpp:105
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Rafael Brandmaier"
+msgstr "Rafael Brandmaier"
+
+#: src/main.cpp:106
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Application icon"
+msgstr "Programmapictogram"
+
+#: src/main.cpp:109
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "L. 'AsmoArael' C."
+msgstr "L. 'AsmoArael' C."
+
+#: src/main.cpp:109
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Mascot artwork"
+msgstr "Illustraties (mascotte en andere zaken)"
+
+#: src/plugins/parrot/parrotvehicle.cpp:132
+#, kde-format
+msgid "Bebop 2"
+msgstr "Bebop 2"
+
+#: src/plugins/parrot/parrotvehicle.cpp:134
+#, kde-format
+msgid "Anafi"
+msgstr "Anafi"
+
+#: src/plugins/parrot/parrotvehicle.cpp:136
+#, kde-format
+msgid "Unknown Parrot Model"
+msgstr "Onbekend model van Parrot"
+
+#: src/plugins/parrot/parrotvehicle.cpp:139
+#, kde-format
+msgctxt "%1 = Model name, %2 = Hostname"
+msgid "%1 (%2)"
+msgstr "%1 (%2)"
+
+#: src/ui/FlightControls.qml:122
+#, kde-format
+msgctxt "%1 = Keyboard shortcut"
+msgid "Drone (%1)"
+msgstr "Drone (%1)"
+
+#: src/ui/FlightControls.qml:180
+#, kde-format
+msgid "LAND"
+msgstr "LANDEN"
+
+#: src/ui/FlightControls.qml:182
+#, kde-format
+msgid "TAKE OFF"
+msgstr "OPSTIJGEN"
+
+#: src/ui/FlightControls.qml:184
+#, kde-format
+msgid "PREPARING"
+msgstr "VOORBEREIDEN"
+
+#: src/ui/FlightControls.qml:188
+#, kde-format
+msgid "DISCONNECTED"
+msgstr "NIET VERBONDEN"
+
+#: src/ui/FlightControls.qml:225
+#, kde-format
+msgctxt "%1 = Keyboard shortcut"
+msgid "Navigation Map (%1)"
+msgstr "Navigatiekaart (%1)"
+
+#: src/ui/FlightControls.qml:250
+#, kde-format
+msgid "FILM"
+msgstr "FILM"
+
+#: src/ui/FlightControls.qml:251
+#, kde-format
+msgid "Fly Slow"
+msgstr "Langzaam vliegen"
+
+#: src/ui/FlightControls.qml:253
+#, kde-format
+msgid "SPORT"
+msgstr "SPORT"
+
+#: src/ui/FlightControls.qml:254
+#, kde-format
+msgid "Fly Fast"
+msgstr "Snel vliegen"
+
+#: src/ui/FlightControls.qml:284
+#, kde-format
+msgid "SCREEN"
+msgstr "SCHERM"
+
+#: src/ui/FlightControls.qml:286
+#, kde-format
+msgid "Use Virtual D-Pads"
+msgstr "Virtuele D-Pads gebruiken"
+
+#: src/ui/FlightControls.qml:288
+#, kde-format
+msgid "CONTROLLER"
+msgstr "BESTURING"
+
+#: src/ui/FlightControls.qml:290
+#, kde-format
+msgid "Use Gamepad Controller"
+msgstr "Gamepad-controller gebruiken"
+
+#: src/ui/FlightControls.qml:322
+#, kde-format
+msgid "VIDEO"
+msgstr "VIDEO"
+
+#: src/ui/FlightControls.qml:324
+#, kde-format
+msgid "Record Videos"
+msgstr "Videos opnemen"
+
+#: src/ui/FlightControls.qml:326
+#, kde-format
+msgid "PHOTO"
+msgstr "FOTO"
+
+#: src/ui/FlightControls.qml:328
+#, kde-format
+msgid "Take Photos"
+msgstr "Foto's nemen"
+
+#: src/ui/FlightControls.qml:364
+#, kde-format
+msgid "Take Photo"
+msgstr "Foto nemen"
+
+#: src/ui/FlightControls.qml:366
+#, kde-format
+msgid "Stop Recording Video"
+msgstr "Video opname stoppen"
+
+#: src/ui/FlightControls.qml:369
+#, kde-format
+msgid "Record Video"
+msgstr "Video opnemen"
+
+#: src/ui/FlightControls.qml:399
+#, kde-format
+msgid "Turn Left"
+msgstr "Links afslaan"
+
+#: src/ui/FlightControls.qml:401
+#, kde-format
+msgid "Turn Right"
+msgstr "Rechts afslaan"
+
+#: src/ui/FlightControls.qml:403
+#, kde-format
+msgid "Move Up"
+msgstr "Omhoog verplaatsen"
+
+#: src/ui/FlightControls.qml:405
+#, kde-format
+msgid "Move Down"
+msgstr "Omlaag verplaatsen"
+
+#: src/ui/FlightControls.qml:495
+#, kde-format
+msgid "Move Left"
+msgstr "Naar links"
+
+#: src/ui/FlightControls.qml:497
+#, kde-format
+msgid "Move Right"
+msgstr "Naar rechts"
+
+#: src/ui/FlightControls.qml:499
+#, kde-format
+msgid "Move Forward"
+msgstr "Naar voren"
+
+#: src/ui/FlightControls.qml:501
+#, kde-format
+msgid "Move Backward"
+msgstr "Naar achteren"
+
+#: src/ui/FlightControls.qml:611 src/ui/FlightControls.qml:620
+#: src/ui/VehicleActionsDrawer.qml:700
+#, kde-format
+msgid "%1 m/s"
+msgstr "%1 m/s"
+
+#: src/ui/FlightControls.qml:623
+#, kde-format
+msgid "– m/s"
+msgstr "– m/s"
+
+#: src/ui/FlightControls.qml:645 src/ui/FlightControls.qml:654
+#: src/ui/FlightControls.qml:679 src/ui/FlightControls.qml:688
+#: src/ui/FlightControls.qml:692 src/ui/FlightControls.qml:738
+#: src/ui/VehicleActionsDrawer.qml:328 src/ui/VehicleActionsDrawer.qml:395
+#, kde-format
+msgid "%1 m"
+msgstr "%1 m"
+
+#: src/ui/FlightControls.qml:657 src/ui/FlightControls.qml:695
+#, kde-format
+msgid "– m"
+msgstr "– m"
+
+#: src/ui/FlightControls.qml:748
+#, kde-format
+msgid "%1 min"
+msgstr "%1 min"
+
+#: src/ui/FlightControls.qml:751
+#, kde-format
+msgid "– min"
+msgstr "– min"
+
+#: src/ui/FlightControls.qml:793 src/ui/FlightControls.qml:800
+#: src/ui/FlightControls.qml:828 src/ui/FlightControls.qml:835
+#: src/ui/Vehicle.qml:354 src/ui/Vehicle.qml:396
+#, kde-format
+msgid "%1%"
+msgstr "%1%"
+
+#: src/ui/FlightControls.qml:800 src/ui/FlightControls.qml:835
+#: src/ui/Vehicle.qml:230 src/ui/Vehicle.qml:354 src/ui/Vehicle.qml:396
+#: src/ui/Vehicle.qml:441
+#, kde-format
+msgid "N/A"
+msgstr "N.v.t."
+
+#: src/ui/main.qml:72
+#, kde-format
+msgid "Kirogi"
+msgstr "Kirogi"
+
+#: src/ui/main.qml:84
+#, kde-format
+msgid "Drone"
+msgstr "Drone"
+
+#: src/ui/main.qml:97
+#, kde-format
+msgid "Flight Controls"
+msgstr "Besturing van vlucht"
+
+#: src/ui/main.qml:110
+#, kde-format
+msgid "Navigation Map"
+msgstr "Navigatiekaart"
+
+#: src/ui/main.qml:123 src/ui/Settings.qml:29
+#, kde-format
+msgid "Settings"
+msgstr "Instellingen"
+
+#: src/ui/main.qml:136
+#, kde-format
+msgid "About"
+msgstr "Info over"
+
+#: src/ui/NavigationMap.qml:205
+#, kde-format
+msgid "Unable to load map."
+msgstr "Kaart laden lukt niet."
+
+#: src/ui/NavigationMap.qml:207
+#, kde-format
+msgid "%1 does not support GPS."
+msgstr "%1 ondersteunt geen GPS."
+
+#: src/ui/NavigationMap.qml:209
+#, kde-format
+msgid "%1 does not have a GPS fix."
+msgstr "%1 heeft geen reparatie van GPS."
+
+#: src/ui/NavigationMap.qml:211
+#, kde-format
+msgid "No device location available."
+msgstr "Apparaatlocatie niet beschikbaar."
+
+#: src/ui/NavigationMap.qml:228
+#, kde-format
+msgctxt "%1 = Keyboard shortcut"
+msgid "Flight Controls (%1)"
+msgstr "Besturing van vlucht (%1)"
+
+#: src/ui/NavigationMap.qml:246
+#, kde-format
+msgid "Center Map on Drone"
+msgstr "Kaart op drone centreren"
+
+#: src/ui/NavigationMap.qml:264
+#, kde-format
+msgid "Center Map on Device"
+msgstr "Kaart op apparaat centreren"
+
+#: src/ui/Settings.qml:40
+#, kde-format
+msgid "Allow Kirogi to request the location of this device"
+msgstr "Geef Kirogi toestemming de locatie van dit apparaat op te vragen"
+
+#: src/ui/Settings.qml:47
+#, kde-format
+msgid "Show D-pads when a gamepad controller is connected"
+msgstr "D-pads tonen wanneer een gamepadcontroller is verbonden"
+
+#: src/ui/Settings.qml:52
+#, kde-format
+msgid "Video"
+msgstr "Video"
+
+#: src/ui/Settings.qml:57
+#, kde-format
+msgid "Stretch video to fit device screen."
+msgstr "Video uitrekken om te passen op het scherm van het apparaat."
+
+#: src/ui/Vehicle.qml:86
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Model"
+msgstr "Model selecteren"
+
+#: src/ui/Vehicle.qml:120
+#, kde-format
+msgid "Flight Checklist"
+msgstr "Checklist van vlucht"
+
+#: src/ui/Vehicle.qml:162
+#, kde-format
+msgid "Select now"
+msgstr "Nu selecteren"
+
+#: src/ui/Vehicle.qml:162
+#, kde-format
+msgid "<b>Model:</b> %1"
+msgstr "<b>Model:</b> %1"
+
+#: src/ui/Vehicle.qml:180 src/ui/Vehicle.qml:478
+#, kde-format
+msgid "Select Model"
+msgstr "Model selecteren"
+
+#: src/ui/Vehicle.qml:233
+#, kde-format
+msgid "Searching ..."
+msgstr "Bezig met zoeken..."
+
+#: src/ui/Vehicle.qml:236
+#, kde-format
+msgid "<b>Drone:</b> %1"
+msgstr "<b>Drone:</b> %1"
+
+#: src/ui/Vehicle.qml:290
+#, kde-format
+msgid "Flying"
+msgstr "Vliegend"
+
+#: src/ui/Vehicle.qml:292
+#, kde-format
+msgid "Ready"
+msgstr "Gereed"
+
+#: src/ui/Vehicle.qml:294
+#, kde-format
+msgid "Preparing ..."
+msgstr "Voorbereiden ..."
+
+#: src/ui/Vehicle.qml:297
+#, kde-format
+msgid "Connecting ..."
+msgstr "Verbinden ..."
+
+#: src/ui/Vehicle.qml:300
+#, kde-format
+msgid "<b>Status:</b> %1"
+msgstr "<b>Status:</b> %1"
+
+#: src/ui/Vehicle.qml:355
+#, kde-format
+msgid "<b>Signal:</b> %1"
+msgstr "<b>Signaal:</b> %1"
+
+#: src/ui/Vehicle.qml:397
+#, kde-format
+msgid "<b>Battery:</b> %1"
+msgstr "<b>Batterij:</b> %1"
+
+#: src/ui/Vehicle.qml:445
+#, kde-format
+msgid "Got fix"
+msgstr "Reparatie opgehaald"
+
+#: src/ui/Vehicle.qml:447
+#, kde-format
+msgid "No fix"
+msgstr "Geen reparatie"
+
+#: src/ui/Vehicle.qml:449
+#, kde-format
+msgid "Not supported"
+msgstr "Niet ondersteund"
+
+#: src/ui/Vehicle.qml:453
+#, kde-format
+msgid "<b>GPS:</b> %1"
+msgstr "<b>GPS:</b> %1"
+
+#: src/ui/Vehicle.qml:480
+#, kde-format
+msgid "Go to Flight Controls"
+msgstr "Gan naar besturing van vlucht"
+
+#: src/ui/Vehicle.qml:483
+#, kde-format
+msgid "Try Flight Controls"
+msgstr "Probeer besturing van vlucht"
+
+#: src/ui/VehicleActionsDrawer.qml:138
+#, kde-format
+msgid "Flat Trim"
+msgstr "Vlakke trim"
+
+#: src/ui/VehicleActionsDrawer.qml:150
+#, kde-format
+msgid "Flip"
+msgstr "Omkeren"
+
+#: src/ui/VehicleActionsDrawer.qml:178
+#, kde-format
+msgid "Flip Forward"
+msgstr "Vooruit omkeren"
+
+#: src/ui/VehicleActionsDrawer.qml:197
+#, kde-format
+msgid "Flip Backward"
+msgstr "Achterwaarts omkeren"
+
+#: src/ui/VehicleActionsDrawer.qml:216
+#, kde-format
+msgid "Flip Left"
+msgstr "Links omkeren"
+
+#: src/ui/VehicleActionsDrawer.qml:235
+#, kde-format
+msgid "Flip Right"
+msgstr "Rechts omkeren"
+
+#: src/ui/VehicleActionsDrawer.qml:252
+#, kde-format
+msgid "Enabled"
+msgstr "Ingeschakeld"
+
+#: src/ui/VehicleActionsDrawer.qml:254
+#, kde-format
+msgid "Disabled"
+msgstr "Uitgeschakeld"
+
+#: src/ui/VehicleActionsDrawer.qml:257
+#, kde-format
+msgid "Geofence: %1"
+msgstr "Geofence: %1"
+
+#: src/ui/VehicleActionsDrawer.qml:260
+#, kde-format
+msgid "Geofence"
+msgstr "Geofence"
+
+#: src/ui/VehicleActionsDrawer.qml:292
+#, kde-format
+msgid "Disable Geofence"
+msgstr "Geofence uitschakelen"
+
+#: src/ui/VehicleActionsDrawer.qml:295
+#, kde-format
+msgid "Enable Geofence"
+msgstr "Geofence inschakelen"
+
+#: src/ui/VehicleActionsDrawer.qml:321
+#, kde-format
+msgid "Maximum altitude:"
+msgstr "Maximum hoogte:"
+
+#: src/ui/VehicleActionsDrawer.qml:388
+#, kde-format
+msgid "Maximum distance:"
+msgstr "Maximum afstand:"
+
+#: src/ui/VehicleActionsDrawer.qml:448
+#, kde-format
+msgid "Film"
+msgstr "Film"
+
+#: src/ui/VehicleActionsDrawer.qml:450
+#, kde-format
+msgid "Sport"
+msgstr "Sport"
+
+#: src/ui/VehicleActionsDrawer.qml:452
+#, kde-format
+msgid "Custom"
+msgstr "Aangepast"
+
+#: src/ui/VehicleActionsDrawer.qml:455
+#, kde-format
+msgid "Performance: %1"
+msgstr "Prestatie: %1"
+
+#: src/ui/VehicleActionsDrawer.qml:458
+#, kde-format
+msgid "Performance"
+msgstr "Prestatie"
+
+#: src/ui/VehicleActionsDrawer.qml:492
+#, kde-format
+msgid "Maximum roll speed:"
+msgstr "Maximum rolsnelheid:"
+
+#: src/ui/VehicleActionsDrawer.qml:499 src/ui/VehicleActionsDrawer.qml:566
+#: src/ui/VehicleActionsDrawer.qml:633
+#, kde-format
+msgid "%1 °/s"
+msgstr "%1 °/s"
+
+#: src/ui/VehicleActionsDrawer.qml:559
+#, kde-format
+msgid "Maximum pitch speed:"
+msgstr "Maximale pitchsnelheid:"
+
+#: src/ui/VehicleActionsDrawer.qml:626
+#, kde-format
+msgid "Maximum yaw speed:"
+msgstr "Maximale yawsnelheid:"
+
+#: src/ui/VehicleActionsDrawer.qml:693
+#, kde-format
+msgid "Maximum vertical speed:"
+msgstr "Maximale verticale snelheid:"
+
+#: src/ui/VehicleActionsDrawer.qml:760
+#, kde-format
+msgid "Maximum tilt:"
+msgstr "Maximale helling:"
+
+#: src/ui/VehicleActionsDrawer.qml:767
+#, kde-format
+msgid "%1°"
+msgstr "%1°"
+
+#: src/ui/VehicleActionsDrawer.qml:825
+#, kde-format
+msgid "Disable Banked Turns"
+msgstr "Scheef omdraaien uitschakelen"
+
+#: src/ui/VehicleActionsDrawer.qml:828
+#, kde-format
+msgid "Enable Banked Turns"
+msgstr "Scheef omdraaien inschakelen"
+
+#: src/ui/VehicleActionsDrawer.qml:852
+#, kde-format
+msgid "Disable Video Stabilization"
+msgstr "Videostabilisatie uitschakelen"
+
+#: src/ui/VehicleActionsDrawer.qml:855
+#, kde-format
+msgid "Enable Video Stabilization"
+msgstr "Videostabilisatie inschakelen"

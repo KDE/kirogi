@@ -1,0 +1,39 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the kirogi package.
+#
+# Víctor Rodrigo Córdoba <vrcordoba@gmail.com>, 2019.
+msgid ""
+msgstr ""
+"Project-Id-Version: kirogi\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2019-08-09 03:23+0200\n"
+"PO-Revision-Date: 2019-09-08 16:31+0100\n"
+"Last-Translator: Víctor Rodrigo Córdoba <vrcordoba@gmail.com>\n"
+"Language-Team: Spanish <kde-l10n-es@kde.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 2.0\n"
+
+#: parrotvehicle.cpp:132
+#, kde-format
+msgid "Bebop 2"
+msgstr "Bebop 2"
+
+#: parrotvehicle.cpp:134
+#, kde-format
+msgid "Anafi"
+msgstr "Anafi"
+
+#: parrotvehicle.cpp:136
+#, kde-format
+msgid "Unknown Parrot Model"
+msgstr "Modelo Parrot desconocido"
+
+#: parrotvehicle.cpp:139
+#, kde-format
+msgctxt "%1 = Model name, %2 = Hostname"
+msgid "%1 (%2)"
+msgstr "%1 (%2)"

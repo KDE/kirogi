@@ -1,0 +1,35 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kirogi\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2019-08-09 03:23+0200\n"
+"PO-Revision-Date: 2019-08-09 17:08+0100\n"
+"Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
+"Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-POFile-SpellExtra: Anafi Parrot Bebop\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: parrotvehicle.cpp:132
+#, kde-format
+msgid "Bebop 2"
+msgstr "Bebop 2"
+
+#: parrotvehicle.cpp:134
+#, kde-format
+msgid "Anafi"
+msgstr "Anafi"
+
+#: parrotvehicle.cpp:136
+#, kde-format
+msgid "Unknown Parrot Model"
+msgstr "Modelo da Parrot Desconhecido"
+
+#: parrotvehicle.cpp:139
+#, kde-format
+msgctxt "%1 = Model name, %2 = Hostname"
+msgid "%1 (%2)"
+msgstr "%1 (%2)"
