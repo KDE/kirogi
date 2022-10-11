@@ -16,6 +16,7 @@
   <name xml:lang="fr">Kirogi</name>
   <name xml:lang="id">Kirogi</name>
   <name xml:lang="it">Kirogi</name>
+  <name xml:lang="ka">Kirogi</name>
   <name xml:lang="ko">기러기</name>
   <name xml:lang="nl">Kirogi</name>
   <name xml:lang="pl">Kirogi</name>
@@ -37,6 +38,7 @@
   <summary xml:lang="fr">Contrôle sol pour drone (UAV)</summary>
   <summary xml:lang="id">Kendali darat UAV (drone)</summary>
   <summary xml:lang="it">Controllo da terra di un APR (drone)</summary>
+  <summary xml:lang="ka">დრონის (UAV) მართვა მიწიდან</summary>
   <summary xml:lang="ko">UAV(드론) 지상 제어</summary>
   <summary xml:lang="nl">UAV (drone) ground control</summary>
   <summary xml:lang="pl">Sterowanie UAV (dron)</summary>
@@ -57,6 +59,7 @@
   <developer_name xml:lang="fr">Développeurs KDE de Kirogi</developer_name>
   <developer_name xml:lang="id">Para Pengembang KDE Kirogi</developer_name>
   <developer_name xml:lang="it">Gli sviluppatori di KDE Kirogi</developer_name>
+  <developer_name xml:lang="ka">KDE Kirogi -ის პროგრამისტები</developer_name>
   <developer_name xml:lang="ko">KDE 기러기 개발자</developer_name>
   <developer_name xml:lang="nl">Ontwikkelaars van KDE Kirogi</developer_name>
   <developer_name xml:lang="pl">Programiści KDE Kirogi</developer_name>
@@ -101,6 +104,7 @@
     <p xml:lang="fr">Fonctionnalités :</p>
     <p xml:lang="id">Fitur:</p>
     <p xml:lang="it">Funzionalità:</p>
+    <p xml:lang="ka">თვისებები:</p>
     <p xml:lang="ko">기능:</p>
     <p xml:lang="nl">Mogelijkheden:</p>
     <p xml:lang="pl">Możliwości:</p>
@@ -123,6 +127,7 @@
       <li xml:lang="fr">Contrôles directs pour le vol</li>
       <li xml:lang="id">Mengendalikan penerbangan yang langsung</li>
       <li xml:lang="it">Controlli di volo diretti</li>
+      <li xml:lang="ka">ფრენის პირდაპირი კონტროლი</li>
       <li xml:lang="ko">직접 비행 제어</li>
       <li xml:lang="nl">Directe besturing van de vlucht</li>
       <li xml:lang="pl">Bezpośrednie sterowanie lotem</li>
@@ -202,6 +207,7 @@
       <li xml:lang="fr">Vidéo en temps réel</li>
       <li xml:lang="id">Video live</li>
       <li xml:lang="it">Video in diretta</li>
+      <li xml:lang="ka">ცოცხალი ვიდეო</li>
       <li xml:lang="ko">라이브 동영상</li>
       <li xml:lang="nl">Live video</li>
       <li xml:lang="pl">Obraz na żywo</li>
@@ -223,6 +229,7 @@
       <li xml:lang="fr">Prendre une photo et enregistrer une vidéo</li>
       <li xml:lang="id">Ambil foto dan rekam video</li>
       <li xml:lang="it">Scatta foto e registra video</li>
+      <li xml:lang="ka">გადაიღეთ სურათები და ჩაიწერეთ ვიდეო</li>
       <li xml:lang="ko">사진 촬영 및 동영상 녹화</li>
       <li xml:lang="nl">Foto maken en video opnemen</li>
       <li xml:lang="pl">Rób zdjęcia i nagrywaj obraz</li>
@@ -243,6 +250,7 @@
       <li xml:lang="fr">Configurer les paramètres de vol (vitesse, limite d'altitude)</li>
       <li xml:lang="id">Konfigurasikan parameter penerbangan (batas kecepatan, ketinggian)</li>
       <li xml:lang="it">Configura i parametri di volo (velocità, limite di altitudine)</li>
+      <li xml:lang="ka">ფრენის პარამეტრების დაყენება (სიჩქარე, სიმაღლის ლიმიტები)</li>
       <li xml:lang="ko">비행 인자(속도, 고도 제한) 설정</li>
       <li xml:lang="nl">Vlugtparameters configureren (grenzen van snelheid, hoogte)</li>
       <li xml:lang="pl">Ustawienia parametrów lotu (szybkość, graniczne wysokości)</li>
