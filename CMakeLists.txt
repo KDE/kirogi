@@ -3,7 +3,7 @@ find_package(ECM 5.54.0 REQUIRED NO_MODULE)
 set(CMAKE_CXX_STANDARD 17)
 set(CXX_STANDARD_REQUIRED ON)
 set(QT_MIN_VERSION "5.12.0")
-set(KF5_MIN_VERSION "5.84.0")
+set(KF_MIN_VERSION "5.84.0")
 
 project(kirogi VERSION 0.1)
 
@@ -97,7 +97,7 @@ find_package(Qt5 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS
     ${qtAndroidComponents}
 )
 
-find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
+find_package(KF5 ${KF_MIN_VERSION} REQUIRED
     ConfigWidgets
     CoreAddons
     I18n
