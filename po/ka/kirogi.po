@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kirogi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-09-01 00:21+0000\n"
-"PO-Revision-Date: 2022-10-10 07:30+0200\n"
+"PO-Revision-Date: 2023-01-24 06:25+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -32,19 +32,19 @@ msgstr "Temuri.doghonadze@gmail.com"
 #, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Kirogi</application>"
-msgstr ""
+msgstr "<application>Kirogi</application>"
 
 #: src/main.cpp:92
 #, kde-kuit-format
 msgctxt "@title"
 msgid "A ground control application for drones."
-msgstr ""
+msgstr "დრონის მიწიდან მართვის აპლიკაცია."
 
 #: src/main.cpp:94
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2019 The Kirogi Team"
-msgstr ""
+msgstr "(c) 2019 Kirogi-ის გუნდი"
 
 #: src/main.cpp:101
 #, kde-kuit-format
@@ -56,7 +56,7 @@ msgstr "Eike Hein"
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Founder, Lead Developer"
-msgstr ""
+msgstr "დამფუძნებელი, წამყვანი პროგრამისტი"
 
 #: src/main.cpp:103
 #, kde-kuit-format
@@ -74,40 +74,40 @@ msgstr "პროგრამისტი"
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Rafael Brandmaier"
-msgstr ""
+msgstr "Rafael Brandmaier"
 
 #: src/main.cpp:106
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Application icon"
-msgstr ""
+msgstr "აპლიკაციის ხატულა"
 
 #: src/main.cpp:109
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "L. 'AsmoArael' C."
-msgstr ""
+msgstr "L. 'AsmoArael' C."
 
 #: src/main.cpp:109
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Mascot artwork"
-msgstr ""
+msgstr "მასკოტის დიზაინი"
 
 #: src/plugins/parrot/parrotvehicle.cpp:132
 #, kde-format
 msgid "Bebop 2"
-msgstr ""
+msgstr "Bebop 2"
 
 #: src/plugins/parrot/parrotvehicle.cpp:134
 #, kde-format
 msgid "Anafi"
-msgstr ""
+msgstr "Anafi"
 
 #: src/plugins/parrot/parrotvehicle.cpp:136
 #, kde-format
 msgid "Unknown Parrot Model"
-msgstr ""
+msgstr "Parrot -ის უცნობი მოდელი"
 
 #: src/plugins/parrot/parrotvehicle.cpp:139
 #, kde-format
@@ -175,7 +175,7 @@ msgstr "ეკრანი"
 #: src/ui/FlightControls.qml:286
 #, kde-format
 msgid "Use Virtual D-Pads"
-msgstr ""
+msgstr "ვირტუალური D-Pad-ების გამოყენება"
 
 #: src/ui/FlightControls.qml:288
 #, kde-format
@@ -185,7 +185,7 @@ msgstr "კონტროლერი"
 #: src/ui/FlightControls.qml:290
 #, kde-format
 msgid "Use Gamepad Controller"
-msgstr ""
+msgstr "ხელის კონტროლერის გამოყენება"
 
 #: src/ui/FlightControls.qml:322
 #, kde-format
@@ -369,22 +369,22 @@ msgstr "ფრენის კონტროლი (%1)"
 #: src/ui/NavigationMap.qml:246
 #, kde-format
 msgid "Center Map on Drone"
-msgstr ""
+msgstr "რუკის დრონზე დაცენტრება"
 
 #: src/ui/NavigationMap.qml:264
 #, kde-format
 msgid "Center Map on Device"
-msgstr ""
+msgstr "რუკის მოწყობილობაზე დაცენტრება"
 
 #: src/ui/Settings.qml:40
 #, kde-format
 msgid "Allow Kirogi to request the location of this device"
-msgstr ""
+msgstr "Kirogi-სთვის ამ მოწყობილობის მდებარეობის გამოთხოვის უფლების მიცემა"
 
 #: src/ui/Settings.qml:47
 #, kde-format
 msgid "Show D-pads when a gamepad controller is connected"
-msgstr ""
+msgstr "როცა ხელის კონტროლერი მიერთებულია, D-pad-ები ნაჩვენები იქნება"
 
 #: src/ui/Settings.qml:52
 #, kde-format
@@ -394,23 +394,23 @@ msgstr "ვიდეო"
 #: src/ui/Settings.qml:57
 #, kde-format
 msgid "Stretch video to fit device screen."
-msgstr ""
+msgstr "ვიდეოს მოწყობილობის ეკრანზე ჩატევა."
 
 #: src/ui/Vehicle.qml:86
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Model"
-msgstr ""
+msgstr "აირჩიეთ მოდელი"
 
 #: src/ui/Vehicle.qml:120
 #, kde-format
 msgid "Flight Checklist"
-msgstr ""
+msgstr "ფრენის საკონტროლო სია"
 
 #: src/ui/Vehicle.qml:162
 #, kde-format
 msgid "Select now"
-msgstr ""
+msgstr "აირჩიეთ ახლა"
 
 #: src/ui/Vehicle.qml:162
 #, kde-format
@@ -470,12 +470,12 @@ msgstr "<b>ელემენტი:</b> %1"
 #: src/ui/Vehicle.qml:445
 #, kde-format
 msgid "Got fix"
-msgstr ""
+msgstr "შესწორება მიღებულია"
 
 #: src/ui/Vehicle.qml:447
 #, kde-format
 msgid "No fix"
-msgstr ""
+msgstr "შესწორების გარეშე"
 
 #: src/ui/Vehicle.qml:449
 #, kde-format
@@ -485,17 +485,17 @@ msgstr "მხარდაუჭერელია"
 #: src/ui/Vehicle.qml:453
 #, kde-format
 msgid "<b>GPS:</b> %1"
-msgstr ""
+msgstr "<b>GPS:</b> %1"
 
 #: src/ui/Vehicle.qml:480
 #, kde-format
 msgid "Go to Flight Controls"
-msgstr ""
+msgstr "ფრენის კონტროლზე გადასვლა"
 
 #: src/ui/Vehicle.qml:483
 #, kde-format
 msgid "Try Flight Controls"
-msgstr ""
+msgstr "ფრენის კონტროლის ცდა"
 
 #: src/ui/VehicleActionsDrawer.qml:138
 #, kde-format
@@ -510,22 +510,22 @@ msgstr "გადაბრუნება"
 #: src/ui/VehicleActionsDrawer.qml:178
 #, kde-format
 msgid "Flip Forward"
-msgstr ""
+msgstr "წინ გადახრა"
 
 #: src/ui/VehicleActionsDrawer.qml:197
 #, kde-format
 msgid "Flip Backward"
-msgstr ""
+msgstr "უკან გადახრა"
 
 #: src/ui/VehicleActionsDrawer.qml:216
 #, kde-format
 msgid "Flip Left"
-msgstr ""
+msgstr "მარცხნივ გადახრა"
 
 #: src/ui/VehicleActionsDrawer.qml:235
 #, kde-format
 msgid "Flip Right"
-msgstr ""
+msgstr "მარჯვნივ გადახრა"
 
 #: src/ui/VehicleActionsDrawer.qml:252
 #, kde-format
@@ -540,27 +540,27 @@ msgstr "გამორთულია"
 #: src/ui/VehicleActionsDrawer.qml:257
 #, kde-format
 msgid "Geofence: %1"
-msgstr ""
+msgstr "გეოზონა: %1"
 
 #: src/ui/VehicleActionsDrawer.qml:260
 #, kde-format
 msgid "Geofence"
-msgstr ""
+msgstr "გეოზონა"
 
 #: src/ui/VehicleActionsDrawer.qml:292
 #, kde-format
 msgid "Disable Geofence"
-msgstr ""
+msgstr "გეოზონის გამორთვა"
 
 #: src/ui/VehicleActionsDrawer.qml:295
 #, kde-format
 msgid "Enable Geofence"
-msgstr ""
+msgstr "გეოზონის ჩართვა"
 
 #: src/ui/VehicleActionsDrawer.qml:321
 #, kde-format
 msgid "Maximum altitude:"
-msgstr ""
+msgstr "მაქსიმალური სიმაღლე:"
 
 #: src/ui/VehicleActionsDrawer.qml:388
 #, kde-format
@@ -616,12 +616,12 @@ msgstr ""
 #: src/ui/VehicleActionsDrawer.qml:693
 #, kde-format
 msgid "Maximum vertical speed:"
-msgstr ""
+msgstr "მაქსიმალური ვერტიკალური სიჩქარე:"
 
 #: src/ui/VehicleActionsDrawer.qml:760
 #, kde-format
 msgid "Maximum tilt:"
-msgstr ""
+msgstr "მაქსიმალური მოხრა:"
 
 #: src/ui/VehicleActionsDrawer.qml:767
 #, kde-format
