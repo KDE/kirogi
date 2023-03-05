@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kirogi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-09-01 00:21+0000\n"
+"POT-Creation-Date: 2023-03-05 00:59+0000\n"
 "PO-Revision-Date: 2020-12-12 14:17+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English <kde-l10n-en_gb@kde.org>\n"
@@ -339,38 +339,38 @@ msgstr "Settings"
 msgid "About"
 msgstr "About"
 
-#: src/ui/NavigationMap.qml:205
+#: src/ui/NavigationMap.qml:213
 #, kde-format
 msgid "Unable to load map."
 msgstr "Unable to load map."
 
-#: src/ui/NavigationMap.qml:207
+#: src/ui/NavigationMap.qml:215
 #, kde-format
 msgid "%1 does not support GPS."
 msgstr "%1 does not support GPS."
 
-#: src/ui/NavigationMap.qml:209
+#: src/ui/NavigationMap.qml:217
 #, kde-format
 msgid "%1 does not have a GPS fix."
 msgstr "%1 does not have a GPS fix."
 
-#: src/ui/NavigationMap.qml:211
+#: src/ui/NavigationMap.qml:219
 #, kde-format
 msgid "No device location available."
 msgstr "No device location available."
 
-#: src/ui/NavigationMap.qml:228
+#: src/ui/NavigationMap.qml:236
 #, kde-format
 msgctxt "%1 = Keyboard shortcut"
 msgid "Flight Controls (%1)"
 msgstr "Flight Controls (%1)"
 
-#: src/ui/NavigationMap.qml:246
+#: src/ui/NavigationMap.qml:254
 #, kde-format
 msgid "Center Map on Drone"
 msgstr "Centre Map on Drone"
 
-#: src/ui/NavigationMap.qml:264
+#: src/ui/NavigationMap.qml:272
 #, kde-format
 msgid "Center Map on Device"
 msgstr "Centre Map on Device"

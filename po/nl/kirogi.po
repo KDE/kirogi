@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kirogi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-09-01 00:21+0000\n"
+"POT-Creation-Date: 2023-03-05 00:59+0000\n"
 "PO-Revision-Date: 2020-12-06 15:31+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
@@ -339,38 +339,38 @@ msgstr "Instellingen"
 msgid "About"
 msgstr "Info over"
 
-#: src/ui/NavigationMap.qml:205
+#: src/ui/NavigationMap.qml:213
 #, kde-format
 msgid "Unable to load map."
 msgstr "Kaart laden lukt niet."
 
-#: src/ui/NavigationMap.qml:207
+#: src/ui/NavigationMap.qml:215
 #, kde-format
 msgid "%1 does not support GPS."
 msgstr "%1 ondersteunt geen GPS."
 
-#: src/ui/NavigationMap.qml:209
+#: src/ui/NavigationMap.qml:217
 #, kde-format
 msgid "%1 does not have a GPS fix."
 msgstr "%1 heeft geen reparatie van GPS."
 
-#: src/ui/NavigationMap.qml:211
+#: src/ui/NavigationMap.qml:219
 #, kde-format
 msgid "No device location available."
 msgstr "Apparaatlocatie niet beschikbaar."
 
-#: src/ui/NavigationMap.qml:228
+#: src/ui/NavigationMap.qml:236
 #, kde-format
 msgctxt "%1 = Keyboard shortcut"
 msgid "Flight Controls (%1)"
 msgstr "Besturing van vlucht (%1)"
 
-#: src/ui/NavigationMap.qml:246
+#: src/ui/NavigationMap.qml:254
 #, kde-format
 msgid "Center Map on Drone"
 msgstr "Kaart op drone centreren"
 
-#: src/ui/NavigationMap.qml:264
+#: src/ui/NavigationMap.qml:272
 #, kde-format
 msgid "Center Map on Device"
 msgstr "Kaart op apparaat centreren"
