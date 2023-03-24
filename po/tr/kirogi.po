@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the kirogi package.
 #
-# Emir SARI <emir_sari@icloud.com>, 2022.
+# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kirogi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-05 00:59+0000\n"
-"PO-Revision-Date: 2022-04-11 12:40+0300\n"
+"PO-Revision-Date: 2023-03-23 14:36+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -37,7 +37,7 @@ msgstr "<application>Kirogi</application>"
 #, kde-kuit-format
 msgctxt "@title"
 msgid "A ground control application for drones."
-msgstr "Uçangözler için bir yer denetim uygulaması"
+msgstr "Uçargözler için bir yerden denetim uygulaması"
 
 #: src/main.cpp:94
 #, kde-kuit-format
@@ -118,7 +118,7 @@ msgstr "%1 (%2)"
 #, kde-format
 msgctxt "%1 = Keyboard shortcut"
 msgid "Drone (%1)"
-msgstr "Uçangöz (%1)"
+msgstr "Uçargöz (%1)"
 
 #: src/ui/FlightControls.qml:180
 #, kde-format
@@ -317,7 +317,7 @@ msgstr "Kirogi"
 #: src/ui/main.qml:84
 #, kde-format
 msgid "Drone"
-msgstr "Uçangöz"
+msgstr "Uçargöz"
 
 #: src/ui/main.qml:97
 #, kde-format
@@ -368,7 +368,7 @@ msgstr "Uçuş Denetimleri (%1)"
 #: src/ui/NavigationMap.qml:254
 #, kde-format
 msgid "Center Map on Drone"
-msgstr "Uçangözü Haritada Ortala"
+msgstr "Uçargözü Haritada Ortala"
 
 #: src/ui/NavigationMap.qml:272
 #, kde-format
@@ -429,7 +429,7 @@ msgstr "Aranıyor ..."
 #: src/ui/Vehicle.qml:236
 #, kde-format
 msgid "<b>Drone:</b> %1"
-msgstr "<b>Uçangöz:</b> %1"
+msgstr "<b>Uçargöz:</b> %1"
 
 #: src/ui/Vehicle.qml:290
 #, kde-format
