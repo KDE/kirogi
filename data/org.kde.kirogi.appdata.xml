@@ -45,7 +45,7 @@
   <summary xml:lang="pt">Controlo terrestre de UAV (drone)</summary>
   <summary xml:lang="sl">Zemeljska kontrola UAV (droni)</summary>
   <summary xml:lang="sv">Markkontroll av drönare (UAV)</summary>
-  <summary xml:lang="tr">İHA (uçangöz) yer denetimi</summary>
+  <summary xml:lang="tr">İHA (uçargöz) yerden denetim</summary>
   <summary xml:lang="uk">Програма для керування UAV (дроном)</summary>
   <summary xml:lang="x-test">xxUAV (drone) ground controlxx</summary>
   <summary xml:lang="zh-CN">在地面上控制无人航空载具 (无人机)</summary>
@@ -89,7 +89,7 @@
     <p xml:lang="pt">O Kirogi é uma aplicação de controlo de drones a nível terrestre. Leve-os aos céus com um estilo de código aberto.</p>
     <p xml:lang="sl">Kirogi je program zemeljske kontrole za drone. Prevzemite v nebo v slogu odprte kode.</p>
     <p xml:lang="sv">Kirogi är ett markkontrollprogram för drönare. </p>
-    <p xml:lang="tr">Kirogi, uçangözler için bir yer denetim uygulamasıdır. Göklere uçun, açık kaynaklı bir biçimde.</p>
+    <p xml:lang="tr">Kirogi, uçargözler için bir yerden denetim uygulamasıdır. Göklere uçun, açık kaynaklı bir biçimde.</p>
     <p xml:lang="uk">Kirogi — програма для керування дронами з землі. Підніміться у небо у стилі відкритості.</p>
     <p xml:lang="x-test">xxKirogi is a ground control application for drones. Take to the skies, open source-style.xx</p>
     <p xml:lang="zh-CN">Kirogi 是一款可在地面上控制无人机的应用程序。以开源之道，展翅高飞。</p>
@@ -277,7 +277,7 @@
       <li xml:lang="pt">Suporte para os drones da Parrot (Anafi, Bebop 2) e Ryze Tello (estão planeados mais)</li>
       <li xml:lang="sl">Podpora za drone Parrot (Anafi, Bebop 2) in Ryze Tello (več v planu)</li>
       <li xml:lang="sv">Stöd för Parrot (Anafi, Bebop 2) och Ryze Tello drönare (flera planerade)</li>
-      <li xml:lang="tr">Parrot (Anafi, Bebop 2) ve Ryze Tello uçangözleri için destek (daha fazlası gelecek)</li>
+      <li xml:lang="tr">Parrot (Anafi, Bebop 2) ve Ryze Tello uçargözleri için destek (daha fazlası gelecek)</li>
       <li xml:lang="uk">Підтримка дронів Parrot (Anafi, Bebop 2) та Ryze Tello (плануємо розширення підтримки)</li>
       <li xml:lang="x-test">xxSupport for Parrot (Anafi, Bebop 2) and Ryze Tello drones (more planned)xx</li>
       <li xml:lang="zh-CN">支持 Parrot (Anafi、Bebop 2) 和 Ryze Tello 无人机 (计划支持更多无人机)</li>
