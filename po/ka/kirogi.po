@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kirogi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-05 00:59+0000\n"
-"PO-Revision-Date: 2023-04-02 05:36+0200\n"
+"PO-Revision-Date: 2023-04-04 06:43+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -595,7 +595,7 @@ msgstr "წარმადობა"
 #: src/ui/VehicleActionsDrawer.qml:492
 #, kde-format
 msgid "Maximum roll speed:"
-msgstr ""
+msgstr "მაქსიმალური განივი დახრის სიჩქარე:"
 
 #: src/ui/VehicleActionsDrawer.qml:499 src/ui/VehicleActionsDrawer.qml:566
 #: src/ui/VehicleActionsDrawer.qml:633
@@ -606,12 +606,12 @@ msgstr "%1 °/s"
 #: src/ui/VehicleActionsDrawer.qml:559
 #, kde-format
 msgid "Maximum pitch speed:"
-msgstr ""
+msgstr "მაქსიმალური ტანგაჟის სიჩქარე:"
 
 #: src/ui/VehicleActionsDrawer.qml:626
 #, kde-format
 msgid "Maximum yaw speed:"
-msgstr ""
+msgstr "მაქსიმალური ვერტიკალური ღერძის მიმართ სიჩქარე:"
 
 #: src/ui/VehicleActionsDrawer.qml:693
 #, kde-format
