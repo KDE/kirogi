@@ -83,6 +83,7 @@
     <p xml:lang="fr">Kirogi est une application de contrôle sol pour les drones. Prenez votre envol en mode « Logiciel Libre ».</p>
     <p xml:lang="id">Kirogi adalah sebuah aplikasi kendali darat untuk drone. Terkendali sampai ke langit, gaya open source.</p>
     <p xml:lang="it">Kirogi è un'applicazione per il controllo da terra di droni. Prendi il volo in stile open source.</p>
+    <p xml:lang="ka">Kirogi დრონების მართვის საკონტროლო აპლიკაციაა. იფრინეთ ღია კოდის სტილში.</p>
     <p xml:lang="ko">기러기는 드론 지상 제어 프로그램입니다. 오픈 소스로 하늘 위로 날아 보십시오.</p>
     <p xml:lang="nl">Kirogi is een besturingstoepassing vanaf de grond voor drones. Neemt u de lucht in, opensource-stijl.</p>
     <p xml:lang="pl">Kirogi jest aplikacją do sterowania dronami. Wzbij się do nieba dzięki otwartemu kodowi.</p>
@@ -147,6 +148,7 @@
       <li xml:lang="fr">Voler par un appui sur la carte de navigation</li>
       <li xml:lang="id">Terbangkan dengan menyentuh pada sebuah Peta Navigasi</li>
       <li xml:lang="it">Vola toccando una mappa di navigazione</li>
+      <li xml:lang="ka">ფრენა ნავიგაციის რუკაზე შეხებით</li>
       <li xml:lang="ko">탐색 지도 터치로 비행</li>
       <li xml:lang="nl">Vliegen door aanraking op een navigatiekaart</li>
       <li xml:lang="pl">Lot dotykiem na mapie nawigacyjnej</li>
@@ -166,6 +168,7 @@
       <li xml:lang="fr">Déclencher des actions sur le véhicule (par exemple : retournement, compensateur)</li>
       <li xml:lang="id">Pemicu aksi wahana (mis. jungkir, trim)</li>
       <li xml:lang="it">Innesca azioni del veicolo (ad es ribalta, assetto)</li>
+      <li xml:lang="ka">ხომალდის ქმედებების გადართვა (გა</li>
       <li xml:lang="ko">비행체 동작 트리거(예: 플립, 트림)</li>
       <li xml:lang="nl">Aansturen van voortuigacties (bijv. omdraaien, trimmen)</li>
       <li xml:lang="pl">Wywołaj działania pojazdu (np. obrotu, odcięcia)</li>
@@ -186,6 +189,7 @@
       <li xml:lang="fr">Prise en charge des terminaux de jeu et des joysticks</li>
       <li xml:lang="id">Dukungan gamepad/joypad</li>
       <li xml:lang="it">Supporto per i gamepad/joypad</li>
+      <li xml:lang="ka">Gamepad / joypad-ის მხარდაჭერა</li>
       <li xml:lang="ko">게임패드 지원</li>
       <li xml:lang="nl">Ondersteuning van gamepad/joypad</li>
       <li xml:lang="pl">Obsługa padów do gier</li>
@@ -271,6 +275,7 @@
       <li xml:lang="fr">Prise en charge des drones Parrot (Anafi, Bebop 2) et Ryze Tello (plus à venir)</li>
       <li xml:lang="id">Dukungan untuk drone-drone Parrot (Anafi, Bebop 2) dan Ryze Tello (direncanakan lebih banyak)</li>
       <li xml:lang="it">Supporto per i droni Parrot (Anafi, Bebop 2) e Ryze Tello (altri pianificati)</li>
+      <li xml:lang="ka">Parrot-ის (Anafi, Bebop 2) და Ryzee Tello დრონების მხარდაჭერა (გეგმაშია სხვა სხვაც)</li>
       <li xml:lang="ko">Parrot(Anafi, Bebop 2) 및 Ryze Tello 드론 지원(추가 지원 예정됨)</li>
       <li xml:lang="nl">Ondersteuning voor Parrot (Anafi, Bebop 2) en Ryze Tello drones (meer in de planning)</li>
       <li xml:lang="pl">Obsługa dronów Parrot (Anafi, Bebop 2) oraz Ryze Tello (planowane jest więcej)</li>
@@ -303,6 +308,7 @@
       <caption xml:lang="fr">L'interface utilisateur pour le mode vol de Kirogi</caption>
       <caption xml:lang="id">Kirogi dalam UI penerbangan</caption>
       <caption xml:lang="it">L'interfaccia in volo di Kirogi</caption>
+      <caption xml:lang="ka">ფრენის ინტერფეისი Kirogi</caption>
       <caption xml:lang="ko">기러기 비행 UI</caption>
       <caption xml:lang="nl">De Kirogi in-flight UI</caption>
       <caption xml:lang="pl">Interfejs Kirogi podczas lotu</caption>
