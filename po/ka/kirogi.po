@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kirogi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-05 00:59+0000\n"
-"PO-Revision-Date: 2023-04-04 06:43+0200\n"
+"PO-Revision-Date: 2023-04-15 05:32+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -500,7 +500,7 @@ msgstr "ფრენის კონტროლის ცდა"
 #: src/ui/VehicleActionsDrawer.qml:138
 #, kde-format
 msgid "Flat Trim"
-msgstr ""
+msgstr "ზედაპირის დონის კალიბრაცია"
 
 #: src/ui/VehicleActionsDrawer.qml:150
 #, kde-format
@@ -631,12 +631,12 @@ msgstr "%1°"
 #: src/ui/VehicleActionsDrawer.qml:825
 #, kde-format
 msgid "Disable Banked Turns"
-msgstr ""
+msgstr "დახრილი მოხვევის გამორთვა"
 
 #: src/ui/VehicleActionsDrawer.qml:828
 #, kde-format
 msgid "Enable Banked Turns"
-msgstr ""
+msgstr "დახრილი მოხვევის ჩართვა"
 
 #: src/ui/VehicleActionsDrawer.qml:852
 #, kde-format
