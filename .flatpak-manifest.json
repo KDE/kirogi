@@ -1,0 +1,58 @@
+{
+    "id": "org.kde.kirogi",
+    "branch": "master",
+    "rename-icon": "kirogi",
+    "runtime": "org.kde.Platform",
+    "runtime-version": "5.15-22.08",
+    "sdk": "org.kde.Sdk",
+    "command": "kirogi",
+    "tags": ["nightly"],
+    "desktop-file-name-prefix": "(Nightly) ",
+    "finish-args": ["--share=ipc", "--socket=x11", "--socket=wayland", "--filesystem=host", "--device=dri", "--system-talk-name=org.freedesktop.Avahi"],
+
+    "modules": [
+        {
+            "name": "gstreamer",
+            "buildsystem": "meson",
+            "sources": [
+                {
+                    "type" : "archive",
+                    "url" : "https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.22.2.tar.xz",
+                    "sha256": "b2afe73603921c608ba48969dbb7d743776744bfe5d8059ece241137b7f88e21"
+                }
+            ]
+        },
+        {
+            "name": "gst-plugins-base",
+            "buildsystem": "meson",
+            "sources": [
+                {
+                    "type" : "archive",
+                    "url" : "https://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-1.22.2.tar.xz",
+                    "sha256": "eb65120c4ee79b7a153c3c1972d5c0158c2151877cc51ec7725bba5749679d49"
+                }
+            ]
+        },
+        {
+            "name": "gst-plugins-good",
+            "buildsystem": "meson",
+            "sources": [
+                {
+                    "type" : "archive",
+                    "url" : "https://gstreamer.freedesktop.org/src/gst-plugins-good/gst-plugins-good-1.22.2.tar.xz",
+                    "sha256": "7c8cc59425f2b232f60ca7d13e56edd615da4f711e73dd01a7cffa46e6bc0cdd"
+                }
+            ]
+        },
+        {
+            "name": "kirogi",
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "dir",
+                    "path": "."
+                }
+            ]
+        }
+    ]
+}
