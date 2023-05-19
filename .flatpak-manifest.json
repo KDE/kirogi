@@ -49,8 +49,8 @@
             "buildsystem": "cmake-ninja",
             "sources": [
                 {
-                    "type": "dir",
-                    "path": "."
+                    "type": "git",
+                    "path": "https://invent.kde.org/utilities/kirogi.git"
                 }
             ]
         }
