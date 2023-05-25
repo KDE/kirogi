@@ -50,7 +50,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "path": "https://invent.kde.org/utilities/kirogi.git"
+                    "url": "https://invent.kde.org/utilities/kirogi.git"
                 }
             ]
         }
