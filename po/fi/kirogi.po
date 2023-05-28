@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the kirogi package.
-# Tommi Nieminen <translator@legisign.org>, 2022.
+# Tommi Nieminen <translator@legisign.org>, 2022, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kirogi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-05 00:59+0000\n"
-"PO-Revision-Date: 2022-08-02 23:04+0300\n"
+"PO-Revision-Date: 2023-05-05 21:17+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 23.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -106,7 +106,7 @@ msgstr "Anafi"
 #: src/plugins/parrot/parrotvehicle.cpp:136
 #, kde-format
 msgid "Unknown Parrot Model"
-msgstr ""
+msgstr "Tuntematon Parrot-malli"
 
 #: src/plugins/parrot/parrotvehicle.cpp:139
 #, kde-format
@@ -144,7 +144,7 @@ msgstr "EI YHTEYTTÄ"
 #, kde-format
 msgctxt "%1 = Keyboard shortcut"
 msgid "Navigation Map (%1)"
-msgstr ""
+msgstr "Navigointikartta (%1)"
 
 #: src/ui/FlightControls.qml:250
 #, kde-format
@@ -184,7 +184,7 @@ msgstr "OHJAIN"
 #: src/ui/FlightControls.qml:290
 #, kde-format
 msgid "Use Gamepad Controller"
-msgstr ""
+msgstr "Käytä peliohjainta"
 
 #: src/ui/FlightControls.qml:322
 #, kde-format
@@ -194,7 +194,7 @@ msgstr "VIDEO"
 #: src/ui/FlightControls.qml:324
 #, kde-format
 msgid "Record Videos"
-msgstr ""
+msgstr "Tallenna videota"
 
 #: src/ui/FlightControls.qml:326
 #, kde-format
@@ -322,12 +322,12 @@ msgstr "Lennokki"
 #: src/ui/main.qml:97
 #, kde-format
 msgid "Flight Controls"
-msgstr ""
+msgstr "Lennonhallinta"
 
 #: src/ui/main.qml:110
 #, kde-format
 msgid "Navigation Map"
-msgstr ""
+msgstr "Navigointikartta"
 
 #: src/ui/main.qml:123 src/ui/Settings.qml:29
 #, kde-format
@@ -342,7 +342,7 @@ msgstr "Tietoa"
 #: src/ui/NavigationMap.qml:213
 #, kde-format
 msgid "Unable to load map."
-msgstr ""
+msgstr "Karttaa ei voitu ladata."
 
 #: src/ui/NavigationMap.qml:215
 #, kde-format
@@ -363,7 +363,7 @@ msgstr "Laitteen sijainti ei ole saatavilla."
 #, kde-format
 msgctxt "%1 = Keyboard shortcut"
 msgid "Flight Controls (%1)"
-msgstr ""
+msgstr "Lennonhallinta (%1)"
 
 #: src/ui/NavigationMap.qml:254
 #, kde-format
@@ -489,12 +489,12 @@ msgstr "<b>GPS:</b> %1"
 #: src/ui/Vehicle.qml:480
 #, kde-format
 msgid "Go to Flight Controls"
-msgstr ""
+msgstr "Siirry lennonhallintaan"
 
 #: src/ui/Vehicle.qml:483
 #, kde-format
 msgid "Try Flight Controls"
-msgstr ""
+msgstr "Kokeile lennonhallintaa"
 
 #: src/ui/VehicleActionsDrawer.qml:138
 #, kde-format
@@ -559,12 +559,12 @@ msgstr ""
 #: src/ui/VehicleActionsDrawer.qml:321
 #, kde-format
 msgid "Maximum altitude:"
-msgstr ""
+msgstr "Enimmäiskorkeus:"
 
 #: src/ui/VehicleActionsDrawer.qml:388
 #, kde-format
 msgid "Maximum distance:"
-msgstr ""
+msgstr "Enimmäisetäisyys:"
 
 #: src/ui/VehicleActionsDrawer.qml:448
 #, kde-format
