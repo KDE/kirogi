@@ -239,22 +239,22 @@ msgstr "Gir a la dreta"
 #: src/ui/FlightControls.qml:403
 #, kde-format
 msgid "Move Up"
-msgstr "Mou amunt"
+msgstr "Mou cap amunt"
 
 #: src/ui/FlightControls.qml:405
 #, kde-format
 msgid "Move Down"
-msgstr "Mou avall"
+msgstr "Mou cap avall"
 
 #: src/ui/FlightControls.qml:495
 #, kde-format
 msgid "Move Left"
-msgstr "Mou a l'esquerra"
+msgstr "Mou cap a l'esquerra"
 
 #: src/ui/FlightControls.qml:497
 #, kde-format
 msgid "Move Right"
-msgstr "Mou a la dreta"
+msgstr "Mou cap a la dreta"
 
 #: src/ui/FlightControls.qml:499
 #, kde-format
