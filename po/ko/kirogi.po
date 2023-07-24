@@ -37,7 +37,7 @@ msgstr "<application>기러기</application>"
 #, kde-kuit-format
 msgctxt "@title"
 msgid "A ground control application for drones."
-msgstr "드론 지상 제어 프로그램입니다."
+msgstr "드론 지상 제어 앱입니다."
 
 #: src/main.cpp:94
 #, kde-kuit-format
@@ -79,7 +79,7 @@ msgstr "Rafael Brandmaier"
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Application icon"
-msgstr "프로그램 아이콘"
+msgstr "앱 아이콘"
 
 #: src/main.cpp:109
 #, kde-kuit-format
