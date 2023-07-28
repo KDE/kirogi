@@ -10,6 +10,7 @@
   <name xml:lang="cs">Kirogi</name>
   <name xml:lang="de">Kirogi</name>
   <name xml:lang="en-GB">Kirogi</name>
+  <name xml:lang="eo">Kirogi</name>
   <name xml:lang="es">Kirogi</name>
   <name xml:lang="et">Kirogi</name>
   <name xml:lang="fi">Kirogi</name>
@@ -32,6 +33,7 @@
   <summary xml:lang="ca">Control terrestre d'UAV (drons)</summary>
   <summary xml:lang="ca-valencia">Control terrestre d'UAV (drons)</summary>
   <summary xml:lang="en-GB">UAV (drone) ground control</summary>
+  <summary xml:lang="eo">UAV (drono) grunda kontrolo</summary>
   <summary xml:lang="es">Control desde tierra de vehículos aéreos no tripulados (drones)</summary>
   <summary xml:lang="et">Mehitamata õhusõidukite ehk droonide maapealne juhtimine</summary>
   <summary xml:lang="fi">Lennokin maahallinta</summary>
@@ -53,6 +55,7 @@
   <developer_name xml:lang="ca">Desenvolupadors del Kirogi del KDE</developer_name>
   <developer_name xml:lang="ca-valencia">Desenvolupadors de Kirogi de KDE</developer_name>
   <developer_name xml:lang="en-GB">KDE Kirogi Developers</developer_name>
+  <developer_name xml:lang="eo">KDE Kirogi Programistoj</developer_name>
   <developer_name xml:lang="es">Desarrolladores de KDE Kirogi</developer_name>
   <developer_name xml:lang="et">KDE Kirogi arendajad</developer_name>
   <developer_name xml:lang="fi">KDE Kirogin kehittäjät</developer_name>
@@ -77,6 +80,7 @@
     <p xml:lang="ca">El Kirogi és una aplicació per al control terrestre de drons. Els porta al cel, a l'estil del codi font obert.</p>
     <p xml:lang="ca-valencia">Kirogi és una aplicació per al control terrestre de drons. Els porta al cel, a l'estil del codi font obert.</p>
     <p xml:lang="en-GB">Kirogi is a ground control application for drones. Take to the skies, open source-style.</p>
+    <p xml:lang="eo">Kirogi estas terkontrola aplikaĵo por senpilotaj aviadiloj. Ekiĝu al la ĉielo, malfermfontstile.</p>
     <p xml:lang="es">Kirogi es una aplicación de control desde tierra para drones. Toma los cielos, al estilo código abierto.</p>
     <p xml:lang="et">Kirogi on droonide maapealse juhtimise rakendus. Kerki taevasse avatud lähtekoodi vaimus!</p>
     <p xml:lang="fi">Kirogi on lennokkien maahallintasovellus. Valloita taivaat avoimen lähdekoodin tyylillä.</p>
@@ -99,6 +103,7 @@
     <p xml:lang="ca-valencia">Característiques:</p>
     <p xml:lang="cs">Vlastnosti:</p>
     <p xml:lang="en-GB">Features:</p>
+    <p xml:lang="eo">Trajtoj:</p>
     <p xml:lang="es">Características:</p>
     <p xml:lang="et">Omadused:</p>
     <p xml:lang="fi">Ominaisuuksia:</p>
@@ -122,6 +127,7 @@
       <li xml:lang="ca">Controls de vol directe</li>
       <li xml:lang="ca-valencia">Controls de vol directe</li>
       <li xml:lang="en-GB">Direct flight controls</li>
+      <li xml:lang="eo">Rektaj flugkontroloj</li>
       <li xml:lang="es">Controles de vuelo directo</li>
       <li xml:lang="et">Lennu otsejuhtimine</li>
       <li xml:lang="fi">Suora lennonhallinta</li>
@@ -143,6 +149,7 @@
       <li xml:lang="ca">Vol tàctil en un mapa de navegació</li>
       <li xml:lang="ca-valencia">Vol tàctil en un mapa de navegació</li>
       <li xml:lang="en-GB">Fly by touch on a Navigation Map</li>
+      <li xml:lang="eo">Flugu per tuŝo sur Navigada Mapo</li>
       <li xml:lang="es">Vuelo táctil mediante mapa de navegación</li>
       <li xml:lang="et">Lendamine puutetundliku navigatsioonikaardi järgi</li>
       <li xml:lang="fr">Voler par un appui sur la carte de navigation</li>
@@ -163,6 +170,7 @@
       <li xml:lang="ca">Activa les accions del vehicle (p. ex. voltes, talls)</li>
       <li xml:lang="ca-valencia">Activa les accions del vehicle (p. ex. voltes, talls)</li>
       <li xml:lang="en-GB">Trigger vehicle actions (e.g. flips, trim)</li>
+      <li xml:lang="eo">Ekigi veturilaj agoj (ekz. renversado, tajlado)</li>
       <li xml:lang="es">Ejecutar acciones con el vehículo (p.e.: volteretas, recortes)</li>
       <li xml:lang="et">Drooni toimingute käivitamine (nt pööramine)</li>
       <li xml:lang="fr">Déclencher des actions sur le véhicule (par exemple : retournement, compensateur)</li>
@@ -183,6 +191,7 @@
       <li xml:lang="ca">Admet comandaments de joc</li>
       <li xml:lang="ca-valencia">Admet comandaments de joc</li>
       <li xml:lang="en-GB">Gamepad/joypad support</li>
+      <li xml:lang="eo">Subteno de Ludpad/ĝojplod</li>
       <li xml:lang="es">Admite controles remotos</li>
       <li xml:lang="et">Juhtpuldi toetus</li>
       <li xml:lang="fi">Peliohjaintuki</li>
@@ -205,6 +214,7 @@
       <li xml:lang="ca">Vídeo en directe</li>
       <li xml:lang="ca-valencia">Vídeo en directe</li>
       <li xml:lang="en-GB">Live video</li>
+      <li xml:lang="eo">Viva video</li>
       <li xml:lang="es">Vídeo en vivo</li>
       <li xml:lang="et">Reaalajas video</li>
       <li xml:lang="fi">Live-video</li>
@@ -227,6 +237,7 @@
       <li xml:lang="ca">Prendre fotos i enregistrar vídeo</li>
       <li xml:lang="ca-valencia">Prendre fotos i enregistrar vídeo</li>
       <li xml:lang="en-GB">Take photo and record video</li>
+      <li xml:lang="eo">Prenu foton kaj registri filmeton</li>
       <li xml:lang="es">Tome fotografías y grabe vídeos</li>
       <li xml:lang="et">Fotode ja video tegemine</li>
       <li xml:lang="fi">Ota kuvia ja videoita</li>
@@ -248,6 +259,7 @@
       <li xml:lang="ca">Configuració dels paràmetres de vol (velocitat, límits d'altitud)</li>
       <li xml:lang="ca-valencia">Configureu els paràmetres de vol (velocitat, límits d'altitud)</li>
       <li xml:lang="en-GB">Configure flight parameters (speed, altitude limits)</li>
+      <li xml:lang="eo">Agordu flugajn parametrojn (rapideco, altlimoj)</li>
       <li xml:lang="es">Configure parámetros de vuelo (velocidad, límites de altura)</li>
       <li xml:lang="et">Lennu parameetrite seadistamine (nt kiiruse- ja kõrgusepiirangud)</li>
       <li xml:lang="fi">Säädä lennon parametreja (nopeutta, korkeusrajoitusta)</li>
@@ -269,6 +281,7 @@
       <li xml:lang="ca">Suport per als drons Parrot (Anafi, Bebop 2) i Ryze Tello (n'hi ha més de planificats)</li>
       <li xml:lang="ca-valencia">Suport per als drons Parrot (Anafi, Bebop 2) i Ryze Tello (n'hi ha més de planificats)</li>
       <li xml:lang="en-GB">Support for Parrot (Anafi, Bebop 2) and Ryze Tello drones (more planned)</li>
+      <li xml:lang="eo">Subteno por Papago (Anafi, Bebop 2) kaj Ryze Tello-flugrobotoj (pliaj planitaj)</li>
       <li xml:lang="es">Admite drones Parrot (Anafi, Bebop 2) y Ryze Tello (hay más planificados)</li>
       <li xml:lang="et">Parroti (Anafi, Bebop 2) ja Ryze Tello droonide toetus (kavas on toetust laiendada)</li>
       <li xml:lang="fi">Parrot- (Anafi, Bebop 2) ja Ryze Tello -lennokkien tuki (lisää suunnitteilla)</li>
@@ -302,6 +315,7 @@
       <caption xml:lang="ca">La IU de vol del Kirogi</caption>
       <caption xml:lang="ca-valencia">La IU de vol de Kirogi</caption>
       <caption xml:lang="en-GB">The Kirogi in-flight UI</caption>
+      <caption xml:lang="eo">La Kirogi enfluga UI</caption>
       <caption xml:lang="es">La interfaz de usuario en vuelo de Kirogi</caption>
       <caption xml:lang="et">Kirogi lennu juhtimise kasutajaliides</caption>
       <caption xml:lang="fi">Kirogin lennonaikainen käyttöliittymä</caption>
