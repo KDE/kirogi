@@ -105,6 +105,8 @@ find_package(KF5 ${KF_MIN_VERSION} REQUIRED
     ${kfDesktopComponents}
 )
 
+find_package(KF${QT_MAJOR_VERSION}KirigamiAddons 0.11 REQUIRED)
+
 find_package(PkgConfig REQUIRED)
 
 pkg_check_modules(GSTREAMER REQUIRED

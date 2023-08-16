@@ -23,7 +23,8 @@ import QtQuick.Layouts 1.12
 import QtQuick.Controls 2.12 as QQC2
 import QtPositioning 5.12
 
-import org.kde.kirigami 2.6 as Kirigami
+import org.kde.kirigami 2.20 as Kirigami
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 
 import org.kde.kirogi 0.1 as Kirogi
 
@@ -138,7 +139,7 @@ Kirigami.ApplicationWindow {
                 tooltip: "Alt+5"
                 shortcut: tooltip
 
-                onTriggered: switchApplicationPage(aboutPage)
+                onTriggered: pageStack.pushDialogLayer(aboutPage)
             }
         ]
     }
@@ -222,13 +223,12 @@ Kirigami.ApplicationWindow {
         visible: enabled
     }
 
-    Kirigami.AboutPage {
+    Component {
         id: aboutPage
-
-        enabled: currentPage == aboutPage
-        visible: enabled
-
-        aboutData: kirogiAboutData
+        FormCard.AboutPage {
+            id: aboutPage
+            aboutData: kirogiAboutData
+        }
     }
 
     Timer {

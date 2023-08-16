@@ -9,6 +9,7 @@ Dependencies:
     'frameworks/kcoreaddons': '@stable'
     'frameworks/ki18n': '@stable'
     'frameworks/kirigami': '@stable'
+    'libraries/kirigami-addons': '@latest'
 
 - 'on': ['Linux', 'FreeBSD']
   'require':
