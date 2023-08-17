@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kirogi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-05 00:59+0000\n"
+"POT-Creation-Date: 2023-08-17 00:49+0000\n"
 "PO-Revision-Date: 2021-05-16 22:34+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -309,32 +309,32 @@ msgstr "%1%"
 msgid "N/A"
 msgstr "없음"
 
-#: src/ui/main.qml:72
+#: src/ui/main.qml:73
 #, kde-format
 msgid "Kirogi"
 msgstr "기러기"
 
-#: src/ui/main.qml:84
+#: src/ui/main.qml:85
 #, kde-format
 msgid "Drone"
 msgstr "드론"
 
-#: src/ui/main.qml:97
+#: src/ui/main.qml:98
 #, kde-format
 msgid "Flight Controls"
 msgstr "비행 제어"
 
-#: src/ui/main.qml:110
+#: src/ui/main.qml:111
 #, kde-format
 msgid "Navigation Map"
 msgstr "탐색 지도"
 
-#: src/ui/main.qml:123 src/ui/Settings.qml:29
+#: src/ui/main.qml:124 src/ui/Settings.qml:29
 #, kde-format
 msgid "Settings"
 msgstr "설정"
 
-#: src/ui/main.qml:136
+#: src/ui/main.qml:137
 #, kde-format
 msgid "About"
 msgstr "정보"
