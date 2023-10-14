@@ -496,7 +496,7 @@ msgstr "<b>GPS:</b> %1"
 #: src/ui/Vehicle.qml:480
 #, kde-format
 msgid "Go to Flight Controls"
-msgstr "Ves als controls de vol"
+msgstr "Ves fins als controls de vol"
 
 #: src/ui/Vehicle.qml:483
 #, kde-format
