@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:41+0000\n"
-"PO-Revision-Date: 2023-10-21 13:54\n"
+"PO-Revision-Date: 2023-11-19 03:40\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -509,22 +509,22 @@ msgstr "翻转"
 #: src/ui/VehicleActionsDrawer.qml:178
 #, kde-format
 msgid "Flip Forward"
-msgstr "向前翻转"
+msgstr "翻转 (向前)"
 
 #: src/ui/VehicleActionsDrawer.qml:197
 #, kde-format
 msgid "Flip Backward"
-msgstr "向后翻转"
+msgstr "翻转 (向后)"
 
 #: src/ui/VehicleActionsDrawer.qml:216
 #, kde-format
 msgid "Flip Left"
-msgstr "向左翻转"
+msgstr "翻转 (向左)"
 
 #: src/ui/VehicleActionsDrawer.qml:235
 #, kde-format
 msgid "Flip Right"
-msgstr "向右翻转"
+msgstr "翻转 (向右)"
 
 #: src/ui/VehicleActionsDrawer.qml:252
 #, kde-format
