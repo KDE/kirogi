@@ -45,6 +45,18 @@
             ]
         },
         {
+            "name": "kirigamiaddons",
+            "config-opts": [ "-DBUILD_TESTING=OFF" ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/libraries/kirigami-addons.git",
+                    "branch": "kf5"
+                }
+            ]
+        },
+        {
             "name": "kirogi",
             "buildsystem": "cmake-ninja",
             "sources": [
