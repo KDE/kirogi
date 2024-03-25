@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kirogi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:41+0000\n"
-"PO-Revision-Date: 2024-02-26 21:30+0100\n"
+"PO-Revision-Date: 2024-03-24 10:34+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo.org>\n"
 "Language: eo\n"
@@ -32,19 +32,19 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Kirogi</application>"
-msgstr ""
+msgstr "<application>Kirogi</application>"
 
 #: src/main.cpp:92
 #, kde-kuit-format
 msgctxt "@title"
 msgid "A ground control application for drones."
-msgstr ""
+msgstr "Apliko pri grunda rego por senpilotaj aviadiloj."
 
 #: src/main.cpp:94
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2019 The Kirogi Team"
-msgstr ""
+msgstr "(c) 2019 La Kirogi Teamo"
 
 #: src/main.cpp:101
 #, kde-kuit-format
@@ -56,7 +56,7 @@ msgstr "Eike Hein"
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Founder, Lead Developer"
-msgstr ""
+msgstr "Fondinto, Ĉefa Programisto"
 
 #: src/main.cpp:103
 #, kde-kuit-format
@@ -74,25 +74,25 @@ msgstr "Ellaboranto"
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Rafael Brandmaier"
-msgstr ""
+msgstr "Rafael Brandmaier"
 
 #: src/main.cpp:106
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Application icon"
-msgstr ""
+msgstr "Piktogramo de aplikaĵo"
 
 #: src/main.cpp:109
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "L. 'AsmoArael' C."
-msgstr ""
+msgstr "L. 'AsmoArael' C."
 
 #: src/main.cpp:109
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Mascot artwork"
-msgstr ""
+msgstr "Maskota artaĵo"
 
 #: src/plugins/parrot/parrotvehicle.cpp:132
 #, kde-format
@@ -119,53 +119,53 @@ msgstr "%1 (%2)"
 #, kde-format
 msgctxt "%1 = Keyboard shortcut"
 msgid "Drone (%1)"
-msgstr ""
+msgstr "Senpilota aviadilo (%1)"
 
 #: src/ui/FlightControls.qml:180
 #, kde-format
 msgid "LAND"
-msgstr ""
+msgstr "TERO"
 
 #: src/ui/FlightControls.qml:182
 #, kde-format
 msgid "TAKE OFF"
-msgstr ""
+msgstr "DEKURO"
 
 #: src/ui/FlightControls.qml:184
 #, kde-format
 msgid "PREPARING"
-msgstr ""
+msgstr "PREPARO"
 
 #: src/ui/FlightControls.qml:188
 #, kde-format
 msgid "DISCONNECTED"
-msgstr ""
+msgstr "DISKONKITO"
 
 #: src/ui/FlightControls.qml:225
 #, kde-format
 msgctxt "%1 = Keyboard shortcut"
 msgid "Navigation Map (%1)"
-msgstr ""
+msgstr "Navigada mapo (%1)"
 
 #: src/ui/FlightControls.qml:250
 #, kde-format
 msgid "FILM"
-msgstr ""
+msgstr "FILMO"
 
 #: src/ui/FlightControls.qml:251
 #, kde-format
 msgid "Fly Slow"
-msgstr ""
+msgstr "Flugi Malrapide"
 
 #: src/ui/FlightControls.qml:253
 #, kde-format
 msgid "SPORT"
-msgstr ""
+msgstr "SPORTO"
 
 #: src/ui/FlightControls.qml:254
 #, kde-format
 msgid "Fly Fast"
-msgstr ""
+msgstr "Flugi Rapide"
 
 #: src/ui/FlightControls.qml:284
 #, kde-format
@@ -175,62 +175,62 @@ msgstr "EKRANO"
 #: src/ui/FlightControls.qml:286
 #, kde-format
 msgid "Use Virtual D-Pads"
-msgstr ""
+msgstr "Uzi Virtualajn D-kusenetojn"
 
 #: src/ui/FlightControls.qml:288
 #, kde-format
 msgid "CONTROLLER"
-msgstr ""
+msgstr "REGILILO"
 
 #: src/ui/FlightControls.qml:290
 #, kde-format
 msgid "Use Gamepad Controller"
-msgstr ""
+msgstr "Uzi Gamepad-Regilon"
 
 #: src/ui/FlightControls.qml:322
 #, kde-format
 msgid "VIDEO"
-msgstr ""
+msgstr "VIDEO"
 
 #: src/ui/FlightControls.qml:324
 #, kde-format
 msgid "Record Videos"
-msgstr ""
+msgstr "Registri Videojn"
 
 #: src/ui/FlightControls.qml:326
 #, kde-format
 msgid "PHOTO"
-msgstr ""
+msgstr "FOTO"
 
 #: src/ui/FlightControls.qml:328
 #, kde-format
 msgid "Take Photos"
-msgstr ""
+msgstr "Fari Fotojn"
 
 #: src/ui/FlightControls.qml:364
 #, kde-format
 msgid "Take Photo"
-msgstr ""
+msgstr "Fari Foton"
 
 #: src/ui/FlightControls.qml:366
 #, kde-format
 msgid "Stop Recording Video"
-msgstr ""
+msgstr "Ĉesigi Registradon de Vidbendo"
 
 #: src/ui/FlightControls.qml:369
 #, kde-format
 msgid "Record Video"
-msgstr ""
+msgstr "Registri Vidbendon"
 
 #: src/ui/FlightControls.qml:399
 #, kde-format
 msgid "Turn Left"
-msgstr ""
+msgstr "Rotacii Maldekstren"
 
 #: src/ui/FlightControls.qml:401
 #, kde-format
 msgid "Turn Right"
-msgstr ""
+msgstr "Rotacii Dekstren"
 
 #: src/ui/FlightControls.qml:403
 #, kde-format
@@ -255,12 +255,12 @@ msgstr "Movi Dekstren"
 #: src/ui/FlightControls.qml:499
 #, kde-format
 msgid "Move Forward"
-msgstr ""
+msgstr "Movi Antaŭen"
 
 #: src/ui/FlightControls.qml:501
 #, kde-format
 msgid "Move Backward"
-msgstr ""
+msgstr "Movi Malantaŭen"
 
 #: src/ui/FlightControls.qml:611 src/ui/FlightControls.qml:620
 #: src/ui/VehicleActionsDrawer.qml:700
@@ -271,7 +271,7 @@ msgstr "%1 m/s"
 #: src/ui/FlightControls.qml:623
 #, kde-format
 msgid "– m/s"
-msgstr ""
+msgstr "– m/s"
 
 #: src/ui/FlightControls.qml:645 src/ui/FlightControls.qml:654
 #: src/ui/FlightControls.qml:679 src/ui/FlightControls.qml:688
@@ -284,7 +284,7 @@ msgstr "%1 m"
 #: src/ui/FlightControls.qml:657 src/ui/FlightControls.qml:695
 #, kde-format
 msgid "– m"
-msgstr ""
+msgstr "– m"
 
 #: src/ui/FlightControls.qml:748
 #, kde-format
@@ -294,7 +294,7 @@ msgstr "%1 min"
 #: src/ui/FlightControls.qml:751
 #, kde-format
 msgid "– min"
-msgstr ""
+msgstr "– min"
 
 #: src/ui/FlightControls.qml:793 src/ui/FlightControls.qml:800
 #: src/ui/FlightControls.qml:828 src/ui/FlightControls.qml:835
@@ -318,17 +318,17 @@ msgstr "Kirogi"
 #: src/ui/main.qml:85
 #, kde-format
 msgid "Drone"
-msgstr ""
+msgstr "Senpilota aviadilo"
 
 #: src/ui/main.qml:98
 #, kde-format
 msgid "Flight Controls"
-msgstr ""
+msgstr "Flugregiloj"
 
 #: src/ui/main.qml:111
 #, kde-format
 msgid "Navigation Map"
-msgstr ""
+msgstr "Navigado Mapo"
 
 #: src/ui/main.qml:124 src/ui/Settings.qml:29
 #, kde-format
@@ -343,48 +343,48 @@ msgstr "Pri"
 #: src/ui/NavigationMap.qml:213
 #, kde-format
 msgid "Unable to load map."
-msgstr ""
+msgstr "Ne eblas ŝargi mapon."
 
 #: src/ui/NavigationMap.qml:215
 #, kde-format
 msgid "%1 does not support GPS."
-msgstr ""
+msgstr "%1 ne subtenas GPS."
 
 #: src/ui/NavigationMap.qml:217
 #, kde-format
 msgid "%1 does not have a GPS fix."
-msgstr ""
+msgstr "%1 ne havas GPS-riparon."
 
 #: src/ui/NavigationMap.qml:219
 #, kde-format
 msgid "No device location available."
-msgstr ""
+msgstr "Neniu aparata loko disponebla."
 
 #: src/ui/NavigationMap.qml:236
 #, kde-format
 msgctxt "%1 = Keyboard shortcut"
 msgid "Flight Controls (%1)"
-msgstr ""
+msgstr "Flugregiloj (%1)"
 
 #: src/ui/NavigationMap.qml:254
 #, kde-format
 msgid "Center Map on Drone"
-msgstr ""
+msgstr "Centra Mapo sur Drone"
 
 #: src/ui/NavigationMap.qml:272
 #, kde-format
 msgid "Center Map on Device"
-msgstr ""
+msgstr "Centra Mapo sur Aparato"
 
 #: src/ui/Settings.qml:40
 #, kde-format
 msgid "Allow Kirogi to request the location of this device"
-msgstr ""
+msgstr "Permesi al Kirogi peti la lokon de ĉi tiu aparato"
 
 #: src/ui/Settings.qml:47
 #, kde-format
 msgid "Show D-pads when a gamepad controller is connected"
-msgstr ""
+msgstr "Montri D-kusenetojn kiam ludpadregilo estas konektita"
 
 #: src/ui/Settings.qml:52
 #, kde-format
@@ -394,33 +394,33 @@ msgstr "Video"
 #: src/ui/Settings.qml:57
 #, kde-format
 msgid "Stretch video to fit device screen."
-msgstr ""
+msgstr "Streĉi videon por konveni aparaton ekranon."
 
 #: src/ui/Vehicle.qml:86
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Model"
-msgstr ""
+msgstr "Elekti Modelon"
 
 #: src/ui/Vehicle.qml:120
 #, kde-format
 msgid "Flight Checklist"
-msgstr ""
+msgstr "Fluga Kontrollisto"
 
 #: src/ui/Vehicle.qml:162
 #, kde-format
 msgid "Select now"
-msgstr ""
+msgstr "Elekti nun"
 
 #: src/ui/Vehicle.qml:162
 #, kde-format
 msgid "<b>Model:</b> %1"
-msgstr ""
+msgstr "<b>Modelo:</b> %1"
 
 #: src/ui/Vehicle.qml:180 src/ui/Vehicle.qml:478
 #, kde-format
 msgid "Select Model"
-msgstr ""
+msgstr "Elekti Modelon"
 
 #: src/ui/Vehicle.qml:233
 #, kde-format
@@ -430,12 +430,12 @@ msgstr "Serĉante..."
 #: src/ui/Vehicle.qml:236
 #, kde-format
 msgid "<b>Drone:</b> %1"
-msgstr ""
+msgstr "<b>Senpilota aviadilo:</b> %1"
 
 #: src/ui/Vehicle.qml:290
 #, kde-format
 msgid "Flying"
-msgstr ""
+msgstr "Flugante"
 
 #: src/ui/Vehicle.qml:292
 #, kde-format
@@ -445,37 +445,37 @@ msgstr "Preta"
 #: src/ui/Vehicle.qml:294
 #, kde-format
 msgid "Preparing ..."
-msgstr ""
+msgstr "Preparante..."
 
 #: src/ui/Vehicle.qml:297
 #, kde-format
 msgid "Connecting ..."
-msgstr ""
+msgstr "Konektante..."
 
 #: src/ui/Vehicle.qml:300
 #, kde-format
 msgid "<b>Status:</b> %1"
-msgstr ""
+msgstr "<b>Stato:</b> %1"
 
 #: src/ui/Vehicle.qml:355
 #, kde-format
 msgid "<b>Signal:</b> %1"
-msgstr ""
+msgstr "<b>Signalo:</b> %1"
 
 #: src/ui/Vehicle.qml:397
 #, kde-format
 msgid "<b>Battery:</b> %1"
-msgstr ""
+msgstr "<b>Baterio:</b> %1"
 
 #: src/ui/Vehicle.qml:445
 #, kde-format
 msgid "Got fix"
-msgstr ""
+msgstr "Riparis"
 
 #: src/ui/Vehicle.qml:447
 #, kde-format
 msgid "No fix"
-msgstr ""
+msgstr "Neniu riparo"
 
 #: src/ui/Vehicle.qml:449
 #, kde-format
@@ -485,22 +485,22 @@ msgstr "Ne subtenata"
 #: src/ui/Vehicle.qml:453
 #, kde-format
 msgid "<b>GPS:</b> %1"
-msgstr ""
+msgstr "<b>GPS:</b> %1"
 
 #: src/ui/Vehicle.qml:480
 #, kde-format
 msgid "Go to Flight Controls"
-msgstr ""
+msgstr "Iri al Flugregiloj"
 
 #: src/ui/Vehicle.qml:483
 #, kde-format
 msgid "Try Flight Controls"
-msgstr ""
+msgstr "Provi Flugregilojn"
 
 #: src/ui/VehicleActionsDrawer.qml:138
 #, kde-format
 msgid "Flat Trim"
-msgstr ""
+msgstr "Plata Trim"
 
 #: src/ui/VehicleActionsDrawer.qml:150
 #, kde-format
@@ -510,22 +510,22 @@ msgstr "Renversi"
 #: src/ui/VehicleActionsDrawer.qml:178
 #, kde-format
 msgid "Flip Forward"
-msgstr ""
+msgstr "Inversigi Antaŭen"
 
 #: src/ui/VehicleActionsDrawer.qml:197
 #, kde-format
 msgid "Flip Backward"
-msgstr ""
+msgstr "Inversigi Malantaŭen"
 
 #: src/ui/VehicleActionsDrawer.qml:216
 #, kde-format
 msgid "Flip Left"
-msgstr ""
+msgstr "Inversigi Maldekstren"
 
 #: src/ui/VehicleActionsDrawer.qml:235
 #, kde-format
 msgid "Flip Right"
-msgstr ""
+msgstr "Inversigi Dekstren"
 
 #: src/ui/VehicleActionsDrawer.qml:252
 #, kde-format
@@ -540,32 +540,32 @@ msgstr "Malŝaltita"
 #: src/ui/VehicleActionsDrawer.qml:257
 #, kde-format
 msgid "Geofence: %1"
-msgstr ""
+msgstr "Geobarilo: %1"
 
 #: src/ui/VehicleActionsDrawer.qml:260
 #, kde-format
 msgid "Geofence"
-msgstr ""
+msgstr "Geobarilo"
 
 #: src/ui/VehicleActionsDrawer.qml:292
 #, kde-format
 msgid "Disable Geofence"
-msgstr ""
+msgstr "Malebligi Geobarilon"
 
 #: src/ui/VehicleActionsDrawer.qml:295
 #, kde-format
 msgid "Enable Geofence"
-msgstr ""
+msgstr "Ebligi Geobarilon"
 
 #: src/ui/VehicleActionsDrawer.qml:321
 #, kde-format
 msgid "Maximum altitude:"
-msgstr ""
+msgstr "Maksimuma alteco:"
 
 #: src/ui/VehicleActionsDrawer.qml:388
 #, kde-format
 msgid "Maximum distance:"
-msgstr ""
+msgstr "Maksimuma distanco:"
 
 #: src/ui/VehicleActionsDrawer.qml:448
 #, kde-format
@@ -575,7 +575,7 @@ msgstr "Filmo"
 #: src/ui/VehicleActionsDrawer.qml:450
 #, kde-format
 msgid "Sport"
-msgstr ""
+msgstr "Sporto"
 
 #: src/ui/VehicleActionsDrawer.qml:452
 #, kde-format
@@ -585,7 +585,7 @@ msgstr "Propra"
 #: src/ui/VehicleActionsDrawer.qml:455
 #, kde-format
 msgid "Performance: %1"
-msgstr ""
+msgstr "Rendimento: %1"
 
 #: src/ui/VehicleActionsDrawer.qml:458
 #, kde-format
@@ -595,33 +595,33 @@ msgstr "Rendimento"
 #: src/ui/VehicleActionsDrawer.qml:492
 #, kde-format
 msgid "Maximum roll speed:"
-msgstr ""
+msgstr "Maksimuma rulrapideco:"
 
 #: src/ui/VehicleActionsDrawer.qml:499 src/ui/VehicleActionsDrawer.qml:566
 #: src/ui/VehicleActionsDrawer.qml:633
 #, kde-format
 msgid "%1 °/s"
-msgstr ""
+msgstr "%1 °/s"
 
 #: src/ui/VehicleActionsDrawer.qml:559
 #, kde-format
 msgid "Maximum pitch speed:"
-msgstr ""
+msgstr "Maksimuma tonalta rapideco:"
 
 #: src/ui/VehicleActionsDrawer.qml:626
 #, kde-format
 msgid "Maximum yaw speed:"
-msgstr ""
+msgstr "Maksimuma devida rapideco:"
 
 #: src/ui/VehicleActionsDrawer.qml:693
 #, kde-format
 msgid "Maximum vertical speed:"
-msgstr ""
+msgstr "Maksimuma vertikala rapido:"
 
 #: src/ui/VehicleActionsDrawer.qml:760
 #, kde-format
 msgid "Maximum tilt:"
-msgstr ""
+msgstr "Maksimuma kliniĝo:"
 
 #: src/ui/VehicleActionsDrawer.qml:767
 #, kde-format
@@ -631,19 +631,19 @@ msgstr "%1°"
 #: src/ui/VehicleActionsDrawer.qml:825
 #, kde-format
 msgid "Disable Banked Turns"
-msgstr ""
+msgstr "Malebligi Bankitajn Turnojn"
 
 #: src/ui/VehicleActionsDrawer.qml:828
 #, kde-format
 msgid "Enable Banked Turns"
-msgstr ""
+msgstr "Ebligi Bankitajn Turnojn"
 
 #: src/ui/VehicleActionsDrawer.qml:852
 #, kde-format
 msgid "Disable Video Stabilization"
-msgstr ""
+msgstr "Malebligi Video-Stabiligon"
 
 #: src/ui/VehicleActionsDrawer.qml:855
 #, kde-format
 msgid "Enable Video Stabilization"
-msgstr ""
+msgstr "Ebligi Video-Stabiligon"
