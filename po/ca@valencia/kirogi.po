@@ -431,7 +431,7 @@ msgstr "Seleccioneu el model"
 #: src/ui/Vehicle.qml:233
 #, kde-format
 msgid "Searching ..."
-msgstr "S'està buscant..."
+msgstr "S'està buscant…"
 
 #: src/ui/Vehicle.qml:236
 #, kde-format
@@ -451,12 +451,12 @@ msgstr "Llest"
 #: src/ui/Vehicle.qml:294
 #, kde-format
 msgid "Preparing ..."
-msgstr "S'està preparant..."
+msgstr "S'està preparant…"
 
 #: src/ui/Vehicle.qml:297
 #, kde-format
 msgid "Connecting ..."
-msgstr "S'està connectant..."
+msgstr "S'està connectant…"
 
 #: src/ui/Vehicle.qml:300
 #, kde-format
