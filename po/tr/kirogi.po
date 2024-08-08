@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kirogi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:41+0000\n"
-"PO-Revision-Date: 2024-03-01 14:47+0300\n"
+"PO-Revision-Date: 2024-08-08 00:36+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.02.0\n"
+"X-Generator: Lokalize 24.11.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -43,7 +43,7 @@ msgstr "Uçargözler için bir yerden denetim uygulaması"
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2019 The Kirogi Team"
-msgstr "(c) 2019 The Kirogi Team"
+msgstr "© 2019 Kirogi Takımı"
 
 #: src/main.cpp:101
 #, kde-kuit-format
@@ -85,7 +85,7 @@ msgstr "Uygulama simgesi"
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "L. 'AsmoArael' C."
-msgstr "L. 'AsmoArael' C."
+msgstr "L. “AsmoArael” C."
 
 #: src/main.cpp:109
 #, kde-kuit-format
@@ -174,7 +174,7 @@ msgstr "EKRAN"
 #: src/ui/FlightControls.qml:286
 #, kde-format
 msgid "Use Virtual D-Pads"
-msgstr "Sanal D-Pad'leri Kullan"
+msgstr "Sanal D-Pad’ler Kullan"
 
 #: src/ui/FlightControls.qml:288
 #, kde-format
@@ -184,7 +184,7 @@ msgstr "DENETİMCİ"
 #: src/ui/FlightControls.qml:290
 #, kde-format
 msgid "Use Gamepad Controller"
-msgstr "Oyun Tablası Denetimcisi Kullan"
+msgstr "Oyun Kolu Denetimcisi Kullan"
 
 #: src/ui/FlightControls.qml:322
 #, kde-format
@@ -378,12 +378,12 @@ msgstr "Aygıtta Haritayı Ortala"
 #: src/ui/Settings.qml:40
 #, kde-format
 msgid "Allow Kirogi to request the location of this device"
-msgstr "Kirogi'nin bu aygıtın konumunu almasına izin ver"
+msgstr "Kirogi’nin bu aygıtın konumunu almasına izin ver"
 
 #: src/ui/Settings.qml:47
 #, kde-format
 msgid "Show D-pads when a gamepad controller is connected"
-msgstr "Bir oyun tablası denetimcisi bağlandığında D-Pad'leri göster"
+msgstr "Bir oyun kolu denetimcisi bağlandığında D-Pad’leri göster"
 
 #: src/ui/Settings.qml:52
 #, kde-format
@@ -424,7 +424,7 @@ msgstr "Model Seçin"
 #: src/ui/Vehicle.qml:233
 #, kde-format
 msgid "Searching ..."
-msgstr "Aranıyor ..."
+msgstr "Aranıyor…"
 
 #: src/ui/Vehicle.qml:236
 #, kde-format
@@ -444,12 +444,12 @@ msgstr "Hazır"
 #: src/ui/Vehicle.qml:294
 #, kde-format
 msgid "Preparing ..."
-msgstr "Hazırlanıyor ..."
+msgstr "Hazırlanıyor…"
 
 #: src/ui/Vehicle.qml:297
 #, kde-format
 msgid "Connecting ..."
-msgstr "Bağlanıyor ..."
+msgstr "Bağlanıyor…"
 
 #: src/ui/Vehicle.qml:300
 #, kde-format
@@ -605,7 +605,7 @@ msgstr "%1 °/sn"
 #: src/ui/VehicleActionsDrawer.qml:559
 #, kde-format
 msgid "Maximum pitch speed:"
-msgstr "En yüksek yukarı-aşağı meyil hızı:"
+msgstr "En yüksek yukarı–aşağı meyil hızı:"
 
 #: src/ui/VehicleActionsDrawer.qml:626
 #, kde-format
@@ -640,9 +640,9 @@ msgstr "İrtifa Değiştiren Dönüşleri Aç"
 #: src/ui/VehicleActionsDrawer.qml:852
 #, kde-format
 msgid "Disable Video Stabilization"
-msgstr "Video Kararlılaştırmasını Kapat"
+msgstr "Video Stabilizasyonunu Kapat"
 
 #: src/ui/VehicleActionsDrawer.qml:855
 #, kde-format
 msgid "Enable Video Stabilization"
-msgstr "Video Kararlılaştırmasını Aç"
+msgstr "Video Stabilizasyonunu Aç"
