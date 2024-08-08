@@ -47,7 +47,7 @@
   <summary xml:lang="pt">Controlo terrestre de UAV (drone)</summary>
   <summary xml:lang="sl">Zemeljska kontrola UAV (droni)</summary>
   <summary xml:lang="sv">Markkontroll av drönare (UAV)</summary>
-  <summary xml:lang="tr">İHA (uçargöz) yerden denetim</summary>
+  <summary xml:lang="tr">İHA (uçargöz) yerden denetimi</summary>
   <summary xml:lang="uk">Програма для керування UAV (дроном)</summary>
   <summary xml:lang="x-test">xxUAV (drone) ground controlxx</summary>
   <summary xml:lang="zh-CN">在地面上控制无人航空载具 (无人机)</summary>
@@ -206,7 +206,7 @@
       <li xml:lang="sk">Podpora Gamepadu/joypadu</li>
       <li xml:lang="sl">Podpora za igralno konzolo ali igralno palico</li>
       <li xml:lang="sv">Stöd för handkontroll</li>
-      <li xml:lang="tr">Oyun tablası/çubuğu desteği</li>
+      <li xml:lang="tr">Oyun kolu/çubuğu desteği</li>
       <li xml:lang="uk">Підтримка пультів керування</li>
       <li xml:lang="x-test">xxGamepad/joypad supportxx</li>
       <li xml:lang="zh-CN">手柄支持</li>
