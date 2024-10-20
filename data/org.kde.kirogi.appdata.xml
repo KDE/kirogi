@@ -53,30 +53,9 @@
   <summary xml:lang="uk">Програма для керування UAV (дроном)</summary>
   <summary xml:lang="x-test">xxUAV (drone) ground controlxx</summary>
   <summary xml:lang="zh-CN">在地面上控制无人航空载具 (无人机)</summary>
-  <developer_name>KDE Kirogi Developers</developer_name>
-  <developer_name xml:lang="ca">Desenvolupadors del Kirogi del KDE</developer_name>
-  <developer_name xml:lang="ca-valencia">Desenvolupadors de Kirogi de KDE</developer_name>
-  <developer_name xml:lang="en-GB">KDE Kirogi Developers</developer_name>
-  <developer_name xml:lang="eo">KDE Kirogi Programistoj</developer_name>
-  <developer_name xml:lang="es">Desarrolladores de KDE Kirogi</developer_name>
-  <developer_name xml:lang="et">KDE Kirogi arendajad</developer_name>
-  <developer_name xml:lang="fi">KDE Kirogin kehittäjät</developer_name>
-  <developer_name xml:lang="fr">Développeurs KDE de Kirogi</developer_name>
-  <developer_name xml:lang="gl">Equipo desenvolvedor de Kirogi de KDE</developer_name>
-  <developer_name xml:lang="id">Para Pengembang KDE Kirogi</developer_name>
-  <developer_name xml:lang="it">Gli sviluppatori di KDE Kirogi</developer_name>
-  <developer_name xml:lang="ka">KDE Kirogi -ის პროგრამისტები</developer_name>
-  <developer_name xml:lang="ko">KDE 기러기 개발자</developer_name>
-  <developer_name xml:lang="nl">Ontwikkelaars van KDE Kirogi</developer_name>
-  <developer_name xml:lang="pl">Programiści KDE Kirogi</developer_name>
-  <developer_name xml:lang="pt">Equipa de Desenvolvimento do Kirogi no KDE</developer_name>
-  <developer_name xml:lang="sk">Vývojári KDE Kirogi</developer_name>
-  <developer_name xml:lang="sl">Razvijalci KDE Kirogi</developer_name>
-  <developer_name xml:lang="sv">KDE Kirogi-utvecklarna</developer_name>
-  <developer_name xml:lang="tr">KDE Kirogi Geliştiricileri</developer_name>
-  <developer_name xml:lang="uk">Розробники KDE Kirogi</developer_name>
-  <developer_name xml:lang="x-test">xxKDE Kirogi Developersxx</developer_name>
-  <developer_name xml:lang="zh-CN">KDE Kirogi 开发者</developer_name>
+  <developer id="kde.org">
+    <name translate="no">KDE</name>
+  </developer>
   <update_contact>hein_AT_kde.org</update_contact>
   <description>
     <p>Kirogi is a ground control application for drones. Take to the skies, open source-style.</p>
