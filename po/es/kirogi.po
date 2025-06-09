@@ -1,13 +1,14 @@
-# Copyright (C) YEAR This file is copyright:
+# Spanish translations for kirogi.po package.
+# Copyright (C) 2019-2025 This file is copyright:
 # This file is distributed under the same license as the kirogi package.
 #
-# Víctor Rodrigo Córdoba <vrcordoba@gmail.com>, 2019, 2020.
+# SPDX-FileCopyrightText: 2019, 2020, 2025 Víctor Rodrigo Córdoba <vrcordoba@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kirogi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:41+0000\n"
-"PO-Revision-Date: 2020-12-19 17:48+0100\n"
+"PO-Revision-Date: 2025-06-09 02:37+0100\n"
 "Last-Translator: Víctor Rodrigo Córdoba <vrcordoba@gmail.com>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -424,7 +425,7 @@ msgstr "Seleccionar modelo"
 #: src/ui/Vehicle.qml:233
 #, kde-format
 msgid "Searching ..."
-msgstr "Buscando..."
+msgstr "Buscando…"
 
 #: src/ui/Vehicle.qml:236
 #, kde-format
@@ -444,12 +445,12 @@ msgstr "Listo"
 #: src/ui/Vehicle.qml:294
 #, kde-format
 msgid "Preparing ..."
-msgstr "Preparando..."
+msgstr "Preparando…"
 
 #: src/ui/Vehicle.qml:297
 #, kde-format
 msgid "Connecting ..."
-msgstr "Conectando..."
+msgstr "Conectando…"
 
 #: src/ui/Vehicle.qml:300
 #, kde-format

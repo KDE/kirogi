@@ -1,13 +1,14 @@
-# Copyright (C) YEAR This file is copyright:
+# Spanish translations for kirogiparrotplugin.po package.
+# Copyright (C) 2019-2025 This file is copyright:
 # This file is distributed under the same license as the kirogi package.
 #
-# Víctor Rodrigo Córdoba <vrcordoba@gmail.com>, 2019.
+# SPDX-FileCopyrightText: 2019, 2025 Víctor Rodrigo Córdoba <vrcordoba@gmail.com>
 msgid ""
 msgstr ""
-"Project-Id-Version: kirogi\n"
+"Project-Id-Version: kirogiparrotplugin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:41+0000\n"
-"PO-Revision-Date: 2019-09-08 16:31+0100\n"
+"PO-Revision-Date: 2025-06-09 02:38+0100\n"
 "Last-Translator: Víctor Rodrigo Córdoba <vrcordoba@gmail.com>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
