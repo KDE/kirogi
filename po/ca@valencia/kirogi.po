@@ -406,7 +406,7 @@ msgstr "Estira el vídeo per a ajustar-lo al dispositiu de pantalla."
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Model"
-msgstr "Seleccioneu el model"
+msgstr "Trieu el model"
 
 #: src/ui/Vehicle.qml:120
 #, kde-format
@@ -426,7 +426,7 @@ msgstr "<b>Model:</b> %1"
 #: src/ui/Vehicle.qml:180 src/ui/Vehicle.qml:478
 #, kde-format
 msgid "Select Model"
-msgstr "Seleccioneu el model"
+msgstr "Trieu el model"
 
 #: src/ui/Vehicle.qml:233
 #, kde-format
