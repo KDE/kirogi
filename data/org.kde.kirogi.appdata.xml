@@ -24,6 +24,7 @@
   <name xml:lang="nl">Kirogi</name>
   <name xml:lang="pl">Kirogi</name>
   <name xml:lang="pt">Kirogi</name>
+  <name xml:lang="pt-BR">Kirogi</name>
   <name xml:lang="sk">Kirogi</name>
   <name xml:lang="sl">Kirogi</name>
   <name xml:lang="sv">Kirogi</name>
@@ -49,6 +50,7 @@
   <summary xml:lang="nl">UAV (drone) ground control</summary>
   <summary xml:lang="pl">Sterowanie UAV (dron)</summary>
   <summary xml:lang="pt">Controlo terrestre de UAV (drone)</summary>
+  <summary xml:lang="pt-BR">Controle de solo de UAV (drone)</summary>
   <summary xml:lang="sl">Zemeljska kontrola UAV (droni)</summary>
   <summary xml:lang="sv">Markkontroll av drönare (UAV)</summary>
   <summary xml:lang="tr">İHA (uçargöz) yerden denetimi</summary>
@@ -78,6 +80,7 @@
     <p xml:lang="nl">Kirogi is een besturingstoepassing vanaf de grond voor drones. Neemt u de lucht in, opensource-stijl.</p>
     <p xml:lang="pl">Kirogi jest aplikacją do sterowania dronami. Wzbij się do nieba dzięki otwartemu kodowi.</p>
     <p xml:lang="pt">O Kirogi é uma aplicação de controlo de drones a nível terrestre. Leve-os aos céus com um estilo de código aberto.</p>
+    <p xml:lang="pt-BR">Kirogi é um aplicativo de controle terrestre para drones. Voe pelos céus, em estilo open source.</p>
     <p xml:lang="sl">Kirogi je program zemeljske kontrole za drone. Prevzemite v nebo v slogu odprte kode.</p>
     <p xml:lang="sv">Kirogi är ett markkontrollprogram för drönare. </p>
     <p xml:lang="tr">Kirogi, uçargözler için bir yerden denetim uygulamasıdır. Göklere uçun, açık kaynaklı bir biçimde.</p>
@@ -103,6 +106,7 @@
     <p xml:lang="nl">Mogelijkheden:</p>
     <p xml:lang="pl">Możliwości:</p>
     <p xml:lang="pt">Funcionalidades:</p>
+    <p xml:lang="pt-BR">Funcionalidades:</p>
     <p xml:lang="sk">Funkcie:</p>
     <p xml:lang="sl">Možnosti:</p>
     <p xml:lang="sv">Funktioner:</p>
@@ -129,6 +133,7 @@
       <li xml:lang="nl">Directe besturing van de vlucht</li>
       <li xml:lang="pl">Bezpośrednie sterowanie lotem</li>
       <li xml:lang="pt">Controlos de voo directos</li>
+      <li xml:lang="pt-BR">Controles de voo diretos</li>
       <li xml:lang="sl">Neposredna kontrola leta</li>
       <li xml:lang="sv">Direkt flygkontroller</li>
       <li xml:lang="tr">Doğrudan uçuş denetimleri</li>
@@ -152,6 +157,7 @@
       <li xml:lang="nl">Vliegen door aanraking op een navigatiekaart</li>
       <li xml:lang="pl">Lot dotykiem na mapie nawigacyjnej</li>
       <li xml:lang="pt">Voar por toque num Mapa de Navegação</li>
+      <li xml:lang="pt-BR">Voe pelo toque em um mapa de navegação</li>
       <li xml:lang="sl">Let z dotikom navigacijskega zemljevida</li>
       <li xml:lang="sv">Flyg genom att peka på navigeringskarta</li>
       <li xml:lang="tr">Bir yerbulum haritasına dokunarak uçun</li>
@@ -175,6 +181,7 @@
       <li xml:lang="nl">Aansturen van voortuigacties (bijv. omdraaien, trimmen)</li>
       <li xml:lang="pl">Wywołaj działania pojazdu (np. obrotu, odcięcia)</li>
       <li xml:lang="pt">Activar as acções do veículo (p.ex., inversões e limitações)</li>
+      <li xml:lang="pt-BR">Acionar ações do veículo (por exemplo, virar, ajustar)</li>
       <li xml:lang="sl">Sproži aktivnosti naprave (npr. zasuki, nagibi)</li>
       <li xml:lang="sv">Utlös fordonsåtgärder (t.ex. vändningar, trimning)</li>
       <li xml:lang="tr">Araç eylemlerini tetikleyin (örn. tersyüz, denge)</li>
@@ -199,6 +206,7 @@
       <li xml:lang="nl">Ondersteuning van gamepad/joypad</li>
       <li xml:lang="pl">Obsługa padów do gier</li>
       <li xml:lang="pt">Suporte para controladores de jogos</li>
+      <li xml:lang="pt-BR">Suporte a gamepad/joypad</li>
       <li xml:lang="sk">Podpora Gamepadu/joypadu</li>
       <li xml:lang="sl">Podpora za igralno konzolo ali igralno palico</li>
       <li xml:lang="sv">Stöd för handkontroll</li>
@@ -224,6 +232,7 @@
       <li xml:lang="nl">Live video</li>
       <li xml:lang="pl">Obraz na żywo</li>
       <li xml:lang="pt">Vídeo em directo</li>
+      <li xml:lang="pt-BR">Vídeo ao vivo</li>
       <li xml:lang="sk">Živé video</li>
       <li xml:lang="sl">Video v živo</li>
       <li xml:lang="sv">Direktsänd video</li>
@@ -249,6 +258,7 @@
       <li xml:lang="nl">Foto maken en video opnemen</li>
       <li xml:lang="pl">Rób zdjęcia i nagrywaj obraz</li>
       <li xml:lang="pt">Tirar fotografias e gravar vídeos</li>
+      <li xml:lang="pt-BR">Tirar foto e gravar vídeo</li>
       <li xml:lang="sl">Napravi fotografijo in posnemi video</li>
       <li xml:lang="sv">Ta foto och spela in video</li>
       <li xml:lang="tr">Fotoğraf çekin ve video kaydedin</li>
@@ -273,6 +283,7 @@
       <li xml:lang="nl">Vlugtparameters configureren (grenzen van snelheid, hoogte)</li>
       <li xml:lang="pl">Ustawienia parametrów lotu (szybkość, graniczne wysokości)</li>
       <li xml:lang="pt">Configurar os parâmetros de voo (velocidade, limites de altitude)</li>
+      <li xml:lang="pt-BR">Configurar parâmetros de voo (velocidade, limites de altitude)</li>
       <li xml:lang="sl">Nastavi parametre leta (hitrost, omejitve višine)</li>
       <li xml:lang="sv">Anpassa flygparametrar (hastighet, elevationsgränser)</li>
       <li xml:lang="tr">Uçuş parametrelerini yapılandırın (hız, irtifa sınırlandırmaları)</li>
@@ -297,6 +308,7 @@
       <li xml:lang="nl">Ondersteuning voor Parrot (Anafi, Bebop 2) en Ryze Tello drones (meer in de planning)</li>
       <li xml:lang="pl">Obsługa dronów Parrot (Anafi, Bebop 2) oraz Ryze Tello (planowane jest więcej)</li>
       <li xml:lang="pt">Suporte para os drones da Parrot (Anafi, Bebop 2) e Ryze Tello (estão planeados mais)</li>
+      <li xml:lang="pt-BR">Suporte para drones Parrot (Anafi, Bebop 2) e Ryze Tello (mais planejados)</li>
       <li xml:lang="sl">Podpora za drone Parrot (Anafi, Bebop 2) in Ryze Tello (več v planu)</li>
       <li xml:lang="sv">Stöd för Parrot (Anafi, Bebop 2) och Ryze Tello drönare (flera planerade)</li>
       <li xml:lang="tr">Parrot (Anafi, Bebop 2) ve Ryze Tello uçargözleri için destek (daha fazlası gelecek)</li>
@@ -333,6 +345,7 @@
       <caption xml:lang="nl">De Kirogi in-flight UI</caption>
       <caption xml:lang="pl">Interfejs Kirogi podczas lotu</caption>
       <caption xml:lang="pt">A interface em voo do Kirogi</caption>
+      <caption xml:lang="pt-BR">A interface em voo do Kirogi</caption>
       <caption xml:lang="sl">Uporabniški vmesnik Kirogi med letom</caption>
       <caption xml:lang="sv">Kirogi användargränssnitt för flygning</caption>
       <caption xml:lang="tr">Kirogi uçuş kullanıcı arayüzü</caption>
