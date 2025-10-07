@@ -1,0 +1,649 @@
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the kirogi package.
+# SPDX-FileCopyrightText: 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kirogi\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-11-05 12:41+0000\n"
+"PO-Revision-Date: 2025-10-06 17:20+0400\n"
+"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
+"Language-Team: ar\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 23.08.5\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "زايد السعيدي"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "zayed.alsaidi@gmail.com"
+
+#: src/main.cpp:90
+#, kde-kuit-format
+msgctxt "@title"
+msgid "<application>Kirogi</application>"
+msgstr "<application>كيروجي</application>"
+
+#: src/main.cpp:92
+#, kde-kuit-format
+msgctxt "@title"
+msgid "A ground control application for drones."
+msgstr "تطبيق للتحكم الأرضي بالطائرات بدون طيار."
+
+#: src/main.cpp:94
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "(c) 2019 The Kirogi Team"
+msgstr "فريق كيروجي (c) 2019"
+
+#: src/main.cpp:101
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Eike Hein"
+msgstr "إيكي هاين"
+
+#: src/main.cpp:101
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Founder, Lead Developer"
+msgstr "مؤسس، ومطور رئيسي"
+
+#: src/main.cpp:103
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Patrick José Pereira"
+msgstr "باتريك جوزيه بيريرا"
+
+#: src/main.cpp:103
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Developer"
+msgstr "مطور"
+
+#: src/main.cpp:105
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Rafael Brandmaier"
+msgstr "رافائيل براندماير"
+
+#: src/main.cpp:106
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Application icon"
+msgstr "أيقونة التطبيق"
+
+#: src/main.cpp:109
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "L. 'AsmoArael' C."
+msgstr "إل. 'أسموآريل' سي."
+
+#: src/main.cpp:109
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Mascot artwork"
+msgstr "عمل فني للشعار (التميمة)"
+
+#: src/plugins/parrot/parrotvehicle.cpp:132
+#, kde-format
+msgid "Bebop 2"
+msgstr "بيبوب 2"
+
+#: src/plugins/parrot/parrotvehicle.cpp:134
+#, kde-format
+msgid "Anafi"
+msgstr "أنَافي"
+
+#: src/plugins/parrot/parrotvehicle.cpp:136
+#, kde-format
+msgid "Unknown Parrot Model"
+msgstr "طراز Parrot مجهول"
+
+#: src/plugins/parrot/parrotvehicle.cpp:139
+#, kde-format
+msgctxt "%1 = Model name, %2 = Hostname"
+msgid "%1 (%2)"
+msgstr "%1 (%2)"
+
+#: src/ui/FlightControls.qml:122
+#, kde-format
+msgctxt "%1 = Keyboard shortcut"
+msgid "Drone (%1)"
+msgstr "طائرة بدون طيار (%1)"
+
+#: src/ui/FlightControls.qml:180
+#, kde-format
+msgid "LAND"
+msgstr "اهْبِطْ"
+
+#: src/ui/FlightControls.qml:182
+#, kde-format
+msgid "TAKE OFF"
+msgstr "أقْلِعْ"
+
+#: src/ui/FlightControls.qml:184
+#, kde-format
+msgid "PREPARING"
+msgstr "يُجَهِّز"
+
+#: src/ui/FlightControls.qml:188
+#, kde-format
+msgid "DISCONNECTED"
+msgstr "غير متصل"
+
+#: src/ui/FlightControls.qml:225
+#, kde-format
+msgctxt "%1 = Keyboard shortcut"
+msgid "Navigation Map (%1)"
+msgstr "خريطة الملاحة (%1)"
+
+#: src/ui/FlightControls.qml:250
+#, kde-format
+msgid "FILM"
+msgstr "فيلم"
+
+#: src/ui/FlightControls.qml:251
+#, kde-format
+msgid "Fly Slow"
+msgstr "طيران بطيء"
+
+#: src/ui/FlightControls.qml:253
+#, kde-format
+msgid "SPORT"
+msgstr "رياضي"
+
+#: src/ui/FlightControls.qml:254
+#, kde-format
+msgid "Fly Fast"
+msgstr "طيران سريع"
+
+#: src/ui/FlightControls.qml:284
+#, kde-format
+msgid "SCREEN"
+msgstr "الشاشة"
+
+#: src/ui/FlightControls.qml:286
+#, kde-format
+msgid "Use Virtual D-Pads"
+msgstr "استخدم لوحات اتجاهات افتراضية"
+
+#: src/ui/FlightControls.qml:288
+#, kde-format
+msgid "CONTROLLER"
+msgstr "وحدة التحكم"
+
+#: src/ui/FlightControls.qml:290
+#, kde-format
+msgid "Use Gamepad Controller"
+msgstr "استخدم وحدة تحكم الألعاب"
+
+#: src/ui/FlightControls.qml:322
+#, kde-format
+msgid "VIDEO"
+msgstr "فيديو"
+
+#: src/ui/FlightControls.qml:324
+#, kde-format
+msgid "Record Videos"
+msgstr "سَجِّل مقاطع الفيديو"
+
+#: src/ui/FlightControls.qml:326
+#, kde-format
+msgid "PHOTO"
+msgstr "صورة"
+
+#: src/ui/FlightControls.qml:328
+#, kde-format
+msgid "Take Photos"
+msgstr "التِقَط صوراً"
+
+#: src/ui/FlightControls.qml:364
+#, kde-format
+msgid "Take Photo"
+msgstr "التِقَط صورة"
+
+#: src/ui/FlightControls.qml:366
+#, kde-format
+msgid "Stop Recording Video"
+msgstr "أوقِف تسجيل الفيديو"
+
+#: src/ui/FlightControls.qml:369
+#, kde-format
+msgid "Record Video"
+msgstr "سَجِّل فيديو"
+
+#: src/ui/FlightControls.qml:399
+#, kde-format
+msgid "Turn Left"
+msgstr "اتجه إلى اليسار"
+
+#: src/ui/FlightControls.qml:401
+#, kde-format
+msgid "Turn Right"
+msgstr "اتجه إلى اليمين"
+
+#: src/ui/FlightControls.qml:403
+#, kde-format
+msgid "Move Up"
+msgstr "اِصْعَدْ"
+
+#: src/ui/FlightControls.qml:405
+#, kde-format
+msgid "Move Down"
+msgstr "اِهْبِطْ"
+
+#: src/ui/FlightControls.qml:495
+#, kde-format
+msgid "Move Left"
+msgstr "تَحَرَّك يساراً"
+
+#: src/ui/FlightControls.qml:497
+#, kde-format
+msgid "Move Right"
+msgstr "تَحَرَّك يميناً"
+
+#: src/ui/FlightControls.qml:499
+#, kde-format
+msgid "Move Forward"
+msgstr "تَحَرَّك للأمام"
+
+#: src/ui/FlightControls.qml:501
+#, kde-format
+msgid "Move Backward"
+msgstr "تَحَرَّك للخلف"
+
+#: src/ui/FlightControls.qml:611 src/ui/FlightControls.qml:620
+#: src/ui/VehicleActionsDrawer.qml:700
+#, kde-format
+msgid "%1 m/s"
+msgstr "%1 م/ث"
+
+#: src/ui/FlightControls.qml:623
+#, kde-format
+msgid "– m/s"
+msgstr "– م/ث"
+
+#: src/ui/FlightControls.qml:645 src/ui/FlightControls.qml:654
+#: src/ui/FlightControls.qml:679 src/ui/FlightControls.qml:688
+#: src/ui/FlightControls.qml:692 src/ui/FlightControls.qml:738
+#: src/ui/VehicleActionsDrawer.qml:328 src/ui/VehicleActionsDrawer.qml:395
+#, kde-format
+msgid "%1 m"
+msgstr "%1 م"
+
+#: src/ui/FlightControls.qml:657 src/ui/FlightControls.qml:695
+#, kde-format
+msgid "– m"
+msgstr "– م"
+
+#: src/ui/FlightControls.qml:748
+#, kde-format
+msgid "%1 min"
+msgstr "%1 دقيقة"
+
+#: src/ui/FlightControls.qml:751
+#, kde-format
+msgid "– min"
+msgstr "– دقيقة"
+
+#: src/ui/FlightControls.qml:793 src/ui/FlightControls.qml:800
+#: src/ui/FlightControls.qml:828 src/ui/FlightControls.qml:835
+#: src/ui/Vehicle.qml:354 src/ui/Vehicle.qml:396
+#, kde-format
+msgid "%1%"
+msgstr "%1٪"
+
+#: src/ui/FlightControls.qml:800 src/ui/FlightControls.qml:835
+#: src/ui/Vehicle.qml:230 src/ui/Vehicle.qml:354 src/ui/Vehicle.qml:396
+#: src/ui/Vehicle.qml:441
+#, kde-format
+msgid "N/A"
+msgstr "غير متوفر"
+
+#: src/ui/main.qml:73
+#, kde-format
+msgid "Kirogi"
+msgstr "كيروجي"
+
+#: src/ui/main.qml:85
+#, kde-format
+msgid "Drone"
+msgstr "طائرة بدون طيار"
+
+#: src/ui/main.qml:98
+#, kde-format
+msgid "Flight Controls"
+msgstr "عناصر التحكم في الطيران"
+
+#: src/ui/main.qml:111
+#, kde-format
+msgid "Navigation Map"
+msgstr "خريطة الملاحة"
+
+#: src/ui/main.qml:124 src/ui/Settings.qml:29
+#, kde-format
+msgid "Settings"
+msgstr "الإعدادات"
+
+#: src/ui/main.qml:137
+#, kde-format
+msgid "About"
+msgstr "حول"
+
+#: src/ui/NavigationMap.qml:213
+#, kde-format
+msgid "Unable to load map."
+msgstr "لا أستطيع تحميل الخريطة."
+
+#: src/ui/NavigationMap.qml:215
+#, kde-format
+msgid "%1 does not support GPS."
+msgstr "لا تدعم %1 نظام تحديد المواقع (GPS)."
+
+#: src/ui/NavigationMap.qml:217
+#, kde-format
+msgid "%1 does not have a GPS fix."
+msgstr "لا يوجد لـ %1 تثبيت لنظام تحديد المواقع (GPS)."
+
+#: src/ui/NavigationMap.qml:219
+#, kde-format
+msgid "No device location available."
+msgstr "لا يتوفر موقع الجهاز."
+
+#: src/ui/NavigationMap.qml:236
+#, kde-format
+msgctxt "%1 = Keyboard shortcut"
+msgid "Flight Controls (%1)"
+msgstr "عناصر التحكم في الطيران (%1)"
+
+#: src/ui/NavigationMap.qml:254
+#, kde-format
+msgid "Center Map on Drone"
+msgstr "وُسِّط الخريطة على الطائرة بدون طيار"
+
+#: src/ui/NavigationMap.qml:272
+#, kde-format
+msgid "Center Map on Device"
+msgstr "وُسِّط الخريطة على الجهاز"
+
+#: src/ui/Settings.qml:40
+#, kde-format
+msgid "Allow Kirogi to request the location of this device"
+msgstr "اسمح لكيروجي بطلب موقع هذا الجهاز"
+
+#: src/ui/Settings.qml:47
+#, kde-format
+msgid "Show D-pads when a gamepad controller is connected"
+msgstr "أظهِر لوحات الاتجاهات عند توصيل وحدة تحكم الألعاب"
+
+#: src/ui/Settings.qml:52
+#, kde-format
+msgid "Video"
+msgstr "فيديو"
+
+#: src/ui/Settings.qml:57
+#, kde-format
+msgid "Stretch video to fit device screen."
+msgstr "اِمْدُدِ الفيديو ليناسب شاشة الجهاز."
+
+#: src/ui/Vehicle.qml:86
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Model"
+msgstr "اِخْتَر الطراز"
+
+#: src/ui/Vehicle.qml:120
+#, kde-format
+msgid "Flight Checklist"
+msgstr "قائمة مراجعة الطيران"
+
+#: src/ui/Vehicle.qml:162
+#, kde-format
+msgid "Select now"
+msgstr "اِخْتَر الآن"
+
+#: src/ui/Vehicle.qml:162
+#, kde-format
+msgid "<b>Model:</b> %1"
+msgstr "<b>الطراز:</b> %1"
+
+#: src/ui/Vehicle.qml:180 src/ui/Vehicle.qml:478
+#, kde-format
+msgid "Select Model"
+msgstr "اِخْتَر الطراز"
+
+#: src/ui/Vehicle.qml:233
+#, kde-format
+msgid "Searching ..."
+msgstr "يبحث..."
+
+#: src/ui/Vehicle.qml:236
+#, kde-format
+msgid "<b>Drone:</b> %1"
+msgstr "<b>طائرة بدون طيار:</b> %1"
+
+#: src/ui/Vehicle.qml:290
+#, kde-format
+msgid "Flying"
+msgstr "يطير"
+
+#: src/ui/Vehicle.qml:292
+#, kde-format
+msgid "Ready"
+msgstr "جاهز"
+
+#: src/ui/Vehicle.qml:294
+#, kde-format
+msgid "Preparing ..."
+msgstr "يُجَهِّز..."
+
+#: src/ui/Vehicle.qml:297
+#, kde-format
+msgid "Connecting ..."
+msgstr "يتصل..."
+
+#: src/ui/Vehicle.qml:300
+#, kde-format
+msgid "<b>Status:</b> %1"
+msgstr "<b>الحالة:</b> %1"
+
+#: src/ui/Vehicle.qml:355
+#, kde-format
+msgid "<b>Signal:</b> %1"
+msgstr "<b>الإشارة:</b> %1"
+
+#: src/ui/Vehicle.qml:397
+#, kde-format
+msgid "<b>Battery:</b> %1"
+msgstr "<b>البطارية:</b> %1"
+
+#: src/ui/Vehicle.qml:445
+#, kde-format
+msgid "Got fix"
+msgstr "اقتنص تثبيتاً"
+
+#: src/ui/Vehicle.qml:447
+#, kde-format
+msgid "No fix"
+msgstr "لا يوجد تثبيت"
+
+#: src/ui/Vehicle.qml:449
+#, kde-format
+msgid "Not supported"
+msgstr "غير مدعوم"
+
+#: src/ui/Vehicle.qml:453
+#, kde-format
+msgid "<b>GPS:</b> %1"
+msgstr "<b>GPS:</b> %1"
+
+#: src/ui/Vehicle.qml:480
+#, kde-format
+msgid "Go to Flight Controls"
+msgstr "اِذْهَب إلى عناصر التحكم في الطيران"
+
+#: src/ui/Vehicle.qml:483
+#, kde-format
+msgid "Try Flight Controls"
+msgstr "جَرِّب عناصر التحكم في الطيران"
+
+#: src/ui/VehicleActionsDrawer.qml:138
+#, kde-format
+msgid "Flat Trim"
+msgstr "تهذيب مسطح"
+
+#: src/ui/VehicleActionsDrawer.qml:150
+#, kde-format
+msgid "Flip"
+msgstr "اِقْلِبْ"
+
+#: src/ui/VehicleActionsDrawer.qml:178
+#, kde-format
+msgid "Flip Forward"
+msgstr "اِقْلِبْ للأمام"
+
+#: src/ui/VehicleActionsDrawer.qml:197
+#, kde-format
+msgid "Flip Backward"
+msgstr "اِقْلِبْ للخلف"
+
+#: src/ui/VehicleActionsDrawer.qml:216
+#, kde-format
+msgid "Flip Left"
+msgstr "اِقْلِبْ لليسار"
+
+#: src/ui/VehicleActionsDrawer.qml:235
+#, kde-format
+msgid "Flip Right"
+msgstr "اِقْلِبْ لليمين"
+
+#: src/ui/VehicleActionsDrawer.qml:252
+#, kde-format
+msgid "Enabled"
+msgstr "مُفَعَّل"
+
+#: src/ui/VehicleActionsDrawer.qml:254
+#, kde-format
+msgid "Disabled"
+msgstr "مُعَطَّل"
+
+#: src/ui/VehicleActionsDrawer.qml:257
+#, kde-format
+msgid "Geofence: %1"
+msgstr "السياج الجغرافي: %1"
+
+#: src/ui/VehicleActionsDrawer.qml:260
+#, kde-format
+msgid "Geofence"
+msgstr "السياج الجغرافي"
+
+#: src/ui/VehicleActionsDrawer.qml:292
+#, kde-format
+msgid "Disable Geofence"
+msgstr "عَطِّل السياج الجغرافي"
+
+#: src/ui/VehicleActionsDrawer.qml:295
+#, kde-format
+msgid "Enable Geofence"
+msgstr "فَعِّل السياج الجغرافي"
+
+#: src/ui/VehicleActionsDrawer.qml:321
+#, kde-format
+msgid "Maximum altitude:"
+msgstr "أقصى ارتفاع:"
+
+#: src/ui/VehicleActionsDrawer.qml:388
+#, kde-format
+msgid "Maximum distance:"
+msgstr "أقصى مسافة:"
+
+#: src/ui/VehicleActionsDrawer.qml:448
+#, kde-format
+msgid "Film"
+msgstr "فيلم"
+
+#: src/ui/VehicleActionsDrawer.qml:450
+#, kde-format
+msgid "Sport"
+msgstr "رياضي"
+
+#: src/ui/VehicleActionsDrawer.qml:452
+#, kde-format
+msgid "Custom"
+msgstr "مخصص"
+
+#: src/ui/VehicleActionsDrawer.qml:455
+#, kde-format
+msgid "Performance: %1"
+msgstr "الأداء: %1"
+
+#: src/ui/VehicleActionsDrawer.qml:458
+#, kde-format
+msgid "Performance"
+msgstr "الأداء"
+
+#: src/ui/VehicleActionsDrawer.qml:492
+#, kde-format
+msgid "Maximum roll speed:"
+msgstr "أقصى سرعة دحرجة:"
+
+#: src/ui/VehicleActionsDrawer.qml:499 src/ui/VehicleActionsDrawer.qml:566
+#: src/ui/VehicleActionsDrawer.qml:633
+#, kde-format
+msgid "%1 °/s"
+msgstr "%1 درجة/ث"
+
+#: src/ui/VehicleActionsDrawer.qml:559
+#, kde-format
+msgid "Maximum pitch speed:"
+msgstr "أقصى سرعة ميلان:"
+
+#: src/ui/VehicleActionsDrawer.qml:626
+#, kde-format
+msgid "Maximum yaw speed:"
+msgstr "أقصى سرعة انعراج:"
+
+#: src/ui/VehicleActionsDrawer.qml:693
+#, kde-format
+msgid "Maximum vertical speed:"
+msgstr "أقصى سرعة عمودية:"
+
+#: src/ui/VehicleActionsDrawer.qml:760
+#, kde-format
+msgid "Maximum tilt:"
+msgstr "أقصى إمالة:"
+
+#: src/ui/VehicleActionsDrawer.qml:767
+#, kde-format
+msgid "%1°"
+msgstr "%1 درجة"
+
+#: src/ui/VehicleActionsDrawer.qml:825
+#, kde-format
+msgid "Disable Banked Turns"
+msgstr "عَطِّل المنعطفات المائلة"
+
+#: src/ui/VehicleActionsDrawer.qml:828
+#, kde-format
+msgid "Enable Banked Turns"
+msgstr "فَعِّل المنعطفات المائلة"
+
+#: src/ui/VehicleActionsDrawer.qml:852
+#, kde-format
+msgid "Disable Video Stabilization"
+msgstr "عَطِّل تثبيت الفيديو"
+
+#: src/ui/VehicleActionsDrawer.qml:855
+#, kde-format
+msgid "Enable Video Stabilization"
+msgstr "فَعِّل تثبيت الفيديو"
