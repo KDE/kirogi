@@ -4,6 +4,7 @@
             {
                 "Email": "hein@kde.org",
                 "Name": "Eike Hein",
+                "Name[ar]": "إيكي هين",
                 "Name[ca@valencia]": "Eike Hein",
                 "Name[ca]": "Eike Hein",
                 "Name[cs]": "Eike Hein",
@@ -32,6 +33,7 @@
             }
         ],
         "Description": "A Kirogi plugin to support the Ryze Tello UAV",
+        "Description[ar]": "ملحق كيروجي لدعم طائرة Ryze Tello بدون طيار",
         "Description[ca@valencia]": "Un connector de Kirogi per a admetre l'UAV Ryze Tello",
         "Description[ca]": "Un connector del Kirogi per a admetre l'UAV Ryze Tello",
         "Description[en_GB]": "A Kirogi plugin to support the Ryze Tello UAV",
@@ -56,6 +58,7 @@
         "Description[zh_CN]": "用于支持 Ryze Tello 无人机的插件",
         "Icon": "uav",
         "Name": "Ryze Tello",
+        "Name[ar]": "Ryze Tello",
         "Name[ca@valencia]": "Ryze Tello",
         "Name[ca]": "Ryze Tello",
         "Name[cs]": "Ryze Tello",

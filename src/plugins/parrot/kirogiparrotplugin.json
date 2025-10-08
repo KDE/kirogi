@@ -4,6 +4,7 @@
             {
                 "Email": "hein@kde.org",
                 "Name": "Eike Hein",
+                "Name[ar]": "إيكي هين",
                 "Name[ca@valencia]": "Eike Hein",
                 "Name[ca]": "Eike Hein",
                 "Name[cs]": "Eike Hein",
@@ -32,6 +33,7 @@
             }
         ],
         "Description": "A Kirogi plugin to support Parrot UAVs",
+        "Description[ar]": "ملحق كيروجي لدعم طائرة Parrot بدون طيار",
         "Description[ca@valencia]": "Un connector de Kirogi per a admetre l'UAV Parrot",
         "Description[ca]": "Un connector del Kirogi per a admetre l'UAV Parrot",
         "Description[en_GB]": "A Kirogi plugin to support Parrot UAVs",
@@ -56,6 +58,7 @@
         "Description[zh_CN]": "用于支持 Parrot 无人机的 Kirogi 插件",
         "Icon": "uav",
         "Name": "Parrot",
+        "Name[ar]": "Parrot",
         "Name[ca@valencia]": "Parrot",
         "Name[ca]": "Parrot",
         "Name[de]": "Parrot",

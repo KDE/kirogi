@@ -4,6 +4,7 @@
             {
                 "Email": "patrickjp@kde.org",
                 "Name": "Patrick José Pereira",
+                "Name[ar]": "باتريك جوزيه بيريرا",
                 "Name[ca@valencia]": "Patrick José Pereira",
                 "Name[ca]": "Patrick José Pereira",
                 "Name[cs]": "Patrick José Pereira",
@@ -31,6 +32,7 @@
             }
         ],
         "Description": "A Kirogi plugin to support MAVLink vehicles",
+        "Description[ar]": "ملحق كيروجي لدعم مركبات MAVLink",
         "Description[ca@valencia]": "Un connector de Kirogi per a admetre vehicles MAVLink",
         "Description[ca]": "Un connector del Kirogi per a admetre vehicles MAVLink",
         "Description[en_GB]": "A Kirogi plugin to support MAVLink vehicles",
@@ -55,6 +57,7 @@
         "Description[zh_CN]": "用于支持 MAVLink 协议载具的插件",
         "Icon": "uav",
         "Name": "MAVLink",
+        "Name[ar]": "MAVLink",
         "Name[ca@valencia]": "MAVLink",
         "Name[ca]": "MAVLink",
         "Name[cs]": "MAVLink",
