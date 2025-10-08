@@ -5,6 +5,7 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>LGPL-2.1+ AND GPL-2.0+</project_license>
   <name>Kirogi</name>
+  <name xml:lang="ar">كيروجي</name>
   <name xml:lang="ca">Kirogi</name>
   <name xml:lang="ca-valencia">Kirogi</name>
   <name xml:lang="cs">Kirogi</name>
@@ -32,6 +33,7 @@
   <name xml:lang="uk">Kirogi</name>
   <name xml:lang="zh-CN">Kirogi</name>
   <summary>UAV (drone) ground control</summary>
+  <summary xml:lang="ar">التحكم الأرضي في الطائرات بدون طيار (الطائرات المسيرة)</summary>
   <summary xml:lang="ca">Control terrestre d'UAV (drons)</summary>
   <summary xml:lang="ca-valencia">Control terrestre d'UAV (drons)</summary>
   <summary xml:lang="en-GB">UAV (drone) ground control</summary>
@@ -61,6 +63,7 @@
   <update_contact>hein_AT_kde.org</update_contact>
   <description>
     <p>Kirogi is a ground control application for drones. Take to the skies, open source-style.</p>
+    <p xml:lang="ar">كيروجي هو تطبيق للتحكم الأرضي بالطائرات بدون طيار. انطلق إلى السماء بأسلوب مفتوح المصدر.</p>
     <p xml:lang="ca">El Kirogi és una aplicació per al control terrestre de drons. Els porta al cel, a l'estil del codi font obert.</p>
     <p xml:lang="ca-valencia">Kirogi és una aplicació per al control terrestre de drons. Els porta al cel, a l'estil del codi font obert.</p>
     <p xml:lang="en-GB">Kirogi is a ground control application for drones. Take to the skies, open source-style.</p>
@@ -85,6 +88,7 @@
     <p xml:lang="uk">Kirogi — програма для керування дронами з землі. Підніміться у небо у стилі відкритості.</p>
     <p xml:lang="zh-CN">Kirogi 是一款可在地面上控制无人机的应用程序。以开源之道，展翅高飞。</p>
     <p>Features:</p>
+    <p xml:lang="ar">الميزات:</p>
     <p xml:lang="ca">Característiques:</p>
     <p xml:lang="ca-valencia">Característiques:</p>
     <p xml:lang="cs">Vlastnosti:</p>
@@ -112,6 +116,7 @@
     <p xml:lang="zh-CN">功能：</p>
     <ul>
       <li>Direct flight controls</li>
+      <li xml:lang="ar">أدوات تحكم طيران مباشرة</li>
       <li xml:lang="ca">Controls de vol directe</li>
       <li xml:lang="ca-valencia">Controls de vol directe</li>
       <li xml:lang="en-GB">Direct flight controls</li>
@@ -136,6 +141,7 @@
       <li xml:lang="uk">Безпосереднє керування польотом</li>
       <li xml:lang="zh-CN">直接控制飞行轨迹</li>
       <li>Fly by touch on a Navigation Map</li>
+      <li xml:lang="ar">حلِّق باللمس على خريطة الملاحة</li>
       <li xml:lang="ca">Vol tàctil en un mapa de navegació</li>
       <li xml:lang="ca-valencia">Vol tàctil en un mapa de navegació</li>
       <li xml:lang="en-GB">Fly by touch on a Navigation Map</li>
@@ -159,6 +165,7 @@
       <li xml:lang="uk">Політ із сенсорним визначенням маршруту на навігаційній карті</li>
       <li xml:lang="zh-CN">在导航图上设定飞行位置</li>
       <li>Trigger vehicle actions (e.g. flips, trim)</li>
+      <li xml:lang="ar">شغِّل إجراءات المركبة (مثل التقلبات والتهذيب)</li>
       <li xml:lang="ca">Activa les accions del vehicle (p. ex. voltes, talls)</li>
       <li xml:lang="ca-valencia">Activa les accions del vehicle (p. ex., voltes, talls)</li>
       <li xml:lang="en-GB">Trigger vehicle actions (e.g. flips, trim)</li>
@@ -182,6 +189,7 @@
       <li xml:lang="uk">Фігури вищого пілотажу (наприклад петлі, бочки)</li>
       <li xml:lang="zh-CN">触发载具动作 (如翻转和平飞)</li>
       <li>Gamepad/joypad support</li>
+      <li xml:lang="ar">دعم لوحة اللعب/عصا التحكم</li>
       <li xml:lang="ca">Admet comandaments de joc</li>
       <li xml:lang="ca-valencia">Admet comandaments de joc</li>
       <li xml:lang="en-GB">Gamepad/joypad support</li>
@@ -207,6 +215,7 @@
       <li xml:lang="uk">Підтримка пультів керування</li>
       <li xml:lang="zh-CN">手柄支持</li>
       <li>Live video</li>
+      <li xml:lang="ar">فيديو حي</li>
       <li xml:lang="ca">Vídeo en directe</li>
       <li xml:lang="ca-valencia">Vídeo en directe</li>
       <li xml:lang="en-GB">Live video</li>
@@ -232,6 +241,7 @@
       <li xml:lang="uk">Інтерактивне відео</li>
       <li xml:lang="zh-CN">实时视频</li>
       <li>Take photo and record video</li>
+      <li xml:lang="ar">التقط صورة وسجِّل فيديو</li>
       <li xml:lang="ca">Prendre fotos i enregistrar vídeo</li>
       <li xml:lang="ca-valencia">Prendre fotos i gravar vídeo</li>
       <li xml:lang="en-GB">Take photo and record video</li>
@@ -256,6 +266,7 @@
       <li xml:lang="uk">Створення знімків та запис відео</li>
       <li xml:lang="zh-CN">拍照和录像</li>
       <li>Configure flight parameters (speed, altitude limits)</li>
+      <li xml:lang="ar">اضبط متغيرات الطيران (السرعة، حدود الارتفاع)</li>
       <li xml:lang="ca">Configuració dels paràmetres de vol (velocitat, límits d'altitud)</li>
       <li xml:lang="ca-valencia">Configureu els paràmetres de vol (velocitat, límits d'altitud)</li>
       <li xml:lang="en-GB">Configure flight parameters (speed, altitude limits)</li>
@@ -280,6 +291,7 @@
       <li xml:lang="uk">Налаштовування параметрів польоту (обмежень на швидкість і висоту)</li>
       <li xml:lang="zh-CN">配置飞行参数 (速度和高度限制)</li>
       <li>Support for Parrot (Anafi, Bebop 2) and Ryze Tello drones (more planned)</li>
+      <li xml:lang="ar">دعم للطائرات المسيرة Parrot (Anafi، Bebop 2) و Ryze Tello (المزيد في الخطة)</li>
       <li xml:lang="ca">Suport per als drons Parrot (Anafi, Bebop 2) i Ryze Tello (n'hi ha més de planificats)</li>
       <li xml:lang="ca-valencia">Suport per als drons Parrot (Anafi, Bebop 2) i Ryze Tello (n'hi ha més de planificats)</li>
       <li xml:lang="en-GB">Support for Parrot (Anafi, Bebop 2) and Ryze Tello drones (more planned)</li>
@@ -316,6 +328,7 @@
     <screenshot type="default">
       <image>https://cdn.kde.org/screenshots/kirogi/kirogi.png</image>
       <caption>The Kirogi in-flight UI</caption>
+      <caption xml:lang="ar">واجهة مستخدم كيروجي أثناء الطيران</caption>
       <caption xml:lang="ca">La IU de vol del Kirogi</caption>
       <caption xml:lang="ca-valencia">La IU de vol de Kirogi</caption>
       <caption xml:lang="en-GB">The Kirogi in-flight UI</caption>
