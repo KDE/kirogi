@@ -2,9 +2,7 @@
 # German translation for kirogi.
 # Copyright (C) 2021 This file is copyright:
 # This file is distributed under the same license as the kirogi package.
-# Frederik Schwarzer <schwarzer@kde.org>, 2021.
-#
-# Automatically generated, 2021.
+# SPDX-FileCopyrightText: 2021 Frederik Schwarzer <schwarzer@kde.org>
 msgid ""
 msgstr ""
 "Project-Id-Version: kirogiparrotplugin\n"
