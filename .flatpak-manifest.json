@@ -6,19 +6,33 @@
     "runtime-version": "5.15-25.08",
     "sdk": "org.kde.Sdk",
     "command": "kirogi",
-    "tags": ["nightly"],
+    "tags": [
+        "nightly"
+    ],
     "desktop-file-name-prefix": "(Nightly) ",
-    "finish-args": ["--share=ipc", "--socket=x11", "--socket=wayland", "--filesystem=host", "--device=dri", "--system-talk-name=org.freedesktop.Avahi"],
-
+    "finish-args": [
+        "--share=ipc",
+        "--socket=x11",
+        "--socket=wayland",
+        "--filesystem=host",
+        "--device=dri",
+        "--system-talk-name=org.freedesktop.Avahi"
+    ],
     "modules": [
         {
             "name": "gstreamer",
             "buildsystem": "meson",
             "sources": [
                 {
-                    "type" : "archive",
-                    "url" : "https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.22.2.tar.xz",
-                    "sha256": "b2afe73603921c608ba48969dbb7d743776744bfe5d8059ece241137b7f88e21"
+                    "type": "archive",
+                    "url": "https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.27.2.tar.xz",
+                    "sha256": "ce129c7ea92dce3063b029171d1324d203927132fc3e0cf92b784ddd055c241d",
+                    "x-checker-data": {
+                        "type": "html",
+                        "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/tags",
+                        "version-pattern": "Release ([\\d\\.]+)",
+                        "url-template": "https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-$version.tar.xz"
+                    }
                 }
             ]
         },
@@ -27,9 +41,15 @@
             "buildsystem": "meson",
             "sources": [
                 {
-                    "type" : "archive",
-                    "url" : "https://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-1.22.2.tar.xz",
-                    "sha256": "eb65120c4ee79b7a153c3c1972d5c0158c2151877cc51ec7725bba5749679d49"
+                    "type": "archive",
+                    "url": "https://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-1.27.2.tar.xz",
+                    "sha256": "6f530a0eac4fe3a8e5487c3eea7b1fac307e2a21f056d9b41747818a88be4bf6",
+                    "x-checker-data": {
+                        "type": "html",
+                        "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/tags",
+                        "version-pattern": "Release ([\\d\\.]+)",
+                        "url-template": "https://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-$version.tar.xz"
+                    }
                 }
             ]
         },
@@ -38,15 +58,23 @@
             "buildsystem": "meson",
             "sources": [
                 {
-                    "type" : "archive",
-                    "url" : "https://gstreamer.freedesktop.org/src/gst-plugins-good/gst-plugins-good-1.22.2.tar.xz",
-                    "sha256": "7c8cc59425f2b232f60ca7d13e56edd615da4f711e73dd01a7cffa46e6bc0cdd"
+                    "type": "archive",
+                    "url": "https://gstreamer.freedesktop.org/src/gst-plugins-good/gst-plugins-good-1.27.2.tar.xz",
+                    "sha256": "4f047416d71b102998db4cc513925cb317d87a3409d0ffae3ba218765b0f1ce5",
+                    "x-checker-data": {
+                        "type": "html",
+                        "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/tags",
+                        "version-pattern": "Release ([\\d\\.]+)",
+                        "url-template": "https://gstreamer.freedesktop.org/src/gst-plugins-good/gst-plugins-good-$version.tar.xz"
+                    }
                 }
             ]
         },
         {
             "name": "kirigamiaddons",
-            "config-opts": [ "-DBUILD_TESTING=OFF" ],
+            "config-opts": [
+                "-DBUILD_TESTING=OFF"
+            ],
             "buildsystem": "cmake-ninja",
             "sources": [
                 {
