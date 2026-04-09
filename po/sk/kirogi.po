@@ -12,8 +12,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 18.12.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 18.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -65,7 +65,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Developer"
-msgstr ""
+msgstr "Vývojár"
 
 #: src/main.cpp:105
 #, kde-kuit-format
@@ -80,9 +80,7 @@ msgid "Application icon"
 msgstr "Ikona aplikácie"
 
 #: src/main.cpp:109
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:credit"
-#| msgid "Lilly 'AsmoArael' Cholley"
+#, kde-kuit-format
 msgctxt "@info:credit"
 msgid "L. 'AsmoArael' C."
 msgstr "Lilly 'AsmoArael' Cholley"
@@ -121,7 +119,7 @@ msgid "Drone (%1)"
 msgstr ""
 
 #: src/ui/FlightControls.qml:180
-#, fuzzy, kde-format
+#, kde-format
 msgid "LAND"
 msgstr "krajina"
 
@@ -131,12 +129,12 @@ msgid "TAKE OFF"
 msgstr ""
 
 #: src/ui/FlightControls.qml:184
-#, fuzzy, kde-format
+#, kde-format
 msgid "PREPARING"
 msgstr "Pripravujem"
 
 #: src/ui/FlightControls.qml:188
-#, fuzzy, kde-format
+#, kde-format
 msgid "DISCONNECTED"
 msgstr "Odpojený"
 
@@ -147,7 +145,7 @@ msgid "Navigation Map (%1)"
 msgstr ""
 
 #: src/ui/FlightControls.qml:250
-#, fuzzy, kde-format
+#, kde-format
 msgid "FILM"
 msgstr "film"
 
@@ -157,7 +155,7 @@ msgid "Fly Slow"
 msgstr ""
 
 #: src/ui/FlightControls.qml:253
-#, fuzzy, kde-format
+#, kde-format
 msgid "SPORT"
 msgstr "šport"
 
@@ -167,7 +165,7 @@ msgid "Fly Fast"
 msgstr ""
 
 #: src/ui/FlightControls.qml:284
-#, fuzzy, kde-format
+#, kde-format
 msgid "SCREEN"
 msgstr "Obrazovka"
 
@@ -177,7 +175,7 @@ msgid "Use Virtual D-Pads"
 msgstr ""
 
 #: src/ui/FlightControls.qml:288
-#, fuzzy, kde-format
+#, kde-format
 msgid "CONTROLLER"
 msgstr "Ovládač"
 
@@ -187,7 +185,7 @@ msgid "Use Gamepad Controller"
 msgstr ""
 
 #: src/ui/FlightControls.qml:322
-#, fuzzy, kde-format
+#, kde-format
 msgid "VIDEO"
 msgstr "Video"
 
@@ -197,7 +195,7 @@ msgid "Record Videos"
 msgstr ""
 
 #: src/ui/FlightControls.qml:326
-#, fuzzy, kde-format
+#, kde-format
 msgid "PHOTO"
 msgstr "Fotka"
 
@@ -222,32 +220,32 @@ msgid "Record Video"
 msgstr ""
 
 #: src/ui/FlightControls.qml:399
-#, fuzzy, kde-format
+#, kde-format
 msgid "Turn Left"
 msgstr "Zabočiť doľava."
 
 #: src/ui/FlightControls.qml:401
-#, fuzzy, kde-format
+#, kde-format
 msgid "Turn Right"
 msgstr "Zabočiť doprava."
 
 #: src/ui/FlightControls.qml:403
-#, fuzzy, kde-format
+#, kde-format
 msgid "Move Up"
 msgstr "Posunúť hore"
 
 #: src/ui/FlightControls.qml:405
-#, fuzzy, kde-format
+#, kde-format
 msgid "Move Down"
 msgstr "Posunúť dole"
 
 #: src/ui/FlightControls.qml:495
-#, fuzzy, kde-format
+#, kde-format
 msgid "Move Left"
 msgstr "Posunúť doľava"
 
 #: src/ui/FlightControls.qml:497
-#, fuzzy, kde-format
+#, kde-format
 msgid "Move Right"
 msgstr "Posunúť doprava"
 
@@ -263,9 +261,9 @@ msgstr ""
 
 #: src/ui/FlightControls.qml:611 src/ui/FlightControls.qml:620
 #: src/ui/VehicleActionsDrawer.qml:700
-#, fuzzy, kde-format
+#, kde-format
 msgid "%1 m/s"
-msgstr "m/s"
+msgstr "%1 m/s"
 
 #: src/ui/FlightControls.qml:623
 #, kde-format
@@ -388,7 +386,7 @@ msgstr ""
 #: src/ui/Settings.qml:52
 #, kde-format
 msgid "Video"
-msgstr ""
+msgstr "Video"
 
 #: src/ui/Settings.qml:57
 #, kde-format
@@ -412,9 +410,9 @@ msgid "Select now"
 msgstr ""
 
 #: src/ui/Vehicle.qml:162
-#, fuzzy, kde-format
+#, kde-format
 msgid "<b>Model:</b> %1"
-msgstr "Model"
+msgstr ""
 
 #: src/ui/Vehicle.qml:180 src/ui/Vehicle.qml:478
 #, kde-format
@@ -442,29 +440,29 @@ msgid "Ready"
 msgstr "Pripravený"
 
 #: src/ui/Vehicle.qml:294
-#, fuzzy, kde-format
+#, kde-format
 msgid "Preparing ..."
 msgstr "Pripravujem"
 
 #: src/ui/Vehicle.qml:297
-#, fuzzy, kde-format
+#, kde-format
 msgid "Connecting ..."
 msgstr "Pripájam..."
 
 #: src/ui/Vehicle.qml:300
-#, fuzzy, kde-format
+#, kde-format
 msgid "<b>Status:</b> %1"
-msgstr "Stav"
+msgstr ""
 
 #: src/ui/Vehicle.qml:355
-#, fuzzy, kde-format
+#, kde-format
 msgid "<b>Signal:</b> %1"
-msgstr "Signál"
+msgstr ""
 
 #: src/ui/Vehicle.qml:397
-#, fuzzy, kde-format
+#, kde-format
 msgid "<b>Battery:</b> %1"
-msgstr "Batéria"
+msgstr ""
 
 #: src/ui/Vehicle.qml:445
 #, kde-format
