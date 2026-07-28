@@ -1,31 +1,32 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2026 This file is copyright:
 # This file is distributed under the same license as the kirogi package.
 # Vit Pelcak <vit@pelcak.org>, 2019, 2020.
+# SPDX-FileCopyrightText: 2026 Libor Filípek <libor.filipek@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kirogi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 09:01+0000\n"
-"PO-Revision-Date: 2020-01-14 12:09+0100\n"
-"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
+"PO-Revision-Date: 2026-07-27 12:05+0200\n"
+"Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 19.12.0\n"
+"X-Generator: Poedit 3.9\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Vít Pelčák"
+msgstr "Vít Pelčák,Libor Filípek"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "vit@pelcak.org"
+msgstr "vit@pelcak.org,libor.filipek@gmail.com"
 
 #: src/main.cpp:90
 #, kde-kuit-format
@@ -37,7 +38,7 @@ msgstr "<application>Kirogi</application>"
 #, kde-kuit-format
 msgctxt "@title"
 msgid "A ground control application for drones."
-msgstr "Aplikace pro ovládání dronů"
+msgstr "Aplikace pro ovládání dronů."
 
 #: src/main.cpp:94
 #, kde-kuit-format
@@ -55,7 +56,7 @@ msgstr "Eike Hein"
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Founder, Lead Developer"
-msgstr ""
+msgstr "Zakladatel, hlavní vývojář"
 
 #: src/main.cpp:103
 #, kde-kuit-format
@@ -79,7 +80,7 @@ msgstr "Rafael Brandmaier"
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Application icon"
-msgstr ""
+msgstr "Ikona aplikace"
 
 #: src/main.cpp:109
 #, kde-kuit-format
@@ -91,7 +92,7 @@ msgstr "L. 'AsmoArael' C."
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Mascot artwork"
-msgstr ""
+msgstr "Grafické návrhy maskotů"
 
 #: src/plugins/parrot/parrotvehicle.cpp:132
 #, kde-format
@@ -106,7 +107,7 @@ msgstr "Anafi"
 #: src/plugins/parrot/parrotvehicle.cpp:136
 #, kde-format
 msgid "Unknown Parrot Model"
-msgstr ""
+msgstr "Neznámý model Parrot"
 
 #: src/plugins/parrot/parrotvehicle.cpp:139
 #, kde-format
@@ -123,28 +124,28 @@ msgstr "Dron (%1)"
 #: src/ui/FlightControls.qml:180
 #, kde-format
 msgid "LAND"
-msgstr ""
+msgstr "ZEMĚ"
 
 #: src/ui/FlightControls.qml:182
 #, kde-format
 msgid "TAKE OFF"
-msgstr ""
+msgstr "VZLET"
 
 #: src/ui/FlightControls.qml:184
 #, kde-format
 msgid "PREPARING"
-msgstr ""
+msgstr "PŘÍPRAVA"
 
 #: src/ui/FlightControls.qml:188
 #, kde-format
 msgid "DISCONNECTED"
-msgstr ""
+msgstr "ODPOJENO"
 
 #: src/ui/FlightControls.qml:225
 #, kde-format
 msgctxt "%1 = Keyboard shortcut"
 msgid "Navigation Map (%1)"
-msgstr ""
+msgstr "Navigační mapa (%1)"
 
 #: src/ui/FlightControls.qml:250
 #, kde-format
@@ -154,7 +155,7 @@ msgstr "FILM"
 #: src/ui/FlightControls.qml:251
 #, kde-format
 msgid "Fly Slow"
-msgstr ""
+msgstr "Létat pomalu"
 
 #: src/ui/FlightControls.qml:253
 #, kde-format
@@ -164,7 +165,7 @@ msgstr "SPORT"
 #: src/ui/FlightControls.qml:254
 #, kde-format
 msgid "Fly Fast"
-msgstr ""
+msgstr "Létat rychle"
 
 #: src/ui/FlightControls.qml:284
 #, kde-format
@@ -174,17 +175,17 @@ msgstr "OBRAZOVKA"
 #: src/ui/FlightControls.qml:286
 #, kde-format
 msgid "Use Virtual D-Pads"
-msgstr ""
+msgstr "Použít virtuální směrová tlačítka"
 
 #: src/ui/FlightControls.qml:288
 #, kde-format
 msgid "CONTROLLER"
-msgstr ""
+msgstr "OVLADAČ"
 
 #: src/ui/FlightControls.qml:290
 #, kde-format
 msgid "Use Gamepad Controller"
-msgstr ""
+msgstr "Použít gamepad"
 
 #: src/ui/FlightControls.qml:322
 #, kde-format
@@ -194,32 +195,32 @@ msgstr "VIDEO"
 #: src/ui/FlightControls.qml:324
 #, kde-format
 msgid "Record Videos"
-msgstr ""
+msgstr "Nahrávání videí"
 
 #: src/ui/FlightControls.qml:326
 #, kde-format
 msgid "PHOTO"
-msgstr ""
+msgstr "FOTO"
 
 #: src/ui/FlightControls.qml:328
 #, kde-format
 msgid "Take Photos"
-msgstr ""
+msgstr "Fotografovat"
 
 #: src/ui/FlightControls.qml:364
 #, kde-format
 msgid "Take Photo"
-msgstr ""
+msgstr "Vyfotit"
 
 #: src/ui/FlightControls.qml:366
 #, kde-format
 msgid "Stop Recording Video"
-msgstr ""
+msgstr "Zastavit nahrávání videa"
 
 #: src/ui/FlightControls.qml:369
 #, kde-format
 msgid "Record Video"
-msgstr ""
+msgstr "Nahrát video"
 
 #: src/ui/FlightControls.qml:399
 #, kde-format
@@ -234,12 +235,12 @@ msgstr "Otočit vpravo"
 #: src/ui/FlightControls.qml:403
 #, kde-format
 msgid "Move Up"
-msgstr "Posunout nahoru"
+msgstr "Přesunout nahoru"
 
 #: src/ui/FlightControls.qml:405
 #, kde-format
 msgid "Move Down"
-msgstr "Posunout dolů"
+msgstr "Přesunout dolů"
 
 #: src/ui/FlightControls.qml:495
 #, kde-format
@@ -254,12 +255,12 @@ msgstr "Přesunout doprava"
 #: src/ui/FlightControls.qml:499
 #, kde-format
 msgid "Move Forward"
-msgstr ""
+msgstr "Přesunout dopředu"
 
 #: src/ui/FlightControls.qml:501
 #, kde-format
 msgid "Move Backward"
-msgstr ""
+msgstr "Přesunout dozadu"
 
 #: src/ui/FlightControls.qml:611 src/ui/FlightControls.qml:620
 #: src/ui/VehicleActionsDrawer.qml:700
@@ -322,12 +323,12 @@ msgstr "Dron"
 #: src/ui/main.qml:98
 #, kde-format
 msgid "Flight Controls"
-msgstr ""
+msgstr "Řídicí prvky letu"
 
 #: src/ui/main.qml:111
 #, kde-format
 msgid "Navigation Map"
-msgstr ""
+msgstr "Navigační mapa"
 
 #: src/ui/main.qml:124 src/ui/Settings.qml:29
 #, kde-format
@@ -342,48 +343,49 @@ msgstr "O aplikaci"
 #: src/ui/NavigationMap.qml:213
 #, kde-format
 msgid "Unable to load map."
-msgstr ""
+msgstr "Nelze načíst mapu."
 
 #: src/ui/NavigationMap.qml:215
 #, kde-format
 msgid "%1 does not support GPS."
-msgstr ""
+msgstr "%1 nepodporuje GPS."
 
 #: src/ui/NavigationMap.qml:217
 #, kde-format
 msgid "%1 does not have a GPS fix."
-msgstr ""
+msgstr "%1 nemá signál GPS."
 
 #: src/ui/NavigationMap.qml:219
 #, kde-format
 msgid "No device location available."
-msgstr ""
+msgstr "Poloha zařízení není k dispozici."
 
 #: src/ui/NavigationMap.qml:236
 #, kde-format
 msgctxt "%1 = Keyboard shortcut"
 msgid "Flight Controls (%1)"
-msgstr ""
+msgstr "Řídicí prvky letu (%1)"
 
 #: src/ui/NavigationMap.qml:254
 #, kde-format
 msgid "Center Map on Drone"
-msgstr ""
+msgstr "Vystředit dron na mapě"
 
 #: src/ui/NavigationMap.qml:272
 #, kde-format
 msgid "Center Map on Device"
-msgstr ""
+msgstr "Vystředit zařízení na mapě"
 
 #: src/ui/Settings.qml:40
 #, kde-format
 msgid "Allow Kirogi to request the location of this device"
 msgstr ""
+"Povolit aplikaci Kirogi, aby si vyžádala informace o poloze tohoto zařízení"
 
 #: src/ui/Settings.qml:47
 #, kde-format
 msgid "Show D-pads when a gamepad controller is connected"
-msgstr ""
+msgstr "Zobrazit směrová tlačítka při připojení gamepadu"
 
 #: src/ui/Settings.qml:52
 #, kde-format
@@ -393,53 +395,53 @@ msgstr "Video"
 #: src/ui/Settings.qml:57
 #, kde-format
 msgid "Stretch video to fit device screen."
-msgstr ""
+msgstr "Přizpůsobit video tak, aby se vešlo na obrazovku zařízení."
 
 #: src/ui/Vehicle.qml:86
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Model"
-msgstr ""
+msgstr "Vybrat model"
 
 #: src/ui/Vehicle.qml:120
 #, kde-format
 msgid "Flight Checklist"
-msgstr ""
+msgstr "Letový kontrolní seznam"
 
 #: src/ui/Vehicle.qml:162
 #, kde-format
 msgid "Select now"
-msgstr ""
+msgstr "Vybrat nyní"
 
 #: src/ui/Vehicle.qml:162
 #, kde-format
 msgid "<b>Model:</b> %1"
-msgstr ""
+msgstr "<b>Model:</b> %1"
 
 #: src/ui/Vehicle.qml:180 src/ui/Vehicle.qml:478
 #, kde-format
 msgid "Select Model"
-msgstr ""
+msgstr "Vybrat model"
 
 #: src/ui/Vehicle.qml:233
 #, kde-format
 msgid "Searching ..."
-msgstr "Vyhledávám ..."
+msgstr "Vyhledávání ..."
 
 #: src/ui/Vehicle.qml:236
 #, kde-format
 msgid "<b>Drone:</b> %1"
-msgstr ""
+msgstr "<b>Dron:</b> %1"
 
 #: src/ui/Vehicle.qml:290
 #, kde-format
 msgid "Flying"
-msgstr ""
+msgstr "Létání"
 
 #: src/ui/Vehicle.qml:292
 #, kde-format
 msgid "Ready"
-msgstr "Připraven"
+msgstr "Připraveno"
 
 #: src/ui/Vehicle.qml:294
 #, kde-format
@@ -449,7 +451,7 @@ msgstr "Probíhá příprava ..."
 #: src/ui/Vehicle.qml:297
 #, kde-format
 msgid "Connecting ..."
-msgstr "Připojuji se ..."
+msgstr "Připojování ..."
 
 #: src/ui/Vehicle.qml:300
 #, kde-format
@@ -469,12 +471,12 @@ msgstr "<b>Baterie:</b> %1"
 #: src/ui/Vehicle.qml:445
 #, kde-format
 msgid "Got fix"
-msgstr ""
+msgstr "Získána poloha"
 
 #: src/ui/Vehicle.qml:447
 #, kde-format
 msgid "No fix"
-msgstr ""
+msgstr "Není signál"
 
 #: src/ui/Vehicle.qml:449
 #, kde-format
@@ -489,17 +491,17 @@ msgstr "<b>GPS:</b> %1"
 #: src/ui/Vehicle.qml:480
 #, kde-format
 msgid "Go to Flight Controls"
-msgstr ""
+msgstr "Přejít na ovládací prvky letu"
 
 #: src/ui/Vehicle.qml:483
 #, kde-format
 msgid "Try Flight Controls"
-msgstr ""
+msgstr "Vyzkoušet řízení letu"
 
 #: src/ui/VehicleActionsDrawer.qml:138
 #, kde-format
 msgid "Flat Trim"
-msgstr ""
+msgstr "Plochý trim"
 
 #: src/ui/VehicleActionsDrawer.qml:150
 #, kde-format
@@ -509,22 +511,22 @@ msgstr "Převrátit"
 #: src/ui/VehicleActionsDrawer.qml:178
 #, kde-format
 msgid "Flip Forward"
-msgstr ""
+msgstr "Převrátit dopředu"
 
 #: src/ui/VehicleActionsDrawer.qml:197
 #, kde-format
 msgid "Flip Backward"
-msgstr ""
+msgstr "Převrátit dozadu"
 
 #: src/ui/VehicleActionsDrawer.qml:216
 #, kde-format
 msgid "Flip Left"
-msgstr ""
+msgstr "Převrátit doleva"
 
 #: src/ui/VehicleActionsDrawer.qml:235
 #, kde-format
 msgid "Flip Right"
-msgstr ""
+msgstr "Převrátit doprava"
 
 #: src/ui/VehicleActionsDrawer.qml:252
 #, kde-format
@@ -539,27 +541,27 @@ msgstr "Zakázáno"
 #: src/ui/VehicleActionsDrawer.qml:257
 #, kde-format
 msgid "Geofence: %1"
-msgstr ""
+msgstr "Virtuální plot: %1"
 
 #: src/ui/VehicleActionsDrawer.qml:260
 #, kde-format
 msgid "Geofence"
-msgstr ""
+msgstr "Virtuální plot"
 
 #: src/ui/VehicleActionsDrawer.qml:292
 #, kde-format
 msgid "Disable Geofence"
-msgstr ""
+msgstr "Vypnout virtuální plot"
 
 #: src/ui/VehicleActionsDrawer.qml:295
 #, kde-format
 msgid "Enable Geofence"
-msgstr ""
+msgstr "Zapnout virtuální plot"
 
 #: src/ui/VehicleActionsDrawer.qml:321
 #, kde-format
 msgid "Maximum altitude:"
-msgstr ""
+msgstr "Maximální nadmořská výška:"
 
 #: src/ui/VehicleActionsDrawer.qml:388
 #, kde-format
@@ -594,7 +596,7 @@ msgstr "Výkon"
 #: src/ui/VehicleActionsDrawer.qml:492
 #, kde-format
 msgid "Maximum roll speed:"
-msgstr ""
+msgstr "Maximální rychlost otáčení:"
 
 #: src/ui/VehicleActionsDrawer.qml:499 src/ui/VehicleActionsDrawer.qml:566
 #: src/ui/VehicleActionsDrawer.qml:633
@@ -605,22 +607,22 @@ msgstr "%1 °/s"
 #: src/ui/VehicleActionsDrawer.qml:559
 #, kde-format
 msgid "Maximum pitch speed:"
-msgstr ""
+msgstr "Maximální rychlost stoupání:"
 
 #: src/ui/VehicleActionsDrawer.qml:626
 #, kde-format
 msgid "Maximum yaw speed:"
-msgstr ""
+msgstr "Maximální úhlová rychlost:"
 
 #: src/ui/VehicleActionsDrawer.qml:693
 #, kde-format
 msgid "Maximum vertical speed:"
-msgstr ""
+msgstr "Maximální vertikální rychlost:"
 
 #: src/ui/VehicleActionsDrawer.qml:760
 #, kde-format
 msgid "Maximum tilt:"
-msgstr ""
+msgstr "Maximální úhel náklonu:"
 
 #: src/ui/VehicleActionsDrawer.qml:767
 #, kde-format
@@ -630,19 +632,19 @@ msgstr "%1°"
 #: src/ui/VehicleActionsDrawer.qml:825
 #, kde-format
 msgid "Disable Banked Turns"
-msgstr ""
+msgstr "Zakázat zatáčky s náklonem"
 
 #: src/ui/VehicleActionsDrawer.qml:828
 #, kde-format
 msgid "Enable Banked Turns"
-msgstr ""
+msgstr "Povolit zatáčky s náklonem"
 
 #: src/ui/VehicleActionsDrawer.qml:852
 #, kde-format
 msgid "Disable Video Stabilization"
-msgstr ""
+msgstr "Vypnout stabilizaci videa"
 
 #: src/ui/VehicleActionsDrawer.qml:855
 #, kde-format
 msgid "Enable Video Stabilization"
-msgstr ""
+msgstr "Zapnout stabilizaci videa"
