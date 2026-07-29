@@ -36,6 +36,7 @@
         "Description[ar]": "ملحق كيروجي لدعم مركبات MAVLink",
         "Description[ca@valencia]": "Un connector de Kirogi per a admetre vehicles MAVLink",
         "Description[ca]": "Un connector del Kirogi per a admetre vehicles MAVLink",
+        "Description[cs]": "Modul Kirogi pro podporu zařízení MAVLink",
         "Description[en_GB]": "A Kirogi plugin to support MAVLink vehicles",
         "Description[eo]": "Kirogi-kromprogramo por subteni MAVLink-veturilojn",
         "Description[es]": "Un complemento de Kirogi para usar los vehículos MAVLink",

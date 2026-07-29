@@ -36,6 +36,7 @@
         "Description[ar]": "ملحق كيروجي لدعم طائرة Ryze Tello بدون طيار",
         "Description[ca@valencia]": "Un connector de Kirogi per a admetre l'UAV Ryze Tello",
         "Description[ca]": "Un connector del Kirogi per a admetre l'UAV Ryze Tello",
+        "Description[cs]": "Modul Kirogi pro podporu bezpilotních letounů Ryze Tello",
         "Description[en_GB]": "A Kirogi plugin to support the Ryze Tello UAV",
         "Description[eo]": "Kirogi-kromprogramo por subteni la Ryze-Tello senpilotan aerveturilon",
         "Description[es]": "Un complemento de Kirogi para usar el vehículo volador no tripulado Ryze Tello",
