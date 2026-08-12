@@ -205,7 +205,7 @@ msgstr "صورة"
 #: src/ui/FlightControls.qml:328
 #, kde-format
 msgid "Take Photos"
-msgstr "التِقَط صوراً"
+msgstr "التِقَط صورًا"
 
 #: src/ui/FlightControls.qml:364
 #, kde-format
@@ -245,12 +245,12 @@ msgstr "اِهْبِطْ"
 #: src/ui/FlightControls.qml:495
 #, kde-format
 msgid "Move Left"
-msgstr "تَحَرَّك يساراً"
+msgstr "تَحَرَّك يسارًا"
 
 #: src/ui/FlightControls.qml:497
 #, kde-format
 msgid "Move Right"
-msgstr "تَحَرَّك يميناً"
+msgstr "تَحَرَّك يمينًا"
 
 #: src/ui/FlightControls.qml:499
 #, kde-format
@@ -470,7 +470,7 @@ msgstr "<b>البطارية:</b> %1"
 #: src/ui/Vehicle.qml:445
 #, kde-format
 msgid "Got fix"
-msgstr "اقتنص تثبيتاً"
+msgstr "اقتنص تثبيتًا"
 
 #: src/ui/Vehicle.qml:447
 #, kde-format
