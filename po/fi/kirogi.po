@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2026 This file is copyright:
 # This file is distributed under the same license as the kirogi package.
-# Tommi Nieminen <translator@legisign.org>, 2022, 2023.
+# SPDX-FileCopyrightText: 2022, 2023, 2026 Tommi Nieminen <translator@legisign.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kirogi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 09:01+0000\n"
-"PO-Revision-Date: 2023-05-05 21:17+0300\n"
+"PO-Revision-Date: 2026-03-05 20:47+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -15,6 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -148,7 +149,7 @@ msgstr "Navigointikartta (%1)"
 #: src/ui/FlightControls.qml:250
 #, kde-format
 msgid "FILM"
-msgstr ""
+msgstr "ELOKUVA"
 
 #: src/ui/FlightControls.qml:251
 #, kde-format
@@ -158,7 +159,7 @@ msgstr "Lennä hitaasti"
 #: src/ui/FlightControls.qml:253
 #, kde-format
 msgid "SPORT"
-msgstr ""
+msgstr "URHEILU"
 
 #: src/ui/FlightControls.qml:254
 #, kde-format
@@ -168,7 +169,7 @@ msgstr "Lennä nopeasti"
 #: src/ui/FlightControls.qml:284
 #, kde-format
 msgid "SCREEN"
-msgstr ""
+msgstr "NÄYTTÖ"
 
 #: src/ui/FlightControls.qml:286
 #, kde-format
@@ -351,7 +352,7 @@ msgstr "%1 ei tue GPS:ää."
 #: src/ui/NavigationMap.qml:217
 #, kde-format
 msgid "%1 does not have a GPS fix."
-msgstr ""
+msgstr "%1: GPS-korjausta ei ole."
 
 #: src/ui/NavigationMap.qml:219
 #, kde-format
@@ -503,27 +504,27 @@ msgstr ""
 #: src/ui/VehicleActionsDrawer.qml:150
 #, kde-format
 msgid "Flip"
-msgstr ""
+msgstr "Pyörähdä"
 
 #: src/ui/VehicleActionsDrawer.qml:178
 #, kde-format
 msgid "Flip Forward"
-msgstr ""
+msgstr "Pyörähdä eteenpäin"
 
 #: src/ui/VehicleActionsDrawer.qml:197
 #, kde-format
 msgid "Flip Backward"
-msgstr ""
+msgstr "Pyörähdä taaksepäin"
 
 #: src/ui/VehicleActionsDrawer.qml:216
 #, kde-format
 msgid "Flip Left"
-msgstr ""
+msgstr "Pyörähdä vasemmalle"
 
 #: src/ui/VehicleActionsDrawer.qml:235
 #, kde-format
 msgid "Flip Right"
-msgstr ""
+msgstr "Pyörähdä oikealle"
 
 #: src/ui/VehicleActionsDrawer.qml:252
 #, kde-format
@@ -538,22 +539,22 @@ msgstr "Ei käytössä"
 #: src/ui/VehicleActionsDrawer.qml:257
 #, kde-format
 msgid "Geofence: %1"
-msgstr ""
+msgstr "Maastoraja: %1"
 
 #: src/ui/VehicleActionsDrawer.qml:260
 #, kde-format
 msgid "Geofence"
-msgstr ""
+msgstr "Maastoraja"
 
 #: src/ui/VehicleActionsDrawer.qml:292
 #, kde-format
 msgid "Disable Geofence"
-msgstr ""
+msgstr "Poista maastoraja käytöstä"
 
 #: src/ui/VehicleActionsDrawer.qml:295
 #, kde-format
 msgid "Enable Geofence"
-msgstr ""
+msgstr "Ota maastoraja käyttöön"
 
 #: src/ui/VehicleActionsDrawer.qml:321
 #, kde-format
@@ -568,12 +569,12 @@ msgstr "Enimmäisetäisyys:"
 #: src/ui/VehicleActionsDrawer.qml:448
 #, kde-format
 msgid "Film"
-msgstr ""
+msgstr "Elokuva"
 
 #: src/ui/VehicleActionsDrawer.qml:450
 #, kde-format
 msgid "Sport"
-msgstr ""
+msgstr "Urheilu"
 
 #: src/ui/VehicleActionsDrawer.qml:452
 #, kde-format
@@ -590,10 +591,11 @@ msgstr "Suorituskyky: %1"
 msgid "Performance"
 msgstr "Suorituskyky"
 
+# https://fi.wikipedia.org/wiki/Lentodynamiikka
 #: src/ui/VehicleActionsDrawer.qml:492
 #, kde-format
 msgid "Maximum roll speed:"
-msgstr ""
+msgstr "Enimmäiskallistumisnopeus:"
 
 #: src/ui/VehicleActionsDrawer.qml:499 src/ui/VehicleActionsDrawer.qml:566
 #: src/ui/VehicleActionsDrawer.qml:633
@@ -601,25 +603,27 @@ msgstr ""
 msgid "%1 °/s"
 msgstr "%1 °/s"
 
+# https://fi.wikipedia.org/wiki/Lentodynamiikka
 #: src/ui/VehicleActionsDrawer.qml:559
 #, kde-format
 msgid "Maximum pitch speed:"
-msgstr ""
+msgstr "Enimmäisnyökkäämisnopeus:"
 
+# https://fi.wikipedia.org/wiki/Lentodynamiikka
 #: src/ui/VehicleActionsDrawer.qml:626
 #, kde-format
 msgid "Maximum yaw speed:"
-msgstr ""
+msgstr "Enimmäiskääntymisnopeus:"
 
 #: src/ui/VehicleActionsDrawer.qml:693
 #, kde-format
 msgid "Maximum vertical speed:"
-msgstr ""
+msgstr "Enimmäispystynopeus:"
 
 #: src/ui/VehicleActionsDrawer.qml:760
 #, kde-format
 msgid "Maximum tilt:"
-msgstr ""
+msgstr "Enimmäiskallistus:"
 
 #: src/ui/VehicleActionsDrawer.qml:767
 #, kde-format
@@ -639,9 +643,9 @@ msgstr ""
 #: src/ui/VehicleActionsDrawer.qml:852
 #, kde-format
 msgid "Disable Video Stabilization"
-msgstr ""
+msgstr "Poista videon vakautus käytöstä"
 
 #: src/ui/VehicleActionsDrawer.qml:855
 #, kde-format
 msgid "Enable Video Stabilization"
-msgstr ""
+msgstr "Käytä videon vakautusta"
